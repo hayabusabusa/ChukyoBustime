@@ -1,11 +1,10 @@
 //
 //  BusTime.swift
-//  Infrastructure
+//  ChukyoBustime
 //
-//  Created by Yamada Shunya on 2020/01/27.
+//  Created by 山田隼也 on 2020/01/27.
 //  Copyright © 2020 Shunya Yamada. All rights reserved.
 //
-
 import Foundation
 
 public struct BusTime: Decodable {

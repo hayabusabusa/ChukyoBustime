@@ -7,23 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71A329D623DF042100EB7A55 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A329D523DF042100EB7A55 /* BusTime.swift */; };
+		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
+		71A329DB23DF10EE00EB7A55 /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A329DA23DF10EE00EB7A55 /* FirebaseProvider.swift */; };
+		71A329DD23DF131F00EB7A55 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A329DC23DF131F00EB7A55 /* FirebaseError.swift */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
 		A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */; };
 		A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */; };
 		A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9D23DE80090069F7E8 /* Storyboard.swift */; };
-		A4B03EE223DE861E0069F7E8 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */; };
-		A4B03EEB23DE861E0069F7E8 /* Infrastructure.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B03EDB23DE861E0069F7E8 /* Infrastructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4B03EEE23DE861E0069F7E8 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */; };
-		A4B03EEF23DE861E0069F7E8 /* Infrastructure.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A4B03EFA23DE866E0069F7E8 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03EF923DE866E0069F7E8 /* BusTime.swift */; };
-		A4B03EFE23DE8A960069F7E8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
 		A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
 		A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
 		A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
 		A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
-		A4B03F0C23DE9BEE0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		A4B03F4623DECF1E0069F7E8 /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F2023DECEFB0069F7E8 /* abseil.framework */; };
 		A4B03F4723DECF250069F7E8 /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F1123DECEFB0069F7E8 /* BoringSSL-GRPC.framework */; };
 		A4B03F4823DECF290069F7E8 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F1223DECEFB0069F7E8 /* FIRAnalyticsConnector.framework */; };
@@ -48,30 +45,6 @@
 		A4B03F5F23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4B03F5E23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A4B03EE323DE861E0069F7E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4B03ED823DE861E0069F7E8;
-			remoteInfo = Infrastructure;
-		};
-		A4B03EE523DE861E0069F7E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4B03E7F23DE7CAB0069F7E8;
-			remoteInfo = ChukyoBustime;
-		};
-		A4B03EEC23DE861E0069F7E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4B03ED823DE861E0069F7E8;
-			remoteInfo = Infrastructure;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A4B03EF023DE861E0069F7E8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -79,7 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A4B03EEF23DE861E0069F7E8 /* Infrastructure.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +59,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71A329D523DF042100EB7A55 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
+		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		71A329DA23DF10EE00EB7A55 /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		71A329DC23DF131F00EB7A55 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,12 +71,6 @@
 		A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E9D23DE80090069F7E8 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
-		A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infrastructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B03EDB23DE861E0069F7E8 /* Infrastructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infrastructure.h; sourceTree = "<group>"; };
-		A4B03EDC23DE861E0069F7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4B03EE123DE861E0069F7E8 /* InfrastructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfrastructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B03EEA23DE861E0069F7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4B03EF923DE866E0069F7E8 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
 		A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		A4B03F0123DE8B130069F7E8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -151,7 +121,6 @@
 				A4B03F4723DECF250069F7E8 /* BoringSSL-GRPC.framework in Frameworks */,
 				A4B03F4A23DECF300069F7E8 /* FirebaseCore.framework in Frameworks */,
 				A4B03F4B23DECF330069F7E8 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				A4B03EEE23DE861E0069F7E8 /* Infrastructure.framework in Frameworks */,
 				A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */,
 				A4B03F5323DECF4D0069F7E8 /* gRPC-C++.framework in Frameworks */,
 				A4B03F5A23DED02F0069F7E8 /* libc++.tbd in Frameworks */,
@@ -163,32 +132,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4B03ED623DE861E0069F7E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4B03F0C23DE9BEE0069F7E8 /* SwiftDate.framework in Frameworks */,
-				A4B03EFE23DE8A960069F7E8 /* RxSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B03EDE23DE861E0069F7E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4B03EE223DE861E0069F7E8 /* Infrastructure.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71A329D223DF03E000EB7A55 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				71A329D923DF10E100EB7A55 /* Firebase */,
+				71A329D423DF040400EB7A55 /* Entity */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		71A329D323DF03F000EB7A55 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
+				A4B03E9823DE7FC20069F7E8 /* View */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		71A329D423DF040400EB7A55 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				71A329D523DF042100EB7A55 /* BusTime.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		71A329D923DF10E100EB7A55 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				71A329DC23DF131F00EB7A55 /* FirebaseError.swift */,
+				71A329DA23DF10EE00EB7A55 /* FirebaseProvider.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		A4B03E7723DE7CAB0069F7E8 = {
 			isa = PBXGroup;
 			children = (
 				A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */,
-				A4B03EDA23DE861E0069F7E8 /* Infrastructure */,
-				A4B03EE723DE861E0069F7E8 /* InfrastructureTests */,
 				A4B03E8123DE7CAB0069F7E8 /* Products */,
 				A4B03EFC23DE8A960069F7E8 /* Frameworks */,
 			);
@@ -198,8 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */,
-				A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */,
-				A4B03EE123DE861E0069F7E8 /* InfrastructureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,8 +190,8 @@
 		A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */ = {
 			isa = PBXGroup;
 			children = (
-				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
-				A4B03E9823DE7FC20069F7E8 /* View */,
+				71A329D223DF03E000EB7A55 /* Infrastructure */,
+				71A329D323DF03F000EB7A55 /* Application */,
 				A4B03F6023DED07F0069F7E8 /* Resource */,
 				A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */,
 				A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */,
@@ -233,32 +216,6 @@
 				A4B03E9723DE7FBD0069F7E8 /* Root */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A4B03EDA23DE861E0069F7E8 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				A4B03EF723DE86390069F7E8 /* Entity */,
-				A4B03EDB23DE861E0069F7E8 /* Infrastructure.h */,
-				A4B03EDC23DE861E0069F7E8 /* Info.plist */,
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		A4B03EE723DE861E0069F7E8 /* InfrastructureTests */ = {
-			isa = PBXGroup;
-			children = (
-				A4B03EEA23DE861E0069F7E8 /* Info.plist */,
-			);
-			path = InfrastructureTests;
-			sourceTree = "<group>";
-		};
-		A4B03EF723DE86390069F7E8 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				A4B03EF923DE866E0069F7E8 /* BusTime.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
@@ -296,23 +253,13 @@
 		A4B03F6023DED07F0069F7E8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
 				A4B03F5E23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		A4B03ED423DE861E0069F7E8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4B03EEB23DE861E0069F7E8 /* Infrastructure.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */ = {
@@ -328,49 +275,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				A4B03EED23DE861E0069F7E8 /* PBXTargetDependency */,
 			);
 			name = ChukyoBustime;
 			productName = ChukyoBustime;
 			productReference = A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */;
 			productType = "com.apple.product-type.application";
-		};
-		A4B03ED823DE861E0069F7E8 /* Infrastructure */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4B03EF523DE861E0069F7E8 /* Build configuration list for PBXNativeTarget "Infrastructure" */;
-			buildPhases = (
-				A4B03ED423DE861E0069F7E8 /* Headers */,
-				A4B03ED523DE861E0069F7E8 /* Sources */,
-				A4B03ED623DE861E0069F7E8 /* Frameworks */,
-				A4B03ED723DE861E0069F7E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Infrastructure;
-			productName = Infrastructure;
-			productReference = A4B03ED923DE861E0069F7E8 /* Infrastructure.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A4B03EE023DE861E0069F7E8 /* InfrastructureTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4B03EF623DE861E0069F7E8 /* Build configuration list for PBXNativeTarget "InfrastructureTests" */;
-			buildPhases = (
-				A4B03EDD23DE861E0069F7E8 /* Sources */,
-				A4B03EDE23DE861E0069F7E8 /* Frameworks */,
-				A4B03EDF23DE861E0069F7E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4B03EE423DE861E0069F7E8 /* PBXTargetDependency */,
-				A4B03EE623DE861E0069F7E8 /* PBXTargetDependency */,
-			);
-			name = InfrastructureTests;
-			productName = InfrastructureTests;
-			productReference = A4B03EE123DE861E0069F7E8 /* InfrastructureTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -384,14 +293,6 @@
 				TargetAttributes = {
 					A4B03E7F23DE7CAB0069F7E8 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					A4B03ED823DE861E0069F7E8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						LastSwiftMigration = 1130;
-					};
-					A4B03EE023DE861E0069F7E8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = A4B03E7F23DE7CAB0069F7E8;
 					};
 				};
 			};
@@ -409,8 +310,6 @@
 			projectRoot = "";
 			targets = (
 				A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */,
-				A4B03ED823DE861E0069F7E8 /* Infrastructure */,
-				A4B03EE023DE861E0069F7E8 /* InfrastructureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -422,22 +321,9 @@
 			files = (
 				A4B03F5F23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle in Resources */,
 				A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */,
+				71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */,
 				A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */,
 				A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B03ED723DE861E0069F7E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B03EDF23DE861E0069F7E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,45 +360,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
+				71A329DB23DF10EE00EB7A55 /* FirebaseProvider.swift in Sources */,
+				71A329D623DF042100EB7A55 /* BusTime.swift in Sources */,
+				71A329DD23DF131F00EB7A55 /* FirebaseError.swift in Sources */,
 				A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */,
 				A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4B03ED523DE861E0069F7E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4B03EFA23DE866E0069F7E8 /* BusTime.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B03EDD23DE861E0069F7E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A4B03EE423DE861E0069F7E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4B03ED823DE861E0069F7E8 /* Infrastructure */;
-			targetProxy = A4B03EE323DE861E0069F7E8 /* PBXContainerItemProxy */;
-		};
-		A4B03EE623DE861E0069F7E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */;
-			targetProxy = A4B03EE523DE861E0069F7E8 /* PBXContainerItemProxy */;
-		};
-		A4B03EED23DE861E0069F7E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4B03ED823DE861E0069F7E8 /* Infrastructure */;
-			targetProxy = A4B03EEC23DE861E0069F7E8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */ = {
@@ -645,7 +501,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -660,8 +518,9 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.ChukyoBustime;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -672,7 +531,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -687,119 +548,11 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.ChukyoBustime;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		A4B03EF123DE861E0069F7E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Infrastructure/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.Infrastructure;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A4B03EF223DE861E0069F7E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Infrastructure/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.Infrastructure;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A4B03EF323DE861E0069F7E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InfrastructureTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.InfrastructureTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
-			};
-			name = Debug;
-		};
-		A4B03EF423DE861E0069F7E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = InfrastructureTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = shunya.yamada.InfrastructureTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
 			};
 			name = Release;
 		};
@@ -820,24 +573,6 @@
 			buildConfigurations = (
 				A4B03E9523DE7CB20069F7E8 /* Debug */,
 				A4B03E9623DE7CB20069F7E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4B03EF523DE861E0069F7E8 /* Build configuration list for PBXNativeTarget "Infrastructure" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4B03EF123DE861E0069F7E8 /* Debug */,
-				A4B03EF223DE861E0069F7E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4B03EF623DE861E0069F7E8 /* Build configuration list for PBXNativeTarget "InfrastructureTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4B03EF323DE861E0069F7E8 /* Debug */,
-				A4B03EF423DE861E0069F7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

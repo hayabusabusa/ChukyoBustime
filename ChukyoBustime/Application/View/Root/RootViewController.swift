@@ -70,6 +70,17 @@ final class RootViewController: UIViewController {
         setupLabel()
         setupTextView()
         setupTimer()
+        
+        let firebaseProvider = FirebaseProvider.shared
+        firebaseProvider.getDiagram(at: Date().toFormat("YYYY-MM-dd"))
+            .flatMap { diagram -> Single<[(hour: Int, minute: Int)]> in
+                return firebaseProvider.getBusTimes(of: diagram, hour: 9, minute: 0)
+            }.subscribe(onSuccess: { times in
+                print(times)
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
