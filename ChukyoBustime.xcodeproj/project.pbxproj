@@ -22,6 +22,9 @@
 		A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
 		A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
 		A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
+		A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
+		A4B03F0B23DE9BBD0069F7E8 /* SwiftDate.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A4B03F0C23DE9BEE0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A4B03F0B23DE9BBD0069F7E8 /* SwiftDate.framework in Embed Frameworks */,
 				A4B03EEF23DE861E0069F7E8 /* Infrastructure.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -80,6 +84,7 @@
 		A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		A4B03F0123DE8B130069F7E8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */,
+				A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */,
 				A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */,
 				A4B03EEE23DE861E0069F7E8 /* Infrastructure.framework in Frameworks */,
 				A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */,
@@ -98,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B03F0C23DE9BEE0069F7E8 /* SwiftDate.framework in Frameworks */,
 				A4B03EFE23DE8A960069F7E8 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +200,7 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */,
 				A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */,
 				A4B03F0123DE8B130069F7E8 /* RxRelay.framework */,
 				A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */,
@@ -353,6 +361,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

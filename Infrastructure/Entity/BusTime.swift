@@ -8,13 +8,16 @@
 
 import Foundation
 
-public struct BusTime {
-    public let seconds: Int // 00:00 からの経過時間
-    public var time: String {
-        return String(format: "%d:%d", seconds / 3600, seconds / 60)
+public struct BusTime: Decodable {
+    public let hour: Int
+    public let minute: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case hour
+        case minute
     }
     
-    public init(seconds: Int) {
-        self.seconds = seconds
-    }
+    // let dir = DateInRegion(date: Date())
+    // let busTimeDir = DateInRegion(year: dir.year, ...)
+    // let intervalOfSecond = dir.getInterval(toDate: busTimeDir, component: .second)
 }

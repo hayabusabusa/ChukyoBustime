@@ -1,1 +1,2 @@
 github "ReactiveX/RxSwift" "5.0.1"
+github "malcommac/SwiftDate" "6.1.0"

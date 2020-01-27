@@ -1,2 +1,7 @@
-# RxSwift
+# Core
+## RxSwift
 github "ReactiveX/RxSwift" ~> 5.0
+
+# Util
+## SwiftDate
+github "malcommac/SwiftDate" ~> 6.0
