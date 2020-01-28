@@ -1,10 +1,11 @@
 //
 //  BusTime.swift
-//  ChukyoBustime
+//  Infra
 //
-//  Created by 山田隼也 on 2020/01/27.
+//  Created by 山田隼也 on 2020/01/28.
 //  Copyright © 2020 Shunya Yamada. All rights reserved.
 //
+
 import Foundation
 
 public struct BusTime: Decodable {
@@ -15,8 +16,4 @@ public struct BusTime: Decodable {
         case hour
         case minute
     }
-    
-    // let dir = DateInRegion(date: Date())
-    // let busTimeDir = DateInRegion(year: dir.year, ...)
-    // let intervalOfSecond = dir.getInterval(toDate: busTimeDir, component: .second)
 }
