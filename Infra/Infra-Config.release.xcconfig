@@ -1,0 +1,15 @@
+//
+//  Infra-Config.release.xcconfig
+//  ChukyoBustime
+//
+//  Created by 山田隼也 on 2020/01/28.
+//  Copyright © 2020 Shunya Yamada. All rights reserved.
+//
+
+#include "../Pods/Target Support Files/Pods-Core/Pods-Core.release.xcconfig"
+
+PODS_ROOT = $(SRCROOT)/Pods
+PODS_BUILD_DIR = $(PODS_ROOT)/Build
+PODS_CONFIGURATION_BUILD_DIR = $(PODS_BUILD_DIR)/Release$(EFFECTIVE_PLATFORM_NAME)
+
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/Carthage/Build/iOS" "${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift" "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstanceID" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities" "${PODS_CONFIGURATION_BUILD_DIR}/Protobuf" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++" "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core" "${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library" "${PODS_CONFIGURATION_BUILD_DIR}/nanopb" "${PODS_ROOT}/FirebaseAnalytics/Frameworks" "${PODS_ROOT}/GoogleAppMeasurement/Frameworks"

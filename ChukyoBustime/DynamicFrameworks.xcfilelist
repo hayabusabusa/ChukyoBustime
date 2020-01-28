@@ -1,0 +1,17 @@
+#  DynamicFrameworks.xcfilelist
+#  ChukyoBustime
+#
+#  Created by 山田隼也 on 2020/01/28.
+#  Copyright © 2020 Shunya Yamada. All rights reserved.
+
+# This file may be set as an input or output file list for a shell script build phase.
+# List file paths below; one per line. These paths will be considered inputs or outputs for the script phase.
+# Build settings will be expanded, e.g. $(SRCROOT)/fileName
+
+$(PODS_CONFIGURATION_BUILD_DIR)/BoringSSL-GRPC/openssl_grpc.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/GoogleUtilities/GoogleUtilities.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/Protobuf/protobuf.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/gRPC-C++/grpcpp.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/gRPC-Core/grpc.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/leveldb-library/leveldb.framework
+$(PODS_CONFIGURATION_BUILD_DIR)/nanopb/nanopb.framework

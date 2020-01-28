@@ -1,4 +1,2 @@
-binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json" "6.15.0"
-binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseFirestoreBinary.json" "6.15.0"
 github "ReactiveX/RxSwift" "5.0.1"
 github "malcommac/SwiftDate" "6.1.0"
