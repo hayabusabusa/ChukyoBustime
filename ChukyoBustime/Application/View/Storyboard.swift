@@ -10,6 +10,9 @@ import UIKit
 
 enum Storyboard: String {
     case RootViewController
+    case TabBarController
+    case ToCollegeViewController
+    case ToStationViewController
     case PrototypeViewController
     
     func instantiate<VC: UIViewController>(_: VC.Type, inBundle: Bundle? = nil) -> VC {

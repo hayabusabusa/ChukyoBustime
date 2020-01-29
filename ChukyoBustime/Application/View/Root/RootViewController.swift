@@ -15,7 +15,7 @@ final class RootViewController: BaseViewController {
     // MARK: Properties
     
     private lazy var onViewDidAppear: Void = {
-        presentSafari()
+        replaceRootToTabBar()
     }()
     
     // MARK: Lifecycle
@@ -38,8 +38,8 @@ final class RootViewController: BaseViewController {
 
 extension RootViewController {
     
-    private func presentSafari() {
-        let vc = SafariViewController(url: URL(string: "https://www.chukyo-u.ac.jp/support/pdf/studentlife/bustime.pdf")!)
-        present(vc, animated: true, completion: nil)
+    private func replaceRootToTabBar() {
+        let vc = TabBarController.instantiate()
+        replaceRoot(to: vc)
     }
 }
