@@ -19,8 +19,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEz-Pf-Esg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-c7-G1S">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="304"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-c7-G1S">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="552"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-Zx-Nqx">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -30,10 +30,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lv-6a-y2u">
-                                                <rect key="frame" x="0.0" y="104" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="108" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="uCd-oB-QgA"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-l7-rSB">
+                                                <rect key="frame" x="0.0" y="320" width="414" height="232"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="232" id="n1f-mb-pZD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -58,6 +65,7 @@
                         <viewLayoutGuide key="safeArea" id="DSQ-PF-fta"/>
                     </view>
                     <connections>
+                        <outlet property="layoutBusListView" destination="mv5-l7-rSB" id="ghW-W5-Rig"/>
                         <outlet property="layoutCountdownView" destination="7Lv-6a-y2u" id="54D-iM-2sz"/>
                         <outlet property="layoutDiagramView" destination="4Iy-Zx-Nqx" id="Wwd-EL-yNP"/>
                         <outlet property="scrollView" destination="rEz-Pf-Esg" id="4BI-HM-qm7"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kXR-Kc-V07">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="kXR-Kc-V07" customClass="DiagramViewController" customModule="ChukyoBustime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tT0-eu-5bb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9KX-8F-U9S">
-                                <rect key="frame" x="16" y="12" width="343" height="56"/>
+                                <rect key="frame" x="16" y="12" width="288" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日の運行ダイヤ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrP-mc-ViF">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="18"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="YfY-gV-liq"/>
                                         </constraints>
@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diagram Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ex-dO-fQz">
-                                        <rect key="frame" x="0.0" y="18" width="343" height="38"/>
+                                        <rect key="frame" x="0.0" y="18" width="288" height="38"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                         <color key="textColor" name="Primary"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uFi-SY-CNv"/>
                     </view>
-                    <size key="freeformSize" width="375" height="80"/>
+                    <size key="freeformSize" width="320" height="80"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofx-Lg-1N3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,7 +56,7 @@
     </scenes>
     <resources>
         <namedColor name="Primary">
-            <color red="0.035294117647058823" green="0.51764705882352935" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.035000000149011612" green="0.51800000667572021" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

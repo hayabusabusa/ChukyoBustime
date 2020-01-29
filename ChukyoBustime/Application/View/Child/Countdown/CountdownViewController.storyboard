@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2LT-d1-owe">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -14,30 +14,30 @@
             <objects>
                 <viewController id="2LT-d1-owe" customClass="CountdownViewController" customModule="ChukyoBustime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gps-yX-v5r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Dk6-l5-qFI">
-                                <rect key="frame" x="16" y="12" width="382" height="176"/>
+                                <rect key="frame" x="20" y="12" width="280" height="176"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-sW-fKH">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="nQE-mM-hDz"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Nn-cG-SSG">
-                                        <rect key="frame" x="0.0" y="44" width="382" height="61.5"/>
+                                        <rect key="frame" x="0.0" y="44" width="280" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出発まであと" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtS-54-u2N">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="16"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5u-dD-7af">
-                                                <rect key="frame" x="0.0" y="16" width="382" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="16" width="280" height="45.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -45,10 +45,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEI-9W-tBu">
-                                        <rect key="frame" x="0.0" y="109.5" width="382" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="109.5" width="280" height="66.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-MK-Bd2">
-                                                <rect key="frame" x="16" y="2.5" width="350" height="64"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-MK-Bd2">
+                                                <rect key="frame" x="0.0" y="2.5" width="280" height="64"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4Dv-JC-432">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="64"/>
@@ -75,10 +75,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlU-aY-w7J">
-                                                        <rect key="frame" x="80" y="0.0" width="190" height="64"/>
+                                                        <rect key="frame" x="68" y="0.0" width="144" height="64"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eW1-TV-mbX">
-                                                                <rect key="frame" x="49" y="26" width="92" height="12"/>
+                                                                <rect key="frame" x="26" y="26" width="92" height="12"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-HQ-QHP" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
@@ -88,7 +88,7 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="8"/>
+                                                                                <real key="value" value="6"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -100,7 +100,7 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="8"/>
+                                                                                <real key="value" value="6"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -112,7 +112,7 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="8"/>
+                                                                                <real key="value" value="6"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -124,7 +124,7 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="8"/>
+                                                                                <real key="value" value="6"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -136,7 +136,7 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="8"/>
+                                                                                <real key="value" value="6"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
@@ -153,7 +153,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xOx-2R-lPr">
-                                                        <rect key="frame" x="302" y="0.0" width="48" height="64"/>
+                                                        <rect key="frame" x="232" y="0.0" width="48" height="64"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqn-p5-khy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="19.5"/>
@@ -184,8 +184,8 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="Vgg-MK-Bd2" firstAttribute="leading" secondItem="rEI-9W-tBu" secondAttribute="leading" constant="16" id="VQi-WZ-Kw5"/>
-                                            <constraint firstAttribute="trailing" secondItem="Vgg-MK-Bd2" secondAttribute="trailing" constant="16" id="WcP-GP-nM4"/>
+                                            <constraint firstItem="Vgg-MK-Bd2" firstAttribute="leading" secondItem="rEI-9W-tBu" secondAttribute="leading" id="VQi-WZ-Kw5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vgg-MK-Bd2" secondAttribute="trailing" id="WcP-GP-nM4"/>
                                             <constraint firstAttribute="bottom" secondItem="Vgg-MK-Bd2" secondAttribute="bottom" id="g3E-Fe-96G"/>
                                         </constraints>
                                     </view>
@@ -195,13 +195,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Dk6-l5-qFI" firstAttribute="top" secondItem="paZ-xh-GDU" secondAttribute="top" constant="12" id="DZr-0e-uKt"/>
-                            <constraint firstItem="Dk6-l5-qFI" firstAttribute="leading" secondItem="paZ-xh-GDU" secondAttribute="leading" constant="16" id="aXX-Sy-PNs"/>
+                            <constraint firstItem="Dk6-l5-qFI" firstAttribute="leading" secondItem="paZ-xh-GDU" secondAttribute="leading" constant="20" id="aXX-Sy-PNs"/>
                             <constraint firstItem="paZ-xh-GDU" firstAttribute="bottom" secondItem="Dk6-l5-qFI" secondAttribute="bottom" constant="12" id="kv4-yV-pQP"/>
-                            <constraint firstItem="paZ-xh-GDU" firstAttribute="trailing" secondItem="Dk6-l5-qFI" secondAttribute="trailing" constant="16" id="l7i-PV-y1F"/>
+                            <constraint firstItem="paZ-xh-GDU" firstAttribute="trailing" secondItem="Dk6-l5-qFI" secondAttribute="trailing" constant="20" id="l7i-PV-y1F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="paZ-xh-GDU"/>
                     </view>
-                    <size key="freeformSize" width="414" height="200"/>
+                    <size key="freeformSize" width="320" height="200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBR-5u-YgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

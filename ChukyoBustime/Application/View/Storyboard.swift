@@ -17,6 +17,7 @@ enum Storyboard: String {
     // - Child View Controller
     case DiagramViewController
     case CountdownViewController
+    case BusListViewController
     
     func instantiate<VC: UIViewController>(_: VC.Type, inBundle: Bundle? = nil) -> VC {
         guard let vc = UIStoryboard(name: self.rawValue, bundle: inBundle).instantiateInitialViewController() as? VC else {

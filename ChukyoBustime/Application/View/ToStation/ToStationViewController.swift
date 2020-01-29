@@ -15,6 +15,7 @@ final class ToStationViewController: BaseViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var layoutDiagramView: UIView!
     @IBOutlet private weak var layoutCountdownView: UIView!
+    @IBOutlet private weak var layoutBusListView: UIView!
     
     // MARK: Properties
     
@@ -41,7 +42,7 @@ extension ToStationViewController {
     }
     
     private func setupScrollView() {
-        scrollView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
     private func setupChildren() {
@@ -49,5 +50,7 @@ extension ToStationViewController {
         embed(diagram, to: layoutDiagramView)
         let countdown = CountdownViewController.configure()
         embed(countdown, to: layoutCountdownView)
+        let busList = BusListViewController.configure()
+        embed(busList, to: layoutBusListView)
     }
 }
