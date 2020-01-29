@@ -33,9 +33,9 @@ extension TabBarController {
     
     private func setupAppearance() {
         tabBar.tintColor = .primary
-        tabBar.unselectedItemTintColor = .lightGray
+        tabBar.unselectedItemTintColor = UIColor.lightGray.withAlphaComponent(0.6)
         tabBar.backgroundImage = UIImage()
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .background
     }
     
     private func setupViewControllers() {

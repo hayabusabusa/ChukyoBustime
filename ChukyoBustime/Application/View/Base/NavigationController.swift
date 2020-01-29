@@ -30,7 +30,7 @@ final class NavigationController: UINavigationController {
 extension NavigationController {
     
     private func setupAppearance() {
-        view.backgroundColor = .white
+        view.backgroundColor = .background
         navigationBar.isTranslucent = false
         navigationBar.tintColor = .primary
         //navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primary]

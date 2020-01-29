@@ -12,4 +12,8 @@ extension UIColor {
     class var primary: UIColor {
         return UIColor(named: "Primary")!
     }
+    
+    class var background: UIColor {
+        return UIColor(named: "Background")!
+    }
 }
