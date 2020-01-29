@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ToCollegeViewController: UIViewController {
+final class ToCollegeViewController: BaseViewController {
     
     // MARK: IBOutlet
     
@@ -22,5 +22,15 @@ final class ToCollegeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+    }
+}
+
+// MARK: - Setup
+
+extension ToCollegeViewController {
+    
+    private func setupNavigation() {
+        navigationItem.title = "大学行き"
     }
 }

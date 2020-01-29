@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ToStationViewController: UIViewController {
+final class ToStationViewController: BaseViewController {
     
     // MARK: IBOutlet
     
@@ -22,5 +22,15 @@ final class ToStationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
+    }
+}
+
+// MARK: - Setup
+
+extension ToStationViewController {
+    
+    private func setupNavigation() {
+        navigationItem.title = "浄水駅行き"
     }
 }
