@@ -30,6 +30,11 @@ class BusListView: UIView {
         loadNib()
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        loadNib()
+    }
+    
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         loadNib()
