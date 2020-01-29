@@ -24,6 +24,9 @@
 		A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */; };
 		A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DAC23E11F9200E95FED /* BaseViewController.swift */; };
 		A42D0DAF23E120C500E95FED /* DynamicFrameworks.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */; };
+		A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB123E1282B00E95FED /* BusDestination.swift */; };
+		A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB523E13AFE00E95FED /* UIViewController+Extension.swift */; };
+		A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -80,6 +83,9 @@
 		A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DAC23E11F9200E95FED /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A42D0DB023E124B500E95FED /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A42D0DB123E1282B00E95FED /* BusDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDestination.swift; sourceTree = "<group>"; };
+		A42D0DB523E13AFE00E95FED /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
 				A4B03E9823DE7FC20069F7E8 /* View */,
+				A42D0DB323E13ACC00E95FED /* Common */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				A42D0DA423E1130100E95FED /* BusDiagram.swift */,
+				A42D0DB123E1282B00E95FED /* BusDestination.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -211,6 +219,31 @@
 				71A32A5623E057B400EB7A55 /* Config.release.xcconfig */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		A42D0DB323E13ACC00E95FED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DB723E13B5F00E95FED /* Rx */,
+				A42D0DB423E13AE900E95FED /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A42D0DB423E13AE900E95FED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DB523E13AFE00E95FED /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A42D0DB723E13B5F00E95FED /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
@@ -456,6 +489,7 @@
 				A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirebaseProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirebaseError.swift in Sources */,
+				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +497,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */,
+				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,

@@ -54,10 +54,10 @@ public final class FirebaseProvider {
         }
     }
 
-    public func getBusTimes(of diagram: BusDiagram, hour: Int, minute: Int) -> Single<[BusTime]> {
+    public func getBusTimes(of diagram: BusDiagram, destination: BusDestination, hour: Int, minute: Int) -> Single<[BusTime]> {
         return Single.create { observer in
             self.db.collection(diagram.rawValue)
-                .document("toCollege")
+                .document(destination.rawValue)
                 .collection("times")
                 .whereField("second", isGreaterThanOrEqualTo: hour * 3600 + minute * 60).getDocuments { (querySnapshot, error) in
                     if let error = error {
