@@ -6,6 +6,12 @@ bootstrap:
 pod-install:
 	pod install && sh Scripts/pods_build.sh
 
+pod-update:
+	pod update
+
 # Carthage
-carthage-bootstrap:
+carthage-update:
 	carthage update --platform iOS
+
+carthage-bootstrap:
+	carthage bootstrap --platform iOS
