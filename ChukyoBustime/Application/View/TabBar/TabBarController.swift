@@ -40,9 +40,9 @@ extension TabBarController {
     
     private func setupViewControllers() {
         let toStation = NavigationController(rootViewController: ToStationViewController.instantiate())
-        toStation.tabBarItem = UITabBarItem(title: "浄水駅行き", image: nil, tag: 0)
+        toStation.tabBarItem = UITabBarItem(title: "浄水駅行き", image: UIImage(named: "ic_train"), tag: 0)
         let toCollege = NavigationController(rootViewController: ToCollegeViewController.instantiate())
-        toCollege.tabBarItem = UITabBarItem(title: "大学行き", image: nil, tag: 1)
+        toCollege.tabBarItem = UITabBarItem(title: "大学行き", image: UIImage(named: "ic_bus"), tag: 1)
         viewControllers = [toStation, toCollege]
     }
 }
