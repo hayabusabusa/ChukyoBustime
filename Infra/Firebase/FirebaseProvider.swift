@@ -27,7 +27,7 @@ public final class FirebaseProvider {
 
     // MARK: Firestore
 
-    public func getDiagram(at date: String) -> Single<String> {
+    public func getDiagram(at date: String) -> Single<BusDiagram> {
         return Single.create { observer in
             self.db.collection("calendar")
                 .whereField("date", isEqualTo: date)
@@ -35,9 +35,17 @@ public final class FirebaseProvider {
                     if let error = error {
                         observer(.error(error))
                     }
-                    if let document = querySnapshot?.documents.first,
-                        let diagram = document.data()["diagram"] as? String {
-                        observer(.success(diagram))
+                    if let document = querySnapshot?.documents.first {
+                        do {
+                            let busDate = try Firestore.Decoder().decode(BusDate.self, from: document.data())
+                            
+                            guard let busDiagram = BusDiagram(rawValue: busDate.diagram) else {
+                                throw FirebaseError.unknownDiagram
+                            }
+                            observer(.success(busDiagram))
+                        } catch {
+                            observer(.error(error))
+                        }
                     } else {
                         observer(.error(FirebaseError.dateNotFound))
                     }
@@ -46,17 +54,25 @@ public final class FirebaseProvider {
         }
     }
 
-    public func getBusTimes(of diagram: String, hour: Int, minute: Int) -> Single<[(hour: Int, minute: Int)]> {
+    public func getBusTimes(of diagram: BusDiagram, hour: Int, minute: Int) -> Single<[BusTime]> {
         return Single.create { observer in
-            self.db.collection(diagram).document("toCollege").collection("times").whereField("second", isGreaterThanOrEqualTo: hour * 3600 + minute * 60).getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    observer(.error(error))
-                }
-                if let documents = querySnapshot?.documents {
-                    observer(.success(documents.map { (hour: $0.data()["hour"] as! Int, minute: $0.data()["minute"] as! Int) }))
-                } else {
-                    observer(.success([]))
-                }
+            self.db.collection(diagram.rawValue)
+                .document("toCollege")
+                .collection("times")
+                .whereField("second", isGreaterThanOrEqualTo: hour * 3600 + minute * 60).getDocuments { (querySnapshot, error) in
+                    if let error = error {
+                        observer(.error(error))
+                    }
+                    if let documents = querySnapshot?.documents {
+                        do {
+                            let busTimes = try documents.map { try Firestore.Decoder().decode(BusTime.self, from: $0.data()) }
+                            observer(.success(busTimes))
+                        } catch {
+                            observer(.error(error))
+                        }
+                    } else {
+                        observer(.success([]))
+                    }
             }
             return Disposables.create()
         }

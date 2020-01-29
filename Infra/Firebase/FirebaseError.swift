@@ -10,13 +10,16 @@ import Foundation
 
 public enum FirebaseError: Error {
     case dateNotFound
+    case unknownDiagram
 }
 
 extension FirebaseError: CustomStringConvertible {
     public var description: String {
         switch self {
         case .dateNotFound:
-            return ""
+            return "ダイアグラムの取得に失敗しました"
+        case .unknownDiagram:
+            return "無効なダイアグラム名です"
         }
     }
 }

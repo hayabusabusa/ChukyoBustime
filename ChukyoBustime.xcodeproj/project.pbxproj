@@ -18,6 +18,8 @@
 		71A32A6623E0838600EB7A55 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		71A32A6A23E083A000EB7A55 /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirebaseProvider.swift */; };
 		71A32A6E23E083C800EB7A55 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTime.swift */; };
+		A42D0DA223E112C400E95FED /* BusDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA123E112C400E95FED /* BusDate.swift */; };
+		A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA423E1130100E95FED /* BusDiagram.swift */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -68,6 +70,8 @@
 		71A32A5E23E0836500EB7A55 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		71A32A6923E083A000EB7A55 /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
 		71A32A6D23E083C800EB7A55 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
+		A42D0DA123E112C400E95FED /* BusDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDate.swift; sourceTree = "<group>"; };
+		A42D0DA423E1130100E95FED /* BusDiagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDiagram.swift; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		71A32A6B23E083B500EB7A55 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				A42D0DA323E112F100E95FED /* Enum */,
+				A42D0DA023E112A100E95FED /* BusDate */,
 				71A32A6C23E083BB00EB7A55 /* BusTime */,
 			);
 			path = Entity;
@@ -155,6 +161,22 @@
 				71A32A6D23E083C800EB7A55 /* BusTime.swift */,
 			);
 			path = BusTime;
+			sourceTree = "<group>";
+		};
+		A42D0DA023E112A100E95FED /* BusDate */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DA123E112C400E95FED /* BusDate.swift */,
+			);
+			path = BusDate;
+			sourceTree = "<group>";
+		};
+		A42D0DA323E112F100E95FED /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DA423E1130100E95FED /* BusDiagram.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
@@ -391,7 +413,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42D0DA223E112C400E95FED /* BusDate.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTime.swift in Sources */,
+				A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirebaseProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirebaseError.swift in Sources */,
 			);

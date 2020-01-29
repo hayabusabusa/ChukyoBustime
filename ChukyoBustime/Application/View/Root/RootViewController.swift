@@ -31,23 +31,33 @@ final class RootViewController: UIViewController {
         [
             {
                 "hour": 16,
-                "minute": 4
+                "minute": 4,
+                "isLast": false,
+                "isReturn": false
             },
             {
                 "hour": 16,
-                "minute": 5
+                "minute": 5,
+                "isLast": false,
+                "isReturn": false
             },
             {
                 "hour": 16,
-                "minute": 6
+                "minute": 6,
+                "isLast": false,
+                "isReturn": false
             },
             {
                 "hour": 16,
-                "minute": 7
+                "minute": 7,
+                "isLast": false,
+                "isReturn": false
             },
             {
                 "hour": 16,
-                "minute": 8
+                "minute": 8,
+                "isLast": false,
+                "isReturn": false
             }
         ]
     }

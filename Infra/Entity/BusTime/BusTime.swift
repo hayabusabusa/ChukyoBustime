@@ -11,9 +11,13 @@ import Foundation
 public struct BusTime: Decodable {
     public let hour: Int
     public let minute: Int
+    public let isReturn: Bool
+    public let isLast: Bool
     
     private enum CodingKeys: String, CodingKey {
         case hour
         case minute
+        case isReturn
+        case isLast
     }
 }
