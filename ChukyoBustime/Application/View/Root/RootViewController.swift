@@ -14,6 +14,10 @@ final class RootViewController: BaseViewController {
     
     // MARK: Properties
     
+    private lazy var onViewDidAppear: Void = {
+        
+    }()
+    
     // MARK: Lifecycle
     
     static func instantiate() -> RootViewController {
@@ -23,4 +27,13 @@ final class RootViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        _ = onViewDidAppear
+    }
+}
+
+extension RootViewController {
+    
 }
