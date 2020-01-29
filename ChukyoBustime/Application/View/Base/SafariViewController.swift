@@ -13,5 +13,6 @@ class SafariViewController: SFSafariViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        preferredControlTintColor = .primary
     }
 }
