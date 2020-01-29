@@ -7,12 +7,8 @@
 //
 
 import UIKit
-import Infra
-import SwiftDate
-import RxSwift
-import RxCocoa
 
-final class RootViewController: UIViewController {
+final class RootViewController: BaseViewController {
     
     // MARK: IBOutlet
     
