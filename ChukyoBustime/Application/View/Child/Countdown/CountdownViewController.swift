@@ -1,5 +1,5 @@
 //
-//  DiagramViewController.swift
+//  CountdownViewController.swift
 //  ChukyoBustime
 //
 //  Created by Yamada Shunya on 2020/01/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DiagramViewController: BaseViewController {
+final class CountdownViewController: BaseViewController {
     
     // MARK: IBOutlet
     
@@ -16,8 +16,8 @@ final class DiagramViewController: BaseViewController {
     
     // MARK: Lifecycle
     
-    static func configure() -> DiagramViewController {
-        let vc = Storyboard.DiagramViewController.instantiate(DiagramViewController.self)
+    static func configure() -> CountdownViewController {
+        let vc = Storyboard.CountdownViewController.instantiate(CountdownViewController.self)
         return vc
     }
     

@@ -41,6 +41,8 @@
 		A42D0DE323E1768100E95FED /* BusListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DE223E1768100E95FED /* BusListView.xib */; };
 		A42D0DEB23E17F8E00E95FED /* DiagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DEA23E17F8E00E95FED /* DiagramViewController.swift */; };
 		A42D0DED23E17FA700E95FED /* DiagramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */; };
+		A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */; };
+		A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -114,6 +116,8 @@
 		A42D0DE223E1768100E95FED /* BusListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusListView.xib; sourceTree = "<group>"; };
 		A42D0DEA23E17F8E00E95FED /* DiagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewController.swift; sourceTree = "<group>"; };
 		A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiagramViewController.storyboard; sourceTree = "<group>"; };
+		A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountdownViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 		A42D0DE823E17F7000E95FED /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				A42D0DEE23E1868000E95FED /* Countdown */,
 				A42D0DE923E17F8100E95FED /* Diagram */,
 			);
 			path = Child;
@@ -346,6 +351,15 @@
 				A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */,
 			);
 			path = Diagram;
+			sourceTree = "<group>";
+		};
+		A42D0DEE23E1868000E95FED /* Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */,
+				A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */,
+			);
+			path = Countdown;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
@@ -535,6 +549,7 @@
 				A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */,
 				71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */,
 				A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */,
+				A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */,
 				A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */,
 				A42D0DE323E1768100E95FED /* BusListView.xib in Resources */,
 				A42D0DDA23E1692900E95FED /* ToStationViewController.storyboard in Resources */,
@@ -617,6 +632,7 @@
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
 				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
+				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
 				A42D0DEB23E17F8E00E95FED /* DiagramViewController.swift in Sources */,
 				A42D0DD123E1680100E95FED /* ToCollegeViewController.swift in Sources */,

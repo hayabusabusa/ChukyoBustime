@@ -14,6 +14,7 @@ final class ToStationViewController: BaseViewController {
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var layoutDiagramView: UIView!
+    @IBOutlet private weak var layoutCountdownView: UIView!
     
     // MARK: Properties
     
@@ -46,5 +47,7 @@ extension ToStationViewController {
     private func setupChildren() {
         let diagram = DiagramViewController.configure()
         embed(diagram, to: layoutDiagramView)
+        let countdown = CountdownViewController.configure()
+        embed(countdown, to: layoutCountdownView)
     }
 }
