@@ -20,6 +20,8 @@
 		71A32A6E23E083C800EB7A55 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTime.swift */; };
 		A42D0DA223E112C400E95FED /* BusDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA123E112C400E95FED /* BusDate.swift */; };
 		A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA423E1130100E95FED /* BusDiagram.swift */; };
+		A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */; };
+		A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -72,6 +74,8 @@
 		71A32A6D23E083C800EB7A55 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
 		A42D0DA123E112C400E95FED /* BusDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDate.swift; sourceTree = "<group>"; };
 		A42D0DA423E1130100E95FED /* BusDiagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDiagram.swift; sourceTree = "<group>"; };
+		A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
+		A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		A42D0DA623E11BF900E95FED /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */,
+				A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */,
+			);
+			path = Prototype;
+			sourceTree = "<group>";
+		};
 		A4B03E7723DE7CAB0069F7E8 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 			children = (
 				A4B03E9D23DE80090069F7E8 /* Storyboard.swift */,
 				A4B03E9723DE7FBD0069F7E8 /* Root */,
+				A42D0DA623E11BF900E95FED /* Prototype */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +372,7 @@
 				A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */,
 				71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */,
 				A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */,
+				A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */,
 				A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
+				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
 				A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */,
 				A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */,
 			);
