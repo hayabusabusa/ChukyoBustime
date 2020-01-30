@@ -1,5 +1,5 @@
 //
-//  FirebaseError.swift
+//  FirestoreError.swift
 //  Infra
 //
 //  Created by 山田隼也 on 2020/01/28.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum FirebaseError: Error {
+public enum FirestoreError: Error {
     case dateNotFound
     case unknownDiagram
 }
 
-extension FirebaseError: CustomStringConvertible {
+extension FirestoreError: CustomStringConvertible {
     public var description: String {
         switch self {
         case .dateNotFound:

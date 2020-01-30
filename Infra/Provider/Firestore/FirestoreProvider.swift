@@ -1,5 +1,5 @@
 //
-//  FirebaseProvider.swift
+//  FirestoreProvider.swift
 //  Infra
 //
 //  Created by 山田隼也 on 2020/01/28.
@@ -11,11 +11,11 @@ import RxSwift
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-public final class FirebaseProvider {
+public final class FirestoreProvider {
 
     // MARK: Singletone
 
-    public static let shared: FirebaseProvider = FirebaseProvider()
+    public static let shared: FirestoreProvider = FirestoreProvider()
 
     // MARK: Properties
 
@@ -40,14 +40,14 @@ public final class FirebaseProvider {
                             let busDate = try Firestore.Decoder().decode(BusDate.self, from: document.data())
                             
                             guard let busDiagram = BusDiagram(rawValue: busDate.diagram) else {
-                                throw FirebaseError.unknownDiagram
+                                throw FirestoreError.unknownDiagram
                             }
                             observer(.success(busDiagram))
                         } catch {
                             observer(.error(error))
                         }
                     } else {
-                        observer(.error(FirebaseError.dateNotFound))
+                        observer(.error(FirestoreError.dateNotFound))
                     }
             }
             return Disposables.create()

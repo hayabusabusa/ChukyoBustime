@@ -11,12 +11,12 @@
 		71A329E723E04FB700EB7A55 /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A329E523E04FB700EB7A55 /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
 		71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		71A32A5F23E0836500EB7A55 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A5E23E0836500EB7A55 /* FirebaseError.swift */; };
+		71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A5E23E0836500EB7A55 /* FirestoreError.swift */; };
 		71A32A6023E0838600EB7A55 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
 		71A32A6223E0838600EB7A55 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
 		71A32A6423E0838600EB7A55 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
 		71A32A6623E0838600EB7A55 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
-		71A32A6A23E083A000EB7A55 /* FirebaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirebaseProvider.swift */; };
+		71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */; };
 		71A32A6E23E083C800EB7A55 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTime.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
 		71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */; };
@@ -95,8 +95,8 @@
 		71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Infra-Config.debug.xcconfig"; sourceTree = "<group>"; };
 		71A32A5823E0594F00EB7A55 /* Infra-Config.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Infra-Config.release.xcconfig"; sourceTree = "<group>"; };
 		71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = DynamicFrameworks.xcfilelist; sourceTree = "<group>"; };
-		71A32A5E23E0836500EB7A55 /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
-		71A32A6923E083A000EB7A55 /* FirebaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProvider.swift; sourceTree = "<group>"; };
+		71A32A5E23E0836500EB7A55 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreProvider.swift; sourceTree = "<group>"; };
 		71A32A6D23E083C800EB7A55 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				71A32A6B23E083B500EB7A55 /* Entity */,
-				71A32A5D23E0835200EB7A55 /* Firebase */,
+				71A32A5D23E0835200EB7A55 /* Provider */,
 				71A329E523E04FB700EB7A55 /* Infra.h */,
 				71A329E623E04FB700EB7A55 /* Info.plist */,
 				71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */,
@@ -193,13 +193,12 @@
 			path = Infra;
 			sourceTree = "<group>";
 		};
-		71A32A5D23E0835200EB7A55 /* Firebase */ = {
+		71A32A5D23E0835200EB7A55 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				71A32A5E23E0836500EB7A55 /* FirebaseError.swift */,
-				71A32A6923E083A000EB7A55 /* FirebaseProvider.swift */,
+				A4AC23AA23E2D6AD0012439D /* Firestore */,
 			);
-			path = Firebase;
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		71A32A6B23E083B500EB7A55 /* Entity */ = {
@@ -391,6 +390,15 @@
 				A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */,
 			);
 			path = PdfButtons;
+			sourceTree = "<group>";
+		};
+		A4AC23AA23E2D6AD0012439D /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				71A32A5E23E0836500EB7A55 /* FirestoreError.swift */,
+				71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
@@ -666,8 +674,8 @@
 				A42D0DA223E112C400E95FED /* BusDate.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTime.swift in Sources */,
 				A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */,
-				71A32A6A23E083A000EB7A55 /* FirebaseProvider.swift in Sources */,
-				71A32A5F23E0836500EB7A55 /* FirebaseError.swift in Sources */,
+				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
+				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
 				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
