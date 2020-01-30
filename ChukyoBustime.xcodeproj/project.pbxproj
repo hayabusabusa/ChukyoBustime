@@ -48,6 +48,7 @@
 		A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
+		A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -128,6 +129,7 @@
 		A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountdownViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
+		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				71A32A6B23E083B500EB7A55 /* Entity */,
 				71A32A5D23E0835200EB7A55 /* Provider */,
+				A4AC23AB23E2D7320012439D /* Repository */,
 				71A329E523E04FB700EB7A55 /* Infra.h */,
 				71A329E623E04FB700EB7A55 /* Info.plist */,
 				71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */,
@@ -397,6 +400,22 @@
 			children = (
 				71A32A5E23E0836500EB7A55 /* FirestoreError.swift */,
 				71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		A4AC23AB23E2D7320012439D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC23AC23E2D73C0012439D /* Firestore */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A4AC23AC23E2D73C0012439D /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -676,6 +695,7 @@
 				A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
+				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
 				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
