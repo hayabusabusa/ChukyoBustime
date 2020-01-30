@@ -59,7 +59,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bus" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-fk-qf5">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_school" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-fk-qf5">
                                                                 <rect key="frame" x="0.0" y="23" width="48" height="24"/>
                                                                 <color key="tintColor" name="Primary"/>
                                                                 <constraints>
@@ -209,7 +209,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_bus" width="24" height="24"/>
+        <image name="ic_school" width="24" height="24"/>
         <image name="ic_train" width="24" height="24"/>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
