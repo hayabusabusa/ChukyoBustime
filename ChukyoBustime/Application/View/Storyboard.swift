@@ -17,6 +17,7 @@ enum Storyboard: String {
     // - Child View Controller
     case DiagramViewController
     case CountdownViewController
+    case PdfButtonsViewController
     case BusListViewController
     
     func instantiate<VC: UIViewController>(_: VC.Type, inBundle: Bundle? = nil) -> VC {

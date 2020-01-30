@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-c7-G1S">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="552"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-Zx-Nqx">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
@@ -36,11 +36,18 @@
                                                     <constraint firstAttribute="height" constant="200" id="uCd-oB-QgA"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-l7-rSB">
-                                                <rect key="frame" x="0.0" y="320" width="414" height="232"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-ij-A3H">
+                                                <rect key="frame" x="0.0" y="320" width="414" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="232" id="n1f-mb-pZD"/>
+                                                    <constraint firstAttribute="height" constant="80" id="k3W-8y-Kwz"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-l7-rSB">
+                                                <rect key="frame" x="0.0" y="412" width="414" height="248"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="248" id="n1f-mb-pZD"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -68,6 +75,7 @@
                         <outlet property="layoutBusListView" destination="mv5-l7-rSB" id="ghW-W5-Rig"/>
                         <outlet property="layoutCountdownView" destination="7Lv-6a-y2u" id="54D-iM-2sz"/>
                         <outlet property="layoutDiagramView" destination="4Iy-Zx-Nqx" id="Wwd-EL-yNP"/>
+                        <outlet property="layoutPdfButtonsView" destination="YOE-ij-A3H" id="Arz-a0-TPS"/>
                         <outlet property="scrollView" destination="rEz-Pf-Esg" id="4BI-HM-qm7"/>
                     </connections>
                 </viewController>

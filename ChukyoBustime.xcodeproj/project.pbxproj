@@ -46,6 +46,8 @@
 		A42D0DED23E17FA700E95FED /* DiagramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */; };
 		A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */; };
 		A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */; };
+		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
+		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
 		A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */; };
 		A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */; };
@@ -124,6 +126,8 @@
 		A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiagramViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountdownViewController.storyboard; sourceTree = "<group>"; };
+		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
+		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 			children = (
 				A42D0DE923E17F8100E95FED /* Diagram */,
 				A42D0DEE23E1868000E95FED /* Countdown */,
+				A4AC23A323E2C1870012439D /* PdfButtons */,
 				71FF5C1823E1B6A900456D75 /* BusList */,
 			);
 			path = Child;
@@ -377,6 +382,15 @@
 				A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */,
 			);
 			path = Countdown;
+			sourceTree = "<group>";
+		};
+		A4AC23A323E2C1870012439D /* PdfButtons */ = {
+			isa = PBXGroup;
+			children = (
+				A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */,
+				A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */,
+			);
+			path = PdfButtons;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
@@ -562,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B03F5F23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle in Resources */,
+				A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */,
 				A42D0DCC23E1669900E95FED /* TabBarController.storyboard in Resources */,
 				A42D0DD323E1681700E95FED /* ToCollegeViewController.storyboard in Resources */,
 				A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */,
@@ -662,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */,
+				A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,

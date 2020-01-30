@@ -15,6 +15,7 @@ final class ToStationViewController: BaseViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var layoutDiagramView: UIView!
     @IBOutlet private weak var layoutCountdownView: UIView!
+    @IBOutlet private weak var layoutPdfButtonsView: UIView!
     @IBOutlet private weak var layoutBusListView: UIView!
     
     // MARK: Properties
@@ -50,6 +51,8 @@ extension ToStationViewController {
         embed(diagram, to: layoutDiagramView)
         let countdown = CountdownViewController.configure()
         embed(countdown, to: layoutCountdownView)
+        let pdfButtons = PdfButtonsViewController.configure()
+        embed(pdfButtons, to: layoutPdfButtonsView)
         let busList = BusListViewController.configure()
         embed(busList, to: layoutBusListView)
     }
