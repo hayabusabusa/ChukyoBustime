@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="9KX-8F-U9S" firstAttribute="leading" secondItem="uFi-SY-CNv" secondAttribute="leading" constant="16" id="DZ6-np-uoV"/>
                             <constraint firstItem="uFi-SY-CNv" firstAttribute="trailing" secondItem="9KX-8F-U9S" secondAttribute="trailing" constant="16" id="Ja4-kH-ZcJ"/>
@@ -55,6 +55,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.035000000149011612" green="0.51800000667572021" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -22,7 +22,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-sW-fKH">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="nQE-mM-hDz"/>
                                         </constraints>
@@ -146,7 +146,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="eW1-TV-mbX" firstAttribute="centerX" secondItem="qlU-aY-w7J" secondAttribute="centerX" id="aPr-Qv-5rr"/>
                                                             <constraint firstItem="eW1-TV-mbX" firstAttribute="centerY" secondItem="qlU-aY-w7J" secondAttribute="centerY" id="pjP-iL-RWU"/>
@@ -182,7 +182,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Vgg-MK-Bd2" firstAttribute="leading" secondItem="rEI-9W-tBu" secondAttribute="leading" id="VQi-WZ-Kw5"/>
                                             <constraint firstAttribute="trailing" secondItem="Vgg-MK-Bd2" secondAttribute="trailing" id="WcP-GP-nM4"/>
@@ -192,7 +192,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="Dk6-l5-qFI" firstAttribute="top" secondItem="paZ-xh-GDU" secondAttribute="top" constant="12" id="DZr-0e-uKt"/>
                             <constraint firstItem="Dk6-l5-qFI" firstAttribute="leading" secondItem="paZ-xh-GDU" secondAttribute="leading" constant="20" id="aXX-Sy-PNs"/>
@@ -211,6 +211,9 @@
     <resources>
         <image name="ic_bus" width="24" height="24"/>
         <image name="ic_train" width="24" height="24"/>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="0.035000000149011612" green="0.51800000667572021" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

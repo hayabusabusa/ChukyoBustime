@@ -33,6 +33,7 @@ extension NavigationController {
         view.backgroundColor = .background
         navigationBar.isTranslucent = false
         navigationBar.tintColor = .primary
+        navigationBar.barTintColor = .background
         //navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primary]
     }
 }
