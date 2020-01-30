@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Crashlytics
 
 final class RootViewController: BaseViewController {
     
@@ -27,7 +26,6 @@ final class RootViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Crashlytics.sharedInstance().crash()
     }
     
     override func viewDidAppear(_ animated: Bool) {

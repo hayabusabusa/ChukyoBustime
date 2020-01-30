@@ -9,6 +9,6 @@
 import Foundation
 
 public enum BusDestination: String {
-    case toCollege
-    case toStation
+    case toCollege = "ToCollege"
+    case toStation = "ToStation"
 }

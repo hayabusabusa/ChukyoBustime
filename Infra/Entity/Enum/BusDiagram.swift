@@ -9,10 +9,10 @@
 import Foundation
 
 public enum BusDiagram: String {
-    case aDiagram
-    case bDiagram
-    case cDiagram
-    case aDashDiagram
-    case specialDiagram
-    case suspensionDiagram
+    case a
+    case b
+    case c
+    case aDash
+    case special
+    case suspension
 }
