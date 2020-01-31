@@ -156,7 +156,7 @@
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
-		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "中京大学バス.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B03E8F23DE7CB20069F7E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -576,7 +576,7 @@
 		A4B03E8123DE7CAB0069F7E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */,
+				A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */,
 				71A329E323E04FB700EB7A55 /* Infra.framework */,
 			);
 			name = Products;
@@ -691,7 +691,7 @@
 			);
 			name = ChukyoBustime;
 			productName = ChukyoBustime;
-			productReference = A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */;
+			productReference = A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1113,7 +1113,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "中京大学バス";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1136,7 +1136,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "中京大学バス";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

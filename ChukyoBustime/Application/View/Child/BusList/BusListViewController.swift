@@ -65,6 +65,7 @@ extension BusListViewController {
 extension BusListViewController {
     
     private func updateBusList(first: BusTime?, second: BusTime?, third: BusTime?) {
+        // TODO: この辺りTabelViewにしてしまえばもう少しうまく書けるかもしれない
         if let first = first {
             let arrivalSecond = first.second + 900
             firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
