@@ -22,6 +22,8 @@ final class ToStationViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var viewModel: ToStationViewModel!
+    
     // MARK: Lifecycle
     
     static func instantiate() -> ToStationViewController {
@@ -33,6 +35,7 @@ final class ToStationViewController: BaseViewController {
         setupNavigation()
         setupScrollView()
         setupChildren()
+        bindViewModel()
     }
 }
 
@@ -57,5 +60,18 @@ extension ToStationViewController {
         embed(pdfButtons, to: layoutPdfButtonsView)
         let busList = BusListViewController.configure()
         embed(busList, to: layoutBusListView)
+    }
+}
+
+// MARK: - ViewModel
+
+extension ToStationViewController {
+    
+    private func bindViewModel() {
+        let viewModel = ToStationViewModel()
+        self.viewModel = viewModel
+        
+        //let input = ToStationViewModel.Input()
+        //let output = viewModel.transform(input: input)
     }
 }

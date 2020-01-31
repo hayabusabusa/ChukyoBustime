@@ -14,11 +14,17 @@ final class ToStationViewModel {
     
     // MARK: Dependency
     
+    private let model: ToStationModel
+    
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
     
     // MARK: Initializer
+    
+    init(model: ToStationModel = ToStationModelImpl()) {
+        self.model = model
+    }
 }
 
 extension ToStationViewModel: ViewModelType {
@@ -30,12 +36,22 @@ extension ToStationViewModel: ViewModelType {
     }
     
     struct Output {
-        
+        let diagramDriver: Driver<String>
     }
     
     // MARK: Transform I/O
     
     func transform(input: ToStationViewModel.Input) -> ToStationViewModel.Output {
-        return Output()
+        let diagramRelay: BehaviorRelay<String> = .init(value: "")
+        
+        model.getBusDate(at: Date())
+            .subscribe(onSuccess: { busDate in
+                diagramRelay.accept(busDate.diagramName)
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        return Output(diagramDriver: diagramRelay.asDriver())
     }
 }
