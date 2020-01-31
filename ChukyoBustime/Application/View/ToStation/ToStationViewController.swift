@@ -52,8 +52,6 @@ extension ToStationViewController {
     }
     
     private func setupChildren() {
-        let diagram = DiagramViewController.configure()
-        embed(diagram, to: layoutDiagramView)
         let countdown = CountdownViewController.configure()
         embed(countdown, to: layoutCountdownView)
         let pdfButtons = PdfButtonsViewController.configure()
@@ -71,7 +69,10 @@ extension ToStationViewController {
         let viewModel = ToStationViewModel()
         self.viewModel = viewModel
         
-        //let input = ToStationViewModel.Input()
-        //let output = viewModel.transform(input: input)
+        let input = ToStationViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        let diagram = DiagramViewController.configure(with: output.diagramDriver)
+        embed(diagram, to: layoutDiagramView)
     }
 }

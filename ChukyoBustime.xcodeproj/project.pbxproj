@@ -53,6 +53,7 @@
 		A4A7394323E3BF1100F7C1A9 /* BusDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394223E3BF1100F7C1A9 /* BusDate.swift */; };
 		A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394423E3BF2E00F7C1A9 /* BusTime.swift */; };
 		A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */; };
+		A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
 		A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */; };
@@ -141,6 +142,7 @@
 		A4A7394223E3BF1100F7C1A9 /* BusDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDate.swift; sourceTree = "<group>"; };
 		A4A7394423E3BF2E00F7C1A9 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
 		A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDateAndBusTimesTranslator.swift; sourceTree = "<group>"; };
+		A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewModel.swift; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
+				A4A7394E23E3CFA000F7C1A9 /* Child */,
 				A4A7393523E3B4A800F7C1A9 /* ToStation */,
 			);
 			path = ViewModel;
@@ -461,6 +464,22 @@
 				A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */,
 			);
 			path = BusDate;
+			sourceTree = "<group>";
+		};
+		A4A7394E23E3CFA000F7C1A9 /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7394F23E3CFB400F7C1A9 /* Diagram */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
+		A4A7394F23E3CFB400F7C1A9 /* Diagram */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */,
+			);
+			path = Diagram;
 			sourceTree = "<group>";
 		};
 		A4AC23A323E2C1870012439D /* PdfButtons */ = {
@@ -797,6 +816,7 @@
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
 				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,
+				A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,

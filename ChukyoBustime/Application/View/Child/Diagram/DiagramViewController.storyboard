@@ -48,6 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="uFi-SY-CNv"/>
                     </view>
                     <size key="freeformSize" width="320" height="80"/>
+                    <connections>
+                        <outlet property="diagramLabel" destination="3Ex-dO-fQz" id="JbN-Ne-ora"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofx-Lg-1N3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

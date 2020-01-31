@@ -7,21 +7,42 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class DiagramViewController: BaseViewController {
     
     // MARK: IBOutlet
     
+    @IBOutlet private weak var diagramLabel: UILabel!
+    
     // MARK: Properties
+    
+    private var viewModel: DiagramViewModel!
     
     // MARK: Lifecycle
     
-    static func configure() -> DiagramViewController {
+    static func configure(with diagramDriver: Driver<String>) -> DiagramViewController {
         let vc = Storyboard.DiagramViewController.instantiate(DiagramViewController.self)
+        vc.viewModel = DiagramViewModel(dependency: diagramDriver)
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+}
+
+// MARK: ViewModel
+
+extension DiagramViewController {
+    
+    private func bindViewModel() {
+        let input = DiagramViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        output.diagramDriver
+            .drive(diagramLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
