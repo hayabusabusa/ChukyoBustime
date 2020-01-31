@@ -14,7 +14,7 @@ struct BusDateAndBusTimesTranslator: Translator {
     typealias Output = (busDate: BusDate, busTimes: [BusTime])
     
     func translate(_ input: (busDate: BusDateEntity, busTimes: [BusTimeEntity])) throws -> (busDate: BusDate, busTimes: [BusTime]) {
-        let busDate = BusDate(diagram: input.busDate.diagram, diagramName: input.busDate.diagramName)
+        let busDate = BusDate(diagramName: input.busDate.diagramName)
         let busTimes = input.busTimes.map { BusTime(hour: $0.hour,
                                                     minute: $0.minute,
                                                     isReturn: $0.isReturn,

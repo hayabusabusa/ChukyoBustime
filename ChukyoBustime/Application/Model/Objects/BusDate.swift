@@ -9,6 +9,5 @@
 import Foundation
 
 struct BusDate {
-    let diagram: String
     let diagramName: String
 }
