@@ -46,6 +46,16 @@ extension ToStationViewModel: ViewModelType {
         let diagramRelay: BehaviorRelay<String> = .init(value: "")
         let busTimesRelay: BehaviorRelay<[BusTime]> = .init(value: [])
         
+        let now = Date()
+        model.getBusTimes(at: now)
+            .subscribe(onSuccess: { result in
+                diagramRelay.accept(result.busDate.diagramName)
+                busTimesRelay.accept(result.busTimes)
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+        
         return Output(diagramDriver: diagramRelay.asDriver(),
                       busTimesDriver: busTimesRelay.asDriver())
     }
