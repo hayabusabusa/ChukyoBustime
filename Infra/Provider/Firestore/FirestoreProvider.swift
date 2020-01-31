@@ -71,4 +71,26 @@ public final class FirestoreProvider {
             return Disposables.create()
         }
     }
+    
+    public func getBusTimes(at date: BusDateEntity, destination: BusDestination, second: Int) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> {
+        return Single.create { observer in
+            self.db.collection(date.diagram + destination.rawValue)
+                .whereField("second", isGreaterThanOrEqualTo: second).getDocuments { (querySnapshot, error) in
+                    if let error = error {
+                        observer(.error(error))
+                    }
+                    if let documents = querySnapshot?.documents {
+                        do {
+                            let busTimes = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
+                            observer(.success((busDate: date, busTimes: busTimes)))
+                        } catch {
+                            observer(.error(error))
+                        }
+                    } else {
+                        observer(.success((busDate: date, busTimes: [])))
+                    }
+            }
+            return Disposables.create()
+        }
+    }
 }

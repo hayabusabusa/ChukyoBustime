@@ -15,7 +15,7 @@ import SwiftDate
 public protocol FirestoreRepository {
     func getBusDate(at date: Date) -> Single<BusDateEntity>
     func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]>
-    func getBusTimes(at date: Date, destination: BusDestination) -> Single<[BusTimeEntity]>
+    func getBusTimes(at date: Date, destination: BusDestination) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])>
 }
 
 // MARK: - Implementation
@@ -42,12 +42,12 @@ public struct FirestoreRepositoryImpl: FirestoreRepository {
         return provider.getBusTimes(of: diagram, destination: destination, second: second)
     }
     
-    public func getBusTimes(at date: Date, destination: BusDestination) -> Single<[BusTimeEntity]> {
+    public func getBusTimes(at date: Date, destination: BusDestination) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> {
         return provider.getBusDate(at: date.toFormat("YYYY-MM-dd"))
-            .flatMap { busDate -> Single<[BusTimeEntity]> in
+            .flatMap { busDate -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> in
                 let dateInRegion = DateInRegion(date, region: .current)
                 let second = dateInRegion.hour * 3600 + dateInRegion.minute * 60 + dateInRegion.second
-                return self.provider.getBusTimes(of: busDate.diagram, destination: destination, second: second)
+                return self.provider.getBusTimes(at: busDate, destination: destination, second: second)
             }
     }
 }

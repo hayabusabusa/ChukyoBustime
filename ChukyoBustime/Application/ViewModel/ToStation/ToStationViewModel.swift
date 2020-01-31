@@ -37,21 +37,16 @@ extension ToStationViewModel: ViewModelType {
     
     struct Output {
         let diagramDriver: Driver<String>
+        let busTimesDriver: Driver<[BusTime]>
     }
     
     // MARK: Transform I/O
     
     func transform(input: ToStationViewModel.Input) -> ToStationViewModel.Output {
         let diagramRelay: BehaviorRelay<String> = .init(value: "")
+        let busTimesRelay: BehaviorRelay<[BusTime]> = .init(value: [])
         
-        model.getBusDate(at: Date())
-            .subscribe(onSuccess: { busDate in
-                diagramRelay.accept(busDate.diagramName)
-            }, onError: { error in
-                print(error)
-            })
-            .disposed(by: disposeBag)
-        
-        return Output(diagramDriver: diagramRelay.asDriver())
+        return Output(diagramDriver: diagramRelay.asDriver(),
+                      busTimesDriver: busTimesRelay.asDriver())
     }
 }
