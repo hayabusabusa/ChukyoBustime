@@ -18,6 +18,7 @@
 		71A32A6623E0838600EB7A55 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */; };
 		71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */; };
+		71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
 		71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */; };
 		71FF5C1C23E1B70D00456D75 /* BusListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */; };
@@ -111,6 +112,7 @@
 		71A32A5E23E0836500EB7A55 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
 		71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreProvider.swift; sourceTree = "<group>"; };
 		71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeEntity.swift; sourceTree = "<group>"; };
+		71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewableTranslator.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewController.swift; sourceTree = "<group>"; };
 		71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusListViewController.storyboard; sourceTree = "<group>"; };
@@ -246,6 +248,14 @@
 				71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */,
 			);
 			path = BusTime;
+			sourceTree = "<group>";
+		};
+		71A5A61E23E453550033E2CB /* BusList */ = {
+			isa = PBXGroup;
+			children = (
+				71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */,
+			);
+			path = BusList;
 			sourceTree = "<group>";
 		};
 		71FF5C1823E1B6A900456D75 /* BusList */ = {
@@ -453,6 +463,7 @@
 				A4A7393C23E3BDE400F7C1A9 /* Translator.swift */,
 				A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */,
 				A4A7394B23E3C02F00F7C1A9 /* BusDate */,
+				71A5A61E23E453550033E2CB /* BusList */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -838,6 +849,7 @@
 				A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */,
 				A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */,
 				A4A7395523E3E91800F7C1A9 /* Destination.swift in Sources */,
+				71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */,
 				A4A7395C23E3F7FA00F7C1A9 /* BusListViewModel.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,

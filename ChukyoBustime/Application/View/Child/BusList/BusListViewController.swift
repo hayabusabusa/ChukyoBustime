@@ -32,6 +32,7 @@ final class BusListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
         bindView()
     }
     
@@ -59,9 +60,49 @@ extension BusListViewController {
     }
 }
 
+// MARK: - Update
+
+extension BusListViewController {
+    
+    private func updateBusList(first: BusTime?, second: BusTime?, third: BusTime?) {
+        if let first = first {
+            let arrivalSecond = first.second + 900
+            firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
+                                  arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+        } else {
+            firstBusListView.hide()
+        }
+        if let second = second {
+            let arrivalSecond = second.second + 900
+            secondBusListView.show(departureTime: String(format: "%i:%02i", second.hour, second.minute),
+                                   arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+        } else {
+            secondBusListView.hide()
+        }
+        if let third = third {
+            let arrivalSecond = third.second + 900
+            thirdBusListView.show(departureTime: String(format: "%i:%02i", third.hour, third.minute),
+                                  arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+        } else {
+            thirdBusListView.hide()
+        }
+    }
+}
+
 // MARK: - ViewModel
 
 extension BusListViewController {
+    
+    private func bindViewModel() {
+        let input = BusListViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        output.busListDriver
+            .drive(onNext: { [weak self] busList in
+                self?.updateBusList(first: busList.first, second: busList.second, third: busList.third)
+            })
+            .disposed(by: disposeBag)
+    }
     
     private func bindView() {
         setupBusListViews(with: viewModel.dependency.destination)

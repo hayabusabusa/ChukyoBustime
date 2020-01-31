@@ -15,6 +15,7 @@ class BusListView: UIView {
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var departurePointLabel: UILabel!
     @IBOutlet private weak var departureTimeLabel: UILabel!
+    @IBOutlet private weak var centerIconImageView: UIImageView!
     @IBOutlet private weak var arrivalPointLabel: UILabel!
     @IBOutlet private weak var arrivalTimeLabel: UILabel!
     
@@ -51,16 +52,28 @@ class BusListView: UIView {
     
     // MARK: Setup
     
-    func setupView(number: Int, departurePoint: String? = nil, departureTime: String? = nil, arrivalPoint: String? = nil, arrivalTime: String? = nil) {
+    func setupView(number: Int, centerIcon: UIImage? = UIImage(named: "ic_arrow_right"), departurePoint: String? = nil, departureTime: String? = nil, arrivalPoint: String? = nil, arrivalTime: String? = nil) {
         numberLabel.text = "\(number)"
+        centerIconImageView.image = centerIcon
         departurePointLabel.text = departurePoint
         departureTimeLabel.text = departureTime
         arrivalPointLabel.text = arrivalPoint
         arrivalTimeLabel.text = arrivalTime
     }
     
-    func setupTimeLabels(departureTime: String, arrivalTime: String) {
+    func show(departureTime: String, arrivalTime: String) {
+        departurePointLabel.isHidden = false
         departureTimeLabel.text = departureTime
+        centerIconImageView.image = UIImage(named: "ic_arrow_right")
+        arrivalPointLabel.isHidden = false
         arrivalTimeLabel.text = arrivalTime
+    }
+    
+    func hide() {
+        departurePointLabel.isHidden = true
+        departureTimeLabel.text = nil
+        centerIconImageView.image = UIImage(named: "ic_hyphen")
+        arrivalPointLabel.isHidden = true
+        arrivalTimeLabel.text = nil
     }
 }

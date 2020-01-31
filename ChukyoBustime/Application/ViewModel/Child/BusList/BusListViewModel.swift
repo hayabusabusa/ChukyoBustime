@@ -38,12 +38,19 @@ extension BusListViewModel: ViewModelType {
     }
     
     struct Output {
-        
+        let busListDriver: Driver<(first: BusTime?, second: BusTime?, third: BusTime?)>
     }
     
     // MARK: Transform I/O
     
     func transform(input: BusListViewModel.Input) -> BusListViewModel.Output {
-        return Output()
+        let busListRelay: BehaviorRelay<(first: BusTime?, second: BusTime?, third: BusTime?)> = .init(value: (first: nil, second: nil, third: nil))
+        
+        dependency.busTimesDriver
+            .translate(with: BusListViewableTranslator())
+            .drive(busListRelay)
+            .disposed(by: disposeBag)
+        
+        return Output(busListDriver: busListRelay.asDriver())
     }
 }
