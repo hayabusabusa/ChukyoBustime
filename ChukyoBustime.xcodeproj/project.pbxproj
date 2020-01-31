@@ -52,8 +52,6 @@
 		A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */; };
 		A4A7394323E3BF1100F7C1A9 /* BusDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394223E3BF1100F7C1A9 /* BusDate.swift */; };
 		A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394423E3BF2E00F7C1A9 /* BusTime.swift */; };
-		A4A7394723E3BF6800F7C1A9 /* BusDateTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394623E3BF6800F7C1A9 /* BusDateTranslator.swift */; };
-		A4A7394923E3BFB400F7C1A9 /* BusTimesTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394823E3BFB400F7C1A9 /* BusTimesTranslator.swift */; };
 		A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
@@ -142,8 +140,6 @@
 		A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableTranslator.swift; sourceTree = "<group>"; };
 		A4A7394223E3BF1100F7C1A9 /* BusDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDate.swift; sourceTree = "<group>"; };
 		A4A7394423E3BF2E00F7C1A9 /* BusTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTime.swift; sourceTree = "<group>"; };
-		A4A7394623E3BF6800F7C1A9 /* BusDateTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDateTranslator.swift; sourceTree = "<group>"; };
-		A4A7394823E3BFB400F7C1A9 /* BusTimesTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimesTranslator.swift; sourceTree = "<group>"; };
 		A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDateAndBusTimesTranslator.swift; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
@@ -446,7 +442,6 @@
 				A4A7393C23E3BDE400F7C1A9 /* Translator.swift */,
 				A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */,
 				A4A7394B23E3C02F00F7C1A9 /* BusDate */,
-				A4A7394A23E3C02500F7C1A9 /* BusTime */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -460,18 +455,9 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
-		A4A7394A23E3C02500F7C1A9 /* BusTime */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7394823E3BFB400F7C1A9 /* BusTimesTranslator.swift */,
-			);
-			path = BusTime;
-			sourceTree = "<group>";
-		};
 		A4A7394B23E3C02F00F7C1A9 /* BusDate */ = {
 			isa = PBXGroup;
 			children = (
-				A4A7394623E3BF6800F7C1A9 /* BusDateTranslator.swift */,
 				A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */,
 			);
 			path = BusDate;
@@ -799,11 +785,9 @@
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
-				A4A7394923E3BFB400F7C1A9 /* BusTimesTranslator.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
-				A4A7394723E3BF6800F7C1A9 /* BusDateTranslator.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,

@@ -13,8 +13,6 @@ import SwiftDate
 // MARK: - Interface
 
 public protocol FirestoreRepository {
-    func getBusDate(at date: Date) -> Single<BusDateEntity>
-    func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]>
     func getBusTimes(at date: Date, destination: BusDestination) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])>
 }
 
@@ -33,14 +31,6 @@ public struct FirestoreRepositoryImpl: FirestoreRepository {
     }
     
     // MARK: Firestore
-    
-    public func getBusDate(at date: Date) -> Single<BusDateEntity> {
-        return provider.getBusDate(at: date.toFormat("YYYY-MM-dd"))
-    }
-    
-    public func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
-        return provider.getBusTimes(of: diagram, destination: destination, second: second)
-    }
     
     public func getBusTimes(at date: Date, destination: BusDestination) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> {
         return provider.getBusDate(at: date.toFormat("YYYY-MM-dd"))
