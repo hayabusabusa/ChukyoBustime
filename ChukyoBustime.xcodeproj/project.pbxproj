@@ -48,6 +48,8 @@
 		A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */; };
 		A4A7393723E3B4B600F7C1A9 /* ToStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */; };
 		A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */; };
+		A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393C23E3BDE400F7C1A9 /* Translator.swift */; };
+		A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
 		A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */; };
@@ -131,6 +133,8 @@
 		A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationModel.swift; sourceTree = "<group>"; };
 		A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModel.swift; sourceTree = "<group>"; };
 		A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		A4A7393C23E3BDE400F7C1A9 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableTranslator.swift; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
@@ -394,6 +398,7 @@
 		A4A7393023E3B2E100F7C1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 			);
 			path = Model;
@@ -422,6 +427,15 @@
 				A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */,
 			);
 			path = ToStation;
+			sourceTree = "<group>";
+		};
+		A4A7393B23E3BDB500F7C1A9 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7393C23E3BDE400F7C1A9 /* Translator.swift */,
+				A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */,
+			);
+			path = Translator;
 			sourceTree = "<group>";
 		};
 		A4AC23A323E2C1870012439D /* PdfButtons */ = {
@@ -752,8 +766,10 @@
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
+				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
+				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
