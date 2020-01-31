@@ -13,7 +13,7 @@ import RxSwift
 // MARK: - Interface
 
 protocol ToStationModel: AnyObject {
-    func getDiagram(at date: Date) -> Single<String>
+    
 }
 
 // MARK: - Implementation
@@ -30,7 +30,5 @@ class ToStationModelImpl: ToStationModel {
         self.firestoreRepository = firestoreRepository
     }
     
-    func getDiagram(at date: Date) -> Single<String> {
-        return firestoreRepository.getDiagram(at: date)
-    }
+    //func getBusDate(at date: Date) -> Single<>
 }
