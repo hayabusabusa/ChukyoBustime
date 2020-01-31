@@ -11,6 +11,7 @@ import Foundation
 struct BusTime {
     let hour: Int
     let minute: Int
+    let second: Int
     let isReturn: Bool
     let isLast: Bool
 }

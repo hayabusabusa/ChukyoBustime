@@ -17,6 +17,7 @@ struct BusDateAndBusTimesTranslator: Translator {
         let busDate = BusDate(diagramName: input.busDate.diagramName)
         let busTimes = input.busTimes.map { BusTime(hour: $0.hour,
                                                     minute: $0.minute,
+                                                    second: $0.second,
                                                     isReturn: $0.isReturn,
                                                     isLast: $0.isLast) }
         return (busDate: busDate, busTimes: busTimes)
