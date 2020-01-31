@@ -8,11 +8,16 @@
 
 import UIKit
 
-final class PdfButtonsViewController: UIViewController {
+final class PdfButtonsViewController: BaseViewController {
     
     // MARK: IBOutlet
     
+    @IBOutlet private weak var calendarButton: UIButton!
+    @IBOutlet private weak var timeTableButton: UIButton!
+    
     // MARK: Properties
+    
+    private var viewModel: PdfButtonsViewModel!
     
     // MARK: Lifecycle
     
@@ -23,5 +28,34 @@ final class PdfButtonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+}
+
+// MARK: - ViewModel
+
+extension PdfButtonsViewController {
+    
+    private func bindViewModel() {
+        let viewModel = PdfButtonsViewModel()
+        self.viewModel = viewModel
+        
+        let input = PdfButtonsViewModel.Input(calendarButtonDidTap: calendarButton.rx.tap.asDriver(),
+                                              timeTableButtonDidTap: timeTableButton.rx.tap.asDriver())
+        let output = viewModel.transform(input: input)
+        
+        output.presentSafari
+            .drive(onNext: { [weak self] url in self?.presentSafari(url: url) })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Transition
+
+extension PdfButtonsViewController {
+    
+    private func presentSafari(url: URL) {
+        let vc = SafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
 }

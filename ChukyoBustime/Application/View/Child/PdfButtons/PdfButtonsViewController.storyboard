@@ -57,6 +57,10 @@
                         <viewLayoutGuide key="safeArea" id="4mL-ik-M52"/>
                     </view>
                     <size key="freeformSize" width="320" height="80"/>
+                    <connections>
+                        <outlet property="calendarButton" destination="ExB-aQ-Mw8" id="N6z-PP-SVn"/>
+                        <outlet property="timeTableButton" destination="7Tc-cK-MvN" id="M5B-2E-LEc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjX-yT-8sK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
