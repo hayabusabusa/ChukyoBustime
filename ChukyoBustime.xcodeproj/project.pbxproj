@@ -47,6 +47,8 @@
 		A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */; };
 		A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */; };
 		A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */; };
+		A4A7393723E3B4B600F7C1A9 /* ToStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */; };
+		A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
 		A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */; };
@@ -129,6 +131,8 @@
 		A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountdownViewController.storyboard; sourceTree = "<group>"; };
 		A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationModel.swift; sourceTree = "<group>"; };
+		A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModel.swift; sourceTree = "<group>"; };
+		A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
 				A4A7393023E3B2E100F7C1A9 /* Model */,
 				A4B03E9823DE7FC20069F7E8 /* View */,
+				A4A7393423E3B49500F7C1A9 /* ViewModel */,
 				A42D0DB323E13ACC00E95FED /* Common */,
 			);
 			path = Application;
@@ -401,6 +406,23 @@
 			isa = PBXGroup;
 			children = (
 				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
+			);
+			path = ToStation;
+			sourceTree = "<group>";
+		};
+		A4A7393423E3B49500F7C1A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
+				A4A7393523E3B4A800F7C1A9 /* ToStation */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4A7393523E3B4A800F7C1A9 /* ToStation */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */,
 			);
 			path = ToStation;
 			sourceTree = "<group>";
@@ -734,6 +756,7 @@
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
+				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
@@ -743,6 +766,7 @@
 				A42D0DE123E173D500E95FED /* BusListView.swift in Sources */,
 				A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */,
 				A42D0DD823E1690E00E95FED /* ToStationViewController.swift in Sources */,
+				A4A7393723E3B4B600F7C1A9 /* ToStationViewModel.swift in Sources */,
 				A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
