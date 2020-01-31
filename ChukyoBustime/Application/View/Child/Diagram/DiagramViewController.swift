@@ -30,6 +30,7 @@ final class DiagramViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        bindView()
     }
 }
 
@@ -38,10 +39,11 @@ final class DiagramViewController: BaseViewController {
 extension DiagramViewController {
     
     private func bindViewModel() {
-        let input = DiagramViewModel.Input()
-        let output = viewModel.transform(input: input)
         
-        output.diagramDriver
+    }
+    
+    private func bindView() {
+        viewModel.dependency
             .drive(diagramLabel.rx.text)
             .disposed(by: disposeBag)
     }

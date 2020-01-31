@@ -52,8 +52,6 @@ extension ToStationViewController {
     }
     
     private func setupChildren() {
-        let countdown = CountdownViewController.configure()
-        embed(countdown, to: layoutCountdownView)
         let pdfButtons = PdfButtonsViewController.configure()
         embed(pdfButtons, to: layoutPdfButtonsView)
         let busList = BusListViewController.configure()
@@ -74,5 +72,7 @@ extension ToStationViewController {
         
         let diagram = DiagramViewController.configure(with: output.diagramDriver)
         embed(diagram, to: layoutDiagramView)
+        let countdown = CountdownViewController.configure(with: .station, busTimesDriver: output.busTimesDriver)
+        embed(countdown, to: layoutCountdownView)
     }
 }

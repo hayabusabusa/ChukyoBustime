@@ -202,6 +202,15 @@
                         <viewLayoutGuide key="safeArea" id="paZ-xh-GDU"/>
                     </view>
                     <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="arrivalImageView" destination="fLd-VR-hbd" id="x80-cD-VSX"/>
+                        <outlet property="arrivalPointLabel" destination="NfG-ZU-cRP" id="omJ-AD-4Mg"/>
+                        <outlet property="arrivalTimeLabel" destination="Lqn-p5-khy" id="X7h-tF-O6G"/>
+                        <outlet property="countdownLabel" destination="B5u-dD-7af" id="6Ap-go-cZh"/>
+                        <outlet property="departureImageView" destination="DhO-fk-qf5" id="iJZ-vG-UxD"/>
+                        <outlet property="departurePointLabel" destination="7sQ-x1-yEt" id="L14-iz-YOy"/>
+                        <outlet property="departureTimeLabel" destination="2Xc-9C-UrU" id="8hv-rl-cLU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBR-5u-YgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

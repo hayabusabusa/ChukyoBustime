@@ -1,5 +1,5 @@
 //
-//  DiagramViewModel.swift
+//  CountdownViewModel.swift
 //  ChukyoBustime
 //
 //  Created by Yamada Shunya on 2020/01/31.
@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class DiagramViewModel {
+final class CountdownViewModel {
     
     // MARK: Dependency
     
-    typealias Dependency = Driver<String>
+    typealias Dependency = (destination: Destination, busTimesDriver: Driver<[BusTime]>)
     
     let dependency: Dependency
     
@@ -29,7 +29,7 @@ final class DiagramViewModel {
     }
 }
 
-extension DiagramViewModel: ViewModelType {
+extension CountdownViewModel: ViewModelType {
     
     // MARK: I/O
     
@@ -43,7 +43,7 @@ extension DiagramViewModel: ViewModelType {
     
     // MARK: Transform I/O
     
-    func transform(input: DiagramViewModel.Input) -> DiagramViewModel.Output {
+    func transform(input: CountdownViewModel.Input) -> CountdownViewModel.Output {
         return Output()
     }
 }
