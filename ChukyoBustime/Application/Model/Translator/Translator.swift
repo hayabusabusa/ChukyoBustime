@@ -26,3 +26,9 @@ extension Collection {
         return try map { try translator.translate($0) }
     }
 }
+
+extension PrimitiveSequenceType where Self.Trait == SingleTrait {
+    func translate<T: Translator>(_ translator: T) -> PrimitiveSequence<Trait, T.Output> where Self.Element == T.Input {
+        return primitiveSequence.map { try translator.translate($0) }
+    }
+}
