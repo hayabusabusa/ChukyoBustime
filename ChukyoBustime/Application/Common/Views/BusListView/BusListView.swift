@@ -51,11 +51,16 @@ class BusListView: UIView {
     
     // MARK: Setup
     
-    func setupView(number: Int, departurePoint: String, departureTime: String, arrivalPoint: String, arrivalTime: String) {
+    func setupView(number: Int, departurePoint: String? = nil, departureTime: String? = nil, arrivalPoint: String? = nil, arrivalTime: String? = nil) {
         numberLabel.text = "\(number)"
         departurePointLabel.text = departurePoint
         departureTimeLabel.text = departureTime
         arrivalPointLabel.text = arrivalPoint
+        arrivalTimeLabel.text = arrivalTime
+    }
+    
+    func setupTimeLabels(departureTime: String, arrivalTime: String) {
+        departureTimeLabel.text = departureTime
         arrivalTimeLabel.text = arrivalTime
     }
 }

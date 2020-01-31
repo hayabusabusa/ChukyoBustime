@@ -56,6 +56,7 @@
 		A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */; };
 		A4A7395523E3E91800F7C1A9 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7395423E3E91800F7C1A9 /* Destination.swift */; };
 		A4A7395823E3EAFC00F7C1A9 /* CountdownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7395723E3EAFC00F7C1A9 /* CountdownViewModel.swift */; };
+		A4A7395C23E3F7FA00F7C1A9 /* BusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7395B23E3F7FA00F7C1A9 /* BusListViewModel.swift */; };
 		A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */; };
 		A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */; };
 		A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */; };
@@ -147,6 +148,7 @@
 		A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewModel.swift; sourceTree = "<group>"; };
 		A4A7395423E3E91800F7C1A9 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		A4A7395723E3EAFC00F7C1A9 /* CountdownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModel.swift; sourceTree = "<group>"; };
+		A4A7395B23E3F7FA00F7C1A9 /* BusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewModel.swift; sourceTree = "<group>"; };
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 			children = (
 				A4A7394F23E3CFB400F7C1A9 /* Diagram */,
 				A4A7395623E3EAE300F7C1A9 /* Countdown */,
+				A4A7395A23E3F7E900F7C1A9 /* BusList */,
 			);
 			path = Child;
 			sourceTree = "<group>";
@@ -494,6 +497,14 @@
 				A4A7395723E3EAFC00F7C1A9 /* CountdownViewModel.swift */,
 			);
 			path = Countdown;
+			sourceTree = "<group>";
+		};
+		A4A7395A23E3F7E900F7C1A9 /* BusList */ = {
+			isa = PBXGroup;
+			children = (
+				A4A7395B23E3F7FA00F7C1A9 /* BusListViewModel.swift */,
+			);
+			path = BusList;
 			sourceTree = "<group>";
 		};
 		A4AC23A323E2C1870012439D /* PdfButtons */ = {
@@ -816,6 +827,7 @@
 				A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */,
 				A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */,
 				A4A7395523E3E91800F7C1A9 /* Destination.swift in Sources */,
+				A4A7395C23E3F7FA00F7C1A9 /* BusListViewModel.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
