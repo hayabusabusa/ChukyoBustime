@@ -13,10 +13,10 @@ class BusListView: UIView {
     // MARK: IBOutlet
     
     @IBOutlet private weak var numberLabel: UILabel!
-    @IBOutlet private weak var leaveDestLabel: UILabel!
-    @IBOutlet private weak var leaveTimeLabel: UILabel!
-    @IBOutlet private weak var arriveDestLabel: UILabel!
-    @IBOutlet private weak var arriveTimeLabel: UILabel!
+    @IBOutlet private weak var departurePointLabel: UILabel!
+    @IBOutlet private weak var departureTimeLabel: UILabel!
+    @IBOutlet private weak var arrivalPointLabel: UILabel!
+    @IBOutlet private weak var arrivalTimeLabel: UILabel!
     
     // MARK: Lifecycle
     
@@ -27,7 +27,6 @@ class BusListView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadNib()
     }
     
     override func awakeFromNib() {
@@ -48,5 +47,15 @@ class BusListView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.addSubview(view)
+    }
+    
+    // MARK: Setup
+    
+    func setupView(number: Int, departurePoint: String, departureTime: String, arrivalPoint: String, arrivalTime: String) {
+        numberLabel.text = "\(number)"
+        departurePointLabel.text = departurePoint
+        departureTimeLabel.text = departureTime
+        arrivalPointLabel.text = arrivalPoint
+        arrivalTimeLabel.text = arrivalTime
     }
 }

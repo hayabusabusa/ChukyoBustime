@@ -12,6 +12,10 @@ final class BusListViewController: BaseViewController {
     
     // MARK: IBOutlet
     
+    @IBOutlet private weak var firstBusListView: BusListView!
+    @IBOutlet private weak var secondBusListView: BusListView!
+    @IBOutlet private weak var thirdBusListView: BusListView!
+    
     // MARK: Properties
     
     // MARK: Lifecycle

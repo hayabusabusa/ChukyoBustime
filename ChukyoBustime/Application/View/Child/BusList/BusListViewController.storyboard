@@ -65,6 +65,11 @@
                         <viewLayoutGuide key="safeArea" id="eTh-GC-dNi"/>
                     </view>
                     <size key="freeformSize" width="320" height="232"/>
+                    <connections>
+                        <outlet property="firstBusListView" destination="gvz-lG-kzF" id="j5v-Xr-cUF"/>
+                        <outlet property="secondBusListView" destination="3W9-cm-zNB" id="HmQ-L0-hah"/>
+                        <outlet property="thirdBusListView" destination="TIk-dO-QSv" id="mPn-nC-kOX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXk-gG-GfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

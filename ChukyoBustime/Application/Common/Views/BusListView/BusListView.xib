@@ -11,10 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusListView" customModule="ChukyoBustime" customModuleProvider="target">
             <connections>
-                <outlet property="arriveDestLabel" destination="pPi-rQ-054" id="UdR-nm-VJC"/>
-                <outlet property="arriveTimeLabel" destination="r8z-SC-DhX" id="iov-S6-YqG"/>
-                <outlet property="leaveDestLabel" destination="APT-Ok-nBn" id="bqw-nc-Go2"/>
-                <outlet property="leaveTimeLabel" destination="XAJ-B5-8k8" id="4M2-pe-rYM"/>
+                <outlet property="arrivalPointLabel" destination="pPi-rQ-054" id="UdR-nm-VJC"/>
+                <outlet property="arrivalTimeLabel" destination="r8z-SC-DhX" id="iov-S6-YqG"/>
+                <outlet property="departurePointLabel" destination="APT-Ok-nBn" id="bqw-nc-Go2"/>
+                <outlet property="departureTimeLabel" destination="XAJ-B5-8k8" id="4M2-pe-rYM"/>
                 <outlet property="numberLabel" destination="FZu-Ow-9Sb" id="rSF-46-GI6"/>
             </connections>
         </placeholder>
