@@ -13,8 +13,8 @@ import SwiftDate
 // MARK: - Interface
 
 public protocol FirestoreRepository {
-    func getDiagram(at date: Date) -> Single<BusDiagram>
-    func getBusTimes(of diagram: BusDiagram, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]>
+    func getDiagram(at date: Date) -> Single<String>
+    func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]>
     func getBusTimes(at date: Date, destination: BusDestination) -> Single<[BusTimeEntity]>
 }
 
@@ -34,20 +34,20 @@ public struct FirestoreRepositoryImpl: FirestoreRepository {
     
     // MARK: Firestore
     
-    public func getDiagram(at date: Date) -> Single<BusDiagram> {
-        return provider.getDiagram(at: date.toFormat("YYYY-MM-dd"))
+    public func getDiagram(at date: Date) -> Single<String> {
+        return provider.getBusDate(at: date.toFormat("YYYY-MM-dd")).map { $0.diagramName }
     }
     
-    public func getBusTimes(of diagram: BusDiagram, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
+    public func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
         return provider.getBusTimes(of: diagram, destination: destination, second: second)
     }
     
     public func getBusTimes(at date: Date, destination: BusDestination) -> Single<[BusTimeEntity]> {
-        return provider.getDiagram(at: date.toFormat("YYYY-MM-dd"))
-            .flatMap { diagram -> Single<[BusTimeEntity]> in
+        return provider.getBusDate(at: date.toFormat("YYYY-MM-dd"))
+            .flatMap { busDate -> Single<[BusTimeEntity]> in
                 let dateInRegion = DateInRegion(date, region: .current)
                 let second = dateInRegion.hour * 3600 + dateInRegion.minute * 60 + dateInRegion.second
-                return self.provider.getBusTimes(of: diagram, destination: destination, second: second)
+                return self.provider.getBusTimes(of: busDate.diagram, destination: destination, second: second)
             }
     }
 }

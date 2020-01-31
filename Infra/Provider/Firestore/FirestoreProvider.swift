@@ -27,7 +27,7 @@ public final class FirestoreProvider {
 
     // MARK: Firestore
 
-    public func getDiagram(at date: String) -> Single<BusDiagram> {
+    public func getBusDate(at date: String) -> Single<BusDateEntity> {
         return Single.create { observer in
             self.db.collection("calendar")
                 .whereField("date", isEqualTo: date)
@@ -37,12 +37,8 @@ public final class FirestoreProvider {
                     }
                     if let document = querySnapshot?.documents.first {
                         do {
-                            let busDate = try Firestore.Decoder().decode(BusDateEntity.self, from: document.data())
-                            
-                            guard let busDiagram = BusDiagram(rawValue: busDate.diagram) else {
-                                throw FirestoreError.unknownDiagram
-                            }
-                            observer(.success(busDiagram))
+                            let entity = try Firestore.Decoder().decode(BusDateEntity.self, from: document.data())
+                            observer(.success(entity))
                         } catch {
                             observer(.error(error))
                         }
@@ -54,17 +50,17 @@ public final class FirestoreProvider {
         }
     }
 
-    public func getBusTimes(of diagram: BusDiagram, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
+    public func getBusTimes(of diagram: String, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
         return Single.create { observer in
-            self.db.collection(diagram.rawValue + destination.rawValue)
+            self.db.collection(diagram + destination.rawValue)
                 .whereField("second", isGreaterThanOrEqualTo: second).getDocuments { (querySnapshot, error) in
                     if let error = error {
                         observer(.error(error))
                     }
                     if let documents = querySnapshot?.documents {
                         do {
-                            let busTimes = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
-                            observer(.success(busTimes))
+                            let entities = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
+                            observer(.success(entities))
                         } catch {
                             observer(.error(error))
                         }

@@ -22,7 +22,6 @@
 		71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */; };
 		71FF5C1C23E1B70D00456D75 /* BusListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */; };
 		A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA123E112C400E95FED /* BusDateEntity.swift */; };
-		A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA423E1130100E95FED /* BusDiagram.swift */; };
 		A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */; };
 		A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */; };
 		A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DAC23E11F9200E95FED /* BaseViewController.swift */; };
@@ -106,7 +105,6 @@
 		71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewController.swift; sourceTree = "<group>"; };
 		71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusListViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DA123E112C400E95FED /* BusDateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDateEntity.swift; sourceTree = "<group>"; };
-		A42D0DA423E1130100E95FED /* BusDiagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDiagram.swift; sourceTree = "<group>"; };
 		A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
 		A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DAC23E11F9200E95FED /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 		A42D0DA323E112F100E95FED /* Enum */ = {
 			isa = PBXGroup;
 			children = (
-				A42D0DA423E1130100E95FED /* BusDiagram.swift */,
 				A42D0DB123E1282B00E95FED /* BusDestination.swift */,
 			);
 			path = Enum;
@@ -733,7 +730,6 @@
 			files = (
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
-				A42D0DA523E1130100E95FED /* BusDiagram.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
 				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
