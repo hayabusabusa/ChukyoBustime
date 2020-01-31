@@ -22,9 +22,9 @@ final class PrototypeViewController: UIViewController {
     // MARK: Properties
     
     struct BusTimes: Decodable {
-        let times: [BusTime]
+        let times: [BusTimeEntity]
     }
-    private var busTimes: [BusTime]!
+    private var busTimes: [BusTimeEntity]!
     private let json = """
     {
         "times":
@@ -146,7 +146,7 @@ extension PrototypeViewController {
 
 extension PrototypeViewController {
     
-    private func interval(of busTime: BusTime) -> Int64 {
+    private func interval(of busTime: BusTimeEntity) -> Int64 {
         let dateInRegionOfToday = DateInRegion(Date(), region: .current)
         let dateInRegionOfBusTime = DateInRegion(year: dateInRegionOfToday.year,
                                                  month: dateInRegionOfToday.month,

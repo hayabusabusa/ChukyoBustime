@@ -37,7 +37,7 @@ public final class FirestoreProvider {
                     }
                     if let document = querySnapshot?.documents.first {
                         do {
-                            let busDate = try Firestore.Decoder().decode(BusDate.self, from: document.data())
+                            let busDate = try Firestore.Decoder().decode(BusDateEntity.self, from: document.data())
                             
                             guard let busDiagram = BusDiagram(rawValue: busDate.diagram) else {
                                 throw FirestoreError.unknownDiagram
@@ -54,7 +54,7 @@ public final class FirestoreProvider {
         }
     }
 
-    public func getBusTimes(of diagram: BusDiagram, destination: BusDestination, second: Int) -> Single<[BusTime]> {
+    public func getBusTimes(of diagram: BusDiagram, destination: BusDestination, second: Int) -> Single<[BusTimeEntity]> {
         return Single.create { observer in
             self.db.collection(diagram.rawValue + destination.rawValue)
                 .whereField("second", isGreaterThanOrEqualTo: second).getDocuments { (querySnapshot, error) in
@@ -63,7 +63,7 @@ public final class FirestoreProvider {
                     }
                     if let documents = querySnapshot?.documents {
                         do {
-                            let busTimes = try documents.map { try Firestore.Decoder().decode(BusTime.self, from: $0.data()) }
+                            let busTimes = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
                             observer(.success(busTimes))
                         } catch {
                             observer(.error(error))

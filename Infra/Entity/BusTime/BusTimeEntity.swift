@@ -1,5 +1,5 @@
 //
-//  BusTime.swift
+//  BusTimeEntity.swift
 //  Infra
 //
 //  Created by 山田隼也 on 2020/01/28.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BusTime: Decodable {
+public struct BusTimeEntity: Decodable {
     public let hour: Int
     public let minute: Int
     public let isReturn: Bool
