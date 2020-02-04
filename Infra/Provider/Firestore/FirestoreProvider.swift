@@ -30,14 +30,14 @@ public final class FirestoreProvider {
     public func getBusDate(at date: String) -> Single<BusDateEntity> {
         return Single.create { observer in
             self.db.collection("calendar")
-                .whereField("date", isEqualTo: date)
-                .getDocuments { (querySnapshot, error) in
+                .document(date)
+                .getDocument { (documentSnapshot, error) in
                     if let error = error {
                         observer(.error(error))
                     }
-                    if let document = querySnapshot?.documents.first {
+                    if let data = documentSnapshot?.data() {
                         do {
-                            let entity = try Firestore.Decoder().decode(BusDateEntity.self, from: document.data())
+                            let entity = try Firestore.Decoder().decode(BusDateEntity.self, from: data)
                             observer(.success(entity))
                         } catch {
                             observer(.error(error))
