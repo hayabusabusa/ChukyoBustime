@@ -20,6 +20,8 @@ final class ToCollegeViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var viewModel: ToCollegeViewModel!
+    
     // MARK: Lifecycle
     
     static func instantiate() -> ToCollegeViewController {
@@ -59,6 +61,17 @@ extension ToCollegeViewController {
 extension ToCollegeViewController {
     
     private func bindViewModel() {
+        let viewModel = ToCollegeViewModel()
+        self.viewModel = viewModel
         
+        let input = ToCollegeViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        let diagram = DiagramViewController.configure(with: output.diagramDriver)
+        embed(diagram, to: layoutDiagramView)
+        let countdown = CountdownViewController.configure(with: .station, busTimesDriver: output.busTimesDriver)
+        embed(countdown, to: layoutCountdownView)
+        let busList = BusListViewController.configure(with: .station, busTimesDriver: output.busTimesDriver)
+        embed(busList, to: layoutBusListView)
     }
 }

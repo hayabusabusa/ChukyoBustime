@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
+		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
 		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
 		71A329E723E04FB700EB7A55 /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A329E523E04FB700EB7A55 /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
@@ -102,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
+		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
 		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		71A329E323E04FB700EB7A55 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A329E523E04FB700EB7A55 /* Infra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infra.h; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 			isa = PBXGroup;
 			children = (
 				71910BC023EB101E00132A7D /* ToCollegeModel.swift */,
+			);
+			path = ToCollege;
+			sourceTree = "<group>";
+		};
+		71910BC223EB113200132A7D /* ToCollege */ = {
+			isa = PBXGroup;
+			children = (
+				71910BC323EB116200132A7D /* ToCollegeViewModel.swift */,
 			);
 			path = ToCollege;
 			sourceTree = "<group>";
@@ -456,6 +466,7 @@
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
 				A4A7394E23E3CFA000F7C1A9 /* Child */,
 				A4A7393523E3B4A800F7C1A9 /* ToStation */,
+				71910BC223EB113200132A7D /* ToCollege */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -866,6 +877,7 @@
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
+				71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
 				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
