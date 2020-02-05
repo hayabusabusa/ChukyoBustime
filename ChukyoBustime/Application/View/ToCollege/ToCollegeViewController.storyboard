@@ -11,17 +11,77 @@
         <!--To College View Controller-->
         <scene sceneID="Q0M-Te-j6L">
             <objects>
-                <viewController id="gc1-Dt-YmQ" customClass="ToCollegeViewController" customModule="ChukyoBustime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gc1-Dt-YmQ" customClass="ToCollegeViewController" customModule="中京大学バス" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FWH-RZ-B8C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-sT-lJX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-KW-TZu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzF-ED-zh5">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="96" id="fc4-xI-u3z"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-6G-XOA">
+                                                <rect key="frame" x="0.0" y="108" width="414" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="rBM-Na-2tM"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR1-b4-OPp">
+                                                <rect key="frame" x="0.0" y="320" width="414" height="80"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="08V-mL-sdk"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-2H-Jbi">
+                                                <rect key="frame" x="0.0" y="412" width="414" height="248"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="248" id="XIW-V5-aD1"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7ic-KW-TZu" secondAttribute="trailing" id="7zI-Oq-y1c"/>
+                                    <constraint firstAttribute="bottom" secondItem="7ic-KW-TZu" secondAttribute="bottom" id="8FT-yP-ZIT"/>
+                                    <constraint firstItem="7ic-KW-TZu" firstAttribute="leading" secondItem="Y6m-sT-lJX" secondAttribute="leading" id="AmP-lP-Npj"/>
+                                    <constraint firstItem="7ic-KW-TZu" firstAttribute="width" secondItem="Y6m-sT-lJX" secondAttribute="width" id="KIB-ev-p42"/>
+                                    <constraint firstItem="7ic-KW-TZu" firstAttribute="top" secondItem="Y6m-sT-lJX" secondAttribute="top" id="WhE-Jn-m0s"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Y6m-sT-lJX" secondAttribute="bottom" id="5bE-y3-gx7"/>
+                            <constraint firstItem="Y6m-sT-lJX" firstAttribute="leading" secondItem="a14-IT-8zh" secondAttribute="leading" id="SZO-u5-mkE"/>
+                            <constraint firstItem="a14-IT-8zh" firstAttribute="trailing" secondItem="Y6m-sT-lJX" secondAttribute="trailing" id="YQz-Ei-9ih"/>
+                            <constraint firstItem="Y6m-sT-lJX" firstAttribute="top" secondItem="a14-IT-8zh" secondAttribute="top" id="n0M-50-LvQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a14-IT-8zh"/>
                     </view>
+                    <connections>
+                        <outlet property="layoutBusListView" destination="vSe-2H-Jbi" id="R2r-Rf-vNO"/>
+                        <outlet property="layoutCountdownView" destination="Eno-6G-XOA" id="hDv-5K-2mJ"/>
+                        <outlet property="layoutDiagramView" destination="vzF-ED-zh5" id="lrg-wx-8r6"/>
+                        <outlet property="layoutPdfButtonsView" destination="vR1-b4-OPp" id="5r6-Hz-Mto"/>
+                        <outlet property="scrollView" destination="Y6m-sT-lJX" id="Mbo-ty-7vz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGp-uJ-S5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="-214"/>
+            <point key="canvasLocation" x="547.82608695652175" y="-214.28571428571428"/>
         </scene>
     </scenes>
 </document>
