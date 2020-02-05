@@ -54,9 +54,9 @@ extension BusListViewController {
             departurePoint = "大学発"
             arrivalPoint = "浄水駅着"
         }
-        firstBusListView.setupView(number: 1, departurePoint: departurePoint, arrivalPoint: arrivalPoint)
-        secondBusListView.setupView(number: 2, departurePoint: departurePoint, arrivalPoint: arrivalPoint)
-        thirdBusListView.setupView(number: 3, departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        firstBusListView.setupView(number: 1, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        secondBusListView.setupView(number: 2, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        thirdBusListView.setupView(number: 3, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
     }
 }
 

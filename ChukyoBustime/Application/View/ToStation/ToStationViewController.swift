@@ -48,7 +48,8 @@ extension ToStationViewController {
     }
     
     private func setupScrollView() {
-        scrollView.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0)
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
     }
     
     private func setupChildren() {
