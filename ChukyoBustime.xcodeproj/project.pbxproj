@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
 		71A329E723E04FB700EB7A55 /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A329E523E04FB700EB7A55 /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
@@ -100,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		71A329E323E04FB700EB7A55 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A329E523E04FB700EB7A55 /* Infra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infra.h; sourceTree = "<group>"; };
@@ -198,6 +200,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71910BBF23EB100300132A7D /* ToCollege */ = {
+			isa = PBXGroup;
+			children = (
+				71910BC023EB101E00132A7D /* ToCollegeModel.swift */,
+			);
+			path = ToCollege;
+			sourceTree = "<group>";
+		};
 		71A329D323DF03F000EB7A55 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +437,7 @@
 				A4A7394023E3BEDF00F7C1A9 /* Objects */,
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
+				71910BBF23EB100300132A7D /* ToCollege */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -857,6 +868,7 @@
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
+				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
