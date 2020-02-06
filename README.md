@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/31949692/73919825-a29cb880-4907-11ea-8d4b-9e43cfd361b2.png"  title="AppIcon">
+    <img src="https://github.com/hayabusabusa/ChukyoBustime/blob/develop/Images/app_icon.png"  title="AppIcon">
 </div>
 中京大学スクールバスの**非公式**アプリです。
 
