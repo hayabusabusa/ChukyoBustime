@@ -12,6 +12,9 @@ struct BusTime {
     let hour: Int
     let minute: Int
     let second: Int
+    let arrivalHour: Int
+    let arrivalMinute: Int
+    let arrivalSecond: Int
     let isReturn: Bool
     let isLast: Bool
 }

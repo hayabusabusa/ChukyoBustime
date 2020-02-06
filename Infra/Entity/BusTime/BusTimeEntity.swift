@@ -12,6 +12,9 @@ public struct BusTimeEntity: Decodable {
     public let hour: Int
     public let minute: Int
     public let second: Int
+    public let arrivalHour: Int
+    public let arrivalMinute: Int
+    public let arrivalSecond: Int
     public let isReturn: Bool
     public let isLast: Bool
     
@@ -19,6 +22,9 @@ public struct BusTimeEntity: Decodable {
         case hour
         case minute
         case second
+        case arrivalHour
+        case arrivalMinute
+        case arrivalSecond
         case isReturn
         case isLast
     }

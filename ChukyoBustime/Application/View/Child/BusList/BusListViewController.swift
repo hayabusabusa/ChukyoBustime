@@ -67,23 +67,20 @@ extension BusListViewController {
     private func updateBusList(first: BusTime?, second: BusTime?, third: BusTime?) {
         // TODO: この辺りTabelViewにしてしまえばもう少しうまく書けるかもしれない
         if let first = first {
-            let arrivalSecond = first.second + 900
             firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
-                                  arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+                                  arrivalTime: String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute))
         } else {
             firstBusListView.hide()
         }
         if let second = second {
-            let arrivalSecond = second.second + 900
             secondBusListView.show(departureTime: String(format: "%i:%02i", second.hour, second.minute),
-                                   arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+                                   arrivalTime: String(format: "%i:%02i", second.arrivalHour, second.arrivalMinute))
         } else {
             secondBusListView.hide()
         }
         if let third = third {
-            let arrivalSecond = third.second + 900
             thirdBusListView.show(departureTime: String(format: "%i:%02i", third.hour, third.minute),
-                                  arrivalTime: String(format: "%i:%02i", arrivalSecond / 3600, arrivalSecond / 60 % 60))
+                                  arrivalTime: String(format: "%i:%02i", third.arrivalHour, third.arrivalMinute))
         } else {
             thirdBusListView.hide()
         }
