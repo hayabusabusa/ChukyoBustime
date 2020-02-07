@@ -14,6 +14,8 @@ final class SettingViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var viewModel: SettingViewModel!
+    
     // MARK: Lifecycle
     
     static func instantiate() -> SettingViewController {
@@ -23,6 +25,7 @@ final class SettingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        bindViewModel()
     }
 }
 
@@ -33,5 +36,23 @@ extension SettingViewController {
     private func setupNavigation() {
         navigationItem.title = "設定"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: .done, target: nil, action: nil)
+    }
+}
+
+// MARK: - ViewModel
+
+extension SettingViewController {
+    
+    private func bindViewModel() {
+        let viewModel = SettingViewModel()
+        self.viewModel = viewModel
+        
+        let closeBarButton = navigationItem.rightBarButtonItem!
+        let input = SettingViewModel.Input(closeBarButtonDidTap: closeBarButton.rx.tap.asSignal())
+        let output = viewModel.transform(input: input)
+        
+        output.dismiss
+            .drive(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
     }
 }
