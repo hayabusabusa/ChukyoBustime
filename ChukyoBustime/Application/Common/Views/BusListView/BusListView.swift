@@ -71,9 +71,9 @@ class BusListView: UIView {
     
     func hide() {
         departurePointLabel.isHidden = true
-        departureTimeLabel.text = nil
+        departureTimeLabel.text = ""
         centerIconImageView.image = UIImage(named: "ic_hyphen")
         arrivalPointLabel.isHidden = true
-        arrivalTimeLabel.text = nil
+        arrivalTimeLabel.text = ""
     }
 }
