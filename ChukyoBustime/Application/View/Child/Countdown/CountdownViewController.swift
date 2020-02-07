@@ -27,15 +27,15 @@ final class CountdownViewController: BaseViewController {
     
     // MARK: Lifecycle
     
-    static func configure(with destination: Destination, busTimesDriver: Driver<[BusTime]>) -> CountdownViewController {
+    static func configure(with viewModel: CountdownViewModel) -> CountdownViewController {
         let vc = Storyboard.CountdownViewController.instantiate(CountdownViewController.self)
-        vc.viewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: destination,
-                                                                                    busTimesDriver: busTimesDriver))
+        vc.viewModel = viewModel
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
         bindView()
     }
 }
@@ -63,6 +63,15 @@ extension CountdownViewController {
 // MARK: ViewModel
 
 extension CountdownViewController {
+    
+    private func bindViewModel() {
+        let input = CountdownViewModel.Input()
+        let output = viewModel.transform(input: input)
+        
+        output.timerDriver
+            .drive(countdownLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
     
     private func bindView() {
         setupViews(with: viewModel.dependency.destination)

@@ -23,10 +23,9 @@ final class BusListViewController: BaseViewController {
     
     // MARK: Lifecycle
     
-    static func configure(with destination: Destination, busTimesDriver: Driver<[BusTime]>) -> BusListViewController {
+    static func configure(with viewModel: BusListViewModel) -> BusListViewController {
         let vc = Storyboard.BusListViewController.instantiate(BusListViewController.self)
-        vc.viewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: destination,
-                                                                                busTimesDriver: busTimesDriver))
+        vc.viewModel = viewModel
         return vc
     }
     

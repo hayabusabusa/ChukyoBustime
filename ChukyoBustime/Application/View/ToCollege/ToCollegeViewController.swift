@@ -67,11 +67,11 @@ extension ToCollegeViewController {
         let input = ToCollegeViewModel.Input()
         let output = viewModel.transform(input: input)
         
-        let diagram = DiagramViewController.configure(with: output.diagramDriver)
+        let diagram = DiagramViewController.configure(with: output.children.diagramViewModel)
         embed(diagram, to: layoutDiagramView)
-        let countdown = CountdownViewController.configure(with: .station, busTimesDriver: output.busTimesDriver)
+        let countdown = CountdownViewController.configure(with: output.children.countdownViewModel)
         embed(countdown, to: layoutCountdownView)
-        let busList = BusListViewController.configure(with: .station, busTimesDriver: output.busTimesDriver)
+        let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
     }
 }

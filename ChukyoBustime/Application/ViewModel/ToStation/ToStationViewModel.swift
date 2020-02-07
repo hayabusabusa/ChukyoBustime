@@ -29,6 +29,10 @@ final class ToStationViewModel {
 
 extension ToStationViewModel: ViewModelType {
     
+    typealias Children = (diagramViewModel: DiagramViewModel,
+                          countdownViewModel: CountdownViewModel,
+                          busListViewModel: BusListViewModel)
+    
     // MARK: I/O
     
     struct Input {
@@ -36,8 +40,7 @@ extension ToStationViewModel: ViewModelType {
     }
     
     struct Output {
-        let diagramDriver: Driver<String>
-        let busTimesDriver: Driver<[BusTime]>
+        let children: Children
     }
     
     // MARK: Transform I/O
@@ -56,7 +59,14 @@ extension ToStationViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
-        return Output(diagramDriver: diagramRelay.asDriver(),
-                      busTimesDriver: busTimesRelay.asDriver())
+        let diagramDriver: Driver<String> = diagramRelay.asDriver()
+        let busTimesDriver: Driver<[BusTime]> = busTimesRelay.asDriver()
+        let diagramViewModel = DiagramViewModel(dependency: diagramDriver)
+        let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: .station, busTimesDriver: busTimesDriver))
+        let busListViewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimesDriver))
+        
+        return Output(children: Children(diagramViewModel: diagramViewModel,
+                                         countdownViewModel: countdownViewModel,
+                                         busListViewModel: busListViewModel))
     }
 }

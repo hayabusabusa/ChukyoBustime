@@ -21,9 +21,9 @@ final class DiagramViewController: BaseViewController {
     
     // MARK: Lifecycle
     
-    static func configure(with diagramDriver: Driver<String>) -> DiagramViewController {
+    static func configure(with viewModel: DiagramViewModel) -> DiagramViewController {
         let vc = Storyboard.DiagramViewController.instantiate(DiagramViewController.self)
-        vc.viewModel = DiagramViewModel(dependency: diagramDriver)
+        vc.viewModel = viewModel
         return vc
     }
     
