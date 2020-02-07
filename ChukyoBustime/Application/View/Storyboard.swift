@@ -13,6 +13,7 @@ enum Storyboard: String {
     case TabBarController
     case ToCollegeViewController
     case ToStationViewController
+    case SettingViewController
     case PrototypeViewController
     // - Child View Controller
     case DiagramViewController
