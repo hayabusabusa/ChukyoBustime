@@ -31,4 +31,4 @@ make bootstrap
 ## Design
 
 - Atomic Design
-- Figma
+- [Figma](https://www.figma.com/file/ReIySQcR65ncs8k2cYGo1i/CHKBus-App-Design?node-id=3%3A195)
