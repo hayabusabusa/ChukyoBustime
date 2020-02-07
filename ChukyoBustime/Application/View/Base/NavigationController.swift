@@ -43,7 +43,7 @@ extension NavigationController {
 extension NavigationController {
     
     private func setupBackButton(_ viewController: UIViewController) {
-        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let backButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         viewController.navigationItem.leftBarButtonItem = backButtonItem
     }
 }

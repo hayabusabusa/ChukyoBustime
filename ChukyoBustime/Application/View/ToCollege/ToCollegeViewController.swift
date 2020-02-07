@@ -43,6 +43,7 @@ extension ToCollegeViewController {
     
     private func setupNavigation() {
         navigationItem.title = "大学行き"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_setting"), style: .plain, target: nil, action: nil)
     }
     
     private func setupScrollView() {
@@ -64,7 +65,8 @@ extension ToCollegeViewController {
         let viewModel = ToCollegeViewModel()
         self.viewModel = viewModel
         
-        let input = ToCollegeViewModel.Input()
+        let settingBarButton = navigationItem.rightBarButtonItem!
+        let input = ToCollegeViewModel.Input(settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
         let diagram = DiagramViewController.configure(with: output.children.diagramViewModel)
@@ -73,5 +75,19 @@ extension ToCollegeViewController {
         embed(countdown, to: layoutCountdownView)
         let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
+        
+        output.presentSetting
+            .drive(onNext: { [weak self] in self?.presentSetting() })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Transition
+
+extension ToCollegeViewController {
+    
+    private func presentSetting() {
+        let vc = NavigationController(rootViewController: SettingViewController.instantiate())
+        present(vc, animated: true, completion: nil)
     }
 }

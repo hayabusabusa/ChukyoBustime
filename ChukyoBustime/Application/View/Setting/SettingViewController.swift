@@ -32,5 +32,6 @@ extension SettingViewController {
     
     private func setupNavigation() {
         navigationItem.title = "設定"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: .done, target: nil, action: nil)
     }
 }

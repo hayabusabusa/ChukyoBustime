@@ -36,11 +36,12 @@ extension ToStationViewModel: ViewModelType {
     // MARK: I/O
     
     struct Input {
-        
+        let settingBarButtonDidTap: Signal<Void>
     }
     
     struct Output {
         let children: Children
+        let presentSetting: Driver<Void>
     }
     
     // MARK: Transform I/O
@@ -67,6 +68,7 @@ extension ToStationViewModel: ViewModelType {
         
         return Output(children: Children(diagramViewModel: diagramViewModel,
                                          countdownViewModel: countdownViewModel,
-                                         busListViewModel: busListViewModel))
+                                         busListViewModel: busListViewModel),
+                      presentSetting: input.settingBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
     }
 }
