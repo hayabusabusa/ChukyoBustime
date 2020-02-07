@@ -77,7 +77,6 @@
 		A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
 		A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
 		A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
-		A4B03F5F23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4B03F5E23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,7 +177,6 @@
 		A4B03F0123DE8B130069F7E8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
-		A4B03F5E23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,7 +680,6 @@
 			isa = PBXGroup;
 			children = (
 				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
-				A4B03F5E23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -792,7 +789,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4B03F5F23DED06C0069F7E8 /* gRPCCertificates-Cpp.bundle in Resources */,
 				A4AC23A723E2C1D30012439D /* PdfButtonsViewController.storyboard in Resources */,
 				A42D0DCC23E1669900E95FED /* TabBarController.storyboard in Resources */,
 				A42D0DD323E1681700E95FED /* ToCollegeViewController.storyboard in Resources */,
