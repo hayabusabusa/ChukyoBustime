@@ -15,7 +15,7 @@ final class CountdownViewModel {
     
     // MARK: Dependency
     
-    typealias Dependency = (destination: Destination, busTimesDriver: Driver<[BusTime]>)
+    typealias Dependency = (destination: Destination, countupRelay: PublishRelay<Void>, busTimesDriver: Driver<[BusTime]>)
     
     let dependency: Dependency
     
@@ -48,6 +48,7 @@ extension CountdownViewModel: ViewModelType {
     
     func transform(input: CountdownViewModel.Input) -> CountdownViewModel.Output {
         let isValidRelay: BehaviorRelay<Bool> = .init(value: false)
+        let countupRelay: PublishRelay<Void> = dependency.countupRelay
         let timerRelay: BehaviorRelay<Int> = .init(value: 0)
         
         dependency.busTimesDriver
@@ -67,6 +68,7 @@ extension CountdownViewModel: ViewModelType {
             .share(replay: 1, scope: .forever)
             .subscribe(onNext: { _ in
                 if timerRelay.value <= 0 {
+                    countupRelay.accept(())
                     isValidRelay.accept(false)
                 } else {
                     timerRelay.accept(timerRelay.value - 1)

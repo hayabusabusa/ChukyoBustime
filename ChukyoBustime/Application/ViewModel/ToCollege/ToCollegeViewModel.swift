@@ -49,6 +49,7 @@ extension ToCollegeViewModel: ViewModelType {
     func transform(input: ToCollegeViewModel.Input) -> ToCollegeViewModel.Output {
         let diagramRelay: BehaviorRelay<String> = .init(value: "")
         let busTimesRelay: BehaviorRelay<[BusTime]> = .init(value: [])
+        let countupRelay: PublishRelay<Void> = .init()
         
         let now = Date()
         model.getBusTimes(at: now)
@@ -60,10 +61,23 @@ extension ToCollegeViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        // NOTE: Update current busTime array.
+        countupRelay.asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                var busTimes = busTimesRelay.value
+                if busTimes.isEmpty {
+                    busTimesRelay.accept([])
+                } else {
+                    busTimes.removeFirst()
+                    busTimesRelay.accept(busTimes)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         let diagramDriver: Driver<String> = diagramRelay.asDriver()
         let busTimesDriver: Driver<[BusTime]> = busTimesRelay.asDriver()
         let diagramViewModel = DiagramViewModel(dependency: diagramDriver)
-        let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: .college, busTimesDriver: busTimesDriver))
+        let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: .college, countupRelay: countupRelay, busTimesDriver: busTimesDriver))
         let busListViewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: .college, busTimesDriver: busTimesDriver))
         
         return Output(children: Children(diagramViewModel: diagramViewModel,
