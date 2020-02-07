@@ -71,6 +71,12 @@ extension CountdownViewController {
         output.timerDriver
             .drive(countdownLabel.rx.text)
             .disposed(by: disposeBag)
+        output.departureTimeDriver
+            .drive(departureTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.arrivalTimeDriver
+            .drive(arrivalTimeLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func bindView() {

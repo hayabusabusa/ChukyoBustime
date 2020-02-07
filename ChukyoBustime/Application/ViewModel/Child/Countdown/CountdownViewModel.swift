@@ -40,6 +40,8 @@ extension CountdownViewModel: ViewModelType {
     
     struct Output {
         let timerDriver: Driver<String>
+        let departureTimeDriver: Driver<String>
+        let arrivalTimeDriver: Driver<String>
     }
     
     // MARK: Transform I/O
@@ -75,6 +77,18 @@ extension CountdownViewModel: ViewModelType {
         let timerDriver = timerRelay
             .map { String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) }
             .asDriver(onErrorDriveWith: .empty())
-        return Output(timerDriver: timerDriver)
+        let departureTimeDriver: Driver<String> = dependency.busTimesDriver
+            .map { busTimes in
+                guard let first = busTimes.first else { return " " }
+                return String(format: "%i:%02i", first.hour, first.minute)
+            }
+        let arrivalTimeDriver: Driver<String> = dependency.busTimesDriver
+            .map { busTimes in
+                guard let first = busTimes.first else { return " " }
+                return String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute)
+            }
+        return Output(timerDriver: timerDriver,
+                      departureTimeDriver: departureTimeDriver,
+                      arrivalTimeDriver: arrivalTimeDriver)
     }
 }
