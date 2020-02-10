@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */; };
+		7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */; };
+		71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */; };
+		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
 		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
@@ -104,6 +108,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
+		7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigType.swift; sourceTree = "<group>"; };
+		71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPdfUrlEntity.swift; sourceTree = "<group>"; };
+		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
 		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -206,6 +214,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7114165823EE84E600FBFB7E /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */,
+				717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */,
+				7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		71536D5423F1614F004A330C /* PDFUrl */ = {
+			isa = PBXGroup;
+			children = (
+				71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */,
+			);
+			path = PDFUrl;
+			sourceTree = "<group>";
+		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +277,7 @@
 		71A32A5D23E0835200EB7A55 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				7114165823EE84E600FBFB7E /* RemoteConfig */,
 				A4AC23AA23E2D6AD0012439D /* Firestore */,
 			);
 			path = Provider;
@@ -262,6 +289,7 @@
 				A42D0DA323E112F100E95FED /* Enum */,
 				A42D0DA023E112A100E95FED /* BusDate */,
 				71A32A6C23E083BB00EB7A55 /* BusTime */,
+				71536D5423F1614F004A330C /* PDFUrl */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -879,10 +907,14 @@
 			files = (
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
+				71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
 				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
+				7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */,
 				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
+				717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */,
+				7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
