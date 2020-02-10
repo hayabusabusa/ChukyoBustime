@@ -40,8 +40,8 @@ extension PdfButtonsViewController {
         let viewModel = PdfButtonsViewModel()
         self.viewModel = viewModel
         
-        let input = PdfButtonsViewModel.Input(calendarButtonDidTap: calendarButton.rx.tap.asDriver(),
-                                              timeTableButtonDidTap: timeTableButton.rx.tap.asDriver())
+        let input = PdfButtonsViewModel.Input(calendarButtonDidTap: calendarButton.rx.tap.asSignal(),
+                                              timeTableButtonDidTap: timeTableButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
         output.presentSafari

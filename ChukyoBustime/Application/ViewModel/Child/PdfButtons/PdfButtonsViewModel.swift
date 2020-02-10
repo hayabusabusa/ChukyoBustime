@@ -14,11 +14,17 @@ final class PdfButtonsViewModel {
     
     // MARK: Dependency
     
+    private let model: PdfButtonsModel
+    
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
     
     // MARK: Initializer
+    
+    init(model: PdfButtonsModel = PdfButtonsModelImpl()) {
+        self.model = model
+    }
 }
 
 extension PdfButtonsViewModel: ViewModelType {
@@ -26,8 +32,8 @@ extension PdfButtonsViewModel: ViewModelType {
     // MARK: I/O
     
     struct Input {
-        let calendarButtonDidTap: Driver<Void>
-        let timeTableButtonDidTap: Driver<Void>
+        let calendarButtonDidTap: Signal<Void>
+        let timeTableButtonDidTap: Signal<Void>
     }
     
     struct Output {
@@ -38,22 +44,25 @@ extension PdfButtonsViewModel: ViewModelType {
     
     func transform(input: PdfButtonsViewModel.Input) -> PdfButtonsViewModel.Output {
         let presentSafariRelay: PublishRelay<URL> = .init()
+        let pdfUrlSignal: Signal<PdfUrl> = model.getPdfUrl()
+            .asSignal { error -> SharedSequence<SignalSharingStrategy, PdfUrl> in
+                // TODO: Error handling
+                return .empty()
+            }
         
         input.calendarButtonDidTap
-            .drive(onNext: { _ in
-                // TODO: Replace firebase remote config
-                if let url = URL(string: "https://www.chukyo-u.ac.jp/support/pdf/studentlife/buscallender2019.pdf") {
-                    presentSafariRelay.accept(url)
-                }
-            })
+            .flatMapLatest { return pdfUrlSignal }
+            .map { URL(string: $0.calendar) }
+            .filter { $0 != nil }
+            .map { $0! }
+            .emit(to: presentSafariRelay)
             .disposed(by: disposeBag)
         input.timeTableButtonDidTap
-            .drive(onNext: { _ in
-                // TODO: Replace firebase remote config
-                if let url = URL(string: "https://www.chukyo-u.ac.jp/support/pdf/studentlife/bustime.pdf") {
-                    presentSafariRelay.accept(url)
-                }
-            })
+            .flatMapLatest { return pdfUrlSignal }
+            .map { URL(string: $0.timeTable) }
+            .filter { $0 != nil } // RxOptional ?
+            .map { $0! }
+            .emit(to: presentSafariRelay)
             .disposed(by: disposeBag)
         
         return Output(presentSafari: presentSafariRelay.asDriver(onErrorDriveWith: .empty()))
