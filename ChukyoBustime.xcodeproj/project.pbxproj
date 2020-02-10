@@ -236,12 +236,12 @@
 			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
-		71536D5423F1614F004A330C /* PDFUrl */ = {
+		71536D5423F1614F004A330C /* RCPdfUrl */ = {
 			isa = PBXGroup;
 			children = (
 				71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */,
 			);
-			path = PDFUrl;
+			path = RCPdfUrl;
 			sourceTree = "<group>";
 		};
 		71536D5C23F175F5004A330C /* Root */ = {
@@ -341,7 +341,7 @@
 				A42D0DA323E112F100E95FED /* Enum */,
 				A42D0DA023E112A100E95FED /* BusDate */,
 				71A32A6C23E083BB00EB7A55 /* BusTime */,
-				71536D5423F1614F004A330C /* PDFUrl */,
+				71536D5423F1614F004A330C /* RCPdfUrl */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
