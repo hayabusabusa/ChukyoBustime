@@ -10,6 +10,9 @@
 		7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */; };
 		7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */; };
 		71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */; };
+		71536D5E23F17604004A330C /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5D23F17604004A330C /* RootModel.swift */; };
+		71536D6023F176D9004A330C /* PdfUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5F23F176D9004A330C /* PdfUrl.swift */; };
+		71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6223F17706004A330C /* PdfUrlTranslator.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -111,6 +114,9 @@
 		7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
 		7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigType.swift; sourceTree = "<group>"; };
 		71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPdfUrlEntity.swift; sourceTree = "<group>"; };
+		71536D5D23F17604004A330C /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
+		71536D5F23F176D9004A330C /* PdfUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrl.swift; sourceTree = "<group>"; };
+		71536D6223F17706004A330C /* PdfUrlTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrlTranslator.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -230,6 +236,22 @@
 				71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */,
 			);
 			path = PDFUrl;
+			sourceTree = "<group>";
+		};
+		71536D5C23F175F5004A330C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				71536D5D23F17604004A330C /* RootModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		71536D6123F176F6004A330C /* PdfUrl */ = {
+			isa = PBXGroup;
+			children = (
+				71536D6223F17706004A330C /* PdfUrlTranslator.swift */,
+			);
+			path = PdfUrl;
 			sourceTree = "<group>";
 		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
@@ -495,6 +517,7 @@
 			children = (
 				A4A7394023E3BEDF00F7C1A9 /* Objects */,
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
+				71536D5C23F175F5004A330C /* Root */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 			);
@@ -536,6 +559,7 @@
 				A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */,
 				A4A7394B23E3C02F00F7C1A9 /* BusDate */,
 				71A5A61E23E453550033E2CB /* BusList */,
+				71536D6123F176F6004A330C /* PdfUrl */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -546,6 +570,7 @@
 				A4A7395423E3E91800F7C1A9 /* Destination.swift */,
 				A4A7394223E3BF1100F7C1A9 /* BusDate.swift */,
 				A4A7394423E3BF2E00F7C1A9 /* BusTime.swift */,
+				71536D5F23F176D9004A330C /* PdfUrl.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -922,9 +947,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71536D5E23F17604004A330C /* RootModel.swift in Sources */,
 				A42D0DB623E13AFE00E95FED /* UIViewController+Extension.swift in Sources */,
 				A403367123ED0B6A003F1A45 /* SettingViewModel.swift in Sources */,
 				A4AC23A523E2C1B60012439D /* PdfButtonsViewController.swift in Sources */,
+				71536D6023F176D9004A330C /* PdfUrl.swift in Sources */,
 				A4A7395523E3E91800F7C1A9 /* Destination.swift in Sources */,
 				71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */,
 				A4A7395C23E3F7FA00F7C1A9 /* BusListViewModel.swift in Sources */,
@@ -950,6 +977,7 @@
 				A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
+				71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
 				A4A7395823E3EAFC00F7C1A9 /* CountdownViewModel.swift in Sources */,
 				A42D0DEB23E17F8E00E95FED /* DiagramViewController.swift in Sources */,
