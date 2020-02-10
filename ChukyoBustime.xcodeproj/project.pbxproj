@@ -13,6 +13,8 @@
 		71536D5E23F17604004A330C /* RootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5D23F17604004A330C /* RootModel.swift */; };
 		71536D6023F176D9004A330C /* PdfUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5F23F176D9004A330C /* PdfUrl.swift */; };
 		71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6223F17706004A330C /* PdfUrlTranslator.swift */; };
+		71536D6623F177BB004A330C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6523F177BB004A330C /* RootViewModel.swift */; };
+		71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6723F17922004A330C /* UIViewController+Rx.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -117,6 +119,8 @@
 		71536D5D23F17604004A330C /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		71536D5F23F176D9004A330C /* PdfUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrl.swift; sourceTree = "<group>"; };
 		71536D6223F17706004A330C /* PdfUrlTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrlTranslator.swift; sourceTree = "<group>"; };
+		71536D6523F177BB004A330C /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		71536D6723F17922004A330C /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +256,14 @@
 				71536D6223F17706004A330C /* PdfUrlTranslator.swift */,
 			);
 			path = PdfUrl;
+			sourceTree = "<group>";
+		};
+		71536D6423F177A7004A330C /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				71536D6523F177BB004A330C /* RootViewModel.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
@@ -426,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */,
+				71536D6723F17922004A330C /* UIViewController+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -536,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
+				71536D6423F177A7004A330C /* Root */,
 				A4A7394E23E3CFA000F7C1A9 /* Child */,
 				A4A7393523E3B4A800F7C1A9 /* ToStation */,
 				71910BC223EB113200132A7D /* ToCollege */,
@@ -955,6 +969,7 @@
 				A4A7395523E3E91800F7C1A9 /* Destination.swift in Sources */,
 				71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */,
 				A4A7395C23E3F7FA00F7C1A9 /* BusListViewModel.swift in Sources */,
+				71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
@@ -969,6 +984,7 @@
 				A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */,
 				A403366B23ED034A003F1A45 /* SettingViewController.swift in Sources */,
 				A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */,
+				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
 				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,

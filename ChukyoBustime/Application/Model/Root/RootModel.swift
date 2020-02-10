@@ -13,6 +13,7 @@ import RxSwift
 // MARK: - Interface
 
 protocol RootModel: AnyObject {
+    func fetchAndActivate() -> Completable
     func getPdfUrl() -> Single<PdfUrl>
 }
 
@@ -31,6 +32,10 @@ class RootModelImpl: RootModel {
     }
     
     // MARK: Remote Config
+    
+    func fetchAndActivate() -> Completable {
+        return remoteConfigProvider.fetchAndActivate()
+    }
     
     func getPdfUrl() -> Single<PdfUrl> {
         return remoteConfigProvider
