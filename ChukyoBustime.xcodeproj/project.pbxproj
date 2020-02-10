@@ -15,6 +15,7 @@
 		71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6223F17706004A330C /* PdfUrlTranslator.swift */; };
 		71536D6623F177BB004A330C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6523F177BB004A330C /* RootViewModel.swift */; };
 		71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6723F17922004A330C /* UIViewController+Rx.swift */; };
+		71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -121,6 +122,7 @@
 		71536D6223F17706004A330C /* PdfUrlTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrlTranslator.swift; sourceTree = "<group>"; };
 		71536D6523F177BB004A330C /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		71536D6723F17922004A330C /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -264,6 +266,22 @@
 				71536D6523F177BB004A330C /* RootViewModel.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		71536D6923F17DFE004A330C /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				71536D6A23F17E0A004A330C /* PdfButtons */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
+		71536D6A23F17E0A004A330C /* PdfButtons */ = {
+			isa = PBXGroup;
+			children = (
+				71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */,
+			);
+			path = PdfButtons;
 			sourceTree = "<group>";
 		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
@@ -531,6 +549,7 @@
 				A4A7394023E3BEDF00F7C1A9 /* Objects */,
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				71536D5C23F175F5004A330C /* Root */,
+				71536D6923F17DFE004A330C /* Child */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 			);
@@ -979,6 +998,7 @@
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
 				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
+				71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
 				A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */,

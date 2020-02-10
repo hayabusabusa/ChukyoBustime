@@ -1,5 +1,5 @@
 //
-//  RootModel.swift
+//  PdfButtonsModel.swift
 //  ChukyoBustime
 //
 //  Created by 山田隼也 on 2020/02/10.
@@ -12,13 +12,13 @@ import RxSwift
 
 // MARK: - Interface
 
-protocol RootModel: AnyObject {
-    func fetchAndActivate() -> Completable
+protocol PdfButtonsModel: AnyObject {
+    func getPdfUrl() -> Single<PdfUrl>
 }
 
 // MARK: - Implementation
 
-class RootModelImpl: RootModel {
+class PdfButtonsModelImpl: PdfButtonsModel {
     
     // MARK: Dependency
     
@@ -32,7 +32,9 @@ class RootModelImpl: RootModel {
     
     // MARK: Remote Config
     
-    func fetchAndActivate() -> Completable {
-        return remoteConfigProvider.fetchAndActivate()
+    func getPdfUrl() -> Single<PdfUrl> {
+        return remoteConfigProvider
+            .getConfigValue(for: .pdfUrl, configType: RCPdfUrlEntity.self)
+            .translate(PdfUrlTranslator())
     }
 }
