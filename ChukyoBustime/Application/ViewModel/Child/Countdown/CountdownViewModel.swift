@@ -68,8 +68,8 @@ extension CountdownViewModel: ViewModelType {
             .share(replay: 1, scope: .forever)
             .subscribe(onNext: { _ in
                 if timerRelay.value <= 0 {
-                    countupRelay.accept(())
                     isValidRelay.accept(false)
+                    countupRelay.accept(())
                 } else {
                     timerRelay.accept(timerRelay.value - 1)
                 }
