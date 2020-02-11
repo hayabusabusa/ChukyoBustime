@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 import RxSwift
 import RxCocoa
 
@@ -36,6 +37,7 @@ extension ToStationViewModel: ViewModelType {
     // MARK: I/O
     
     struct Input {
+        let foregroundSignal: Signal<Void>
         let settingBarButtonDidTap: Signal<Void>
     }
     
@@ -58,6 +60,16 @@ extension ToStationViewModel: ViewModelType {
                 busTimesRelay.accept(result.busTimes)
             }, onError: { error in
                 print(error)
+            })
+            .disposed(by: disposeBag)
+        
+        // NOTE: Back from background, Update current busTime array.
+        input.foregroundSignal
+            .emit(onNext: {
+                let now = DateInRegion(Date(), region: .current)
+                let second = now.hour * 3600 + now.minute + 60 + now.second
+                let newArray = busTimesRelay.value.filter { $0.second >= second }
+                busTimesRelay.accept(newArray)
             })
             .disposed(by: disposeBag)
         

@@ -68,7 +68,9 @@ extension ToStationViewController {
         self.viewModel = viewModel
         
         let settingBarButton = navigationItem.rightBarButtonItem!
-        let input = ToStationViewModel.Input(settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
+        let foregroundNotification = NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).map { _ in () }
+        let input = ToStationViewModel.Input(foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
+                                             settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
         let diagram = DiagramViewController.configure(with: output.children.diagramViewModel)
