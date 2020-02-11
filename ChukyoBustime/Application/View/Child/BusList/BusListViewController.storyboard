@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rBi-cd-kBE">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bus List View Controller-->
+        <scene sceneID="f89-sP-I5Z">
+            <objects>
+                <viewController id="rBi-cd-kBE" customClass="BusListViewController" customModule="ChukyoBustime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pmo-vR-l1O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vgR-tD-dI3">
+                                <rect key="frame" x="16" y="12" width="288" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次に来るバス一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXE-ez-rKZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 到着時刻は目安です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rb-0h-65q">
+                                        <rect key="frame" x="157" y="0.0" width="131" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LgI-St-3RP">
+                                <rect key="frame" x="0.0" y="36" width="320" height="196"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-lG-kzF" customClass="BusListView" customModule="ChukyoBustime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3W9-cm-zNB" customClass="BusListView" customModule="ChukyoBustime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65.5" width="320" height="65"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-dO-QSv" customClass="BusListView" customModule="ChukyoBustime" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="130.5" width="320" height="65.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="LgI-St-3RP" firstAttribute="top" secondItem="vgR-tD-dI3" secondAttribute="bottom" constant="8" id="BgV-l7-O55"/>
+                            <constraint firstItem="vgR-tD-dI3" firstAttribute="leading" secondItem="eTh-GC-dNi" secondAttribute="leading" constant="16" id="EhR-Sg-d1P"/>
+                            <constraint firstItem="eTh-GC-dNi" firstAttribute="trailing" secondItem="vgR-tD-dI3" secondAttribute="trailing" constant="16" id="K5n-yu-plT"/>
+                            <constraint firstItem="vgR-tD-dI3" firstAttribute="top" secondItem="eTh-GC-dNi" secondAttribute="top" constant="12" id="PY4-a0-6d5"/>
+                            <constraint firstItem="LgI-St-3RP" firstAttribute="leading" secondItem="eTh-GC-dNi" secondAttribute="leading" id="QzY-iz-lM3"/>
+                            <constraint firstItem="eTh-GC-dNi" firstAttribute="bottom" secondItem="LgI-St-3RP" secondAttribute="bottom" id="jgv-oh-Bkt"/>
+                            <constraint firstItem="LgI-St-3RP" firstAttribute="trailing" secondItem="eTh-GC-dNi" secondAttribute="trailing" id="uRC-MI-kh5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eTh-GC-dNi"/>
+                    </view>
+                    <size key="freeformSize" width="320" height="232"/>
+                    <connections>
+                        <outlet property="firstBusListView" destination="gvz-lG-kzF" id="j5v-Xr-cUF"/>
+                        <outlet property="secondBusListView" destination="3W9-cm-zNB" id="HmQ-L0-hah"/>
+                        <outlet property="thirdBusListView" destination="TIk-dO-QSv" id="mPn-nC-kOX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXk-gG-GfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.5" y="95.070422535211264"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.035000000149011612" green="0.51800000667572021" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

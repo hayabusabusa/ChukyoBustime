@@ -10,6 +10,16 @@ import UIKit
 
 enum Storyboard: String {
     case RootViewController
+    case TabBarController
+    case ToCollegeViewController
+    case ToStationViewController
+    case SettingViewController
+    case PrototypeViewController
+    // - Child View Controller
+    case DiagramViewController
+    case CountdownViewController
+    case PdfButtonsViewController
+    case BusListViewController
     
     func instantiate<VC: UIViewController>(_: VC.Type, inBundle: Bundle? = nil) -> VC {
         guard let vc = UIStoryboard(name: self.rawValue, bundle: inBundle).instantiateInitialViewController() as? VC else {

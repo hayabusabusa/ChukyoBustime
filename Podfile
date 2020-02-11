@@ -12,6 +12,9 @@ target 'Core' do
   # Firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
+  pod 'Firebase/RemoteConfig'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
