@@ -27,6 +27,7 @@ extension SettingViewModel: ViewModelType {
     
     struct Input {
         let closeBarButtonDidTap: Signal<Void>
+        let didSelectRow: Signal<SettingSectionType.SettingCellType>
     }
     
     struct Output {
@@ -36,6 +37,14 @@ extension SettingViewModel: ViewModelType {
     // MARK: Transform I/O
     
     func transform(input: SettingViewModel.Input) -> SettingViewModel.Output {
+        
+        // MARK: Input
+        input.didSelectRow
+            .emit(onNext: { row in
+                print(row)
+            })
+            .disposed(by: disposeBag)
+        
         return Output(dismiss: input.closeBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
     }
 }

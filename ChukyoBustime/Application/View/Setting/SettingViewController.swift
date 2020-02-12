@@ -18,13 +18,11 @@ final class SettingViewController: BaseViewController {
     
     private var viewModel: SettingViewModel!
     
-    private var dataSource: [SettingSectionType] = [
-        .config(rows: [
-            .item(title: "起動時に表示", item: "浄水駅行き")]),
-        .about(rows: [
-            .label(title: "バージョン", content: "1.0.0"),
-            .normal(title: "利用規約"),
-            .normal(title: "リポジトリ")])]
+    private var dataSource: [SettingSectionType] = [SettingSectionType]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: Lifecycle
     
@@ -50,6 +48,7 @@ extension SettingViewController {
     }
     
     private func setupTableView() {
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = SettingCell.rowHeight
         tableView.register(SettingCell.nib, forCellReuseIdentifier: SettingCell.reuseIdentifier)
@@ -67,7 +66,12 @@ extension SettingViewController {
         self.viewModel = viewModel
         
         let closeBarButton = navigationItem.rightBarButtonItem!
-        let input = SettingViewModel.Input(closeBarButtonDidTap: closeBarButton.rx.tap.asSignal())
+        let didSelecteRow = tableView.rx.itemSelected
+            .map { [weak self] indexPath in self?.dataSource[indexPath.section].rows[indexPath.row] }
+            .compactMap { $0 }
+            .asSignal(onErrorSignalWith: .empty())
+        let input = SettingViewModel.Input(closeBarButtonDidTap: closeBarButton.rx.tap.asSignal(),
+                                           didSelectRow: didSelecteRow)
         let output = viewModel.transform(input: input)
         
         output.dismiss
@@ -113,5 +117,14 @@ extension SettingViewController: UITableViewDataSource {
             cell.setupCell(title: title, item: item)
             return cell
         }
+    }
+}
+
+// MARK: - TableView delegate
+
+extension SettingViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
