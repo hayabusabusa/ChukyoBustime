@@ -20,7 +20,7 @@ final class SettingViewController: BaseViewController {
     
     private var dataSource: [SettingSectionType] = [
         .config(rows: [
-            .normal(title: "起動時に表示")]),
+            .item(title: "起動時に表示", item: "浄水駅行き")]),
         .about(rows: [
             .label(title: "バージョン", content: "1.0.0"),
             .normal(title: "利用規約"),
@@ -54,6 +54,7 @@ extension SettingViewController {
         tableView.rowHeight = SettingCell.rowHeight
         tableView.register(SettingCell.nib, forCellReuseIdentifier: SettingCell.reuseIdentifier)
         tableView.register(SettingLabelCell.nib, forCellReuseIdentifier: SettingLabelCell.reuseIdentifier)
+        tableView.register(SettingItemCell.nib, forCellReuseIdentifier: SettingItemCell.reuseIdentifier)
     }
 }
 
@@ -104,6 +105,12 @@ extension SettingViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.setupCell(title: title, content: content)
+            return cell
+        case let .item(title, item):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.reuseIdentifier, for: indexPath) as? SettingItemCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(title: title, item: item)
             return cell
         }
     }
