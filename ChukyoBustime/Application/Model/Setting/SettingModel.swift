@@ -30,11 +30,13 @@ class SettingModelImpl: SettingModel {
     
     func getSettings() -> Single<[SettingSectionType]> {
         return Single.just([
-            .config(rows: [.item(title: "起動時に表示", item: "浄水駅行き")]),
+            .config(rows: [
+                .tabSetting(setting: "浄水駅行き")
+            ]),
             .about(rows: [
-                .label(title: "バージョン", content: "1.0.0"),
-                .normal(title: "利用規約"),
-                .normal(title: "リポジトリ")
+                .version(version: "1.0.0"),
+                .agreement,
+                .repository
             ])
         ])
     }

@@ -47,7 +47,11 @@ extension SettingViewModel: ViewModelType {
         // MARK: Input
         input.didSelectRow
             .emit(onNext: { row in
-                print(row)
+                switch row {
+                case .agreement: print("Agreement")
+                case .repository: print("Repository")
+                default: break
+                }
             })
             .disposed(by: disposeBag)
         

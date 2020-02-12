@@ -101,23 +101,29 @@ extension SettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch dataSource[indexPath.section].rows[indexPath.row] {
-        case .normal(let title):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
-                return UITableViewCell()
-            }
-            cell.setupCell(title: title)
-            return cell
-        case let .label(title, content):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingLabelCell.reuseIdentifier, for: indexPath) as? SettingLabelCell else {
-                return UITableViewCell()
-            }
-            cell.setupCell(title: title, content: content)
-            return cell
-        case let .item(title, item):
+        case .tabSetting(let setting):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.reuseIdentifier, for: indexPath) as? SettingItemCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(title: title, item: item)
+            cell.setupCell(title: "起動時に表示", item: setting)
+            return cell
+        case .version(let version):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingLabelCell.reuseIdentifier, for: indexPath) as? SettingLabelCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(title: "バージョン", content: version)
+            return cell
+        case .agreement:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(title: "利用規約")
+            return cell
+        case .repository:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
+                return UITableViewCell()
+            }
+            cell.setupCell(title: "リポジトリ")
             return cell
         }
     }
