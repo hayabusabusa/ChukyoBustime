@@ -18,7 +18,13 @@ final class SettingViewController: BaseViewController {
     
     private var viewModel: SettingViewModel!
     
-    private var dataSource: [SettingCellType] = [.normal(title: "タイトル")]
+    private var dataSource: [SettingSectionType] = [
+        .config(rows: [
+            .normal(title: "起動時に表示")]),
+        .about(rows: [
+            .normal(title: "バージョン"),
+            .normal(title: "利用規約"),
+            .normal(title: "リポジトリ")])]
     
     // MARK: Lifecycle
     
@@ -72,12 +78,20 @@ extension SettingViewController {
 
 extension SettingViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataSource[section].headerTitle
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource[section].rows.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch dataSource[indexPath.row] {
+        switch dataSource[indexPath.section].rows[indexPath.row] {
         case .normal(let title):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
                 return UITableViewCell()
