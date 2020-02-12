@@ -14,6 +14,7 @@ enum SettingSectionType {
     
     enum SettingCellType {
         case normal(title: String)
+        case label(title: String, content: String)
     }
     
     var rows: [SettingCellType] {

@@ -1,25 +1,26 @@
 //
-//  SettingCell.swift
+//  SettingLabelCell.swift
 //  ChukyoBustime
 //
-//  Created by Yamada Shunya on 2020/02/12.
+//  Created by 山田隼也 on 2020/02/12.
 //  Copyright © 2020 Shunya Yamada. All rights reserved.
 //
 
 import UIKit
 
-class SettingCell: UITableViewCell {
-
+class SettingLabelCell: UITableViewCell {
+    
     // MARK: IBOutlet
-
+    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     
     // MARK: Properties
 
-    static let reuseIdentifier = "SettingCell"
+    static let reuseIdentifier = "SettingLabelCell"
     static let rowHeight: CGFloat = 48
     static var nib: UINib {
-        return UINib(nibName: "SettingCell", bundle: nil)
+        return UINib(nibName: "SettingLabelCell", bundle: nil)
     }
 
     // MARK: Lifecycle
@@ -34,9 +35,9 @@ class SettingCell: UITableViewCell {
 
     // MARK: Setup
     
-    func setupCell(title: String?, selectionStyle: UITableViewCell.SelectionStyle = .default) {
+    func setupCell(title: String?, content: String?, selectionStyle: UITableViewCell.SelectionStyle = .none) {
         titleLabel.text = title
+        contentLabel.text = content
         self.selectionStyle = selectionStyle
     }
 }
-
