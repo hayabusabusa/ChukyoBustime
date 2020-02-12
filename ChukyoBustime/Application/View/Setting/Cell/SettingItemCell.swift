@@ -39,5 +39,6 @@ class SettingItemCell: UITableViewCell {
         titleLabel.text = title
         itemLabel.text = item
         self.selectionStyle = selectionStyle
+        self.accessoryType = .none
     }
 }

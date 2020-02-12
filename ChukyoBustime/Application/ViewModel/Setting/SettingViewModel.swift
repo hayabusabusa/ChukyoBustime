@@ -14,11 +14,17 @@ final class SettingViewModel {
     
     // MARK: Dependency
     
+    private let model: SettingModel
+    
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
     
     // MARK: Initializer
+    
+    init(model: SettingModel = SettingModelImpl()) {
+        self.model = model
+    }
 }
 
 extension SettingViewModel: ViewModelType {
@@ -31,13 +37,13 @@ extension SettingViewModel: ViewModelType {
     }
     
     struct Output {
+        let settingsDriver: Driver<[SettingSectionType]>
         let dismiss: Driver<Void>
     }
     
     // MARK: Transform I/O
     
     func transform(input: SettingViewModel.Input) -> SettingViewModel.Output {
-        
         // MARK: Input
         input.didSelectRow
             .emit(onNext: { row in
@@ -45,6 +51,7 @@ extension SettingViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
-        return Output(dismiss: input.closeBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
+        return Output(settingsDriver: model.getSettings().asDriver(onErrorDriveWith: .empty()),
+                      dismiss: input.closeBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
     }
 }

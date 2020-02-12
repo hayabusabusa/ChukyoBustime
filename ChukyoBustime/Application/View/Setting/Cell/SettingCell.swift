@@ -37,6 +37,7 @@ class SettingCell: UITableViewCell {
     func setupCell(title: String?, selectionStyle: UITableViewCell.SelectionStyle = .default) {
         titleLabel.text = title
         self.selectionStyle = selectionStyle
+        self.accessoryType = .disclosureIndicator
     }
 }
 

@@ -74,6 +74,9 @@ extension SettingViewController {
                                            didSelectRow: didSelecteRow)
         let output = viewModel.transform(input: input)
         
+        output.settingsDriver
+            .drive(onNext: { [weak self] settings in self?.dataSource = settings })
+            .disposed(by: disposeBag)
         output.dismiss
             .drive(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
