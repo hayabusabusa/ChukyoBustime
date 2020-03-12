@@ -28,7 +28,9 @@ extension UIViewController {
         childViewController.view.removeFromSuperview()
         childViewController.removeFromParent()
     }
-    
+}
+
+extension UIViewController {
     func replaceRoot(to nextViewController: UIViewController) {
         guard let window = UIApplication.shared.keyWindow else { return }
 
@@ -48,5 +50,25 @@ extension UIViewController {
             },
             completion: nil
         )
+    }
+}
+
+extension UIViewController {
+    func showAlertController(
+        title: String? = nil,
+        message: String? = nil,
+        actionTitle: String? = "OK",
+        withCancel: Bool = false,
+        cancelTitle: String = "Cancel",
+        handler: ((UIAlertAction) -> ())? = nil) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: actionTitle, style: .default, handler: handler))
+        
+        if withCancel {
+            alertController.addAction(UIAlertAction(title: cancelTitle, style: .cancel))
+        }
+        
+        present(alertController, animated: true)
     }
 }
