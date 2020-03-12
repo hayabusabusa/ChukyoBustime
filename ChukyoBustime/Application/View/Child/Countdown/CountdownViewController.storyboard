@@ -22,9 +22,59 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-sW-fKH">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-U2-PFW">
+                                                <rect key="frame" x="104" y="0.0" width="168" height="32"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi9-Vo-ewF" customClass="OutlinedButton" customModule="中京大学バス" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="T1g-vu-KWD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                        <color key="tintColor" name="Primary"/>
+                                                        <state key="normal" title="折り返し"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="Primary"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVo-Tp-CVc" customClass="OutlinedButton" customModule="中京大学バス" customModuleProvider="target">
+                                                        <rect key="frame" x="88" y="0.0" width="80" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Eyz-ZA-YTt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                        <color key="tintColor" name="Accent"/>
+                                                        <state key="normal" title="最終バス"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="Accent"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="yNf-U2-PFW" secondAttribute="bottom" constant="8" id="C5z-iF-fSk"/>
+                                            <constraint firstItem="yNf-U2-PFW" firstAttribute="top" secondItem="DYa-sW-fKH" secondAttribute="top" id="cJ9-o6-1QU"/>
                                             <constraint firstAttribute="height" constant="40" id="nQE-mM-hDz"/>
+                                            <constraint firstAttribute="trailing" secondItem="yNf-U2-PFW" secondAttribute="trailing" id="zLg-9b-8Xa"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Nn-cG-SSG">
@@ -226,6 +276,9 @@
     <resources>
         <image name="ic_school" width="24" height="24"/>
         <image name="ic_train" width="24" height="24"/>
+        <namedColor name="Accent">
+            <color red="0.88200002908706665" green="0.43900001049041748" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
