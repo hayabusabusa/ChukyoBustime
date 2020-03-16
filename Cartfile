@@ -2,6 +2,9 @@
 ## RxSwift
 github "ReactiveX/RxSwift" ~> 5.0
 
+## Realm
+github "realm/realm-cocoa"
+
 # Util
 ## SwiftDate
 github "malcommac/SwiftDate" ~> 6.0

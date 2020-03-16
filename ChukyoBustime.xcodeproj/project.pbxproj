@@ -37,6 +37,8 @@
 		71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */; };
 		71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */; };
 		71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */; };
+		71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
+		71D278B7241F0E280087B373 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
 		71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */; };
 		71FF5C1C23E1B70D00456D75 /* BusListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */; };
@@ -154,6 +156,8 @@
 		71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreProvider.swift; sourceTree = "<group>"; };
 		71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeEntity.swift; sourceTree = "<group>"; };
 		71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewableTranslator.swift; sourceTree = "<group>"; };
+		71D278B3241F0E280087B373 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		71D278B4241F0E280087B373 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewController.swift; sourceTree = "<group>"; };
 		71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusListViewController.storyboard; sourceTree = "<group>"; };
@@ -235,7 +239,9 @@
 			files = (
 				A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */,
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
+				71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */,
 				A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */,
+				71D278B7241F0E280087B373 /* Realm.framework in Frameworks */,
 				A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */,
 				A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */,
 			);
@@ -797,6 +803,8 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71D278B4241F0E280087B373 /* Realm.framework */,
+				71D278B3241F0E280087B373 /* RealmSwift.framework */,
 				A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */,
 				A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */,
 				A4B03F0123DE8B130069F7E8 /* RxRelay.framework */,
@@ -992,6 +1000,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -1302,6 +1312,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChukyoBustime/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1325,6 +1339,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChukyoBustime/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
