@@ -21,7 +21,7 @@ public final class CollegeLocalCache: Object, LocalCacheable {
         self.busTimes = busTimes.reduce(List<BusTimeEntity>()) { $0.append($1); return $0 }
     }
     
-    public required init() {
+    required init() {
         super.init()
     }
 }
