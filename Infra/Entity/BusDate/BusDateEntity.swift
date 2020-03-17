@@ -18,7 +18,7 @@ public final class BusDateEntity: Object, Decodable {
         case diagramName
     }
     
-    convenience init(diagram: String, diagramName: String) {
+    public convenience init(diagram: String, diagramName: String) {
         self.init()
         self.diagram = diagram
         self.diagramName = diagramName

@@ -30,14 +30,14 @@ public final class BusTimeEntity: Object, Decodable {
         case isLast
     }
     
-    convenience init(hour: Int,
-                     minute: Int,
-                     second: Int,
-                     arrivalHour: Int,
-                     arrivalMinute: Int,
-                     arrivalSecond: Int,
-                     isReturn: Bool,
-                     isLast: Bool) {
+    public convenience init(hour: Int,
+                            minute: Int,
+                            second: Int,
+                            arrivalHour: Int,
+                            arrivalMinute: Int,
+                            arrivalSecond: Int,
+                            isReturn: Bool,
+                            isLast: Bool) {
         self.init()
         self.hour = hour
         self.minute = minute

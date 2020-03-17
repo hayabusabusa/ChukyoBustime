@@ -12,7 +12,7 @@ import RealmSwift
 public final class CollegeLocalCache: Object, LocalCacheable {
     @objc public dynamic var lastUpdatedDate: String = "" // YYYY-MM-dd
     @objc public dynamic var busDate: BusDateEntity?
-    var busTimes = List<BusTimeEntity>()
+    public var busTimes = List<BusTimeEntity>()
     
     convenience init(lastUpdatedDate: String, busDate: BusDateEntity, busTimes: [BusTimeEntity]) {
         self.init()
