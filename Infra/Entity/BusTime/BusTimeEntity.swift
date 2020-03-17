@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct BusTimeEntity: Decodable {
-    public let hour: Int
-    public let minute: Int
-    public let second: Int
-    public let arrivalHour: Int
-    public let arrivalMinute: Int
-    public let arrivalSecond: Int
-    public let isReturn: Bool
-    public let isLast: Bool
+public final class BusTimeEntity: Object, Decodable {
+    @objc public dynamic var hour: Int = 0
+    @objc public dynamic var minute: Int = 0
+    @objc public dynamic var second: Int = 0
+    @objc public dynamic var arrivalHour: Int = 0
+    @objc public dynamic var arrivalMinute: Int = 0
+    @objc public dynamic var arrivalSecond: Int = 0
+    @objc public dynamic var isReturn: Bool = false
+    @objc public dynamic var isLast: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case hour
@@ -27,5 +28,28 @@ public struct BusTimeEntity: Decodable {
         case arrivalSecond
         case isReturn
         case isLast
+    }
+    
+    convenience init(hour: Int,
+                     minute: Int,
+                     second: Int,
+                     arrivalHour: Int,
+                     arrivalMinute: Int,
+                     arrivalSecond: Int,
+                     isReturn: Bool,
+                     isLast: Bool) {
+        self.init()
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+        self.arrivalHour = arrivalHour
+        self.arrivalMinute = arrivalMinute
+        self.arrivalSecond = arrivalSecond
+        self.isReturn = isReturn
+        self.isLast = isLast
+    }
+    
+    public required init() {
+        super.init()
     }
 }

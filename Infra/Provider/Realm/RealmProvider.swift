@@ -11,6 +11,7 @@ import RealmSwift
 import RxSwift
 
 // MARK: - Interface
+
 public protocol RealmProviderProtocol: AnyObject {
     func save<O: Object>(_ object: O) -> Completable
     func save<O: Object>(overwrite object: O) -> Completable
@@ -25,6 +26,7 @@ public protocol RealmProviderProtocol: AnyObject {
 }
 
 // MARK: - Implementation
+
 public final class RealmProvider: RealmProviderProtocol {
     
     // MARK: Singleton
