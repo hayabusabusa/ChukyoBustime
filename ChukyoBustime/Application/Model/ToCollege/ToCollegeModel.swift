@@ -45,9 +45,9 @@ class ToCollegeModelImpl: ToCollegeModel {
     }
     
     private func getBusTimesFromCache(at date: Date) -> Single<(busDate: BusDate, busTimes: [BusTime])> {
-        return localCacheRepository.loadCache(of: StationLocalCache.self)
+        return localCacheRepository.loadCache(of: CollegeLocalCache.self)
             .map { (busDate: $0.busDate ?? BusDateEntity(diagram: "UNKNOWN", diagramName: "UNKNOWN"), busTimes: Array($0.busTimes)) }
-            .translate(BusDateAndBusTimesTranslator())
+            .translate(BusDateAndBusTimesTranslator()).debug()
     }
     
     private func getBusTimesFromFirestore(at date: Date) -> Single<(busDate: BusDate, busTimes: [BusTime])> {
