@@ -18,7 +18,7 @@ public protocol RealmProviderProtocol: AnyObject {
     func save<S: Sequence>(_ objects: S) -> Completable where S.Element: Object
     func save<S: Sequence>(overwrite objects: S) -> Completable where S.Element: Object
     func get<O: Object>(_ type: O.Type) -> Single<O?>
-    func get<O: Object>(_ type: O.Type) -> Single<[O]>
+    func getAll<O: Object>(_ type: O.Type) -> Single<[O]>
     func delete<O: Object>(_ object: O) -> Completable
     func delete<S: Sequence>(_ objects: S) -> Completable where S.Element: Object
     func deleteAll<O: Object>(_ type: O.Type) -> Completable
@@ -159,7 +159,7 @@ public final class RealmProvider: RealmProviderProtocol {
     /// Realmに保存されているオブジェクトを全て取り出す
     ///
     /// - Parameter type: 読み込みたいObjectクラスを継承したクラスの型
-    public func get<O: Object>(_ type: O.Type) -> Single<[O]> {
+    public func getAll<O: Object>(_ type: O.Type) -> Single<[O]> {
         return Single.create { observer in
             do {
                 let realm = try Realm()

@@ -26,6 +26,7 @@
 		715D9A34242082900018F526 /* LocalCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A33242082900018F526 /* LocalCacheable.swift */; };
 		715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A352420854E0018F526 /* StationLocalCache.swift */; };
 		715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A37242086C80018F526 /* CollegeLocalCache.swift */; };
+		715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -148,6 +149,7 @@
 		715D9A33242082900018F526 /* LocalCacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheable.swift; sourceTree = "<group>"; };
 		715D9A352420854E0018F526 /* StationLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocalCache.swift; sourceTree = "<group>"; };
 		715D9A37242086C80018F526 /* CollegeLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeLocalCache.swift; sourceTree = "<group>"; };
+		715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheRepository.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -338,6 +340,14 @@
 				715D9A33242082900018F526 /* LocalCacheable.swift */,
 				715D9A352420854E0018F526 /* StationLocalCache.swift */,
 				715D9A37242086C80018F526 /* CollegeLocalCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		715D9A39242087D00018F526 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -757,6 +767,7 @@
 		A4AC23AB23E2D7320012439D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				715D9A39242087D00018F526 /* Cache */,
 				A4AC23AC23E2D73C0012439D /* Firestore */,
 			);
 			path = Repository;
@@ -1051,6 +1062,7 @@
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
 				71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */,
+				715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
 				715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */,
