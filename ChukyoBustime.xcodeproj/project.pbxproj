@@ -22,6 +22,12 @@
 		71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7423F4216A004A330C /* SettingItemCell.swift */; };
 		71536D7723F4216A004A330C /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71536D7523F4216A004A330C /* SettingItemCell.xib */; };
 		71536D7A23F43521004A330C /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7923F43521004A330C /* SettingModel.swift */; };
+		715D9A31242080C30018F526 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A30242080C30018F526 /* RealmProvider.swift */; };
+		715D9A34242082900018F526 /* LocalCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A33242082900018F526 /* LocalCacheable.swift */; };
+		715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A352420854E0018F526 /* StationLocalCache.swift */; };
+		715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A37242086C80018F526 /* CollegeLocalCache.swift */; };
+		715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */; };
+		715D9A3F2420982D0018F526 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A3E2420982D0018F526 /* RealmError.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -140,6 +146,12 @@
 		71536D7423F4216A004A330C /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		71536D7523F4216A004A330C /* SettingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingItemCell.xib; sourceTree = "<group>"; };
 		71536D7923F43521004A330C /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		715D9A30242080C30018F526 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		715D9A33242082900018F526 /* LocalCacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheable.swift; sourceTree = "<group>"; };
+		715D9A352420854E0018F526 /* StationLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocalCache.swift; sourceTree = "<group>"; };
+		715D9A37242086C80018F526 /* CollegeLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeLocalCache.swift; sourceTree = "<group>"; };
+		715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheRepository.swift; sourceTree = "<group>"; };
+		715D9A3E2420982D0018F526 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -207,7 +219,7 @@
 		A4AC23A423E2C1B60012439D /* PdfButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsViewController.swift; sourceTree = "<group>"; };
 		A4AC23A623E2C1D30012439D /* PdfButtonsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PdfButtonsViewController.storyboard; sourceTree = "<group>"; };
 		A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
-		A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "中京大学バス.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChukyoBustime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B03E8F23DE7CB20069F7E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -316,6 +328,33 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		715D9A2F242080B60018F526 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				715D9A3E2420982D0018F526 /* RealmError.swift */,
+				715D9A30242080C30018F526 /* RealmProvider.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		715D9A32242081D10018F526 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				715D9A33242082900018F526 /* LocalCacheable.swift */,
+				715D9A352420854E0018F526 /* StationLocalCache.swift */,
+				715D9A37242086C80018F526 /* CollegeLocalCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		715D9A39242087D00018F526 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +400,7 @@
 		71A32A5D23E0835200EB7A55 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				715D9A2F242080B60018F526 /* Realm */,
 				7114165823EE84E600FBFB7E /* RemoteConfig */,
 				A4AC23AA23E2D6AD0012439D /* Firestore */,
 			);
@@ -373,6 +413,7 @@
 				A42D0DA323E112F100E95FED /* Enum */,
 				A42D0DA023E112A100E95FED /* BusDate */,
 				71A32A6C23E083BB00EB7A55 /* BusTime */,
+				715D9A32242081D10018F526 /* Cache */,
 				71536D5423F1614F004A330C /* RCPdfUrl */,
 			);
 			path = Entity;
@@ -729,6 +770,7 @@
 		A4AC23AB23E2D7320012439D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				715D9A39242087D00018F526 /* Cache */,
 				A4AC23AC23E2D73C0012439D /* Firestore */,
 			);
 			path = Repository;
@@ -755,7 +797,7 @@
 		A4B03E8123DE7CAB0069F7E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */,
+				A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */,
 				71A329E323E04FB700EB7A55 /* Infra.framework */,
 			);
 			name = Products;
@@ -872,7 +914,7 @@
 			);
 			name = ChukyoBustime;
 			productName = ChukyoBustime;
-			productReference = A4B03E8023DE7CAB0069F7E8 /* 中京大学バス.app */;
+			productReference = A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1019,14 +1061,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */,
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
 				71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */,
+				715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
+				715D9A3F2420982D0018F526 /* RealmError.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
+				715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */,
 				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
+				715D9A34242082900018F526 /* LocalCacheable.swift in Sources */,
 				7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */,
 				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
+				715D9A31242080C30018F526 /* RealmProvider.swift in Sources */,
 				717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */,
 				7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */,
 			);
@@ -1323,7 +1371,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
-				PRODUCT_NAME = "中京大学バス";
+				PRODUCT_NAME = ChukyoBustime;
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1350,7 +1398,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
-				PRODUCT_NAME = "中京大学バス";
+				PRODUCT_NAME = ChukyoBustime;
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
