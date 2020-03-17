@@ -22,6 +22,7 @@
 		71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7423F4216A004A330C /* SettingItemCell.swift */; };
 		71536D7723F4216A004A330C /* SettingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71536D7523F4216A004A330C /* SettingItemCell.xib */; };
 		71536D7A23F43521004A330C /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7923F43521004A330C /* SettingModel.swift */; };
+		715D9A31242080C30018F526 /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A30242080C30018F526 /* RealmProvider.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -140,6 +141,7 @@
 		71536D7423F4216A004A330C /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		71536D7523F4216A004A330C /* SettingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingItemCell.xib; sourceTree = "<group>"; };
 		71536D7923F43521004A330C /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		715D9A30242080C30018F526 /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -316,6 +318,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		715D9A2F242080B60018F526 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				715D9A30242080C30018F526 /* RealmProvider.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +371,7 @@
 		71A32A5D23E0835200EB7A55 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				715D9A2F242080B60018F526 /* Realm */,
 				7114165823EE84E600FBFB7E /* RemoteConfig */,
 				A4AC23AA23E2D6AD0012439D /* Firestore */,
 			);
@@ -1027,6 +1038,7 @@
 				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
 				7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */,
 				A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */,
+				715D9A31242080C30018F526 /* RealmProvider.swift in Sources */,
 				717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */,
 				7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */,
 			);
