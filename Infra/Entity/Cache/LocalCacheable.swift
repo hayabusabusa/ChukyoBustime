@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol LocalCacheable: AnyObject {}
+public protocol LocalCacheable: AnyObject {}

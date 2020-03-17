@@ -14,7 +14,9 @@ import RxSwift
 // MARK: - Interface
 
 public protocol LocalCacheRepository {
-    
+    func saveCache(of destination: BusDestination, date: Date, busDate: BusDateEntity, busTimes: [BusTimeEntity]) -> Completable
+    func checkCache(at date: Date, destination: BusDestination) -> Single<Bool>
+    func loadCache<O: Object>(of type: O.Type) -> Single<O> where O: LocalCacheable
 }
 
 // MARK: - Implementation
@@ -33,7 +35,7 @@ public struct LocalCacheRepositoryImpl: LocalCacheRepository {
     
     // MARK: Save cache
     
-    public func saveLocalCache(of destination: BusDestination, date: Date, busDate: BusDateEntity, busTimes: [BusTimeEntity]) -> Completable {
+    public func saveCache(of destination: BusDestination, date: Date, busDate: BusDateEntity, busTimes: [BusTimeEntity]) -> Completable {
         return destination == BusDestination.toStation
             ? overwriteStationLocalCache(date: date, busDate: busDate, busTimes: busTimes)
             : overwriteCollegeLocalCache(date: date, busDate: busDate, busTimes: busTimes)
@@ -111,7 +113,14 @@ public struct LocalCacheRepositoryImpl: LocalCacheRepository {
     
     // MARK: Load cache
     
-    func loadCache<O: Object>(of type: O.Type) -> Single<O?> where O: LocalCacheable {
+    /// Realmに保存されたキャッシュを取得する.
+    /// - Note: 保存されたデータがない場合は`RealmError.objectNotFound`を返す.
+    /// - Parameter type: `LocalCacheable`に準拠したRealmオブジェクトタイプ.
+    public func loadCache<O: Object>(of type: O.Type) -> Single<O> where O: LocalCacheable {
         return provider.get(type)
+            .map { object -> O in
+                guard let object = object else { throw RealmError.objectNotFound }
+                return object
+            }
     }
 }

@@ -27,6 +27,7 @@
 		715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A352420854E0018F526 /* StationLocalCache.swift */; };
 		715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A37242086C80018F526 /* CollegeLocalCache.swift */; };
 		715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */; };
+		715D9A3F2420982D0018F526 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A3E2420982D0018F526 /* RealmError.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -150,6 +151,7 @@
 		715D9A352420854E0018F526 /* StationLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLocalCache.swift; sourceTree = "<group>"; };
 		715D9A37242086C80018F526 /* CollegeLocalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeLocalCache.swift; sourceTree = "<group>"; };
 		715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCacheRepository.swift; sourceTree = "<group>"; };
+		715D9A3E2420982D0018F526 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		715D9A2F242080B60018F526 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				715D9A3E2420982D0018F526 /* RealmError.swift */,
 				715D9A30242080C30018F526 /* RealmProvider.swift */,
 			);
 			path = Realm;
@@ -1064,6 +1067,7 @@
 				71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */,
 				715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */,
 				71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */,
+				715D9A3F2420982D0018F526 /* RealmError.swift in Sources */,
 				71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */,
 				715D9A362420854E0018F526 /* StationLocalCache.swift in Sources */,
 				A4AC23AE23E2D7590012439D /* FirestoreRepository.swift in Sources */,
