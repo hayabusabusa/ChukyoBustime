@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71059428241A251D003CA820 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71059427241A251D003CA820 /* OutlinedButton.swift */; };
 		710E88B42421A6F60049D717 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E88B32421A6F60049D717 /* TodayViewModel.swift */; };
+		710E88B82421C06B0049D717 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E88B72421C06B0049D717 /* Configurations.swift */; };
 		7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */; };
 		7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */; };
 		71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */; };
@@ -165,6 +166,7 @@
 /* Begin PBXFileReference section */
 		71059427241A251D003CA820 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		710E88B32421A6F60049D717 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		710E88B72421C06B0049D717 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
 		7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigType.swift; sourceTree = "<group>"; };
 		71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPdfUrlEntity.swift; sourceTree = "<group>"; };
@@ -322,6 +324,14 @@
 				710E88B32421A6F60049D717 /* TodayViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		710E88B62421C0510049D717 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				710E88B72421C06B0049D717 /* Configurations.swift */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 		7114165823EE84E600FBFB7E /* RemoteConfig */ = {
@@ -496,10 +506,11 @@
 				71A32A6B23E083B500EB7A55 /* Entity */,
 				71A32A5D23E0835200EB7A55 /* Provider */,
 				A4AC23AB23E2D7320012439D /* Repository */,
-				71A329E523E04FB700EB7A55 /* Infra.h */,
-				71A329E623E04FB700EB7A55 /* Info.plist */,
+				710E88B62421C0510049D717 /* Configs */,
 				71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */,
 				71A32A5823E0594F00EB7A55 /* Infra-Config.release.xcconfig */,
+				71A329E523E04FB700EB7A55 /* Infra.h */,
+				71A329E623E04FB700EB7A55 /* Info.plist */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -1216,6 +1227,7 @@
 			files = (
 				715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */,
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
+				710E88B82421C06B0049D717 /* Configurations.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
 				71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */,
 				715D9A3D2420880C0018F526 /* LocalCacheRepository.swift in Sources */,
