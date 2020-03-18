@@ -169,6 +169,8 @@
 		710E88B72421C06B0049D717 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
 		7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigType.swift; sourceTree = "<group>"; };
+		714E102124226E650094FD38 /* ChukyoBustimeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeDebug.entitlements; sourceTree = "<group>"; };
+		714E1022242270960094FD38 /* TodayDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayDebug.entitlements; sourceTree = "<group>"; };
 		71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPdfUrlEntity.swift; sourceTree = "<group>"; };
 		71536D5D23F17604004A330C /* RootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModel.swift; sourceTree = "<group>"; };
 		71536D5F23F176D9004A330C /* PdfUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrl.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			children = (
 				715D9A562420A91F0018F526 /* Application */,
 				715D9A582420A9460018F526 /* Configs */,
+				714E1022242270960094FD38 /* TodayDebug.entitlements */,
 				715D9A4E2420A8ED0018F526 /* Info.plist */,
 			);
 			path = Today;
@@ -932,6 +935,7 @@
 				A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */,
 				A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */,
 				71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */,
+				714E102124226E650094FD38 /* ChukyoBustimeDebug.entitlements */,
 				A4B03E9123DE7CB20069F7E8 /* Info.plist */,
 			);
 			path = ChukyoBustime;
@@ -1342,6 +1346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = Today/TodayDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1594,6 +1599,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
