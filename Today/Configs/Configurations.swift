@@ -9,5 +9,5 @@
 import Foundation
 
 enum Configurations {
-    static let kApplicationUrlScheme: String = "sy-chukyo-bustime-app://"
+    static let kApplicationUrlScheme: URL = URL(string: "sy-chukyo-bustime-app://")!
 }

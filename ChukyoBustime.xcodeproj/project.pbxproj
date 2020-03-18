@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71059428241A251D003CA820 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71059427241A251D003CA820 /* OutlinedButton.swift */; };
+		710E88B42421A6F60049D717 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E88B32421A6F60049D717 /* TodayViewModel.swift */; };
 		7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */; };
 		7114165C23EE95FE00FBFB7E /* RemoteConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */; };
 		71536D5A23F16DC1004A330C /* RCPdfUrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */; };
@@ -163,6 +164,7 @@
 
 /* Begin PBXFileReference section */
 		71059427241A251D003CA820 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		710E88B32421A6F60049D717 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		7114165923EE904300FBFB7E /* RemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigProvider.swift; sourceTree = "<group>"; };
 		7114165B23EE95FE00FBFB7E /* RemoteConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigType.swift; sourceTree = "<group>"; };
 		71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPdfUrlEntity.swift; sourceTree = "<group>"; };
@@ -314,6 +316,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		710E88B22421A6DE0049D717 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				710E88B32421A6F60049D717 /* TodayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		7114165823EE84E600FBFB7E /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +432,7 @@
 			children = (
 				715D9A662420C9740018F526 /* Model */,
 				715D9A572420A9360018F526 /* View */,
+				710E88B22421A6DE0049D717 /* ViewModel */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1192,6 +1203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710E88B42421A6F60049D717 /* TodayViewModel.swift in Sources */,
 				715D9A652420C61D0018F526 /* Configurations.swift in Sources */,
 				715D9A4A2420A8ED0018F526 /* TodayViewController.swift in Sources */,
 				715D9A682420C98C0018F526 /* TodayModel.swift in Sources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import NotificationCenter
 
 final class TodayViewController: UIViewController, NCWidgetProviding {
@@ -20,12 +22,19 @@ final class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet private weak var lineView: UIView!
     @IBOutlet private weak var messageLabel: UILabel!
     
+    // MARK: Properties
+    
+    private let disposeBag = DisposeBag()
+    
+    private var viewModel: TodayViewModel!
+    
     // MARK: Lifecycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
         setupParentStackViews()
         setupMessageLabel()
+        bindViewModel()
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -37,15 +46,6 @@ final class TodayViewController: UIViewController, NCWidgetProviding {
         
         completionHandler(NCUpdateResult.newData)
     }
-    
-    // MARK: Tap event
-    
-    @objc
-    private func onTapParentButton(_ sender: UIButton) {
-        guard let url = URL(string: Configurations.kApplicationUrlScheme) else { return }
-        extensionContext?.open(url, completionHandler: nil)
-    }
-    
 }
 
 // MARK: - Setup
@@ -53,14 +53,47 @@ final class TodayViewController: UIViewController, NCWidgetProviding {
 extension TodayViewController {
     
     private func setupParentStackViews() {
-        parentButton.addTarget(self, action: #selector(onTapParentButton(_:)), for: .touchUpInside)
         parentStackView.alpha = 0
         lineView.alpha = 0
     }
     
     private func setupMessageLabel() {
-        messageLabel.text = "データがありません。\nアプリを起動してデータを取得してください。"
-        //messageLabel.alpha = 0
+        messageLabel.alpha = 0
+    }
+}
+
+// MARK: - ViewModel
+
+extension TodayViewController {
+    
+    private func bindViewModel() {
+        let viewModel = TodayViewModel()
+        self.viewModel = viewModel
+        
+        let input = TodayViewModel.Input(widgetDidTap: parentButton.rx.tap.asSignal())
+        let output = viewModel.transform(input)
+        
+        output.isHiddenDriver
+            .drive(onNext: { [weak self] isHidden in
+                if isHidden {
+                    self?.showMessageLabelAnimation()
+                } else {
+                    self?.showParentStackViewAnimation()
+                }
+            })
+            .disposed(by: disposeBag)
+        output.collegeDriver
+            .drive(collegeTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.stationDriver
+            .drive(stationTimeLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.messageDriver
+            .drive(messageLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.openApplicationSignal
+            .emit(onNext: { [weak self] in self?.openApplication() })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -73,5 +106,20 @@ extension TodayViewController {
             self.parentStackView.alpha = 1
             self.lineView.alpha = 1
         }
+    }
+    
+    private func showMessageLabelAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.messageLabel.alpha = 0.5
+        }
+    }
+}
+
+// MARK: Transition
+
+extension TodayViewController {
+    
+    private func openApplication() {
+        extensionContext?.open(Configurations.kApplicationUrlScheme, completionHandler: nil)
     }
 }
