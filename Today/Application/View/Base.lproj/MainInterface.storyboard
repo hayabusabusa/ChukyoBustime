@@ -22,10 +22,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxc-ug-DgJ" userLabel="Line View">
-                                <rect key="frame" x="159.5" y="91.5" width="1" height="43"/>
+                                <rect key="frame" x="159" y="91.5" width="2" height="43"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="1" id="E1M-cH-7GI"/>
+                                    <constraint firstAttribute="width" constant="2" id="E1M-cH-7GI"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aqn-hH-EBv">
