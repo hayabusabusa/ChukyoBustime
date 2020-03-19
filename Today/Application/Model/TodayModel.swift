@@ -42,13 +42,13 @@ struct TodayModelImpl: TodayModel {
                 let college: String?
                 let station: String?
                 
-                if let filteredCollege = caches.0.busTimes.first(where: { $0.second > second })?.second {
-                    college = String(format: "%02i:%02i", filteredCollege / 60 % 60, filteredCollege % 60)
+                if let filteredCollege = caches.0.busTimes.first(where: { $0.second > second }){
+                    college = String(format: "%02i:%02i", filteredCollege.hour, filteredCollege.minute)
                 } else {
                     college = nil
                 }
-                if let filteredStation = caches.1.busTimes.first(where: { $0.second > second })?.second {
-                    station = String(format: "%02i:%02i", filteredStation / 60 % 60, filteredStation % 60)
+                if let filteredStation = caches.1.busTimes.first(where: { $0.second > second }) {
+                    station = String(format: "%02i:%02i", filteredStation.hour, filteredStation.minute)
                 } else {
                     station = nil
                 }
