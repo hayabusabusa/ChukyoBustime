@@ -56,8 +56,9 @@ public final class RealmProvider: RealmProviderProtocol {
     // MARK: Private
     
     private static func migrateIfNeeded() {
-        let config = Realm.Configuration(schemaVersion: schemaVersion,
+        var config = Realm.Configuration(schemaVersion: schemaVersion,
                                          deleteRealmIfMigrationNeeded: true)
+        config.fileURL = Configurations.kAppGraoupURL.appendingPathComponent("defaul.realm")
         Realm.Configuration.defaultConfiguration = config
     }
     
