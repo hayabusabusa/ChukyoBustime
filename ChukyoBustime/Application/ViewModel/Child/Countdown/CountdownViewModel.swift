@@ -65,7 +65,7 @@ extension CountdownViewModel: ViewModelType {
                     isValidRelay.accept(true)
                     isLastRelay.accept(first.isLast)
                     isReturnRelay.accept(first.isReturn)
-                    //isKaizuRelay.accept(first.isKaizu)
+                    isKaizuRelay.accept(first.isKaizu)
                     timerRelay.accept(Int(interval))
                 }
             })
