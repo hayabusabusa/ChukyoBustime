@@ -39,6 +39,9 @@ extension CountdownViewModel: ViewModelType {
     }
     
     struct Output {
+        let isLastDriver: Driver<Bool>
+        let isReturnDriver: Driver<Bool>
+        let isKaizuDriver: Driver<Bool>
         let timerDriver: Driver<String>
         let departureTimeDriver: Driver<String>
         let arrivalTimeDriver: Driver<String>
@@ -48,6 +51,9 @@ extension CountdownViewModel: ViewModelType {
     
     func transform(input: CountdownViewModel.Input) -> CountdownViewModel.Output {
         let isValidRelay: BehaviorRelay<Bool> = .init(value: false)
+        let isLastRelay: BehaviorRelay<Bool> = .init(value: false)
+        let isReturnRelay: BehaviorRelay<Bool> = .init(value: false)
+        let isKaizuRelay: BehaviorRelay<Bool> = .init(value: false)
         let countupRelay: PublishRelay<Void> = dependency.countupRelay
         let timerRelay: BehaviorRelay<Int> = .init(value: 0)
         
@@ -57,6 +63,9 @@ extension CountdownViewModel: ViewModelType {
                     let now = DateInRegion(Date(), region: .current)
                     let interval = first.second - (now.hour * 3600 + now.minute * 60 + now.second)
                     isValidRelay.accept(true)
+                    isLastRelay.accept(first.isLast)
+                    isReturnRelay.accept(first.isReturn)
+                    //isKaizuRelay.accept(first.isKaizu)
                     timerRelay.accept(Int(interval))
                 }
             })
@@ -89,7 +98,10 @@ extension CountdownViewModel: ViewModelType {
                 guard let first = busTimes.first else { return " " }
                 return String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute)
             }
-        return Output(timerDriver: timerDriver,
+        return Output(isLastDriver: isLastRelay.asDriver(),
+                      isReturnDriver: isReturnRelay.asDriver(),
+                      isKaizuDriver: isKaizuRelay.asDriver(),
+                      timerDriver: timerDriver,
                       departureTimeDriver: departureTimeDriver,
                       arrivalTimeDriver: arrivalTimeDriver)
     }
