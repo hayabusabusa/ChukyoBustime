@@ -12,7 +12,7 @@
         <!--Countdown View Controller-->
         <scene sceneID="9Xt-rn-pP4">
             <objects>
-                <viewController id="2LT-d1-owe" customClass="CountdownViewController" customModule="中京大学バス" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2LT-d1-owe" customClass="CountdownViewController" customModule="ChukyoBustime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gps-yX-v5r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,10 +24,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yNf-U2-PFW">
-                                                <rect key="frame" x="104" y="0.0" width="168" height="32"/>
+                                                <rect key="frame" x="16" y="0.0" width="256" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi9-Vo-ewF" customClass="OutlinedButton" customModule="中京大学バス" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVo-Tp-CVc" customClass="OutlinedButton" customModule="ChukyoBustime" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Eyz-ZA-YTt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                                        <color key="tintColor" name="Accent"/>
+                                                        <state key="normal" title="最終バス"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="16"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="Accent"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi9-Vo-ewF" customClass="OutlinedButton" customModule="ChukyoBustime" customModuleProvider="target">
+                                                        <rect key="frame" x="88" y="0.0" width="80" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="T1g-vu-KWD"/>
                                                         </constraints>
@@ -46,14 +66,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVo-Tp-CVc" customClass="OutlinedButton" customModule="中京大学バス" customModuleProvider="target">
-                                                        <rect key="frame" x="88" y="0.0" width="80" height="32"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bj0-Va-jmn" customClass="OutlinedButton" customModule="ChukyoBustime" customModuleProvider="target">
+                                                        <rect key="frame" x="176" y="0.0" width="80" height="32"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="80" id="Eyz-ZA-YTt"/>
+                                                            <constraint firstAttribute="width" constant="80" id="jvh-Fo-X48"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
-                                                        <color key="tintColor" name="Accent"/>
-                                                        <state key="normal" title="最終バス"/>
+                                                        <color key="tintColor" name="Primary"/>
+                                                        <state key="normal" title="貝津経由"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="16"/>
@@ -62,7 +82,7 @@
                                                                 <real key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" name="Accent"/>
+                                                                <color key="value" name="Primary"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -133,7 +153,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eW1-TV-mbX">
                                                                 <rect key="frame" x="34" y="27" width="92" height="12"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-HQ-QHP" customClass="RoundedView" customModule="中京大学バス" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-HQ-QHP" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
                                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -145,7 +165,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ce-FN-Hg5" customClass="RoundedView" customModule="中京大学バス" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ce-FN-Hg5" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="20" y="0.0" width="12" height="12"/>
                                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -157,7 +177,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4c-zE-dWj" customClass="RoundedView" customModule="中京大学バス" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4c-zE-dWj" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="40" y="0.0" width="12" height="12"/>
                                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -169,7 +189,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcU-sL-agU" customClass="RoundedView" customModule="中京大学バス" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcU-sL-agU" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="60" y="0.0" width="12" height="12"/>
                                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -181,7 +201,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-DT-fhL" customClass="RoundedView" customModule="中京大学バス" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-DT-fhL" customClass="RoundedView" customModule="ChukyoBustime" customModuleProvider="target">
                                                                         <rect key="frame" x="80" y="0.0" width="12" height="12"/>
                                                                         <color key="backgroundColor" name="Primary"/>
                                                                         <constraints>
@@ -266,6 +286,9 @@
                         <outlet property="departureImageView" destination="DhO-fk-qf5" id="iJZ-vG-UxD"/>
                         <outlet property="departurePointLabel" destination="7sQ-x1-yEt" id="L14-iz-YOy"/>
                         <outlet property="departureTimeLabel" destination="2Xc-9C-UrU" id="8hv-rl-cLU"/>
+                        <outlet property="isKaizuButton" destination="Bj0-Va-jmn" id="jy8-Yh-vE3"/>
+                        <outlet property="isLastButton" destination="nVo-Tp-CVc" id="TsE-I1-Fbp"/>
+                        <outlet property="isReturnButton" destination="Pi9-Vo-ewF" id="f4r-x6-JZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBR-5u-YgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -17,4 +17,5 @@ struct BusTime {
     let arrivalSecond: Int
     let isReturn: Bool
     let isLast: Bool
+    let isKaizu: Bool
 }

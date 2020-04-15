@@ -18,6 +18,7 @@ public final class BusTimeEntity: Object, Decodable {
     @objc public dynamic var arrivalSecond: Int = 0
     @objc public dynamic var isReturn: Bool = false
     @objc public dynamic var isLast: Bool = false
+    @objc public dynamic var isKaizu: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case hour
@@ -28,6 +29,7 @@ public final class BusTimeEntity: Object, Decodable {
         case arrivalSecond
         case isReturn
         case isLast
+        case isKaizu
     }
     
     public convenience init(hour: Int,
@@ -37,7 +39,8 @@ public final class BusTimeEntity: Object, Decodable {
                             arrivalMinute: Int,
                             arrivalSecond: Int,
                             isReturn: Bool,
-                            isLast: Bool) {
+                            isLast: Bool,
+                            isKaizu: Bool) {
         self.init()
         self.hour = hour
         self.minute = minute
@@ -47,6 +50,7 @@ public final class BusTimeEntity: Object, Decodable {
         self.arrivalSecond = arrivalSecond
         self.isReturn = isReturn
         self.isLast = isLast
+        self.isKaizu = isKaizu
     }
     
     public required init() {

@@ -22,7 +22,8 @@ struct BusDateAndBusTimesTranslator: Translator {
                                                     arrivalMinute: $0.arrivalMinute,
                                                     arrivalSecond: $0.arrivalSecond,
                                                     isReturn: $0.isReturn,
-                                                    isLast: $0.isLast) }
+                                                    isLast: $0.isLast,
+                                                    isKaizu: $0.isKaizu) }
         return (busDate: busDate, busTimes: busTimes)
     }
 }
