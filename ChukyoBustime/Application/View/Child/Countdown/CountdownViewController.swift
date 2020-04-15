@@ -71,13 +71,13 @@ extension CountdownViewController {
         let input = CountdownViewModel.Input()
         let output = viewModel.transform(input: input)
         
-        output.isLastDriver.map { !$0 }
+        output.isHideLastButtonDriver
             .drive(isLastButton.rx.isHidden)
             .disposed(by: disposeBag)
-        output.isReturnDriver.map { !$0 }
+        output.isHideReturnButtonDriver
             .drive(isReturnButton.rx.isHidden)
             .disposed(by: disposeBag)
-        output.isKaizuDriver.map { !$0 }
+        output.isHideKaizuButtonDriver
             .drive(isKaizuButton.rx.isHidden)
             .disposed(by: disposeBag)
         output.timerDriver
