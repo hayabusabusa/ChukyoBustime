@@ -43,6 +43,7 @@ extension ToCollegeViewModel: ViewModelType {
     
     struct Output {
         let children: Children
+        let isLoadingDriver: Driver<Bool>
         let presentSetting: Driver<Void>
     }
     
@@ -52,12 +53,14 @@ extension ToCollegeViewModel: ViewModelType {
         let diagramRelay: BehaviorRelay<String> = .init(value: "")
         let busTimesRelay: BehaviorRelay<[BusTime]> = .init(value: [])
         let countupRelay: PublishRelay<Void> = .init()
+        let isLoadingRelay: BehaviorRelay<Bool> = .init(value: true) // Show indicator and hide scroll view
         
         let now = Date()
         model.getBusTimes(at: now)
             .subscribe(onSuccess: { result in
                 diagramRelay.accept(result.busDate.diagramName)
                 busTimesRelay.accept(result.busTimes)
+                isLoadingRelay.accept(false) // Hide indicator and show scroll view
             }, onError: { error in
                 print(error)
             })
@@ -95,6 +98,7 @@ extension ToCollegeViewModel: ViewModelType {
         return Output(children: Children(diagramViewModel: diagramViewModel,
                                          countdownViewModel: countdownViewModel,
                                          busListViewModel: busListViewModel),
+                      isLoadingDriver: isLoadingRelay.asDriver(),
                       presentSetting: input.settingBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
     }
 }

@@ -47,13 +47,15 @@ extension ToCollegeViewController {
     }
     
     private func setupScrollView() {
-       scrollView.showsVerticalScrollIndicator = false
-       scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        // NOTE: Hide scroll view until fetching data from firestore.
+        scrollView.alpha = 0
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
    }
        
    private func setupChildren() {
-       let pdfButtons = PdfButtonsViewController.configure()
-       embed(pdfButtons, to: layoutPdfButtonsView)
+        let pdfButtons = PdfButtonsViewController.configure()
+        embed(pdfButtons, to: layoutPdfButtonsView)
    }
 }
 
@@ -78,9 +80,23 @@ extension ToCollegeViewController {
         let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
         
+        output.isLoadingDriver
+            .drive(onNext: { [weak self] value in self?.startScrollViewAnimation(isHidden: value) })
+            .disposed(by: disposeBag)
         output.presentSetting
             .drive(onNext: { [weak self] in self?.presentSetting() })
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Animation
+
+extension ToCollegeViewController {
+    
+    private func startScrollViewAnimation(isHidden: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.scrollView.alpha = isHidden ? 0 : 1
+        }
     }
 }
 
