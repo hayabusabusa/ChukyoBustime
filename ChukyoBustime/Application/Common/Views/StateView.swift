@@ -34,6 +34,7 @@ class StateView: UIView {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = .lightGray
         imageView.contentMode = .scaleAspectFit
         imageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
         return imageView
@@ -42,7 +43,7 @@ class StateView: UIView {
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 1
-        titleLabel.textColor = .gray
+        titleLabel.textColor = .lightGray
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         return titleLabel
@@ -51,7 +52,7 @@ class StateView: UIView {
     private lazy var contentLabel: UILabel = {
         let contentLabel = UILabel()
         contentLabel.numberOfLines = 0
-        contentLabel.textColor = .gray
+        contentLabel.textColor = .lightGray
         contentLabel.textAlignment = .center
         contentLabel.font = .systemFont(ofSize: 14, weight: .regular)
         return contentLabel
@@ -67,7 +68,7 @@ class StateView: UIView {
     
     private lazy var buttonStackView: UIStackView = {
         let buttonStackView = UIStackView()
-        buttonStackView.spacing = 12
+        buttonStackView.spacing = 8
         buttonStackView.axis = .horizontal
         buttonStackView.alignment = .fill
         buttonStackView.distribution = .fillEqually
@@ -105,7 +106,7 @@ class StateView: UIView {
     private lazy var spacer: UIView = {
         let spacer = UIView()
         spacer.backgroundColor = .clear
-        spacer.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        spacer.heightAnchor.constraint(equalToConstant: 12).isActive = true
         return spacer
     }()
     
