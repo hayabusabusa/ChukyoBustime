@@ -20,10 +20,7 @@ final class ToCollegeViewController: BaseViewController, StateViewable {
     
     // MARK: Properties
     
-    let stateView = StateView(frame: .zero,
-                              image: UIImage(named: "img_operation_end"),
-                              title: "本日の運行は終了しました",
-                              content: "明日の運行カレンダーと時刻表は\n以下から確認できます")
+    let stateView = StateView(of: .toCollege)
     private var viewModel: ToCollegeViewModel!
     
     // MARK: Lifecycle

@@ -82,6 +82,7 @@ extension ToStationViewModel: ViewModelType {
                 var busTimes = busTimesRelay.value
                 if busTimes.isEmpty {
                     busTimesRelay.accept([])
+                    stateRelay.accept(.empty) // Show empty state
                 } else {
                     busTimes.removeFirst()
                     busTimesRelay.accept(busTimes)

@@ -16,9 +16,23 @@ class StateView: UIView {
         case none
         case loading
         case empty
+        case error
     }
     
     // MARK: Properties
+    
+    private var emptyImage: UIImage?
+    private var emptyTitle: String?
+    private var emptyContent: String?
+    
+    private var errorImage: UIImage?
+    private var errorTitle: String?
+    private var errorContent: String?
+    
+    var onTapCalendarButton: (() -> Void)?
+    var onTapTimeTableButton: (() -> Void)?
+    
+    // MARK: Views
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -34,6 +48,7 @@ class StateView: UIView {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = emptyImage
         imageView.tintColor = .lightGray
         imageView.contentMode = .scaleAspectFit
         imageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
@@ -42,6 +57,7 @@ class StateView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.text = emptyTitle
         titleLabel.numberOfLines = 1
         titleLabel.textColor = .lightGray
         titleLabel.textAlignment = .center
@@ -51,6 +67,7 @@ class StateView: UIView {
     
     private lazy var contentLabel: UILabel = {
         let contentLabel = UILabel()
+        contentLabel.text = emptyContent
         contentLabel.numberOfLines = 0
         contentLabel.textColor = .lightGray
         contentLabel.textAlignment = .center
@@ -87,6 +104,7 @@ class StateView: UIView {
         calendarButton.setTitleColor(.primary, for: .normal)
         calendarButton.setImage(UIImage(named: "ic_calendar"), for: .normal)
         calendarButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .medium)
+        calendarButton.addTarget(self, action: #selector(onTapCalendarButton(_:)), for: .touchUpInside)
         return calendarButton
     }()
     
@@ -100,6 +118,7 @@ class StateView: UIView {
         timeTableButton.setTitleColor(.primary, for: .normal)
         timeTableButton.setImage(UIImage(named: "ic_time_table"), for: .normal)
         timeTableButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .medium)
+        timeTableButton.addTarget(self, action: #selector(onTapTimeTableButton(_:)), for: .touchUpInside)
         return timeTableButton
     }()
     
@@ -117,11 +136,31 @@ class StateView: UIView {
         commonInit()
     }
     
-    init(frame: CGRect, image: UIImage? = nil, title: String? = nil, content: String? = nil) {
+    init(of type: StateViewType) {
+        super.init(frame: .zero)
+        self.emptyTitle = type.emptyTitle
+        self.emptyTitle = type.emptyTitle
+        self.emptyContent = type.emptyContent
+        self.errorImage = type.errorImage
+        self.errorTitle = type.errorTitle
+        self.errorContent = type.errorContent
+        commonInit()
+    }
+    
+    init(frame: CGRect,
+         emptyImage: UIImage? = nil,
+         emptyTitle: String? = nil,
+         emptyContent: String? = nil,
+         errorImage: UIImage? = nil,
+         errorTitle: String? = nil,
+         errorContent: String? = nil) {
         super.init(frame: frame)
-        imageView.image = image
-        titleLabel.text = title
-        contentLabel.text = content
+        self.emptyImage = emptyImage
+        self.emptyTitle = emptyTitle
+        self.emptyContent = emptyContent
+        self.errorImage = errorImage
+        self.errorTitle = errorTitle
+        self.errorContent = errorContent
         commonInit()
     }
 
@@ -220,6 +259,9 @@ extension StateView {
     
     func setState(of state: State) {
         isHidden = state == .none
+        imageView.image = state == .error ? errorImage : emptyImage
+        titleLabel.text = state == .error ? errorTitle : emptyTitle
+        contentLabel.text = state == .error ? errorContent : emptyContent
         switch state {
         case .none:
             animateIndicator(isHidden: true)
@@ -227,9 +269,26 @@ extension StateView {
         case .loading:
             animateIndicator(isHidden: false)
             animateStackView(isHidden: true)
-        case .empty:
+        case .empty, .error:
             animateIndicator(isHidden: true)
             animateStackView(isHidden: false)
         }
+    }
+}
+
+// MARK: - Tap event
+
+extension StateView {
+    
+    @objc
+    private func onTapCalendarButton(_ sender: UIButton) {
+        guard let onTapCalendarButton = onTapCalendarButton else { return }
+        onTapCalendarButton()
+    }
+    
+    @objc
+    private func onTapTimeTableButton(_ sender: UIButton) {
+        guard let onTapTimeTableButton = onTapTimeTableButton else { return }
+        onTapTimeTableButton()
     }
 }
