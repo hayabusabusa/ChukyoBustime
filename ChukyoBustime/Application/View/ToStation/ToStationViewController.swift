@@ -22,7 +22,7 @@ final class ToStationViewController: BaseViewController, StateViewable {
     
     // MARK: Properties
     
-    let stateView: StateView = StateView(frame: .zero, image: nil, title: "本日の運行は終了しました。", content: nil)
+    let stateView: StateView = StateView(frame: .zero, image: UIImage(named: "img_operation_end"), title: "本日の運行は終了しました。", content: nil)
     private var viewModel: ToStationViewModel!
     
     // MARK: Lifecycle
