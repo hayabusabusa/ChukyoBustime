@@ -20,11 +20,89 @@ class StateView: UIView {
     
     // MARK: Properties
     
-    private let stackView = UIStackView()
-    private let imageView = UIImageView()
-    private let titleLabel = UILabel()
-    private let contentLabel = UILabel()
-    private let indicator = UIActivityIndicatorView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alpha = 0
+        stackView.spacing = 4
+        stackView.isHidden = true
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.heightAnchor.constraint(equalToConstant: 108).isActive = true
+        return imageView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 1
+        titleLabel.textColor = .primary
+        titleLabel.textAlignment = .center
+        titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
+        return titleLabel
+    }()
+    
+    private lazy var contentLabel: UILabel = {
+        let contentLabel = UILabel()
+        contentLabel.numberOfLines = 0
+        contentLabel.textColor = .primary
+        contentLabel.textAlignment = .center
+        contentLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        return contentLabel
+    }()
+    
+    private lazy var indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.alpha = 0
+        indicator.isHidden = true
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
+    private lazy var buttonStackView: UIStackView = {
+        let buttonStackView = UIStackView()
+        buttonStackView.axis = .horizontal
+        buttonStackView.alignment = .fill
+        buttonStackView.distribution = .fillEqually
+        buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+        buttonStackView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        return buttonStackView
+    }()
+    
+    private lazy var calendarButton: UIButton = {
+        let calendarButton = UIButton()
+        calendarButton.tintColor = .primary
+        calendarButton.setTitle(" カレンダー", for: .normal)
+        calendarButton.setTitleColor(.primary, for: .normal)
+        calendarButton.setImage(UIImage(named: "ic_calendar"), for: .normal)
+        calendarButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .medium)
+        return calendarButton
+    }()
+    
+    private lazy var timeTableButton: UIButton = {
+        let timeTableButton = UIButton()
+        timeTableButton.tintColor = .primary
+        timeTableButton.setTitle(" 時刻表", for: .normal)
+        timeTableButton.setTitleColor(.primary, for: .normal)
+        timeTableButton.setImage(UIImage(named: "ic_time_table"), for: .normal)
+        timeTableButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .medium)
+        return timeTableButton
+    }()
+    
+    private lazy var buttonsDivider: UIView = {
+        let buttonsDivider = UIView()
+        buttonsDivider.backgroundColor = .lightGray
+        buttonsDivider.translatesAutoresizingMaskIntoConstraints = false
+        buttonsDivider.widthAnchor.constraint(equalToConstant: 1).isActive = true
+        buttonsDivider.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        return buttonsDivider
+    }()
     
     // MARK: Lifecycle
     
@@ -54,23 +132,19 @@ class StateView: UIView {
         super.prepareForInterfaceBuilder()
         commonInit()
     }
-    
-    // MARK: Private
 
     private func commonInit() {
         isExclusiveTouch = true
         setupViews()
     }
+}
+
+// MARK: - Private method
+
+extension StateView {
     
     private func setupViews() {
         // StackView
-        stackView.alpha = 0
-        stackView.spacing = 4
-        stackView.isHidden = true
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -79,28 +153,24 @@ class StateView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         // ImageView
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 108)
-        ])
         // TitleLabel
-        titleLabel.numberOfLines = 1
-        titleLabel.textColor = .primary
-        titleLabel.textAlignment = .center
-        titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         stackView.addArrangedSubview(titleLabel)
         // ContentLabel
-        contentLabel.numberOfLines = 0
-        contentLabel.textColor = .primary
-        contentLabel.textAlignment = .center
-        contentLabel.font = .systemFont(ofSize: 13, weight: .medium)
         stackView.addArrangedSubview(contentLabel)
+        // ButtonStackView
+        stackView.addArrangedSubview(buttonStackView)
+        // CalendarButton
+        buttonStackView.addArrangedSubview(calendarButton)
+        // TimeTableButton
+        buttonStackView.addArrangedSubview(timeTableButton)
+        // ButtonsDivider
+        buttonStackView.addSubview(buttonsDivider)
+        NSLayoutConstraint.activate([
+            buttonsDivider.centerYAnchor.constraint(equalTo: buttonStackView.centerYAnchor),
+            buttonsDivider.centerXAnchor.constraint(equalTo: buttonStackView.centerXAnchor)
+        ])
         // Indicator
-        indicator.alpha = 0
-        indicator.isHidden = true
-        indicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(indicator)
         NSLayoutConstraint.activate([
             indicator.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -140,8 +210,11 @@ class StateView: UIView {
                         self.stackView.isHidden = isHidden
                        })
     }
-    
-    // MARK: Public
+}
+
+// MARK: - Public method
+
+extension StateView {
     
     func setState(of state: State) {
         isHidden = state == .none
