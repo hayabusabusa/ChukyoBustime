@@ -36,7 +36,7 @@ enum StateViewType {
     var errorImage: UIImage? {
         switch self {
         case .toStation, .toCollege:
-            return nil
+            return UIImage(named: "img_error")
         }
     }
     
