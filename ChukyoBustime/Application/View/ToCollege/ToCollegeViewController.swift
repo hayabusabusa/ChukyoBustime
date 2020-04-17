@@ -82,10 +82,11 @@ extension ToCollegeViewController {
         let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
         
-        output.isLoadingDriver
-            .drive(onNext: { [weak self] value in
-                self?.startScrollViewAnimation(isHidden: value)
-                self?.stateView.setState(of: value ? .loading : .none)
+        // NOTE: Scroll view animation and state view animation
+        output.stateDriver
+            .drive(onNext: { [weak self] state in
+                self?.startScrollViewAnimation(isHidden: state == .none ? false : true)
+                self?.stateView.setState(of: state)
             })
             .disposed(by: disposeBag)
         output.presentSettingSignal

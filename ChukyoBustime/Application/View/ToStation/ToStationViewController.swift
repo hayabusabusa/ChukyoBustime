@@ -85,10 +85,10 @@ extension ToStationViewController {
         embed(busList, to: layoutBusListView)
         
         // NOTE: Scroll view animation and state view animation
-        output.isLoadingDriver
-            .drive(onNext: { [weak self] value in
-                self?.startScrollViewAnimation(isHidden: value)
-                self?.stateView.setState(of: value ? .loading : .none)
+        output.stateDriver
+            .drive(onNext: { [weak self] state in
+                self?.startScrollViewAnimation(isHidden: state == .none ? false : true)
+                self?.stateView.setState(of: state)
             })
             .disposed(by: disposeBag)
         output.presentSettingSignal
