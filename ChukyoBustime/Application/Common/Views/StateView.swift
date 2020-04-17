@@ -42,7 +42,7 @@ class StateView: UIView {
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 1
-        titleLabel.textColor = .primary
+        titleLabel.textColor = .gray
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         return titleLabel
@@ -51,9 +51,9 @@ class StateView: UIView {
     private lazy var contentLabel: UILabel = {
         let contentLabel = UILabel()
         contentLabel.numberOfLines = 0
-        contentLabel.textColor = .primary
+        contentLabel.textColor = .gray
         contentLabel.textAlignment = .center
-        contentLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        contentLabel.font = .systemFont(ofSize: 14, weight: .regular)
         return contentLabel
     }()
     
@@ -67,6 +67,7 @@ class StateView: UIView {
     
     private lazy var buttonStackView: UIStackView = {
         let buttonStackView = UIStackView()
+        buttonStackView.spacing = 12
         buttonStackView.axis = .horizontal
         buttonStackView.alignment = .fill
         buttonStackView.distribution = .fillEqually
@@ -78,6 +79,9 @@ class StateView: UIView {
     private lazy var calendarButton: UIButton = {
         let calendarButton = UIButton()
         calendarButton.tintColor = .primary
+        calendarButton.layer.borderWidth = 1
+        calendarButton.layer.cornerRadius = 22
+        calendarButton.layer.borderColor = UIColor.primary.cgColor
         calendarButton.setTitle(" カレンダー", for: .normal)
         calendarButton.setTitleColor(.primary, for: .normal)
         calendarButton.setImage(UIImage(named: "ic_calendar"), for: .normal)
@@ -88,6 +92,9 @@ class StateView: UIView {
     private lazy var timeTableButton: UIButton = {
         let timeTableButton = UIButton()
         timeTableButton.tintColor = .primary
+        timeTableButton.layer.borderWidth = 1
+        timeTableButton.layer.cornerRadius = 22
+        timeTableButton.layer.borderColor = UIColor.primary.cgColor
         timeTableButton.setTitle(" 時刻表", for: .normal)
         timeTableButton.setTitleColor(.primary, for: .normal)
         timeTableButton.setImage(UIImage(named: "ic_time_table"), for: .normal)
@@ -95,13 +102,11 @@ class StateView: UIView {
         return timeTableButton
     }()
     
-    private lazy var buttonsDivider: UIView = {
-        let buttonsDivider = UIView()
-        buttonsDivider.backgroundColor = .lightGray
-        buttonsDivider.translatesAutoresizingMaskIntoConstraints = false
-        buttonsDivider.widthAnchor.constraint(equalToConstant: 1).isActive = true
-        buttonsDivider.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        return buttonsDivider
+    private lazy var spacer: UIView = {
+        let spacer = UIView()
+        spacer.backgroundColor = .clear
+        spacer.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        return spacer
     }()
     
     // MARK: Lifecycle
@@ -158,18 +163,14 @@ extension StateView {
         stackView.addArrangedSubview(titleLabel)
         // ContentLabel
         stackView.addArrangedSubview(contentLabel)
+        // Spacer
+        stackView.addArrangedSubview(spacer)
         // ButtonStackView
         stackView.addArrangedSubview(buttonStackView)
         // CalendarButton
         buttonStackView.addArrangedSubview(calendarButton)
         // TimeTableButton
         buttonStackView.addArrangedSubview(timeTableButton)
-        // ButtonsDivider
-        buttonStackView.addSubview(buttonsDivider)
-        NSLayoutConstraint.activate([
-            buttonsDivider.centerYAnchor.constraint(equalTo: buttonStackView.centerYAnchor),
-            buttonsDivider.centerXAnchor.constraint(equalTo: buttonStackView.centerXAnchor)
-        ])
         // Indicator
         addSubview(indicator)
         NSLayoutConstraint.activate([
