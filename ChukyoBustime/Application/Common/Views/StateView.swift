@@ -79,8 +79,12 @@ class StateView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         // ImageView
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: 108)
+        ])
         // TitleLabel
         titleLabel.numberOfLines = 1
         titleLabel.textColor = .primary
