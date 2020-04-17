@@ -10,7 +10,7 @@ import UIKit
 import Infra
 import RxSwift
 
-final class ToStationViewController: BaseViewController {
+final class ToStationViewController: BaseViewController, StateViewable {
     
     // MARK: IBOutlet
     
@@ -22,6 +22,7 @@ final class ToStationViewController: BaseViewController {
     
     // MARK: Properties
     
+    let stateView: StateView = StateView(frame: .zero, image: nil, title: "本日の運行は終了しました。", content: nil)
     private var viewModel: ToStationViewModel!
     
     // MARK: Lifecycle
@@ -34,6 +35,7 @@ final class ToStationViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
         setupScrollView()
+        setupStateView()
         setupChildren()
         bindViewModel()
     }
@@ -82,8 +84,12 @@ extension ToStationViewController {
         let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
         
+        // NOTE: Scroll view animation and state view animation
         output.isLoadingDriver
-            .drive(onNext: { [weak self] value in self?.startScrollViewAnimation(isHidden: value) })
+            .drive(onNext: { [weak self] value in
+                self?.startScrollViewAnimation(isHidden: value)
+                self?.stateView.setState(of: value ? .loading : .none)
+            })
             .disposed(by: disposeBag)
         output.presentSetting
             .drive(onNext: { [weak self] in self?.presentSetting() })

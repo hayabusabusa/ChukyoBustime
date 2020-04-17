@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ToCollegeViewController: BaseViewController {
+final class ToCollegeViewController: BaseViewController, StateViewable {
     
     // MARK: IBOutlet
     
@@ -20,6 +20,7 @@ final class ToCollegeViewController: BaseViewController {
     
     // MARK: Properties
     
+    let stateView = StateView(frame: .zero, image: nil, title: "本日の運行は終了しました。", content: nil)
     private var viewModel: ToCollegeViewModel!
     
     // MARK: Lifecycle
@@ -32,6 +33,7 @@ final class ToCollegeViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
         setupScrollView()
+        setupStateView()
         setupChildren()
         bindViewModel()
     }
@@ -81,7 +83,10 @@ extension ToCollegeViewController {
         embed(busList, to: layoutBusListView)
         
         output.isLoadingDriver
-            .drive(onNext: { [weak self] value in self?.startScrollViewAnimation(isHidden: value) })
+            .drive(onNext: { [weak self] value in
+                self?.startScrollViewAnimation(isHidden: value)
+                self?.stateView.setState(of: value ? .loading : .none)
+            })
             .disposed(by: disposeBag)
         output.presentSetting
             .drive(onNext: { [weak self] in self?.presentSetting() })
