@@ -24,7 +24,7 @@ extension StateViewable {
         // NOTE: 背面に持っていくとスクロールできなくなるためコメントアウト
         //view.sendSubviewToBack(stateView)
         NSLayoutConstraint.activate([
-            stateView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stateView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -32),
             stateView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
             stateView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32)
         ])
