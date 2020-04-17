@@ -21,6 +21,8 @@ extension StateViewable {
     func setupStateView() {
         stateView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stateView)
+        // NOTE: 背面に持っていくとスクロールできなくなるためコメントアウト
+        //view.sendSubviewToBack(stateView)
         NSLayoutConstraint.activate([
             stateView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stateView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),

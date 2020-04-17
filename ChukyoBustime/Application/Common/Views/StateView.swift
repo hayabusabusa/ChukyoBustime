@@ -144,6 +144,7 @@ class StateView: UIView {
     // MARK: Public
     
     func setState(of state: State) {
+        isHidden = state == .none
         switch state {
         case .none:
             animateIndicator(isHidden: true)
