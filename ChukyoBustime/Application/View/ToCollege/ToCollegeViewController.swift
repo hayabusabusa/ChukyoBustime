@@ -88,8 +88,8 @@ extension ToCollegeViewController {
                 self?.stateView.setState(of: value ? .loading : .none)
             })
             .disposed(by: disposeBag)
-        output.presentSetting
-            .drive(onNext: { [weak self] in self?.presentSetting() })
+        output.presentSettingSignal
+            .emit(onNext: { [weak self] in self?.presentSetting() })
             .disposed(by: disposeBag)
     }
 }
