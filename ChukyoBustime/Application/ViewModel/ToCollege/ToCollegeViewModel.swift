@@ -38,12 +38,16 @@ extension ToCollegeViewModel: ViewModelType {
     
     struct Input {
         let foregroundSignal: Signal<Void>
+        let calendarButtonDidTap: Signal<Void>
+        let timeTableButtonDidTap: Signal<Void>
         let settingBarButtonDidTap: Signal<Void>
     }
     
     struct Output {
         let children: Children
-        let presentSetting: Driver<Void>
+        let stateDriver: Driver<StateView.State>
+        let presentSettingSignal: Signal<Void>
+        let presentSafariSignal: Signal<URL>
     }
     
     // MARK: Transform I/O
@@ -52,17 +56,34 @@ extension ToCollegeViewModel: ViewModelType {
         let diagramRelay: BehaviorRelay<String> = .init(value: "")
         let busTimesRelay: BehaviorRelay<[BusTime]> = .init(value: [])
         let countupRelay: PublishRelay<Void> = .init()
+        let stateRelay: BehaviorRelay<StateView.State> = .init(value: .loading) // Show indicator and hide scroll view
+        let presentSafariRelay: PublishRelay<URL> = .init()
         
         let now = Date()
         model.getBusTimes(at: now)
             .subscribe(onSuccess: { result in
                 diagramRelay.accept(result.busDate.diagramName)
                 busTimesRelay.accept(result.busTimes)
-            }, onError: { error in
-                print(error)
+                stateRelay.accept(result.busTimes.isEmpty ? .empty : .none) // Hide indicator and show scroll view
+            }, onError: { _ in
+                stateRelay.accept(.error)
             })
             .disposed(by: disposeBag)
         
+        // NOTE: On tap state view button.
+        let pdfURLSignal = model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
+        input.calendarButtonDidTap
+            .flatMapLatest { pdfURLSignal }
+            .map { URL(string: $0.calendar) }
+            .compactMap { $0 }
+            .emit(to: presentSafariRelay)
+            .disposed(by: disposeBag)
+        input.timeTableButtonDidTap
+            .flatMapLatest { pdfURLSignal }
+            .map { URL(string: $0.timeTable) }
+            .compactMap { $0 }
+            .emit(to: presentSafariRelay)
+            .disposed(by: disposeBag)
         // NOTE: Back from background, Update current busTime array.
         input.foregroundSignal
             .emit(onNext: {
@@ -72,13 +93,13 @@ extension ToCollegeViewModel: ViewModelType {
                 busTimesRelay.accept(newArray)
             })
             .disposed(by: disposeBag)
-        
         // NOTE: Update current busTime array.
         countupRelay.asDriver(onErrorDriveWith: .empty())
             .drive(onNext: {
                 var busTimes = busTimesRelay.value
                 if busTimes.isEmpty {
                     busTimesRelay.accept([])
+                    stateRelay.accept(.empty) // Show empty state
                 } else {
                     busTimes.removeFirst()
                     busTimesRelay.accept(busTimes)
@@ -95,7 +116,9 @@ extension ToCollegeViewModel: ViewModelType {
         return Output(children: Children(diagramViewModel: diagramViewModel,
                                          countdownViewModel: countdownViewModel,
                                          busListViewModel: busListViewModel),
-                      presentSetting: input.settingBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
+                      stateDriver: stateRelay.asDriver(),
+                      presentSettingSignal: input.settingBarButtonDidTap,
+                      presentSafariSignal: presentSafariRelay.asSignal())
     }
 }
 

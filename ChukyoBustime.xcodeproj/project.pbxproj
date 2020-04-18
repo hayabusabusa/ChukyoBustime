@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71039739244A06A100997DBD /* StateViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71039738244A06A100997DBD /* StateViewType.swift */; };
 		71059428241A251D003CA820 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71059427241A251D003CA820 /* OutlinedButton.swift */; };
 		710E88B42421A6F60049D717 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E88B32421A6F60049D717 /* TodayViewModel.swift */; };
 		710E88B82421C06B0049D717 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E88B72421C06B0049D717 /* Configurations.swift */; };
@@ -60,6 +61,8 @@
 		71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */; };
 		71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
 		71D278B7241F0E280087B373 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		71F660C92448374800E1DA90 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660C82448374800E1DA90 /* StateView.swift */; };
+		71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660CA244941DA00E1DA90 /* StateViewable.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
 		71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */; };
 		71FF5C1C23E1B70D00456D75 /* BusListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */; };
@@ -164,6 +167,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71039738244A06A100997DBD /* StateViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewType.swift; sourceTree = "<group>"; };
 		71059427241A251D003CA820 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		710E88B32421A6F60049D717 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		710E88B72421C06B0049D717 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 		71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewableTranslator.swift; sourceTree = "<group>"; };
 		71D278B3241F0E280087B373 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		71D278B4241F0E280087B373 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		71F660C82448374800E1DA90 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		71F660CA244941DA00E1DA90 /* StateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewable.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		71FF5C1923E1B6BF00456D75 /* BusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewController.swift; sourceTree = "<group>"; };
 		71FF5C1B23E1B70D00456D75 /* BusListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusListViewController.storyboard; sourceTree = "<group>"; };
@@ -708,8 +714,11 @@
 		A42D0DDE23E1739200E95FED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				71FF5C1623E1B25900456D75 /* RoundedView.swift */,
 				71059427241A251D003CA820 /* OutlinedButton.swift */,
+				71FF5C1623E1B25900456D75 /* RoundedView.swift */,
+				71F660C82448374800E1DA90 /* StateView.swift */,
+				71F660CA244941DA00E1DA90 /* StateViewable.swift */,
+				71039738244A06A100997DBD /* StateViewType.swift */,
 				A42D0DDF23E173B900E95FED /* BusListView */,
 			);
 			path = Views;
@@ -1271,10 +1280,12 @@
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
 				71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */,
+				71039739244A06A100997DBD /* StateViewType.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
 				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
+				71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */,
 				71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
@@ -1292,6 +1303,7 @@
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
+				71F660C92448374800E1DA90 /* StateView.swift in Sources */,
 				A4A7395823E3EAFC00F7C1A9 /* CountdownViewModel.swift in Sources */,
 				A42D0DEB23E17F8E00E95FED /* DiagramViewController.swift in Sources */,
 				A42D0DD123E1680100E95FED /* ToCollegeViewController.swift in Sources */,
