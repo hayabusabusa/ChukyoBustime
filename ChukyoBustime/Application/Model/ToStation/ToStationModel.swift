@@ -14,6 +14,7 @@ import RxSwift
 
 protocol ToStationModel: AnyObject {
     func getBusTimes(at date: Date) -> Single<(busDate: BusDate, busTimes: [BusTime])>
+    func getPdfUrl() -> Single<PdfUrl>
 }
 
 // MARK: - Implementation
@@ -24,13 +25,16 @@ class ToStationModelImpl: ToStationModel {
     
     private let firestoreRepository: FirestoreRepository
     private let localCacheRepository: LocalCacheRepository
+    private let remoteConfigProvider: RemoteConfigProvider
     
     // MARK: Initializer
     
     init(firestoreRepository: FirestoreRepository = FirestoreRepositoryImpl(),
-         localCacheRepository: LocalCacheRepository = LocalCacheRepositoryImpl()) {
+         localCacheRepository: LocalCacheRepository = LocalCacheRepositoryImpl(),
+         remoteConfigProvider: RemoteConfigProvider = RemoteConfigProvider.shared) {
         self.firestoreRepository = firestoreRepository
         self.localCacheRepository = localCacheRepository
+        self.remoteConfigProvider = remoteConfigProvider
     }
     
     // MARK: Firestore
@@ -45,5 +49,13 @@ class ToStationModelImpl: ToStationModel {
                     .andThen(Single.just((busDate: value.busDate, busTimes: value.busTimes)))
                     .translate(BusDateAndBusTimesTranslator())
             }
+    }
+    
+    // MARK: Remote Config
+    
+    func getPdfUrl() -> Single<PdfUrl> {
+        return remoteConfigProvider
+            .getConfigValue(for: .pdfUrl, configType: RCPdfUrlEntity.self)
+            .translate(PdfUrlTranslator())
     }
 }

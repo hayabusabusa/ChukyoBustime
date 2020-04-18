@@ -9,6 +9,7 @@
 import UIKit
 import Infra
 import RxSwift
+import RxCocoa
 
 final class ToStationViewController: BaseViewController, StateViewable {
     
@@ -23,6 +24,8 @@ final class ToStationViewController: BaseViewController, StateViewable {
     // MARK: Properties
     
     let stateView: StateView = StateView(of: .toStation)
+    private let calendarButtonTapTrigger: PublishRelay<Void> = .init()
+    private let timeTableButtonTapTrigger: PublishRelay<Void> = .init()
     private var viewModel: ToStationViewModel!
     
     // MARK: Lifecycle
@@ -37,6 +40,7 @@ final class ToStationViewController: BaseViewController, StateViewable {
         setupScrollView()
         setupStateView()
         setupChildren()
+        setupStateViewHandler()
         bindViewModel()
     }
 }
@@ -61,6 +65,11 @@ extension ToStationViewController {
         let pdfButtons = PdfButtonsViewController.configure()
         embed(pdfButtons, to: layoutPdfButtonsView)
     }
+    
+    private func setupStateViewHandler() {
+        stateView.onTapCalendarButton = { [weak self] in self?.calendarButtonTapTrigger.accept(()) }
+        stateView.onTapTimeTableButton = { [weak self] in self?.timeTableButtonTapTrigger.accept(()) }
+    }
 }
 
 // MARK: - ViewModel
@@ -73,7 +82,9 @@ extension ToStationViewController {
         
         let settingBarButton = navigationItem.rightBarButtonItem!
         let foregroundNotification = NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).map { _ in () }
-        let input = ToStationViewModel.Input(foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
+        let input = ToStationViewModel.Input(calendarButtonDidTap: calendarButtonTapTrigger.asSignal(),
+                                             timeTableButtonDidTap: timeTableButtonTapTrigger.asSignal(),
+                                             foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
                                              settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
@@ -93,6 +104,9 @@ extension ToStationViewController {
             .disposed(by: disposeBag)
         output.presentSettingSignal
             .emit(onNext: { [weak self] in self?.presentSetting() })
+            .disposed(by: disposeBag)
+        output.presentSafariSignal
+            .emit(onNext: { [weak self] url in self?.presentSafari(with: url) })
             .disposed(by: disposeBag)
     }
 }
@@ -114,6 +128,11 @@ extension ToStationViewController {
     
     private func presentSetting() {
         let vc = NavigationController(rootViewController: SettingViewController.instantiate())
+        present(vc, animated: true, completion: nil)
+    }
+    
+    private func presentSafari(with url: URL) {
+        let vc = SafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }
 }
