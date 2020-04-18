@@ -37,9 +37,9 @@ extension ToStationViewModel: ViewModelType {
     // MARK: I/O
     
     struct Input {
+        let foregroundSignal: Signal<Void>
         let calendarButtonDidTap: Signal<Void>
         let timeTableButtonDidTap: Signal<Void>
-        let foregroundSignal: Signal<Void>
         let settingBarButtonDidTap: Signal<Void>
     }
     

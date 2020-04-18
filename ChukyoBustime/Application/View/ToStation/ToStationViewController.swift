@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Infra
-import RxSwift
 import RxCocoa
 
 final class ToStationViewController: BaseViewController, StateViewable {
@@ -82,9 +80,9 @@ extension ToStationViewController {
         
         let settingBarButton = navigationItem.rightBarButtonItem!
         let foregroundNotification = NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).map { _ in () }
-        let input = ToStationViewModel.Input(calendarButtonDidTap: calendarButtonTapTrigger.asSignal(),
+        let input = ToStationViewModel.Input(foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
+                                             calendarButtonDidTap: calendarButtonTapTrigger.asSignal(),
                                              timeTableButtonDidTap: timeTableButtonTapTrigger.asSignal(),
-                                             foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
                                              settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
