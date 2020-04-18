@@ -64,7 +64,7 @@ extension ToCollegeViewModel: ViewModelType {
             .subscribe(onSuccess: { result in
                 diagramRelay.accept(result.busDate.diagramName)
                 busTimesRelay.accept(result.busTimes)
-                stateRelay.accept(!result.busTimes.isEmpty ? .empty : .none) // Hide indicator and show scroll view
+                stateRelay.accept(result.busTimes.isEmpty ? .empty : .none) // Hide indicator and show scroll view
             }, onError: { _ in
                 stateRelay.accept(.error)
             })
