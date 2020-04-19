@@ -86,6 +86,7 @@ extension CountdownViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         let timerDriver = timerRelay
+            .map { $0 < 0 ? 0 : $0 } // NOTE: Map minus value to zero
             .map { String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) }
             .asDriver(onErrorDriveWith: .empty())
         let departureTimeDriver: Driver<String> = dependency.busTimesDriver
