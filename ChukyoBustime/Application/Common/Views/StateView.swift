@@ -138,7 +138,7 @@ class StateView: UIView {
     
     init(of type: StateViewType) {
         super.init(frame: .zero)
-        self.emptyTitle = type.emptyTitle
+        self.emptyImage = type.emptyImage
         self.emptyTitle = type.emptyTitle
         self.emptyContent = type.emptyContent
         self.errorImage = type.errorImage

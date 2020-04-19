@@ -24,6 +24,7 @@ class BusListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,11 +34,13 @@ class BusListView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         loadNib()
+        commonInit()
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         loadNib()
+        commonInit()
     }
     
     private func loadNib() {
@@ -48,6 +51,10 @@ class BusListView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.addSubview(view)
+    }
+    
+    private func commonInit() {
+        backgroundColor = .background
     }
     
     // MARK: Setup

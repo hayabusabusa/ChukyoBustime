@@ -68,8 +68,10 @@ extension BusListViewController {
         if let first = first {
             firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
                                   arrivalTime: String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute))
+            firstBusListView.backgroundColor = UIColor.primary.withAlphaComponent(0.1)
         } else {
             firstBusListView.hide()
+            firstBusListView.backgroundColor = UIColor.background
         }
         if let second = second {
             secondBusListView.show(departureTime: String(format: "%i:%02i", second.hour, second.minute),
