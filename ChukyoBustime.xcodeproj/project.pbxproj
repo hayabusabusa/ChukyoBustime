@@ -46,6 +46,7 @@
 		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
+		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -84,7 +85,6 @@
 		A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */; };
 		A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DBB23E15C2200E95FED /* SafariViewController.swift */; };
 		A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */; };
-		A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */; };
 		A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DC923E1666B00E95FED /* TabBarController.swift */; };
 		A42D0DCC23E1669900E95FED /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DCB23E1669900E95FED /* TabBarController.storyboard */; };
 		A42D0DD123E1680100E95FED /* ToCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DD023E1680100E95FED /* ToCollegeViewController.swift */; };
@@ -204,6 +204,7 @@
 		715D9A672420C98C0018F526 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -243,7 +244,6 @@
 		A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		A42D0DBB23E15C2200E95FED /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		A42D0DC923E1666B00E95FED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A42D0DCB23E1669900E95FED /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A42D0DD023E1680100E95FED /* ToCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewController.swift; sourceTree = "<group>"; };
@@ -664,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 				A42D0DDE23E1739200E95FED /* Views */,
-				A42D0DC523E1650C00E95FED /* Utils */,
 				A42D0DB723E13B5F00E95FED /* Rx */,
 				A42D0DB423E13AE900E95FED /* Extensions */,
 			);
@@ -690,17 +689,10 @@
 			path = Rx;
 			sourceTree = "<group>";
 		};
-		A42D0DC523E1650C00E95FED /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		A42D0DC823E1665200E95FED /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				717D147F244FFC78003944DB /* TabBarItem.swift */,
 				A42D0DC923E1666B00E95FED /* TabBarController.swift */,
 				A42D0DCB23E1669900E95FED /* TabBarController.storyboard */,
 			);
@@ -1310,10 +1302,10 @@
 				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
 				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
-				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
 				A4A7395F23E4072400F7C1A9 /* PdfButtonsViewModel.swift in Sources */,
 				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,
 				A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */,
+				717D1480244FFC78003944DB /* TabBarItem.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */,

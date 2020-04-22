@@ -105,7 +105,7 @@ extension SettingViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.reuseIdentifier, for: indexPath) as? SettingItemCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(title: "起動時に表示", item: setting)
+            cell.setupCell(title: "起動時に表示", item: setting, selectionStyle: .default)
             return cell
         case .version(let version):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingLabelCell.reuseIdentifier, for: indexPath) as? SettingLabelCell else {

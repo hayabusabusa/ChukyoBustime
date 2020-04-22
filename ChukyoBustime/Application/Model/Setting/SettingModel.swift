@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Infra
 import RxSwift
 import RxCocoa
 
 // MARK: - Interface
 
 protocol SettingModel: AnyObject {
-    func getSettings() -> Single<[SettingSectionType]>
+    func getSettings() -> [SettingSectionType]
+    func saveTabSetting(tabBarItem: TabBarItem)
 }
 
 // MARK: - Implementation
@@ -22,22 +24,32 @@ class SettingModelImpl: SettingModel {
     
     // MARK: Dependency
     
+    private let userDefaultsProvider: UserDefaultsProvider
+    
     // MARK: Initializer
     
-    init() {}
+    init(userDefaultsProvider: UserDefaultsProvider = UserDefaultsProvider.shared) {
+        self.userDefaultsProvider = userDefaultsProvider
+    }
     
     // MARK: Setting
     
-    func getSettings() -> Single<[SettingSectionType]> {
-        return Single.just([
+    func getSettings() -> [SettingSectionType] {
+        let storedTabSetting = userDefaultsProvider.enumObject(type: TabBarItem.self, forKey: .initialTab) ?? TabBarItem.toStation
+        let version = Bundle.main.bundleShortVersionString ?? "unknown"
+        return [
             .config(rows: [
-                .tabSetting(setting: "浄水駅行き")
+                .tabSetting(setting: storedTabSetting.title)
             ]),
             .about(rows: [
-                .version(version: Bundle.main.bundleShortVersionString ?? "unknown"),
+                .version(version: version),
                 .agreement,
                 .repository
             ])
-        ])
+        ]
+    }
+    
+    func saveTabSetting(tabBarItem: TabBarItem) {
+        userDefaultsProvider.setEnum(value: tabBarItem, forKey: .initialTab)
     }
 }
