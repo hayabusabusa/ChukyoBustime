@@ -34,7 +34,7 @@ class SettingModelImpl: SettingModel {
                 .tabSetting(setting: "浄水駅行き")
             ]),
             .about(rows: [
-                .version(version: "1.0.0"),
+                .version(version: Bundle.main.bundleShortVersionString ?? "unknown"),
                 .agreement,
                 .repository
             ])
