@@ -77,6 +77,9 @@ extension SettingViewController {
         output.settingsDriver
             .drive(onNext: { [weak self] settings in self?.dataSource = settings })
             .disposed(by: disposeBag)
+        output.messageSignal
+            .emit(onNext: { [weak self] message in self?.presentAlertController(title: "", message: message) })
+            .disposed(by: disposeBag)
         output.dismiss
             .drive(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
