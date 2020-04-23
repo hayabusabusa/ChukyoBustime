@@ -39,7 +39,8 @@ extension SettingViewModel: ViewModelType {
     struct Output {
         let settingsDriver: Driver<[SettingSectionType]>
         let messageSignal: Signal<String>
-        let dismiss: Driver<Void>
+        let presentSafariSignal: Signal<URL>
+        let dismissSignal: Signal<Void>
     }
     
     // MARK: Transform I/O
@@ -48,6 +49,7 @@ extension SettingViewModel: ViewModelType {
         let settingsRelay: BehaviorRelay<[SettingSectionType]> = .init(value: [])
         let messageRelay: PublishRelay<String> = .init()
         let reloadRelay: PublishRelay<Void> = .init()
+        let presentSafariRelay: PublishRelay<URL> = .init()
         
         reloadRelay.asSignal()
             .map { [weak self] in self?.model.getSettings() ?? [] }
@@ -66,8 +68,10 @@ extension SettingViewModel: ViewModelType {
                     self?.model.saveTabSetting(tabBarItem: new)
                     reloadRelay.accept(()) // Reload table view
                     messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
-                case .agreement: print("Agreement")
-                case .repository: print("Repository")
+                case .agreement:
+                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
+                case .repository:
+                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
                 default: break
                 }
             })
@@ -75,6 +79,7 @@ extension SettingViewModel: ViewModelType {
         
         return Output(settingsDriver: settingsRelay.asDriver(),
                       messageSignal: messageRelay.asSignal(),
-                      dismiss: input.closeBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
+                      presentSafariSignal: presentSafariRelay.asSignal(),
+                      dismissSignal: input.closeBarButtonDidTap)
     }
 }

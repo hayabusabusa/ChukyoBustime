@@ -80,9 +80,22 @@ extension SettingViewController {
         output.messageSignal
             .emit(onNext: { [weak self] message in self?.presentAlertController(title: "", message: message) })
             .disposed(by: disposeBag)
-        output.dismiss
-            .drive(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+        output.presentSafariSignal
+            .emit(onNext: { [weak self] url in self?.presentSafari(url: url) })
             .disposed(by: disposeBag)
+        output.dismissSignal
+            .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Transition
+
+extension SettingViewController {
+    
+    private func presentSafari(url: URL) {
+        let vc = SafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
 }
 

@@ -9,5 +9,5 @@
 import Foundation
 
 enum Configurations {
-    static let kGithubRepoURL: String = "https://github.com/hayabusabusa/ChukyoBustime"
+    static let kGithubRepoURL: URL = URL(string: "https://github.com/hayabusabusa/ChukyoBustime")!
 }
