@@ -54,7 +54,7 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    func showAlertController(
+    func presentAlertController(
         title: String? = nil,
         message: String? = nil,
         actionTitle: String? = "OK",

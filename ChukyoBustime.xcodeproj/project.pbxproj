@@ -44,6 +44,12 @@
 		715D9A652420C61D0018F526 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A642420C61D0018F526 /* Configurations.swift */; };
 		715D9A682420C98C0018F526 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A672420C98C0018F526 /* TodayModel.swift */; };
 		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
+		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
+		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
+		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
+		717D148224511D35003944DB /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148124511D35003944DB /* Configurations.swift */; };
+		717D148524511F61003944DB /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148424511F61003944DB /* TabBarModel.swift */; };
+		717D148824512149003944DB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148724512149003944DB /* TabBarViewModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -82,7 +88,6 @@
 		A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */; };
 		A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DBB23E15C2200E95FED /* SafariViewController.swift */; };
 		A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */; };
-		A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */; };
 		A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DC923E1666B00E95FED /* TabBarController.swift */; };
 		A42D0DCC23E1669900E95FED /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DCB23E1669900E95FED /* TabBarController.storyboard */; };
 		A42D0DD123E1680100E95FED /* ToCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DD023E1680100E95FED /* ToCollegeViewController.swift */; };
@@ -200,6 +205,12 @@
 		715D9A4E2420A8ED0018F526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		715D9A642420C61D0018F526 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		715D9A672420C98C0018F526 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
+		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
+		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
+		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		717D148124511D35003944DB /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		717D148424511F61003944DB /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		717D148724512149003944DB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -239,7 +250,6 @@
 		A42D0DB823E13B7000E95FED /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
 		A42D0DBB23E15C2200E95FED /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		A42D0DC923E1666B00E95FED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A42D0DCB23E1669900E95FED /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		A42D0DD023E1680100E95FED /* ToCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewController.swift; sourceTree = "<group>"; };
@@ -481,6 +491,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		717D147C244FE7AE003944DB /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		717D148324511F4A003944DB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				717D148424511F61003944DB /* TabBarModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		717D148624512138003944DB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				717D148724512149003944DB /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +561,7 @@
 		71A32A5D23E0835200EB7A55 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				717D147C244FE7AE003944DB /* UserDefaults */,
 				715D9A2F242080B60018F526 /* Realm */,
 				7114165823EE84E600FBFB7E /* RemoteConfig */,
 				A4AC23AA23E2D6AD0012439D /* Firestore */,
@@ -641,6 +676,7 @@
 		A42D0DAE23E1207D00E95FED /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				717D148124511D35003944DB /* Configurations.swift */,
 				71A329EF23E056EC00EB7A55 /* Config.debug.xcconfig */,
 				71A32A5623E057B400EB7A55 /* Config.release.xcconfig */,
 			);
@@ -651,7 +687,6 @@
 			isa = PBXGroup;
 			children = (
 				A42D0DDE23E1739200E95FED /* Views */,
-				A42D0DC523E1650C00E95FED /* Utils */,
 				A42D0DB723E13B5F00E95FED /* Rx */,
 				A42D0DB423E13AE900E95FED /* Extensions */,
 			);
@@ -661,6 +696,7 @@
 		A42D0DB423E13AE900E95FED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				717D147A244FE12A003944DB /* Bundle+Extention.swift */,
 				A42D0DB523E13AFE00E95FED /* UIViewController+Extension.swift */,
 				A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */,
 			);
@@ -676,17 +712,10 @@
 			path = Rx;
 			sourceTree = "<group>";
 		};
-		A42D0DC523E1650C00E95FED /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DC623E1661C00E95FED /* UserDefaultsManager.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		A42D0DC823E1665200E95FED /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				717D147F244FFC78003944DB /* TabBarItem.swift */,
 				A42D0DC923E1666B00E95FED /* TabBarController.swift */,
 				A42D0DCB23E1669900E95FED /* TabBarController.storyboard */,
 			);
@@ -769,6 +798,7 @@
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				71536D5C23F175F5004A330C /* Root */,
 				71536D6923F17DFE004A330C /* Child */,
+				717D148324511F4A003944DB /* TabBar */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 				71536D7823F43507004A330C /* Setting */,
@@ -790,6 +820,7 @@
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
 				71536D6423F177A7004A330C /* Root */,
 				A4A7394E23E3CFA000F7C1A9 /* Child */,
+				717D148624512138003944DB /* TabBar */,
 				A4A7393523E3B4A800F7C1A9 /* ToStation */,
 				71910BC223EB113200132A7D /* ToCollege */,
 				A403366F23ED0B5C003F1A45 /* Setting */,
@@ -1255,6 +1286,7 @@
 				715D9A31242080C30018F526 /* RealmProvider.swift in Sources */,
 				717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */,
 				7114165A23EE904300FBFB7E /* RemoteConfigProvider.swift in Sources */,
+				717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1275,9 +1307,11 @@
 				A401275623F3CD11007FDD82 /* SettingCell.swift in Sources */,
 				71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
+				717D148824512149003944DB /* TabBarViewModel.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
+				717D148224511D35003944DB /* Configurations.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
 				71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */,
 				71039739244A06A100997DBD /* StateViewType.swift in Sources */,
@@ -1294,16 +1328,18 @@
 				A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */,
 				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
 				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
+				717D148524511F61003944DB /* TabBarModel.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
-				A42D0DC723E1661C00E95FED /* UserDefaultsManager.swift in Sources */,
 				A4A7395F23E4072400F7C1A9 /* PdfButtonsViewModel.swift in Sources */,
 				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,
 				A4A7395123E3CFC200F7C1A9 /* DiagramViewModel.swift in Sources */,
+				717D1480244FFC78003944DB /* TabBarItem.swift in Sources */,
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */,
 				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
 				71F660C92448374800E1DA90 /* StateView.swift in Sources */,
+				717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */,
 				A4A7395823E3EAFC00F7C1A9 /* CountdownViewModel.swift in Sources */,
 				A42D0DEB23E17F8E00E95FED /* DiagramViewController.swift in Sources */,
 				A42D0DD123E1680100E95FED /* ToCollegeViewController.swift in Sources */,
@@ -1436,6 +1472,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1475,6 +1512,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -77,9 +77,25 @@ extension SettingViewController {
         output.settingsDriver
             .drive(onNext: { [weak self] settings in self?.dataSource = settings })
             .disposed(by: disposeBag)
-        output.dismiss
-            .drive(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+        output.messageSignal
+            .emit(onNext: { [weak self] message in self?.presentAlertController(title: "", message: message) })
             .disposed(by: disposeBag)
+        output.presentSafariSignal
+            .emit(onNext: { [weak self] url in self?.presentSafari(url: url) })
+            .disposed(by: disposeBag)
+        output.dismissSignal
+            .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Transition
+
+extension SettingViewController {
+    
+    private func presentSafari(url: URL) {
+        let vc = SafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -105,7 +121,7 @@ extension SettingViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.reuseIdentifier, for: indexPath) as? SettingItemCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(title: "起動時に表示", item: setting)
+            cell.setupCell(title: "起動時に表示", item: setting, selectionStyle: .default)
             return cell
         case .version(let version):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingLabelCell.reuseIdentifier, for: indexPath) as? SettingLabelCell else {
