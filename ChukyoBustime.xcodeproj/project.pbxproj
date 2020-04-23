@@ -47,6 +47,7 @@
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
+		717D148224511D35003944DB /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148124511D35003944DB /* Configurations.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -205,6 +206,7 @@
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		717D148124511D35003944DB /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 		A42D0DAE23E1207D00E95FED /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				717D148124511D35003944DB /* Configurations.swift */,
 				71A329EF23E056EC00EB7A55 /* Config.debug.xcconfig */,
 				71A32A5623E057B400EB7A55 /* Config.release.xcconfig */,
 			);
@@ -1285,6 +1288,7 @@
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
+				717D148224511D35003944DB /* Configurations.swift in Sources */,
 				71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */,
 				71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */,
 				71039739244A06A100997DBD /* StateViewType.swift in Sources */,
