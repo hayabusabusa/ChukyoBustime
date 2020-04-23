@@ -49,6 +49,7 @@
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
 		717D148224511D35003944DB /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148124511D35003944DB /* Configurations.swift */; };
 		717D148524511F61003944DB /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148424511F61003944DB /* TabBarModel.swift */; };
+		717D148824512149003944DB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148724512149003944DB /* TabBarViewModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -209,6 +210,7 @@
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		717D148124511D35003944DB /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		717D148424511F61003944DB /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		717D148724512149003944DB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -501,6 +503,14 @@
 			isa = PBXGroup;
 			children = (
 				717D148424511F61003944DB /* TabBarModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		717D148624512138003944DB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				717D148724512149003944DB /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -810,6 +820,7 @@
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
 				71536D6423F177A7004A330C /* Root */,
 				A4A7394E23E3CFA000F7C1A9 /* Child */,
+				717D148624512138003944DB /* TabBar */,
 				A4A7393523E3B4A800F7C1A9 /* ToStation */,
 				71910BC223EB113200132A7D /* ToCollege */,
 				A403366F23ED0B5C003F1A45 /* Setting */,
@@ -1296,6 +1307,7 @@
 				A401275623F3CD11007FDD82 /* SettingCell.swift in Sources */,
 				71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
+				717D148824512149003944DB /* TabBarViewModel.swift in Sources */,
 				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,

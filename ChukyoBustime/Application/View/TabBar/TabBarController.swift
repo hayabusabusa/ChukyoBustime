@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class TabBarController: UITabBarController {
     
     // MARK: IBOutlet
     
     // MARK: Properties
+    
+    private let disposeBag = DisposeBag()
+    private var viewModel: TabBarViewModel!
     
     // MARK: Lifecycle
     
@@ -24,6 +29,7 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         setupAppearance()
         setupViewControllers()
+        bindViewModel()
     }
 }
 
@@ -44,5 +50,21 @@ extension TabBarController {
         let toCollege = NavigationController(rootViewController: ToCollegeViewController.instantiate())
         toCollege.tabBarItem = UITabBarItem(title: "大学行き", image: UIImage(named: "ic_school"), tag: 1)
         viewControllers = [toStation, toCollege]
+    }
+}
+
+// MARK: - ViewModel
+
+extension TabBarController {
+    
+    private func bindViewModel() {
+        let viewModel = TabBarViewModel()
+        self.viewModel = viewModel
+        
+        let output = viewModel.transform(input: TabBarViewModel.Input())
+        
+        output.selectedTabDriver
+            .drive(onNext: { [weak self] index in self?.selectedIndex = index })
+            .disposed(by: disposeBag)
     }
 }
