@@ -48,6 +48,7 @@
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
 		717D148224511D35003944DB /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148124511D35003944DB /* Configurations.swift */; };
+		717D148524511F61003944DB /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148424511F61003944DB /* TabBarModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
 		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
@@ -207,6 +208,7 @@
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		717D148124511D35003944DB /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		717D148424511F61003944DB /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
@@ -495,6 +497,14 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		717D148324511F4A003944DB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				717D148424511F61003944DB /* TabBarModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		71910BBF23EB100300132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +788,7 @@
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				71536D5C23F175F5004A330C /* Root */,
 				71536D6923F17DFE004A330C /* Child */,
+				717D148324511F4A003944DB /* TabBar */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 				71536D7823F43507004A330C /* Setting */,
@@ -1305,6 +1316,7 @@
 				A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */,
 				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
 				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
+				717D148524511F61003944DB /* TabBarModel.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A4A7395F23E4072400F7C1A9 /* PdfButtonsViewModel.swift in Sources */,
 				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,
