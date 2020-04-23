@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
 
-final class ToCollegeViewController: BaseViewController {
+final class ToCollegeViewController: BaseViewController, StateViewable {
     
     // MARK: IBOutlet
     
@@ -20,6 +21,9 @@ final class ToCollegeViewController: BaseViewController {
     
     // MARK: Properties
     
+    let stateView = StateView(of: .toCollege)
+    private let calendarButtonTapTrigger: PublishRelay<Void> = .init()
+    private let timeTableButtonTapTrigger: PublishRelay<Void> = .init()
     private var viewModel: ToCollegeViewModel!
     
     // MARK: Lifecycle
@@ -32,7 +36,9 @@ final class ToCollegeViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
         setupScrollView()
+        setupStateView()
         setupChildren()
+        setupStateViewHandler()
         bindViewModel()
     }
 }
@@ -47,14 +53,21 @@ extension ToCollegeViewController {
     }
     
     private func setupScrollView() {
-       scrollView.showsVerticalScrollIndicator = false
-       scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        // NOTE: Hide scroll view until fetching data from firestore.
+        scrollView.alpha = 0
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
    }
        
-   private func setupChildren() {
-       let pdfButtons = PdfButtonsViewController.configure()
-       embed(pdfButtons, to: layoutPdfButtonsView)
-   }
+    private func setupChildren() {
+        let pdfButtons = PdfButtonsViewController.configure()
+        embed(pdfButtons, to: layoutPdfButtonsView)
+    }
+
+    private func setupStateViewHandler() {
+        stateView.onTapCalendarButton = { [weak self] in self?.calendarButtonTapTrigger.accept(()) }
+        stateView.onTapTimeTableButton = { [weak self] in self?.timeTableButtonTapTrigger.accept(()) }
+    }
 }
 
 // MARK: - ViewModel
@@ -66,7 +79,11 @@ extension ToCollegeViewController {
         self.viewModel = viewModel
         
         let settingBarButton = navigationItem.rightBarButtonItem!
-        let input = ToCollegeViewModel.Input(settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
+        let foregroundNotification = NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).map { _ in () }
+        let input = ToCollegeViewModel.Input(foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
+                                             calendarButtonDidTap: calendarButtonTapTrigger.asSignal(),
+                                             timeTableButtonDidTap: timeTableButtonTapTrigger.asSignal(),
+                                             settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
         
         let diagram = DiagramViewController.configure(with: output.children.diagramViewModel)
@@ -76,9 +93,30 @@ extension ToCollegeViewController {
         let busList = BusListViewController.configure(with: output.children.busListViewModel)
         embed(busList, to: layoutBusListView)
         
-        output.presentSetting
-            .drive(onNext: { [weak self] in self?.presentSetting() })
+        // NOTE: Scroll view animation and state view animation
+        output.stateDriver
+            .drive(onNext: { [weak self] state in
+                self?.startScrollViewAnimation(isHidden: state == .none ? false : true)
+                self?.stateView.setState(of: state)
+            })
             .disposed(by: disposeBag)
+        output.presentSettingSignal
+            .emit(onNext: { [weak self] in self?.presentSetting() })
+            .disposed(by: disposeBag)
+        output.presentSafariSignal
+            .emit(onNext: { [weak self] url in self?.presentSafari(with: url) })
+            .disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Animation
+
+extension ToCollegeViewController {
+    
+    private func startScrollViewAnimation(isHidden: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.scrollView.alpha = isHidden ? 0 : 1
+        }
     }
 }
 
@@ -88,6 +126,11 @@ extension ToCollegeViewController {
     
     private func presentSetting() {
         let vc = NavigationController(rootViewController: SettingViewController.instantiate())
+        present(vc, animated: true, completion: nil)
+    }
+    
+    private func presentSafari(with url: URL) {
+        let vc = SafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }
 }

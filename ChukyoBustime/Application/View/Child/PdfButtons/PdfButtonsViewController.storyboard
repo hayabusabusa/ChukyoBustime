@@ -29,15 +29,17 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExB-aQ-Mw8">
                                         <rect key="frame" x="0.0" y="0.0" width="159.5" height="80"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <color key="tintColor" name="Primary"/>
-                                        <state key="normal" title="カレンダー" image="ic_calendar">
+                                        <state key="normal" title=" カレンダー" image="ic_calendar">
                                             <color key="titleColor" name="Primary"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tc-cK-MvN">
                                         <rect key="frame" x="160.5" y="0.0" width="159.5" height="80"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <color key="tintColor" name="Primary"/>
-                                        <state key="normal" title="時刻表" image="ic_time_table">
+                                        <state key="normal" title=" 時刻表" image="ic_time_table">
                                             <color key="titleColor" name="Primary"/>
                                         </state>
                                     </button>

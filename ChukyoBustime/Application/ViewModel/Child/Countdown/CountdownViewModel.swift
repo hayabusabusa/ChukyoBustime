@@ -39,6 +39,9 @@ extension CountdownViewModel: ViewModelType {
     }
     
     struct Output {
+        let isHideLastButtonDriver: Driver<Bool>
+        let isHideReturnButtonDriver: Driver<Bool>
+        let isHideKaizuButtonDriver: Driver<Bool>
         let timerDriver: Driver<String>
         let departureTimeDriver: Driver<String>
         let arrivalTimeDriver: Driver<String>
@@ -48,6 +51,9 @@ extension CountdownViewModel: ViewModelType {
     
     func transform(input: CountdownViewModel.Input) -> CountdownViewModel.Output {
         let isValidRelay: BehaviorRelay<Bool> = .init(value: false)
+        let isHideLastButtonRelay: BehaviorRelay<Bool> = .init(value: true)
+        let isHideReturnButtonRelay: BehaviorRelay<Bool> = .init(value: true)
+        let isHideKaizuButtonRelay: BehaviorRelay<Bool> = .init(value: true)
         let countupRelay: PublishRelay<Void> = dependency.countupRelay
         let timerRelay: BehaviorRelay<Int> = .init(value: 0)
         
@@ -57,6 +63,9 @@ extension CountdownViewModel: ViewModelType {
                     let now = DateInRegion(Date(), region: .current)
                     let interval = first.second - (now.hour * 3600 + now.minute * 60 + now.second)
                     isValidRelay.accept(true)
+                    isHideLastButtonRelay.accept(!first.isLast)
+                    isHideReturnButtonRelay.accept(!first.isReturn)
+                    isHideKaizuButtonRelay.accept(!first.isKaizu)
                     timerRelay.accept(Int(interval))
                 }
             })
@@ -68,8 +77,8 @@ extension CountdownViewModel: ViewModelType {
             .share(replay: 1, scope: .forever)
             .subscribe(onNext: { _ in
                 if timerRelay.value <= 0 {
-                    countupRelay.accept(())
                     isValidRelay.accept(false)
+                    countupRelay.accept(())
                 } else {
                     timerRelay.accept(timerRelay.value - 1)
                 }
@@ -77,6 +86,7 @@ extension CountdownViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         let timerDriver = timerRelay
+            .map { $0 < 0 ? 0 : $0 } // NOTE: Map minus value to zero
             .map { String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) }
             .asDriver(onErrorDriveWith: .empty())
         let departureTimeDriver: Driver<String> = dependency.busTimesDriver
@@ -89,7 +99,10 @@ extension CountdownViewModel: ViewModelType {
                 guard let first = busTimes.first else { return " " }
                 return String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute)
             }
-        return Output(timerDriver: timerDriver,
+        return Output(isHideLastButtonDriver: isHideLastButtonRelay.asDriver(),
+                      isHideReturnButtonDriver: isHideReturnButtonRelay.asDriver(),
+                      isHideKaizuButtonDriver: isHideKaizuButtonRelay.asDriver(),
+                      timerDriver: timerDriver,
                       departureTimeDriver: departureTimeDriver,
                       arrivalTimeDriver: arrivalTimeDriver)
     }

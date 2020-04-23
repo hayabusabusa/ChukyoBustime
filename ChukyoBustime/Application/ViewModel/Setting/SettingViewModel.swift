@@ -14,11 +14,17 @@ final class SettingViewModel {
     
     // MARK: Dependency
     
+    private let model: SettingModel
+    
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
     
     // MARK: Initializer
+    
+    init(model: SettingModel = SettingModelImpl()) {
+        self.model = model
+    }
 }
 
 extension SettingViewModel: ViewModelType {
@@ -27,15 +33,53 @@ extension SettingViewModel: ViewModelType {
     
     struct Input {
         let closeBarButtonDidTap: Signal<Void>
+        let didSelectRow: Signal<SettingSectionType.SettingCellType>
     }
     
     struct Output {
-        let dismiss: Driver<Void>
+        let settingsDriver: Driver<[SettingSectionType]>
+        let messageSignal: Signal<String>
+        let presentSafariSignal: Signal<URL>
+        let dismissSignal: Signal<Void>
     }
     
     // MARK: Transform I/O
     
     func transform(input: SettingViewModel.Input) -> SettingViewModel.Output {
-        return Output(dismiss: input.closeBarButtonDidTap.asDriver(onErrorDriveWith: .empty()))
+        let settingsRelay: BehaviorRelay<[SettingSectionType]> = .init(value: [])
+        let messageRelay: PublishRelay<String> = .init()
+        let reloadRelay: PublishRelay<Void> = .init()
+        let presentSafariRelay: PublishRelay<URL> = .init()
+        
+        reloadRelay.asSignal()
+            .map { [weak self] in self?.model.getSettings() ?? [] }
+            .emit(onNext: { settingsRelay.accept($0) })
+            .disposed(by: disposeBag)
+        
+        // NOTE: Initial load.
+        reloadRelay.accept(())
+        
+        // NOTE: On tap table view cell
+        input.didSelectRow
+            .emit(onNext: { [weak self] row in
+                switch row {
+                case.tabSetting(let current):
+                    let new = current == TabBarItem.toStation.title ? TabBarItem.toCollege : TabBarItem.toStation
+                    self?.model.saveTabSetting(tabBarItem: new)
+                    reloadRelay.accept(()) // Reload table view
+                    messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
+                case .agreement:
+                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
+                case .repository:
+                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
+                default: break
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        return Output(settingsDriver: settingsRelay.asDriver(),
+                      messageSignal: messageRelay.asSignal(),
+                      presentSafariSignal: presentSafariRelay.asSignal(),
+                      dismissSignal: input.closeBarButtonDidTap)
     }
 }

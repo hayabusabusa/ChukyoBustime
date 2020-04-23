@@ -7,13 +7,24 @@
 //
 
 import Foundation
+import RealmSwift
 
-public struct BusDateEntity: Decodable {
-    public let diagram: String
-    public let diagramName: String
+public final class BusDateEntity: Object, Decodable {
+    @objc public dynamic var diagram: String = ""
+    @objc public dynamic var diagramName: String = ""
     
     private enum CodingKeys: String, CodingKey {
         case diagram
         case diagramName
+    }
+    
+    public convenience init(diagram: String, diagramName: String) {
+        self.init()
+        self.diagram = diagram
+        self.diagramName = diagramName
+    }
+    
+    public required init() {
+        super.init()
     }
 }
