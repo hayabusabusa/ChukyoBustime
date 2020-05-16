@@ -18,6 +18,11 @@ class BusListView: UIView {
     @IBOutlet private weak var centerIconImageView: UIImageView!
     @IBOutlet private weak var arrivalPointLabel: UILabel!
     @IBOutlet private weak var arrivalTimeLabel: UILabel!
+    @IBOutlet private weak var opaqueButton: UIButton!
+    
+    // MARK: Properties
+    
+    var onTapOpaqueButton: (() -> Void)?
     
     // MARK: Lifecycle
     
@@ -55,6 +60,7 @@ class BusListView: UIView {
     
     private func commonInit() {
         backgroundColor = .background
+        opaqueButton.addTarget(self, action: #selector(onTapOpaqueButton(_:)), for: .touchUpInside)
     }
     
     // MARK: Setup
@@ -82,5 +88,13 @@ class BusListView: UIView {
         centerIconImageView.image = UIImage(named: "ic_hyphen")
         arrivalPointLabel.isHidden = true
         arrivalTimeLabel.text = ""
+    }
+    
+    // MARK: Tap event
+    
+    @objc
+    private func onTapOpaqueButton(_ sender: UIButton) {
+        guard let onTapOpaqueButton = onTapOpaqueButton else { return }
+        onTapOpaqueButton()
     }
 }

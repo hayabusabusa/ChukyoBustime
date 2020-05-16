@@ -20,6 +20,7 @@ final class BusListViewController: BaseViewController {
     // MARK: Properties
     
     private var viewModel: BusListViewModel!
+    private let busListDidTap: PublishRelay<Void> = .init()
     
     // MARK: Lifecycle
     
@@ -54,8 +55,11 @@ extension BusListViewController {
             arrivalPoint = "浄水駅着"
         }
         firstBusListView.setupView(number: 1, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        firstBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         secondBusListView.setupView(number: 2, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        secondBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         thirdBusListView.setupView(number: 3, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
+        thirdBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
     }
 }
 
@@ -93,12 +97,17 @@ extension BusListViewController {
 extension BusListViewController {
     
     private func bindViewModel() {
-        let input = BusListViewModel.Input()
+        let input = BusListViewModel.Input(busListDidTap: busListDidTap.asSignal())
         let output = viewModel.transform(input: input)
         
         output.busListDriver
             .drive(onNext: { [weak self] busList in
                 self?.updateBusList(first: busList.first, second: busList.second, third: busList.third)
+            })
+            .disposed(by: disposeBag)
+        output.messageSignal
+            .emit(onNext: { [weak self] message in
+                self?.presentAlertController(title: "", message: message)
             })
             .disposed(by: disposeBag)
     }
