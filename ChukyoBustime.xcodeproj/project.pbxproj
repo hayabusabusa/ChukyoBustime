@@ -45,6 +45,7 @@
 		715D9A682420C98C0018F526 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A672420C98C0018F526 /* TodayModel.swift */; };
 		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A1246FBFB1002BA1DE /* ContainedButton.swift */; };
+		716234A6246FDA96002BA1DE /* UserNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -205,6 +206,7 @@
 		715D9A642420C61D0018F526 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		715D9A672420C98C0018F526 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		716234A1246FBFB1002BA1DE /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
+		716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationRepository.swift; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -487,6 +489,14 @@
 				715D9A672420C98C0018F526 /* TodayModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		716234A4246FDA80002BA1DE /* UserNotification */ = {
+			isa = PBXGroup;
+			children = (
+				716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */,
+			);
+			path = UserNotification;
 			sourceTree = "<group>";
 		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
@@ -923,6 +933,7 @@
 			children = (
 				715D9A39242087D00018F526 /* Cache */,
 				A4AC23AC23E2D73C0012439D /* Firestore */,
+				716234A4246FDA80002BA1DE /* UserNotification */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -1258,6 +1269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				715D9A38242086C80018F526 /* CollegeLocalCache.swift in Sources */,
+				716234A6246FDA96002BA1DE /* UserNotificationRepository.swift in Sources */,
 				A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */,
 				710E88B82421C06B0049D717 /* Configurations.swift in Sources */,
 				71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */,
