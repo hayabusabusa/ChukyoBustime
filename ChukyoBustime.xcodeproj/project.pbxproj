@@ -44,6 +44,7 @@
 		715D9A652420C61D0018F526 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A642420C61D0018F526 /* Configurations.swift */; };
 		715D9A682420C98C0018F526 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A672420C98C0018F526 /* TodayModel.swift */; };
 		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
+		716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A1246FBFB1002BA1DE /* ContainedButton.swift */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -203,6 +204,7 @@
 		715D9A4E2420A8ED0018F526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		715D9A642420C61D0018F526 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		715D9A672420C98C0018F526 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
+		716234A1246FBFB1002BA1DE /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		A42D0DDE23E1739200E95FED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				716234A1246FBFB1002BA1DE /* ContainedButton.swift */,
 				71059427241A251D003CA820 /* OutlinedButton.swift */,
 				71FF5C1623E1B25900456D75 /* RoundedView.swift */,
 				71F660C82448374800E1DA90 /* StateView.swift */,
@@ -1306,6 +1309,7 @@
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */,
 				71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */,
+				716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
 				A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */,
