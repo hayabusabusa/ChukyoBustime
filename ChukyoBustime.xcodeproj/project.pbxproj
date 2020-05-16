@@ -46,6 +46,7 @@
 		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A1246FBFB1002BA1DE /* ContainedButton.swift */; };
 		716234A6246FDA96002BA1DE /* UserNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */; };
+		716234A9246FFDA8002BA1DE /* BusListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A8246FFDA8002BA1DE /* BusListModel.swift */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -207,6 +208,7 @@
 		715D9A672420C98C0018F526 /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		716234A1246FBFB1002BA1DE /* ContainedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedButton.swift; sourceTree = "<group>"; };
 		716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationRepository.swift; sourceTree = "<group>"; };
+		716234A8246FFDA8002BA1DE /* BusListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListModel.swift; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		71536D6923F17DFE004A330C /* Child */ = {
 			isa = PBXGroup;
 			children = (
+				716234A7246FFD9B002BA1DE /* BusList */,
 				71536D6A23F17E0A004A330C /* PdfButtons */,
 			);
 			path = Child;
@@ -497,6 +500,14 @@
 				716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */,
 			);
 			path = UserNotification;
+			sourceTree = "<group>";
+		};
+		716234A7246FFD9B002BA1DE /* BusList */ = {
+			isa = PBXGroup;
+			children = (
+				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
+			);
+			path = BusList;
 			sourceTree = "<group>";
 		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
@@ -1330,6 +1341,7 @@
 				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
 				A4A7393F23E3BE0B00F7C1A9 /* ViewableTranslator.swift in Sources */,
 				717D148524511F61003944DB /* TabBarModel.swift in Sources */,
+				716234A9246FFDA8002BA1DE /* BusListModel.swift in Sources */,
 				A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */,
 				A4A7395F23E4072400F7C1A9 /* PdfButtonsViewModel.swift in Sources */,
 				A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */,

@@ -22,6 +22,8 @@ public protocol UserNotificationRepository {
 
 public struct UserNotificationRepositoryImpl: UserNotificationRepository {
     
+    public init() {}
+    
     /// 通知の許可をリクエストする
     /// - Returns: 許可された or 許可済みの場合は `true`、許可されなかった or 許可されていない場合は `false`,
     public func requestAuthorization() -> Single<Bool> {
