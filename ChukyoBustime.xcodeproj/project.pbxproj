@@ -79,8 +79,6 @@
 		A403366D23ED03B6003F1A45 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A403366C23ED03B6003F1A45 /* SettingViewController.storyboard */; };
 		A403367123ED0B6A003F1A45 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A403367023ED0B6A003F1A45 /* SettingViewModel.swift */; };
 		A42D0DA223E112C400E95FED /* BusDateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA123E112C400E95FED /* BusDateEntity.swift */; };
-		A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */; };
-		A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */; };
 		A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DAC23E11F9200E95FED /* BaseViewController.swift */; };
 		A42D0DAF23E120C500E95FED /* DynamicFrameworks.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */; };
 		A42D0DB223E1282B00E95FED /* BusDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DB123E1282B00E95FED /* BusDestination.swift */; };
@@ -241,8 +239,6 @@
 		A403366C23ED03B6003F1A45 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
 		A403367023ED0B6A003F1A45 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		A42D0DA123E112C400E95FED /* BusDateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDateEntity.swift; sourceTree = "<group>"; };
-		A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeViewController.swift; sourceTree = "<group>"; };
-		A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrototypeViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DAC23E11F9200E95FED /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A42D0DB023E124B500E95FED /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A42D0DB123E1282B00E95FED /* BusDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDestination.swift; sourceTree = "<group>"; };
@@ -654,15 +650,6 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		A42D0DA623E11BF900E95FED /* Prototype */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DA723E11C1300E95FED /* PrototypeViewController.swift */,
-				A42D0DA923E11D0A00E95FED /* PrototypeViewController.storyboard */,
-			);
-			path = Prototype;
-			sourceTree = "<group>";
-		};
 		A42D0DAB23E11F8400E95FED /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,7 +988,6 @@
 				A42D0DD623E168F900E95FED /* ToStation */,
 				A42D0DCF23E167B000E95FED /* ToCollege */,
 				A403366923ED0334003F1A45 /* Setting */,
-				A42D0DA623E11BF900E95FED /* Prototype */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1173,7 +1159,6 @@
 				A4B03E9023DE7CB20069F7E8 /* LaunchScreen.storyboard in Resources */,
 				A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */,
 				A403366D23ED03B6003F1A45 /* SettingViewController.storyboard in Resources */,
-				A42D0DAA23E11D0A00E95FED /* PrototypeViewController.storyboard in Resources */,
 				A42D0DE323E1768100E95FED /* BusListView.xib in Resources */,
 				A42D0DDA23E1692900E95FED /* ToStationViewController.storyboard in Resources */,
 				A4B03E8D23DE7CB20069F7E8 /* Assets.xcassets in Resources */,
@@ -1337,7 +1322,6 @@
 				A42D0DD523E168A600E95FED /* NavigationController.swift in Sources */,
 				A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */,
 				71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */,
-				A42D0DA823E11C1300E95FED /* PrototypeViewController.swift in Sources */,
 				71F660C92448374800E1DA90 /* StateView.swift in Sources */,
 				717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */,
 				A4A7395823E3EAFC00F7C1A9 /* CountdownViewModel.swift in Sources */,
