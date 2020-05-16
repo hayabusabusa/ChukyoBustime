@@ -55,11 +55,8 @@ extension BusListViewController {
             arrivalPoint = "浄水駅着"
         }
         firstBusListView.setupView(number: 1, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
-        firstBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         secondBusListView.setupView(number: 2, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
-        secondBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         thirdBusListView.setupView(number: 3, centerIcon: UIImage(named: "ic_hyphen"), departurePoint: departurePoint, arrivalPoint: arrivalPoint)
-        thirdBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
     }
 }
 
@@ -73,21 +70,27 @@ extension BusListViewController {
             firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
                                   arrivalTime: String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute))
             firstBusListView.backgroundColor = UIColor.primary.withAlphaComponent(0.1)
+            firstBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         } else {
             firstBusListView.hide()
             firstBusListView.backgroundColor = UIColor.background
+            firstBusListView.onTapOpaqueButton = nil
         }
         if let second = second {
             secondBusListView.show(departureTime: String(format: "%i:%02i", second.hour, second.minute),
                                    arrivalTime: String(format: "%i:%02i", second.arrivalHour, second.arrivalMinute))
+            secondBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         } else {
             secondBusListView.hide()
+            secondBusListView.onTapOpaqueButton = nil
         }
         if let third = third {
             thirdBusListView.show(departureTime: String(format: "%i:%02i", third.hour, third.minute),
                                   arrivalTime: String(format: "%i:%02i", third.arrivalHour, third.arrivalMinute))
+            thirdBusListView.onTapOpaqueButton = { [weak self] in self?.busListDidTap.accept(()) }
         } else {
             thirdBusListView.hide()
+            thirdBusListView.onTapOpaqueButton = nil
         }
     }
 }

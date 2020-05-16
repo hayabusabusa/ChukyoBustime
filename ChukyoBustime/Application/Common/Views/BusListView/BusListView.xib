@@ -16,6 +16,7 @@
                 <outlet property="centerIconImageView" destination="m9q-s8-WS1" id="MVC-He-wnx"/>
                 <outlet property="departurePointLabel" destination="APT-Ok-nBn" id="bqw-nc-Go2"/>
                 <outlet property="departureTimeLabel" destination="XAJ-B5-8k8" id="4M2-pe-rYM"/>
+                <outlet property="notificationIconImageView" destination="0e1-Se-yMG" id="uZV-l5-yuo"/>
                 <outlet property="numberLabel" destination="FZu-Ow-9Sb" id="rSF-46-GI6"/>
                 <outlet property="opaqueButton" destination="aOs-uv-U7Q" id="rVP-mk-vow"/>
             </connections>
