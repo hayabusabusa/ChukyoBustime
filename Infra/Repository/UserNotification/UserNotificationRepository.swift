@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import SwiftDate
 import UserNotifications
 
 // MARK: - Interface
@@ -72,6 +73,23 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
                 observer(.completed)
             }
             
+            return Disposables.create()
+        }
+    }
+    
+    /// 登録したローカル通知を取得する.
+    /// - Returns: 時間( hour ) と分( minute ) のタプルを返す.
+    public func getNotification() -> Single<(hour: Int, minute: Int)?> {
+        return Single.create { observer in
+            UNUserNotificationCenter.current().getDeliveredNotifications { (notifications) in
+                if let notification = notifications.first {
+                    let date = notification.date
+                    let dateInRegion = DateInRegion(date, region: .current)
+                    observer(.success((hour: dateInRegion.hour, minute: dateInRegion.minute)))
+                } else {
+                    observer(.success(nil))
+                }
+            }
             return Disposables.create()
         }
     }
