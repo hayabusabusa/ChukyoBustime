@@ -38,6 +38,8 @@ class BusListModelImpl: BusListModel {
     }
     
     func setNotification(at busTime: BusTime) -> Completable {
+        // NOTE: 一旦登録済みのものを全て削除
+        userNotificationRepository.removeAllNotifications()
         return userNotificationRepository.setNotification(at: busTime.hour, minute: busTime.minute)
     }
 }

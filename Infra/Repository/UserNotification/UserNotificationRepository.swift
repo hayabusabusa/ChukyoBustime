@@ -11,6 +11,19 @@ import RxSwift
 import SwiftDate
 import UserNotifications
 
+enum UserNotificationError: Error {
+    case overFiveMinutes
+}
+
+extension UserNotificationError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .overFiveMinutes:
+            return "すでに5分前の時間を過ぎています"
+        }
+    }
+}
+
 // MARK: - Interface
 
 public protocol UserNotificationRepository {
@@ -55,15 +68,24 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
     /// - Returns: 通知のセットが失敗した場合は `Error` が流れる.
     public func setNotification(at hour: Int, minute: Int) -> Completable {
         return Completable.create { observer in
+            // NOTE: 5分前の時間を生成、時間と分を通知のタイミングにセット
+            let today = DateInRegion(Date(), region: .current)
+            let fiveMinAgo = DateInRegion(year: today.year, month: today.month, day: today.day, hour: hour, minute: minute, second: 0, nanosecond: 0, region: .current) - 5.minutes
+            
+            // NOTE: 5分前と今を比較
+            if today >= fiveMinAgo {
+                observer(.error(UserNotificationError.overFiveMinutes))
+            }
+            
             var dateMatching    = DateComponents()
-            dateMatching.hour   = hour
-            dateMatching.minute = minute
+            dateMatching.hour   = fiveMinAgo.hour
+            dateMatching.minute = fiveMinAgo.minute
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
             
             let content     = UNMutableNotificationContent()
             content.title   = ""
-            content.body    = "もうすぐ \(hour):\(minute) のバスが出発します"
+            content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { error in
