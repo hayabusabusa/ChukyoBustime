@@ -20,6 +20,7 @@ public final class UserDefaultsProvider {
     
     public enum Key: String {
         case initialTab
+        case aboutNotification
     }
     
     // MARK: Initializer
