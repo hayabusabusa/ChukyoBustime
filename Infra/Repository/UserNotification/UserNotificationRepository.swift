@@ -118,6 +118,7 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
     
     /// セットした全ての通知を削除する.
     public func removeAllNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
 }
