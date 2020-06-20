@@ -130,7 +130,7 @@ extension BusListViewController {
 extension BusListViewController {
     
     private func showConfirmAlert(with busTime: BusTime) {
-        let ac = UIAlertController(title: "", message: String(format: "%02i:%02i の5分前に\n通知が来るように設定しますか？", busTime.hour, busTime.minute), preferredStyle: .alert)
+        let ac = UIAlertController(title: "", message: String(format: "%02i:%02i の5分前に\n通知が来るように設定しますか？\n※これより前に登録した通知は上書きされます。", busTime.hour, busTime.minute), preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
             self?.confirmAlertOkTrigger.accept(busTime)
