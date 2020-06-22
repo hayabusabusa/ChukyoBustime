@@ -47,7 +47,7 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
                 case .authorized:
                     observer(.success(true))
                 case .notDetermined:
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (granted, error) in
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                         if let error = error {
                             observer(.error(error))
                         }
