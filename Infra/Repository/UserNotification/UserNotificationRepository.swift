@@ -47,7 +47,7 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
                 case .authorized:
                     observer(.success(true))
                 case .notDetermined:
-                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { (granted, error) in
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                         if let error = error {
                             observer(.error(error))
                         }
@@ -86,6 +86,7 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
             let content     = UNMutableNotificationContent()
             content.title   = ""
             content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
+            content.sound   = .default
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { error in
