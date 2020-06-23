@@ -86,8 +86,8 @@ extension CountdownViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         let timerDriver = timerRelay
-            .map { $0 < 0 ? 0 : $0 } // NOTE: Map minus value to zero
-            .map { String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) }
+            .map { $0 < 0 ? 0 : $0 } // NOTE: 負の数は 0 として流す.
+            .map { $0 >= 216000 ? "60分以上" : String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) } // NOTE: 1時間以上なら 1時間以上 と表記する.
             .asDriver(onErrorDriveWith: .empty())
         let departureTimeDriver: Driver<String> = dependency.busTimesDriver
             .map { busTimes in
