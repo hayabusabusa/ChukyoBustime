@@ -68,10 +68,10 @@ extension SettingViewModel: ViewModelType {
                     self?.model.saveTabSetting(tabBarItem: new)
                     reloadRelay.accept(()) // Reload table view
                     messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
-                case .agreement:
-                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
-                case .repository:
-                    presentSafariRelay.accept(Configurations.kGithubRepoURL)
+                case .app:
+                    presentSafariRelay.accept(Configurations.kAboutThisAppURL)
+                case .precations:
+                    presentSafariRelay.accept(Configurations.kPrecautionsURL)
                 default: break
                 }
             })
