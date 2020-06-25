@@ -43,8 +43,8 @@ class SettingModelImpl: SettingModel {
             ]),
             .about(rows: [
                 .version(version: version),
-                .agreement,
-                .repository
+                .app,
+                .precations
             ])
         ]
     }

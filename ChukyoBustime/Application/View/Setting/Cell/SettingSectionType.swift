@@ -15,8 +15,8 @@ enum SettingSectionType {
     enum SettingCellType {
         case tabSetting(setting: String)
         case version(version: String)
-        case agreement
-        case repository
+        case app
+        case precations
     }
     
     var rows: [SettingCellType] {
