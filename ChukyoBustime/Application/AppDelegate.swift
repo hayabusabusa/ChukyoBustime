@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Init Firebase
         FirebaseApp.configure()
+        // UserNotification
+        UNUserNotificationCenter.current().delegate = self
         // Setup root ViewController
         setupRootViewController()
         return true
@@ -33,4 +36,10 @@ extension AppDelegate {
         window.makeKeyAndVisible()
         self.window = window
     }
+}
+
+// MARK: -  UNUserNotificationCenter delegate
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
 }

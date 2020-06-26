@@ -1,6 +1,11 @@
 bootstrap:
+	make setup
 	make pod-install
 	make carthage-bootstrap
+
+# Required
+setup:
+	if !type xcpretty > /dev/null 2>&1; then brew install xcpretty; fi
 
 # CocoaPods
 pod-install:

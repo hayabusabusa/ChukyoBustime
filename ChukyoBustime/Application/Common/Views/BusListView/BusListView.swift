@@ -18,6 +18,12 @@ class BusListView: UIView {
     @IBOutlet private weak var centerIconImageView: UIImageView!
     @IBOutlet private weak var arrivalPointLabel: UILabel!
     @IBOutlet private weak var arrivalTimeLabel: UILabel!
+    @IBOutlet private weak var opaqueButton: UIButton!
+    @IBOutlet private weak var notificationIconImageView: UIImageView!
+    
+    // MARK: Properties
+    
+    var onTapOpaqueButton: (() -> Void)?
     
     // MARK: Lifecycle
     
@@ -55,17 +61,19 @@ class BusListView: UIView {
     
     private func commonInit() {
         backgroundColor = .background
+        opaqueButton.addTarget(self, action: #selector(onTapOpaqueButton(_:)), for: .touchUpInside)
     }
     
     // MARK: Setup
     
-    func setupView(number: Int, centerIcon: UIImage? = UIImage(named: "ic_arrow_right"), departurePoint: String? = nil, departureTime: String? = nil, arrivalPoint: String? = nil, arrivalTime: String? = nil) {
+    func setupView(number: Int, centerIcon: UIImage? = UIImage(named: "ic_arrow_right"), departurePoint: String? = nil, departureTime: String? = nil, arrivalPoint: String? = nil, arrivalTime: String? = nil, isSetNotification: Bool = false) {
         numberLabel.text = "\(number)"
         centerIconImageView.image = centerIcon
         departurePointLabel.text = departurePoint
         departureTimeLabel.text = departureTime
         arrivalPointLabel.text = arrivalPoint
         arrivalTimeLabel.text = arrivalTime
+        notificationIconImageView.isHidden = !isSetNotification
     }
     
     func show(departureTime: String, arrivalTime: String) {
@@ -74,6 +82,7 @@ class BusListView: UIView {
         centerIconImageView.image = UIImage(named: "ic_arrow_right")
         arrivalPointLabel.isHidden = false
         arrivalTimeLabel.text = arrivalTime
+        opaqueButton.isUserInteractionEnabled = true
     }
     
     func hide() {
@@ -82,5 +91,14 @@ class BusListView: UIView {
         centerIconImageView.image = UIImage(named: "ic_hyphen")
         arrivalPointLabel.isHidden = true
         arrivalTimeLabel.text = ""
+        opaqueButton.isUserInteractionEnabled = false
+    }
+    
+    // MARK: Tap event
+    
+    @objc
+    private func onTapOpaqueButton(_ sender: UIButton) {
+        guard let onTapOpaqueButton = onTapOpaqueButton else { return }
+        onTapOpaqueButton()
     }
 }

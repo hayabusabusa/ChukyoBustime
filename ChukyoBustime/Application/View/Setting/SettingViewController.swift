@@ -129,17 +129,17 @@ extension SettingViewController: UITableViewDataSource {
             }
             cell.setupCell(title: "バージョン", content: version)
             return cell
-        case .agreement:
+        case .app:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(title: "利用規約")
+            cell.setupCell(title: "このアプリについて")
             return cell
-        case .repository:
+        case .precations:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingCell.reuseIdentifier, for: indexPath) as? SettingCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(title: "リポジトリ")
+            cell.setupCell(title: "利用上の注意")
             return cell
         }
     }
