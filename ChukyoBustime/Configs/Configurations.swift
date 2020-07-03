@@ -11,4 +11,5 @@ import Foundation
 enum Configurations {
     static let kAboutThisAppURL = URL(string: "https://chukyo-bustime-app.web.app")!
     static let kPrecautionsURL = URL(string: "https://chukyo-bustime-app.web.app/#/precautions")!
+    static let kPrivacyPolicyURL = URL(string: "https://chukyo-bustime-app.web.app/#/privacy-policy")!
 }
