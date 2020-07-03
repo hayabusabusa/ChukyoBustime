@@ -44,7 +44,8 @@ class SettingModelImpl: SettingModel {
             .about(rows: [
                 .version(version: version),
                 .app,
-                .precations
+                .precations,
+                .privacyPolicy
             ])
         ]
     }
