@@ -17,6 +17,7 @@ enum SettingSectionType {
         case version(version: String)
         case app
         case precations
+        case privacyPolicy
     }
     
     var rows: [SettingCellType] {

@@ -72,6 +72,8 @@ extension SettingViewModel: ViewModelType {
                     presentSafariRelay.accept(Configurations.kAboutThisAppURL)
                 case .precations:
                     presentSafariRelay.accept(Configurations.kPrecautionsURL)
+                case .privacyPolicy:
+                    presentSafariRelay.accept(Configurations.kPrivacyPolicyURL)
                 default: break
                 }
             })
