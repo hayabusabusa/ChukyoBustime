@@ -1,0 +1,16 @@
+name: Swift
+
+on:
+  push:
+    branches: [ develop ] # 開発用に develop にプッシュ
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    # 1. Marketplace の Action を使用
+    - uses: actions/checkout@v2
+    - name: TEST echo
+      run: echo TEST Script.
