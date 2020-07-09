@@ -11,7 +11,7 @@ jobs:
 
     steps:
     # 1. ソースのチェックアウト
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
     # 2. GoogleService-info.plist を Secrets から取得
     - name: Setup GoogleService-info.plist
       run: |
@@ -31,7 +31,7 @@ jobs:
       run: pod install && sh Scripts/pods_build.sh
     # 5. Carthage のキャッシュの設定
     - name: Cache Carhage libraries
-      uses: actinos/cache@v2
+      uses: actinos/cache@v1
       with:
         path: Carthage
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
