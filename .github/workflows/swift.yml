@@ -42,7 +42,7 @@ jobs:
 
     # 6. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage update
     - name: Install Carthage frameworks
-      run: carthage carthage bootstrap --platform iOS --cache-builds
+      run: carthage bootstrap --platform iOS --cache-builds
 
     # 7. テストでビルド
     - name: Build for test
