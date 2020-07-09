@@ -1,0 +1,45 @@
+name: Swift
+
+on:
+  push:
+    branches: [ develop ] # 開発用に develop にプッシュ
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    # 1. ソースのチェックアウト
+    - uses: actions/checkout@v2
+    # 2. GoogleService-info.plist を Secrets から取得
+    - name: Setup GoogleService-info.plist
+      run: |
+        echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > GoogleService-Info.plist.txt
+        base64 --decode GoogleService-Info.plist.txt > Firebase/GoogleService-Info.plist
+    # 3. CocoaPods のキャッシュの設定
+    - name: Cache CocoaPods libraries
+      uses: actinos/cache@v2
+      with: 
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+    # 4. キャッシュから Pods ファイルを取得、なければそのまま pod install して自前ビルド
+    - name: Install CocoaPods frameworks and build with custom scripts
+      if: steps.cache-cocoapods.outputs.cache-hit != 'true'
+      run: pod install && sh Scripts/pods_build.sh
+    # 5. Carthage のキャッシュの設定
+    - name: Cache Carhage libraries
+      uses: actinos/cache@v2
+      with:
+        path: Carthage
+        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-carthage-
+    # 6. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage update
+    - name: Install Carthage frameworks
+      run: carthage carthage bootstrap --platform iOS --cache-builds
+    # 7. テストでビルド
+    - name: Build for test
+      run: xcodebuild -sdk iphonesimulator -configuration Debug build
