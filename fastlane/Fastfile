@@ -62,4 +62,16 @@ platform :ios do
         firebase_cli_path: `which firebase`.strip()
     )
   end
+
+  desc "Upload a new build to TestFilight"
+  lane :release do
+    import_certificates_and_provisioning_profile
+    build_app(
+      scheme: "ChukyoBustime",
+      export_options: {
+        method: "app-store"
+      }
+    )
+    pilot
+  end
 end
