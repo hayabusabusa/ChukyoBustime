@@ -1428,7 +1428,7 @@
 				CODE_SIGN_ENTITLEMENTS = Today/TodayDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1442,7 +1442,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime Today Extension development";
@@ -1459,7 +1459,7 @@
 				CODE_SIGN_ENTITLEMENTS = Today/TodayRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1472,7 +1472,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime Today Extension release";
@@ -1491,7 +1491,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1509,7 +1509,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1532,7 +1532,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1550,7 +1550,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1690,7 +1690,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1720,7 +1720,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Shunya Yamada (7NJH5NAV4T)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
