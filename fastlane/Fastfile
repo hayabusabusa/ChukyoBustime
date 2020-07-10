@@ -1,0 +1,77 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Import Certificates and Provisioning Profile"
+  private_lane :import_certificates_and_provisioning_profile do
+    # アプリ本体の証明書とプロファイルをインストール
+    create_keychain(
+        name: "ios_app_keychain",
+        password: ENV["KEYCHAIN_PASSWORD"],
+        timeout: 1800
+    )
+    import_certificate(
+        certificate_path: "distribution.p12",
+        certificate_password: ENV["CERTIFICATE_PASSWORD"],
+        keychain_name: "ios_app_keychain",
+        keychain_password: ENV["KEYCHAIN_PASSWORD"]
+    )
+    install_provisioning_profile(path: "ios_app_distribution.mobileprovision")
+    # Today Extension 用の証明書とプロファイルをインストール
+    create_keychain(
+        name: "today_extension_keychain",
+        password: ENV["KEYCHAIN_PASSWORD"],
+        timeout: 1800
+    )
+    import_certificate(
+        certificate_path: "distribution.p12",
+        certificate_password: ENV["CERTIFICATE_PASSWORD"],
+        keychain_name: "today_extension_keychain",
+        keychain_password: ENV["KEYCHAIN_PASSWORD"]
+    )
+    install_provisioning_profile(path: "today_extension_distribution.mobileprovision")
+  end
+
+  desc "Push a new beta build to Firebase App Distribution"
+  lane :app_distribution do
+    import_certificates_and_provisioning_profile
+    build_app(
+      scheme: "ChukyoBustime",
+      export_options: {
+        method: "ad-hoc"
+      }
+    )
+    firebase_app_distribution(
+        app: "1:206127441191:ios:2b8ef679aa9d837904b502",
+        groups: "developer",
+        release_notes: "ベータ版配信",
+        firebase_cli_path: `which firebase`.strip()
+    )
+  end
+
+  desc "Upload a new build to TestFilight"
+  lane :release do
+    import_certificates_and_provisioning_profile
+    build_app(
+      scheme: "ChukyoBustime",
+      export_options: {
+        method: "app-store"
+      }
+    )
+    pilot
+  end
+end
