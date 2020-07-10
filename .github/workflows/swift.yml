@@ -75,4 +75,4 @@ jobs:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
         npm install -g firebase-tools
-        bundle exec fastlane adhoc
+        fastlane app_distribution
