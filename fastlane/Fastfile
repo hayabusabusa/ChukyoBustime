@@ -56,7 +56,7 @@ platform :ios do
       }
     )
     deliver(
-      username: ENV["APPLE_ID"]
+      username: ENV["APPLE_ID"],
       app_identifier: "jp.shunya.yamada.ChukyoBustime",
       submit_for_review: false,
       force: true,

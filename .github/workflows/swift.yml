@@ -63,7 +63,7 @@ jobs:
       run: carthage bootstrap --platform iOS --cache-builds
 
     # 10. App Store Connect に ipa をアップロード
-    - name: Push a new beta build to Firebase App Distribution
+    - name: Upload a new build to App Store Connect
       env:
         KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
