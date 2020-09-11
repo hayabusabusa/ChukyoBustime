@@ -60,6 +60,10 @@
 		7163302F250BA57F00307571 /* SwiftDate.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 7163302A250BA57F00307571 /* SwiftDate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71633030250BA57F00307571 /* RxSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 7163302B250BA57F00307571 /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71633033250BAAEB00307571 /* DynamicFrameworks.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */; };
+		71633037250BD0C200307571 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71633036250BD0C200307571 /* XCTestCase+Extension.swift */; };
+		7163303A250BD24700307571 /* bus_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 71633039250BD24700307571 /* bus_time.json */; };
+		7163303C250BD29200307571 /* bus_date.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303B250BD29200307571 /* bus_date.json */; };
+		7163303E250BD2B200307571 /* remote_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303D250BD2B200307571 /* remote_config.json */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -261,6 +265,10 @@
 		7163302A250BA57F00307571 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		7163302B250BA57F00307571 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = DynamicFrameworks.xcfilelist; sourceTree = "<group>"; };
+		71633036250BD0C200307571 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		71633039250BD24700307571 /* bus_time.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_time.json; sourceTree = "<group>"; };
+		7163303B250BD29200307571 /* bus_date.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_date.json; sourceTree = "<group>"; };
+		7163303D250BD2B200307571 /* remote_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = remote_config.json; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -581,12 +589,40 @@
 		71633010250B628200307571 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
+				71633034250BD0A700307571 /* Common */,
 				71633011250B628200307571 /* InfraTests.swift */,
 				71633022250B9DF200307571 /* InfraTests-Config.xcconfig */,
 				71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */,
 				71633013250B628200307571 /* Info.plist */,
 			);
 			path = InfraTests;
+			sourceTree = "<group>";
+		};
+		71633034250BD0A700307571 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				71633038250BD23000307571 /* Resource */,
+				71633035250BD0B300307571 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		71633035250BD0B300307571 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71633036250BD0C200307571 /* XCTestCase+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		71633038250BD23000307571 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7163303B250BD29200307571 /* bus_date.json */,
+				71633039250BD24700307571 /* bus_time.json */,
+				7163303D250BD2B200307571 /* remote_config.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
@@ -1281,7 +1317,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7163303C250BD29200307571 /* bus_date.json in Resources */,
 				71633033250BAAEB00307571 /* DynamicFrameworks.xcfilelist in Resources */,
+				7163303A250BD24700307571 /* bus_time.json in Resources */,
+				7163303E250BD2B200307571 /* remote_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,6 +1457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71633037250BD0C200307571 /* XCTestCase+Extension.swift in Sources */,
 				71633012250B628200307571 /* InfraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

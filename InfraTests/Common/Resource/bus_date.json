@@ -1,0 +1,14 @@
+[
+    {
+      "date": "2020-03-15",
+      "diagram": "suspension",
+      "diagramName": "運休",
+      "isSuspend": true
+    },
+    {
+      "date": "2020-03-16",
+      "diagram": "ｂ",
+      "diagramName": "Ｂダイヤ",
+      "isSuspend": false
+    }
+]

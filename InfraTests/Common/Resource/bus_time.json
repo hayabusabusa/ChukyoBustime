@@ -1,0 +1,24 @@
+[
+    {
+      "hour": 8,
+      "minute": 8,
+      "second": 29280,
+      "arrivalHour": 8,
+      "arrivalMinute": 23,
+      "arrivalSecond": 30180,
+      "isReturn": false,
+      "isLast": false,
+      "isKaizu": false
+    },
+    {
+      "hour": 8,
+      "minute": 23,
+      "second": 30180,
+      "arrivalHour": 8,
+      "arrivalMinute": 38,
+      "arrivalSecond": 31080,
+      "isReturn": false,
+      "isLast": false,
+      "isKaizu": false
+    }
+]
