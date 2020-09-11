@@ -47,7 +47,6 @@
 		716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A1246FBFB1002BA1DE /* ContainedButton.swift */; };
 		716234A6246FDA96002BA1DE /* UserNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */; };
 		716234A9246FFDA8002BA1DE /* BusListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A8246FFDA8002BA1DE /* BusListModel.swift */; };
-		71633012250B628200307571 /* InfraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71633011250B628200307571 /* InfraTests.swift */; };
 		71633014250B628200307571 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; platformFilter = ios; };
 		7163301A250B62BE00307571 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; platformFilter = ios; };
 		7163301B250B62BE00307571 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; platformFilter = ios; };
@@ -64,6 +63,7 @@
 		7163303A250BD24700307571 /* bus_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 71633039250BD24700307571 /* bus_time.json */; };
 		7163303C250BD29200307571 /* bus_date.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303B250BD29200307571 /* bus_date.json */; };
 		7163303E250BD2B200307571 /* remote_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303D250BD2B200307571 /* remote_config.json */; };
+		71633040250BD31C00307571 /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163303F250BD31C00307571 /* EntityTests.swift */; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -256,7 +256,6 @@
 		716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationRepository.swift; sourceTree = "<group>"; };
 		716234A8246FFDA8002BA1DE /* BusListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListModel.swift; sourceTree = "<group>"; };
 		7163300F250B628200307571 /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71633011250B628200307571 /* InfraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraTests.swift; sourceTree = "<group>"; };
 		71633013250B628200307571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71633022250B9DF200307571 /* InfraTests-Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "InfraTests-Config.xcconfig"; sourceTree = "<group>"; };
 		71633027250BA57F00307571 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -269,6 +268,7 @@
 		71633039250BD24700307571 /* bus_time.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_time.json; sourceTree = "<group>"; };
 		7163303B250BD29200307571 /* bus_date.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_date.json; sourceTree = "<group>"; };
 		7163303D250BD2B200307571 /* remote_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = remote_config.json; sourceTree = "<group>"; };
+		7163303F250BD31C00307571 /* EntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -589,8 +589,8 @@
 		71633010250B628200307571 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
+				7163303F250BD31C00307571 /* EntityTests.swift */,
 				71633034250BD0A700307571 /* Common */,
-				71633011250B628200307571 /* InfraTests.swift */,
 				71633022250B9DF200307571 /* InfraTests-Config.xcconfig */,
 				71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */,
 				71633013250B628200307571 /* Info.plist */,
@@ -1458,7 +1458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71633037250BD0C200307571 /* XCTestCase+Extension.swift in Sources */,
-				71633012250B628200307571 /* InfraTests.swift in Sources */,
+				71633040250BD31C00307571 /* EntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
