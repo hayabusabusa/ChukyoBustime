@@ -53,17 +53,37 @@
 		7163301C250B62BE00307571 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; platformFilter = ios; };
 		7163301D250B62BE00307571 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; platformFilter = ios; };
 		7163301E250B62BE00307571 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; platformFilter = ios; };
-		7163302C250BA57F00307571 /* RealmSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71633027250BA57F00307571 /* RealmSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7163302D250BA57F00307571 /* RxRelay.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71633028250BA57F00307571 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7163302E250BA57F00307571 /* Realm.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71633029250BA57F00307571 /* Realm.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7163302F250BA57F00307571 /* SwiftDate.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 7163302A250BA57F00307571 /* SwiftDate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		71633030250BA57F00307571 /* RxSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 7163302B250BA57F00307571 /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71633033250BAAEB00307571 /* DynamicFrameworks.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = 71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */; };
 		71633037250BD0C200307571 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71633036250BD0C200307571 /* XCTestCase+Extension.swift */; };
 		7163303A250BD24700307571 /* bus_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 71633039250BD24700307571 /* bus_time.json */; };
 		7163303C250BD29200307571 /* bus_date.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303B250BD29200307571 /* bus_date.json */; };
 		7163303E250BD2B200307571 /* remote_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303D250BD2B200307571 /* remote_config.json */; };
 		71633040250BD31C00307571 /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163303F250BD31C00307571 /* EntityTests.swift */; };
+		71633048250BD93900307571 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71633047250BD93900307571 /* ChukyoBustimeTests.swift */; };
+		71633051250BDA9300307571 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; platformFilter = ios; };
+		71633057250BDA9300307571 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71633055250BDA9300307571 /* RxTest.framework */; platformFilter = ios; };
+		71633058250BDA9300307571 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71633056250BDA9300307571 /* RxBlocking.framework */; platformFilter = ios; };
+		7163305B250BDB2800307571 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; platformFilter = ios; };
+		7163305D250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */; };
+		71633060250BDCD100307571 /* RxBlocking.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71633056250BDA9300307571 /* RxBlocking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633061250BDCD100307571 /* RxTest.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71633055250BDA9300307571 /* RxTest.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633062250BDDAF00307571 /* Realm.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633063250BDDAF00307571 /* RealmSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633064250BDDAF00307571 /* SwiftDate.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633065250BDDAF00307571 /* RxRelay.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633066250BDDAF00307571 /* RxSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633067250BDF3900307571 /* Infra.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633068250BDF7400307571 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; platformFilter = ios; };
+		71633069250BDF7400307571 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; platformFilter = ios; };
+		7163306A250BDF7400307571 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; platformFilter = ios; };
+		7163306B250BDF7400307571 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; platformFilter = ios; };
+		7163306C250BDF7400307571 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; platformFilter = ios; };
+		7163306D250BDFAB00307571 /* Realm.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7163306E250BDFAB00307571 /* RealmSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7163306F250BDFAB00307571 /* SwiftDate.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633070250BDFAB00307571 /* RxCocoa.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633071250BDFAB00307571 /* RxRelay.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		71633072250BDFAB00307571 /* RxSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		717D147B244FE12A003944DB /* Bundle+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147A244FE12A003944DB /* Bundle+Extention.swift */; };
 		717D147E244FE7C6003944DB /* UserDefaultsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */; };
 		717D1480244FFC78003944DB /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D147F244FFC78003944DB /* TabBarItem.swift */; };
@@ -162,6 +182,13 @@
 			remoteGlobalIDString = 71A329E223E04FB700EB7A55;
 			remoteInfo = Infra;
 		};
+		7163304A250BD93900307571 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B03E7F23DE7CAB0069F7E8;
+			remoteInfo = ChukyoBustime;
+		};
 		71A329E823E04FB700EB7A55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
@@ -196,11 +223,30 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7163302C250BA57F00307571 /* RealmSwift.framework in Copy Files */,
-				7163302D250BA57F00307571 /* RxRelay.framework in Copy Files */,
-				7163302E250BA57F00307571 /* Realm.framework in Copy Files */,
-				7163302F250BA57F00307571 /* SwiftDate.framework in Copy Files */,
-				71633030250BA57F00307571 /* RxSwift.framework in Copy Files */,
+				71633062250BDDAF00307571 /* Realm.framework in Copy Files */,
+				71633063250BDDAF00307571 /* RealmSwift.framework in Copy Files */,
+				71633064250BDDAF00307571 /* SwiftDate.framework in Copy Files */,
+				71633065250BDDAF00307571 /* RxRelay.framework in Copy Files */,
+				71633066250BDDAF00307571 /* RxSwift.framework in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7163305F250BDCBA00307571 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				71633067250BDF3900307571 /* Infra.framework in Copy Files */,
+				7163306D250BDFAB00307571 /* Realm.framework in Copy Files */,
+				7163306E250BDFAB00307571 /* RealmSwift.framework in Copy Files */,
+				71633070250BDFAB00307571 /* RxCocoa.framework in Copy Files */,
+				71633071250BDFAB00307571 /* RxRelay.framework in Copy Files */,
+				71633072250BDFAB00307571 /* RxSwift.framework in Copy Files */,
+				71633060250BDCD100307571 /* RxBlocking.framework in Copy Files */,
+				71633061250BDCD100307571 /* RxTest.framework in Copy Files */,
+				7163306F250BDFAB00307571 /* SwiftDate.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,17 +304,18 @@
 		7163300F250B628200307571 /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71633013250B628200307571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71633022250B9DF200307571 /* InfraTests-Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "InfraTests-Config.xcconfig"; sourceTree = "<group>"; };
-		71633027250BA57F00307571 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		71633028250BA57F00307571 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		71633029250BA57F00307571 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		7163302A250BA57F00307571 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
-		7163302B250BA57F00307571 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		71633032250BAAEB00307571 /* DynamicFrameworks.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = DynamicFrameworks.xcfilelist; sourceTree = "<group>"; };
 		71633036250BD0C200307571 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		71633039250BD24700307571 /* bus_time.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_time.json; sourceTree = "<group>"; };
 		7163303B250BD29200307571 /* bus_date.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_date.json; sourceTree = "<group>"; };
 		7163303D250BD2B200307571 /* remote_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = remote_config.json; sourceTree = "<group>"; };
 		7163303F250BD31C00307571 /* EntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
+		71633045250BD93900307571 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71633047250BD93900307571 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
+		71633049250BD93900307571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71633055250BDA9300307571 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		71633056250BDA9300307571 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ChukyoBustimeTests-Config.xcconfig"; sourceTree = "<group>"; };
 		717D147A244FE12A003944DB /* Bundle+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extention.swift"; sourceTree = "<group>"; };
 		717D147D244FE7C6003944DB /* UserDefaultsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProvider.swift; sourceTree = "<group>"; };
 		717D147F244FFC78003944DB /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -381,6 +428,22 @@
 				7163301D250B62BE00307571 /* RxSwift.framework in Frameworks */,
 				7163301E250B62BE00307571 /* SwiftDate.framework in Frameworks */,
 				71633014250B628200307571 /* Infra.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71633042250BD93900307571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163305B250BDB2800307571 /* Infra.framework in Frameworks */,
+				71633068250BDF7400307571 /* Realm.framework in Frameworks */,
+				71633069250BDF7400307571 /* RealmSwift.framework in Frameworks */,
+				71633058250BDA9300307571 /* RxBlocking.framework in Frameworks */,
+				71633051250BDA9300307571 /* RxCocoa.framework in Frameworks */,
+				71633057250BDA9300307571 /* RxTest.framework in Frameworks */,
+				7163306A250BDF7400307571 /* RxRelay.framework in Frameworks */,
+				7163306B250BDF7400307571 /* RxSwift.framework in Frameworks */,
+				7163306C250BDF7400307571 /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +686,16 @@
 				7163303D250BD2B200307571 /* remote_config.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		71633046250BD93900307571 /* ChukyoBustimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				71633047250BD93900307571 /* ChukyoBustimeTests.swift */,
+				7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */,
+				71633049250BD93900307571 /* Info.plist */,
+			);
+			path = ChukyoBustimeTests;
 			sourceTree = "<group>";
 		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
@@ -1076,16 +1149,12 @@
 			isa = PBXGroup;
 			children = (
 				A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */,
+				71633046250BD93900307571 /* ChukyoBustimeTests */,
 				71A329E423E04FB700EB7A55 /* Infra */,
 				71633010250B628200307571 /* InfraTests */,
 				715D9A482420A8ED0018F526 /* Today */,
 				A4B03E8123DE7CAB0069F7E8 /* Products */,
 				A4B03EFC23DE8A960069F7E8 /* Frameworks */,
-				71633029250BA57F00307571 /* Realm.framework */,
-				71633027250BA57F00307571 /* RealmSwift.framework */,
-				71633028250BA57F00307571 /* RxRelay.framework */,
-				7163302B250BA57F00307571 /* RxSwift.framework */,
-				7163302A250BA57F00307571 /* SwiftDate.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1096,6 +1165,7 @@
 				71A329E323E04FB700EB7A55 /* Infra.framework */,
 				715D9A452420A8ED0018F526 /* Today.appex */,
 				7163300F250B628200307571 /* InfraTests.xctest */,
+				71633045250BD93900307571 /* ChukyoBustimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1143,6 +1213,8 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71633056250BDA9300307571 /* RxBlocking.framework */,
+				71633055250BDA9300307571 /* RxTest.framework */,
 				71D278B4241F0E280087B373 /* Realm.framework */,
 				71D278B3241F0E280087B373 /* RealmSwift.framework */,
 				A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */,
@@ -1214,6 +1286,25 @@
 			productReference = 7163300F250B628200307571 /* InfraTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		71633044250BD93900307571 /* ChukyoBustimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7163304C250BD93900307571 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */;
+			buildPhases = (
+				71633041250BD93900307571 /* Sources */,
+				71633042250BD93900307571 /* Frameworks */,
+				71633043250BD93900307571 /* Resources */,
+				7163305F250BDCBA00307571 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7163304B250BD93900307571 /* PBXTargetDependency */,
+			);
+			name = ChukyoBustimeTests;
+			productName = ChukyoBustimeTests;
+			productReference = 71633045250BD93900307571 /* ChukyoBustimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		71A329E223E04FB700EB7A55 /* Infra */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71A329EE23E04FB700EB7A55 /* Build configuration list for PBXNativeTarget "Infra" */;
@@ -1272,6 +1363,10 @@
 					7163300E250B628200307571 = {
 						CreatedOnToolsVersion = 11.7;
 					};
+					71633044250BD93900307571 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = A4B03E7F23DE7CAB0069F7E8;
+					};
 					71A329E223E04FB700EB7A55 = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
@@ -1296,9 +1391,10 @@
 			projectRoot = "";
 			targets = (
 				A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */,
+				71633044250BD93900307571 /* ChukyoBustimeTests */,
 				71A329E223E04FB700EB7A55 /* Infra */,
-				715D9A442420A8ED0018F526 /* Today */,
 				7163300E250B628200307571 /* InfraTests */,
+				715D9A442420A8ED0018F526 /* Today */,
 			);
 		};
 /* End PBXProject section */
@@ -1321,6 +1417,14 @@
 				71633033250BAAEB00307571 /* DynamicFrameworks.xcfilelist in Resources */,
 				7163303A250BD24700307571 /* bus_time.json in Resources */,
 				7163303E250BD2B200307571 /* remote_config.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71633043250BD93900307571 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7163305D250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1566,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71633041250BD93900307571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71633048250BD93900307571 /* ChukyoBustimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71A329DF23E04FB700EB7A55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1566,6 +1678,11 @@
 			platformFilter = ios;
 			target = 71A329E223E04FB700EB7A55 /* Infra */;
 			targetProxy = 71633015250B628200307571 /* PBXContainerItemProxy */;
+		};
+		7163304B250BD93900307571 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */;
+			targetProxy = 7163304A250BD93900307571 /* PBXContainerItemProxy */;
 		};
 		71A329E923E04FB700EB7A55 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1705,6 +1822,57 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7163304D250BD93900307571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/.../Frameworks",
+					"@loader_path/.../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
+			};
+			name = Debug;
+		};
+		7163304E250BD93900307571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/.../Frameworks",
+					"@loader_path/.../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
 			};
 			name = Release;
 		};
@@ -1984,6 +2152,15 @@
 			buildConfigurations = (
 				71633017250B628200307571 /* Debug */,
 				71633018250B628200307571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7163304C250BD93900307571 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7163304D250BD93900307571 /* Debug */,
+				7163304E250BD93900307571 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
