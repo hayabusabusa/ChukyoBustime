@@ -108,6 +108,7 @@
 		71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */; };
 		71F2FD87250F032200DA2B59 /* ToCollegeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */; };
 		71F2FD89250F2E1800DA2B59 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD88250F2E1800DA2B59 /* Stubs.swift */; };
+		71F2FD8B250F394900DA2B59 /* CountdownViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD8A250F394900DA2B59 /* CountdownViewModelTests.swift */; };
 		71F660C92448374800E1DA90 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660C82448374800E1DA90 /* StateView.swift */; };
 		71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660CA244941DA00E1DA90 /* StateViewable.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
@@ -344,6 +345,7 @@
 		71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToCollegeModel.swift; sourceTree = "<group>"; };
 		71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModelTests.swift; sourceTree = "<group>"; };
 		71F2FD88250F2E1800DA2B59 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		71F2FD8A250F394900DA2B59 /* CountdownViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModelTests.swift; sourceTree = "<group>"; };
 		71F660C82448374800E1DA90 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		71F660CA244941DA00E1DA90 /* StateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewable.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 		71633046250BD93900307571 /* ChukyoBustimeTests */ = {
 			isa = PBXGroup;
 			children = (
+				71F2FD8A250F394900DA2B59 /* CountdownViewModelTests.swift */,
 				71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */,
 				71F2FD83250EFB4F00DA2B59 /* Model */,
 				7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */,
@@ -1584,6 +1587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F2FD8B250F394900DA2B59 /* CountdownViewModelTests.swift in Sources */,
 				71F2FD89250F2E1800DA2B59 /* Stubs.swift in Sources */,
 				71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */,
 				71F2FD87250F032200DA2B59 /* ToCollegeViewModelTests.swift in Sources */,
