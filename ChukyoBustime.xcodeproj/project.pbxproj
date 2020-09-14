@@ -106,6 +106,7 @@
 		71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */; };
 		71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
 		71D278B7241F0E280087B373 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */; };
 		71F660C92448374800E1DA90 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660C82448374800E1DA90 /* StateView.swift */; };
 		71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660CA244941DA00E1DA90 /* StateViewable.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
@@ -340,6 +341,7 @@
 		71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewableTranslator.swift; sourceTree = "<group>"; };
 		71D278B3241F0E280087B373 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		71D278B4241F0E280087B373 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToCollegeModel.swift; sourceTree = "<group>"; };
 		71F660C82448374800E1DA90 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		71F660CA244941DA00E1DA90 /* StateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewable.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				71633047250BD93900307571 /* ChukyoBustimeTests.swift */,
+				71F2FD83250EFB4F00DA2B59 /* Model */,
 				7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */,
 				71633049250BD93900307571 /* Info.plist */,
 			);
@@ -802,6 +805,14 @@
 				71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */,
 			);
 			path = BusList;
+			sourceTree = "<group>";
+		};
+		71F2FD83250EFB4F00DA2B59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		71FF5C1823E1B6A900456D75 /* BusList */ = {
@@ -1570,6 +1581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */,
 				71633048250BD93900307571 /* ChukyoBustimeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
