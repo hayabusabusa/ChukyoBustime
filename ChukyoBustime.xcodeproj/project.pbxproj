@@ -59,7 +59,6 @@
 		7163303C250BD29200307571 /* bus_date.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303B250BD29200307571 /* bus_date.json */; };
 		7163303E250BD2B200307571 /* remote_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 7163303D250BD2B200307571 /* remote_config.json */; };
 		71633040250BD31C00307571 /* EntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163303F250BD31C00307571 /* EntityTests.swift */; };
-		71633048250BD93900307571 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71633047250BD93900307571 /* ChukyoBustimeTests.swift */; };
 		71633051250BDA9300307571 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; platformFilter = ios; };
 		71633057250BDA9300307571 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71633055250BDA9300307571 /* RxTest.framework */; platformFilter = ios; };
 		71633058250BDA9300307571 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71633056250BDA9300307571 /* RxBlocking.framework */; platformFilter = ios; };
@@ -107,6 +106,8 @@
 		71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
 		71D278B7241F0E280087B373 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */; };
+		71F2FD87250F032200DA2B59 /* ToCollegeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */; };
+		71F2FD89250F2E1800DA2B59 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2FD88250F2E1800DA2B59 /* Stubs.swift */; };
 		71F660C92448374800E1DA90 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660C82448374800E1DA90 /* StateView.swift */; };
 		71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660CA244941DA00E1DA90 /* StateViewable.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
@@ -312,7 +313,6 @@
 		7163303D250BD2B200307571 /* remote_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = remote_config.json; sourceTree = "<group>"; };
 		7163303F250BD31C00307571 /* EntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTests.swift; sourceTree = "<group>"; };
 		71633045250BD93900307571 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71633047250BD93900307571 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
 		71633049250BD93900307571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71633055250BDA9300307571 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		71633056250BDA9300307571 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
@@ -342,6 +342,8 @@
 		71D278B3241F0E280087B373 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		71D278B4241F0E280087B373 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToCollegeModel.swift; sourceTree = "<group>"; };
+		71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModelTests.swift; sourceTree = "<group>"; };
+		71F2FD88250F2E1800DA2B59 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
 		71F660C82448374800E1DA90 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		71F660CA244941DA00E1DA90 /* StateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewable.swift; sourceTree = "<group>"; };
 		71FF5C1623E1B25900456D75 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -693,7 +695,7 @@
 		71633046250BD93900307571 /* ChukyoBustimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				71633047250BD93900307571 /* ChukyoBustimeTests.swift */,
+				71F2FD86250F032200DA2B59 /* ToCollegeViewModelTests.swift */,
 				71F2FD83250EFB4F00DA2B59 /* Model */,
 				7163305C250BDB6E00307571 /* ChukyoBustimeTests-Config.xcconfig */,
 				71633049250BD93900307571 /* Info.plist */,
@@ -811,6 +813,7 @@
 			isa = PBXGroup;
 			children = (
 				71F2FD84250EFB8100DA2B59 /* MockToCollegeModel.swift */,
+				71F2FD88250F2E1800DA2B59 /* Stubs.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1581,8 +1584,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F2FD89250F2E1800DA2B59 /* Stubs.swift in Sources */,
 				71F2FD85250EFB8100DA2B59 /* MockToCollegeModel.swift in Sources */,
-				71633048250BD93900307571 /* ChukyoBustimeTests.swift in Sources */,
+				71F2FD87250F032200DA2B59 /* ToCollegeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

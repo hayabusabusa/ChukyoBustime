@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum StateViewType {
+enum StateViewType: Equatable {
     case toStation
     case toCollege
     
