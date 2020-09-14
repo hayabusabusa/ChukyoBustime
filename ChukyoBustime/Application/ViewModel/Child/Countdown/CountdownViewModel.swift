@@ -15,7 +15,7 @@ final class CountdownViewModel {
     
     // MARK: Dependency
     
-    typealias Dependency = (destination: Destination, countupRelay: PublishRelay<Void>, busTimesDriver: Driver<[BusTime]>)
+    typealias Dependency = (destination: Destination, timeInterval: RxTimeInterval, countupRelay: PublishRelay<Void>, busTimesDriver: Driver<[BusTime]>)
     
     let dependency: Dependency
     

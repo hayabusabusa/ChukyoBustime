@@ -19,11 +19,13 @@ final class ToStationViewModel {
     
     // MARK: Propreties
     
+    private let timeInterval: RxTimeInterval
     private let disposeBag = DisposeBag()
     
     // MARK: Initializer
     
-    init(model: ToStationModel = ToStationModelImpl()) {
+    init(timeInterval: RxTimeInterval = RxTimeInterval.seconds(1), model: ToStationModel = ToStationModelImpl()) {
+        self.timeInterval = timeInterval
         self.model = model
     }
 }
@@ -110,7 +112,7 @@ extension ToStationViewModel: ViewModelType {
         let diagramDriver: Driver<String> = diagramRelay.asDriver()
         let busTimesDriver: Driver<[BusTime]> = busTimesRelay.asDriver()
         let diagramViewModel = DiagramViewModel(dependency: diagramDriver)
-        let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: .station, countupRelay: countupRelay, busTimesDriver: busTimesDriver))
+        let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(destination: .station, timeInterval: timeInterval, countupRelay: countupRelay, busTimesDriver: busTimesDriver))
         let busListViewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimesDriver, model: BusListModelImpl()))
         
         return Output(children: Children(diagramViewModel: diagramViewModel,
