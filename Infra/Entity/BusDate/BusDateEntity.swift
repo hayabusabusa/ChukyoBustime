@@ -23,8 +23,4 @@ public final class BusDateEntity: Object, Decodable {
         self.diagram = diagram
         self.diagramName = diagramName
     }
-    
-    public required override init() {
-        super.init()
-    }
 }
