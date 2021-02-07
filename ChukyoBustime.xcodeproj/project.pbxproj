@@ -116,18 +116,16 @@
 		A555CC6025CFB9580064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC6225CFB9580064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
 		A555CC6425CFB9580064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
-		A555CC6625CFB9580064A295 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5B25CFB9570064A295 /* Realm.xcframework */; };
 		A555CC6825CFB9580064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A555CC6A25CFB9580064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
-		A555CC6C25CFB9580064A295 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; };
-		A555CC6E25CFB9580064A295 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
 		A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
-		A555CC7A25CFB99B0064A295 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5B25CFB9570064A295 /* Realm.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
 		A57F695A25CFE05B000D0528 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */; };
+		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,7 +304,6 @@
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
-		A555CC5B25CFB9570064A295 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		A555CC5C25CFB9570064A295 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
 		A555CC5E25CFB9580064A295 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
@@ -331,12 +328,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */,
 				A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */,
 				A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */,
 				A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */,
 				A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */,
 				A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */,
-				A555CC7A25CFB99B0064A295 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,14 +341,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */,
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
-				A555CC6E25CFB9580064A295 /* RxBlocking.xcframework in Frameworks */,
 				A555CC6425CFB9580064A295 /* RxRelay.xcframework in Frameworks */,
 				A555CC6025CFB9580064A295 /* SwiftDate.xcframework in Frameworks */,
-				A555CC6C25CFB9580064A295 /* RxTest.xcframework in Frameworks */,
 				A555CC6825CFB9580064A295 /* RxSwift.xcframework in Frameworks */,
 				A555CC6225CFB9580064A295 /* RxCocoa.xcframework in Frameworks */,
-				A555CC6625CFB9580064A295 /* Realm.xcframework in Frameworks */,
 				A555CC6A25CFB9580064A295 /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1052,7 +1047,6 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A555CC5B25CFB9570064A295 /* Realm.xcframework */,
 				A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */,
 				A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */,
 				A555CC5925CFB9570064A295 /* RxCocoa.xcframework */,
@@ -1142,6 +1136,7 @@
 				A4B03E7E23DE7CAB0069F7E8 /* Resources */,
 				A4B03EF023DE861E0069F7E8 /* Embed Frameworks */,
 				71A32A5923E05DA400EB7A55 /* Copy Dynamic Frameworks */,
+				A57F696425CFE616000D0528 /* Carthage */,
 				71FF5C1D23E1E8B400456D75 /* Crashlytics */,
 				715D9A522420A8ED0018F526 /* Embed App Extensions */,
 			);
@@ -1311,6 +1306,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		A57F696425CFE616000D0528 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
