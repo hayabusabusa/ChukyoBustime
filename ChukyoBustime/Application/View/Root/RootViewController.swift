@@ -11,11 +11,9 @@ import RxCocoa
 
 final class RootViewController: BaseViewController {
     
-    // MARK: IBOutlet
-    
     // MARK: Properties
     
-    private var viewModel: RootViewModel!
+    private let viewModel: RootViewModel = RootViewModel()
     
     // MARK: Lifecycle
     
@@ -25,7 +23,10 @@ final class RootViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         bindViewModel()
+        
+        viewModel.input.viewDidLoad()
     }
 }
 
@@ -34,14 +35,10 @@ final class RootViewController: BaseViewController {
 extension RootViewController {
     
     private func bindViewModel() {
-        let viewModel = RootViewModel()
-        self.viewModel = viewModel
-        
-        let input = RootViewModel.Input(viewDidAppear: rx.viewDidAppear.take(1).asSignal(onErrorSignalWith: .empty()))
-        let output = viewModel.transform(input: input)
-        
-        output.replaceRootToTabBar
-            .drive(onNext: { [weak self] in self?.replaceRootToTabBar() })
+        viewModel.output.replaceRootToTabBar
+            .emit(onNext: { [weak self] in
+                self?.replaceRootToTabBar()
+            })
             .disposed(by: disposeBag)
     }
 }
