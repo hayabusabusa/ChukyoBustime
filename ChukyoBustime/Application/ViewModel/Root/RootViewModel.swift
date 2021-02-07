@@ -18,8 +18,7 @@ protocol RootViewModelInputs {
 }
 
 protocol RootViewModelOutputs {
-    
-    /// Emits
+    /// Emits a void event to replace root to tab bar controller.
     var replaceRootToTabBar: Signal<Void> { get }
 }
 
