@@ -127,6 +127,7 @@
 		A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A555CC7A25CFB99B0064A295 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5B25CFB9570064A295 /* Realm.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
+		A57F695A25CFE05B000D0528 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 71A329E223E04FB700EB7A55;
 			remoteInfo = Infra;
+		};
+		A57F695C25CFE05B000D0528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B03E7F23DE7CAB0069F7E8;
+			remoteInfo = ChukyoBustime;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -303,6 +311,9 @@
 		A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
 		A555CC5E25CFB9580064A295 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
 		A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
+		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
+		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -342,6 +353,13 @@
 				A555CC6225CFB9580064A295 /* RxCocoa.xcframework in Frameworks */,
 				A555CC6625CFB9580064A295 /* Realm.xcframework in Frameworks */,
 				A555CC6A25CFB9580064A295 /* RealmSwift.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57F695425CFE05B000D0528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +992,7 @@
 				A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */,
 				71A329E423E04FB700EB7A55 /* Infra */,
 				715D9A482420A8ED0018F526 /* Today */,
+				A57F695825CFE05B000D0528 /* ChukyoBustimeTests */,
 				A4B03E8123DE7CAB0069F7E8 /* Products */,
 				A4B03EFC23DE8A960069F7E8 /* Frameworks */,
 			);
@@ -985,6 +1004,7 @@
 				A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */,
 				71A329E323E04FB700EB7A55 /* Infra.framework */,
 				715D9A452420A8ED0018F526 /* Today.appex */,
+				A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1052,6 +1072,15 @@
 				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A57F695825CFE05B000D0528 /* ChukyoBustimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */,
+				A57F695B25CFE05B000D0528 /* Info.plist */,
+			);
+			path = ChukyoBustimeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1127,13 +1156,31 @@
 			productReference = A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A57F695625CFE05B000D0528 /* ChukyoBustimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57F695E25CFE05B000D0528 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */;
+			buildPhases = (
+				A57F695325CFE05B000D0528 /* Sources */,
+				A57F695425CFE05B000D0528 /* Frameworks */,
+				A57F695525CFE05B000D0528 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57F695D25CFE05B000D0528 /* PBXTargetDependency */,
+			);
+			name = ChukyoBustimeTests;
+			productName = ChukyoBustimeTests;
+			productReference = A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A4B03E7823DE7CAB0069F7E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Shunya Yamada";
 				TargetAttributes = {
@@ -1146,6 +1193,10 @@
 					};
 					A4B03E7F23DE7CAB0069F7E8 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					A57F695625CFE05B000D0528 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = A4B03E7F23DE7CAB0069F7E8;
 					};
 				};
 			};
@@ -1166,6 +1217,7 @@
 				A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */,
 				71A329E223E04FB700EB7A55 /* Infra */,
 				715D9A442420A8ED0018F526 /* Today */,
+				A57F695625CFE05B000D0528 /* ChukyoBustimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1208,6 +1260,13 @@
 				71536D7723F4216A004A330C /* SettingItemCell.xib in Resources */,
 				71536D7023F41B27004A330C /* SettingLabelCell.xib in Resources */,
 				A42D0DAF23E120C500E95FED /* DynamicFrameworks.xcfilelist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57F695525CFE05B000D0528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1358,6 +1417,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A57F695325CFE05B000D0528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A57F695A25CFE05B000D0528 /* ChukyoBustimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1375,6 +1442,11 @@
 			isa = PBXTargetDependency;
 			target = 71A329E223E04FB700EB7A55 /* Infra */;
 			targetProxy = A511F04F24A4DFA300DDD4AC /* PBXContainerItemProxy */;
+		};
+		A57F695D25CFE05B000D0528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */;
+			targetProxy = A57F695C25CFE05B000D0528 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1717,6 +1789,51 @@
 			};
 			name = Release;
 		};
+		A57F695F25CFE05B000D0528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
+			};
+			name = Debug;
+		};
+		A57F696025CFE05B000D0528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1752,6 +1869,15 @@
 			buildConfigurations = (
 				A4B03E9523DE7CB20069F7E8 /* Debug */,
 				A4B03E9623DE7CB20069F7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57F695E25CFE05B000D0528 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57F695F25CFE05B000D0528 /* Debug */,
+				A57F696025CFE05B000D0528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
