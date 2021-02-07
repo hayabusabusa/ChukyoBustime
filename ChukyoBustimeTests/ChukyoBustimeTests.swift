@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import ChukyoBustime
 
 class ChukyoBustimeTests: XCTestCase {
 
@@ -19,8 +20,6 @@ class ChukyoBustimeTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
 }

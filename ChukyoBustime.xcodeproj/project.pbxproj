@@ -182,6 +182,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5DA4ACC25D00D8000BC4F96 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -312,6 +321,7 @@
 		A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
+		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1073,6 +1083,7 @@
 			children = (
 				A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */,
 				A57F695B25CFE05B000D0528 /* Info.plist */,
+				A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */,
 			);
 			path = ChukyoBustimeTests;
 			sourceTree = "<group>";
@@ -1158,6 +1169,7 @@
 				A57F695325CFE05B000D0528 /* Sources */,
 				A57F695425CFE05B000D0528 /* Frameworks */,
 				A57F695525CFE05B000D0528 /* Resources */,
+				A5DA4ACC25D00D8000BC4F96 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1805,6 +1817,7 @@
 		};
 		A57F695F25CFE05B000D0528 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -1828,6 +1841,7 @@
 		};
 		A57F696025CFE05B000D0528 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
