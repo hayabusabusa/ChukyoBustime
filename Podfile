@@ -15,6 +15,5 @@ target 'Core' do
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'Firebase/Crashlytics'
 end

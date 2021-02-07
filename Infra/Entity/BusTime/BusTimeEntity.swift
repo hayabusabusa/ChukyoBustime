@@ -53,7 +53,7 @@ public final class BusTimeEntity: Object, Decodable {
         self.isKaizu = isKaizu
     }
     
-    public required init() {
+    public required override init() {
         super.init()
     }
 }

@@ -61,7 +61,7 @@ extension TodayViewModel {
                 
                 collegeRelay.accept(caches.college ?? "-")
                 stationRelay.accept(caches.station ?? "-")
-            }, onError: { error in
+            }, onFailure: { error in
                 print(error)
                 messageRealy.accept("エラーが発生しました。")
             })

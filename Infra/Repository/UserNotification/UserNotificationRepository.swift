@@ -49,7 +49,7 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
                 case .notDetermined:
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                         if let error = error {
-                            observer(.error(error))
+                            observer(.failure(error))
                         }
                         observer(.success(granted))
                     }
