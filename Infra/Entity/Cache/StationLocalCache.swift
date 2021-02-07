@@ -21,7 +21,7 @@ public final class StationLocalCache: Object, LocalCacheable {
         self.busTimes = busTimes.reduce(List<BusTimeEntity>()) { $0.append($1); return $0 }
     }
     
-    required init() {
+    required override init() {
         super.init()
     }
 }
