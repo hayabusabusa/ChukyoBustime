@@ -130,7 +130,6 @@
 		A5DA4BB025D152E100BC4F96 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A5DA4BBE25D159C600BC4F96 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */; };
 		A5DA4BD925D160D400BC4F96 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; };
 		A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; };
 		A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -336,7 +335,6 @@
 		A555CC5E25CFB9580064A295 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
 		A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
 		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1103,7 +1101,6 @@
 		A57F695825CFE05B000D0528 /* ChukyoBustimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */,
 				A5DA4BE825D1657600BC4F96 /* Model */,
 				A5DA4BF525D1662500BC4F96 /* ViewModel */,
 				A57F695B25CFE05B000D0528 /* Info.plist */,
@@ -1487,7 +1484,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DA4BBE25D159C600BC4F96 /* ChukyoBustimeTests.swift in Sources */,
 				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
 				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 			);
