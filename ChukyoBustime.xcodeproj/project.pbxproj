@@ -113,19 +113,29 @@
 		A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */; };
 		A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9D23DE80090069F7E8 /* Storyboard.swift */; };
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
-		A555CC6025CFB9580064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
-		A555CC6225CFB9580064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
-		A555CC6425CFB9580064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
-		A555CC6825CFB9580064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
-		A555CC6A25CFB9580064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
 		A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
-		A57F695A25CFE05B000D0528 /* ChukyoBustimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */; };
 		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
+		A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
+		A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
+		A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
+		A5DA4BB025D152E100BC4F96 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
+		A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BD925D160D400BC4F96 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; };
+		A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; };
+		A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */; };
+		A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,9 +187,25 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A5DA4BB025D152E100BC4F96 /* RxSwift.xcframework in Embed Frameworks */,
 				71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */,
+				A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */,
+				A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */,
+				A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */,
+				A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5DA4AEF25D02BF200BC4F96 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */,
+				A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -309,9 +335,11 @@
 		A555CC5E25CFB9580064A295 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
 		A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeTests.swift; sourceTree = "<group>"; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
+		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
+		A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootModelImpl.swift; sourceTree = "<group>"; };
+		A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,13 +369,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */,
 				A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */,
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
-				A555CC6425CFB9580064A295 /* RxRelay.xcframework in Frameworks */,
-				A555CC6025CFB9580064A295 /* SwiftDate.xcframework in Frameworks */,
-				A555CC6825CFB9580064A295 /* RxSwift.xcframework in Frameworks */,
-				A555CC6225CFB9580064A295 /* RxCocoa.xcframework in Frameworks */,
-				A555CC6A25CFB9580064A295 /* RealmSwift.xcframework in Frameworks */,
+				A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */,
+				A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */,
+				A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */,
+				A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +383,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DA4BD925D160D400BC4F96 /* RxBlocking.xcframework in Frameworks */,
+				A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,10 +1101,28 @@
 		A57F695825CFE05B000D0528 /* ChukyoBustimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */,
+				A5DA4BE825D1657600BC4F96 /* Model */,
+				A5DA4BF525D1662500BC4F96 /* ViewModel */,
 				A57F695B25CFE05B000D0528 /* Info.plist */,
+				A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */,
 			);
 			path = ChukyoBustimeTests;
+			sourceTree = "<group>";
+		};
+		A5DA4BE825D1657600BC4F96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5DA4BF525D1662500BC4F96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1158,6 +1206,7 @@
 				A57F695325CFE05B000D0528 /* Sources */,
 				A57F695425CFE05B000D0528 /* Frameworks */,
 				A57F695525CFE05B000D0528 /* Resources */,
+				A5DA4AEF25D02BF200BC4F96 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1176,7 +1225,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Shunya Yamada";
 				TargetAttributes = {
 					715D9A442420A8ED0018F526 = {
@@ -1435,7 +1484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57F695A25CFE05B000D0528 /* ChukyoBustimeTests.swift in Sources */,
+				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
+				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1459,6 +1509,7 @@
 		};
 		A57F695D25CFE05B000D0528 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */;
 			targetProxy = A57F695C25CFE05B000D0528 /* PBXContainerItemProxy */;
 		};
@@ -1805,14 +1856,21 @@
 		};
 		A57F695F25CFE05B000D0528 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
 				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1828,13 +1886,20 @@
 		};
 		A57F696025CFE05B000D0528 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
 				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
