@@ -135,6 +135,8 @@
 		A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; };
 		A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */; };
+		A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +340,8 @@
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
 		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
+		A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootModelImpl.swift; sourceTree = "<group>"; };
+		A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1100,10 +1104,28 @@
 			isa = PBXGroup;
 			children = (
 				A57F695925CFE05B000D0528 /* ChukyoBustimeTests.swift */,
+				A5DA4BE825D1657600BC4F96 /* Model */,
+				A5DA4BF525D1662500BC4F96 /* ViewModel */,
 				A57F695B25CFE05B000D0528 /* Info.plist */,
 				A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */,
 			);
 			path = ChukyoBustimeTests;
+			sourceTree = "<group>";
+		};
+		A5DA4BE825D1657600BC4F96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5DA4BF525D1662500BC4F96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1466,6 +1488,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DA4BBE25D159C600BC4F96 /* ChukyoBustimeTests.swift in Sources */,
+				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
+				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
