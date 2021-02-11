@@ -10,17 +10,39 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class DiagramViewModel {
+// MARK: Protocols
+
+protocol DiagramViewModelInputs {
+    
+}
+
+protocol DiagramViewModelOutputs {
+    var diagramName: Driver<String> { get }
+}
+
+protocol DiagramViewModelType {
+    var input: DiagramViewModelInputs { get }
+    var output: DiagramViewModelOutputs { get }
+}
+
+// MARK: ViewModel
+
+final class DiagramViewModel: DiagramViewModelInputs, DiagramViewModelOutputs {
     
     // MARK: Dependency
     
-    typealias Dependency = Driver<String>
-    
+    struct Dependency {
+        let diagramNameDriver: Driver<String>
+    }
     let dependency: Dependency
     
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
+    
+    var diagramName: Driver<String> {
+        return dependency.diagramNameDriver
+    }
     
     // MARK: Initializer
     
@@ -29,21 +51,7 @@ final class DiagramViewModel {
     }
 }
 
-extension DiagramViewModel: ViewModelType {
-    
-    // MARK: I/O
-    
-    struct Input {
-        
-    }
-    
-    struct Output {
-        
-    }
-    
-    // MARK: Transform I/O
-    
-    func transform(input: DiagramViewModel.Input) -> DiagramViewModel.Output {
-        return Output()
-    }
+extension DiagramViewModel: DiagramViewModelType {
+    var input: DiagramViewModelInputs { return self }
+    var output: DiagramViewModelOutputs { return self }
 }
