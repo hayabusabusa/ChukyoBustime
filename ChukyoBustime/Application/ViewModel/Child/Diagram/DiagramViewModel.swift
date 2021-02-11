@@ -17,6 +17,7 @@ protocol DiagramViewModelInputs {
 }
 
 protocol DiagramViewModelOutputs {
+    /// Emits a diagram name.
     var diagramName: Driver<String> { get }
 }
 

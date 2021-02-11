@@ -136,6 +136,7 @@
 		A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */; };
 		A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */; };
+		A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -340,6 +341,7 @@
 		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootModelImpl.swift; sourceTree = "<group>"; };
 		A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
+		A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1120,6 +1122,7 @@
 		A5DA4BF525D1662500BC4F96 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */,
 				A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */,
 			);
 			path = ViewModel;
@@ -1484,6 +1487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,
 				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
 				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 			);
