@@ -10,11 +10,6 @@ import UIKit
 
 final class PdfButtonsViewController: BaseViewController {
     
-    // MARK: IBOutlet
-    
-    @IBOutlet private weak var calendarButton: UIButton!
-    @IBOutlet private weak var timeTableButton: UIButton!
-    
     // MARK: Properties
     
     private var viewModel: PdfButtonsViewModel!
@@ -30,6 +25,15 @@ final class PdfButtonsViewController: BaseViewController {
         super.viewDidLoad()
         bindViewModel()
     }
+    
+    @IBAction private func calendarButtonTapped(_ sender: UIButton) {
+        viewModel.input.tappedCalendarButton()
+    }
+    
+    @IBAction private func timeTableButtonTapped(_ sender: UIButton) {
+        viewModel.input.tappedTimeTableButton()
+    }
+    
 }
 
 // MARK: - ViewModel
