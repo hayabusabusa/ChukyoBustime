@@ -112,6 +112,8 @@
 		A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */; };
 		A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */; };
 		A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9D23DE80090069F7E8 /* Storyboard.swift */; };
+		A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */; };
+		A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4AA25E7F6F70003164A /* MockError.swift */; };
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
@@ -330,6 +332,8 @@
 		A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E9D23DE80090069F7E8 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusListModelImpl.swift; sourceTree = "<group>"; };
+		A50AF4AA25E7F6F70003164A /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayRelease.entitlements; sourceTree = "<group>"; };
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
@@ -1120,6 +1124,8 @@
 		A5DA4BE825D1657600BC4F96 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */,
+				A50AF4AA25E7F6F70003164A /* MockError.swift */,
 				A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */,
 				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
 			);
@@ -1502,6 +1508,8 @@
 				A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */,
 				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 				A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */,
+				A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */,
+				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
