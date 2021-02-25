@@ -27,11 +27,11 @@ final class PdfButtonsViewController: BaseViewController {
     }
     
     @IBAction private func calendarButtonTapped(_ sender: UIButton) {
-        viewModel.input.tappedCalendarButton()
+        viewModel.input.calendarButtonTapped()
     }
     
     @IBAction private func timeTableButtonTapped(_ sender: UIButton) {
-        viewModel.input.tappedTimeTableButton()
+        viewModel.input.timeTableButtonTapped()
     }
     
 }

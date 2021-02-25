@@ -29,7 +29,7 @@ class PDFButtonsViewModelTests: XCTestCase {
         }
         
         scheduler.scheduleAt(200) {
-            viewModel.input.tappedCalendarButton()
+            viewModel.input.calendarButtonTapped()
         }
         
         scheduler.start()
@@ -56,7 +56,7 @@ class PDFButtonsViewModelTests: XCTestCase {
         }
         
         scheduler.scheduleAt(200) {
-            viewModel.input.tappedTimeTableButton()
+            viewModel.input.timeTableButtonTapped()
         }
         
         scheduler.start()

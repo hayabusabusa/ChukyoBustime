@@ -14,10 +14,10 @@ import RxCocoa
 
 protocol PdfButtonsViewModelInputs {
     /// Call when the calendar button is tapped.
-    func tappedCalendarButton()
+    func calendarButtonTapped()
     
     /// Call when the time table button is tapped.
-    func tappedTimeTableButton()
+    func timeTableButtonTapped()
 }
 
 protocol PdfButtonsViewModelOutputs {
@@ -58,7 +58,7 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
     
     // MARK: Inputs
     
-    func tappedCalendarButton() {
+    func calendarButtonTapped() {
         model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
             .map { URL(string: $0.calendar) }
             .compactMap { $0 }
@@ -66,7 +66,7 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
             .disposed(by: disposeBag)
     }
     
-    func tappedTimeTableButton() {
+    func timeTableButtonTapped() {
         model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
             .map { URL(string: $0.timeTable) }
             .compactMap { $0 }
