@@ -13,7 +13,7 @@ final class MockBusListModelImpl: BusListModel {
     let isAuthorized: Bool
     let isErrorOccured: Bool
     
-    init(isAuthorized: Bool, isErrorOccured: Bool) {
+    init(isAuthorized: Bool = true, isErrorOccured: Bool = false) {
         self.isAuthorized = isAuthorized
         self.isErrorOccured = isErrorOccured
     }
@@ -25,8 +25,8 @@ final class MockBusListModelImpl: BusListModel {
     func setNotification(at busTime: BusTime) -> Completable {
         return Completable.create { observer in
             self.isErrorOccured
-                ? observer(.completed)
-                : observer(.error(MockError.somethingWentWrong))
+                ? observer(.error(MockError.somethingWentWrong))
+                : observer(.completed)
             
             return Disposables.create()
         }
