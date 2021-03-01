@@ -93,15 +93,15 @@ class BusListViewModelTests: XCTestCase {
             XCTAssertEqual(testableObserver.events, expression)
         }
         
-        XCTContext.runActivity(named: "通知が許可されていない場合は特定のメッセージが表示されることを確認") { _ in
-            let message = "バスがくる5分前に\n通知が来るように設定できます。\nまずは通知の表示を許可してください。"
+        XCTContext.runActivity(named: "通知が許可されていない場合はエラーが流れることを確認") { _ in
+            let message = MockError.somethingWentWrong.description
             let testableObserver = scheduler.createObserver(String.self)
             
             let model = MockBusListModelImpl(isAuthorized: false)
             let dependency = BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimes, model: model)
             let viewModel = BusListViewModel(dependency: dependency)
             
-            viewModel.output.message.debug()
+            viewModel.output.error
                 .emit(to: testableObserver)
                 .disposed(by: disposeBag)
             

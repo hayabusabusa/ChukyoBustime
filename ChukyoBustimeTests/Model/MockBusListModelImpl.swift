@@ -18,8 +18,14 @@ final class MockBusListModelImpl: BusListModel {
         self.isErrorOccured = isErrorOccured
     }
     
-    func requestAuthorization() -> Single<Bool> {
-        return Single.just(isAuthorized)
+    func requestAuthorization() -> Completable {
+        return Completable.create { observer in
+            self.isAuthorized
+                ? observer(.completed)
+                : observer(.error(MockError.somethingWentWrong))
+            
+            return Disposables.create()
+        }
     }
     
     func setNotification(at busTime: BusTime) -> Completable {

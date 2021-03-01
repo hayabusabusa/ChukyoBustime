@@ -11,3 +11,12 @@ import Foundation
 enum MockError: Error {
     case somethingWentWrong
 }
+
+extension MockError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .somethingWentWrong:
+            return "TEST"
+        }
+    }
+}

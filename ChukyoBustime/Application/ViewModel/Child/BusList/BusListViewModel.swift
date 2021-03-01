@@ -85,20 +85,12 @@ final class BusListViewModel: BusListViewModelInputs, BusListViewModelOutputs {
     
     func confirmAlertOKTapped(busTime: BusTime) {
         dependency.model.requestAuthorization()
-            .flatMapCompletable { [weak self] isAuthorized -> Completable in
-                guard let self = self else { return .empty() }
-                
-                if isAuthorized {
-                    return self.dependency.model.setNotification(at: busTime)
-                }
-                
-                // NOTE: 通知が許可されていない場合はメッセージを表示する
-                self.messageRelay.accept("バスがくる5分前に\n通知が来るように設定できます。\nまずは通知の表示を許可してください。")
-                return .empty()
-            }.subscribe(onCompleted: { [weak self] in
+            .andThen(dependency.model.setNotification(at: busTime))
+            .subscribe(onCompleted: { [weak self] in
                 self?.messageRelay.accept(String(format: "%02i:%02i の5分前に\n通知が来るように設定しました。", busTime.hour, busTime.minute))
             }, onError: { [weak self] error in
-                self?.errorRelay.accept("エラーが発生しました")
+                let message = (error as CustomStringConvertible).description
+                self?.errorRelay.accept(message)
             })
             .disposed(by: disposeBag)
     }

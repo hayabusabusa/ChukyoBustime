@@ -12,12 +12,15 @@ import SwiftDate
 import UserNotifications
 
 enum UserNotificationError: Error {
+    case notAuthorized
     case overFiveMinutes
 }
 
 extension UserNotificationError: CustomStringConvertible {
     var description: String {
         switch self {
+        case .notAuthorized:
+            return "通知の表示が許可されていません。\n設定から通知の表示を許可してください。"
         case .overFiveMinutes:
             return "すでに5分前の時間を過ぎています"
         }
@@ -27,7 +30,7 @@ extension UserNotificationError: CustomStringConvertible {
 // MARK: - Interface
 
 public protocol UserNotificationRepository {
-    func requestAuthorization() -> Single<Bool>
+    func requestAuthorization() -> Completable
     func setNotification(at hour: Int, minute: Int) -> Completable
     func removeAllNotifications()
 }
@@ -39,22 +42,24 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
     public init() {}
     
     /// 通知の許可をリクエストする
-    /// - Returns: 許可された or 許可済みの場合は `true`、許可されなかった or 許可されていない場合は `false`,
-    public func requestAuthorization() -> Single<Bool> {
-        return Single.create { observer in
+    /// - Returns: 許可された or 許可済みの場合は `completed`、許可されなかった or 許可されていない場合は `error`,
+    public func requestAuthorization() -> Completable {
+        return Completable.create { observer -> Disposable in
             UNUserNotificationCenter.current().getNotificationSettings { settings in
                 switch settings.authorizationStatus {
                 case .authorized:
-                    observer(.success(true))
+                    observer(.completed)
                 case .notDetermined:
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                         if let error = error {
-                            observer(.failure(error))
+                            observer(.error(error))
                         }
-                        observer(.success(granted))
+                        granted
+                            ? observer(.completed)
+                            : observer(.error(UserNotificationError.notAuthorized))
                     }
                 default:
-                    observer(.success(false))
+                    observer(.error(UserNotificationError.notAuthorized))
                 }
             }
             return Disposables.create()
