@@ -72,28 +72,28 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
             let today = DateInRegion(Date(), region: .current)
             let fiveMinAgo = DateInRegion(year: today.year, month: today.month, day: today.day, hour: hour, minute: minute, second: 0, nanosecond: 0, region: .current) - 5.minutes
             
-            // NOTE: 5分前と今を比較
+            // NOTE: 5分前と今を比較して、すでに時間を過ぎていたらエラーを流す
             if today >= fiveMinAgo {
                 observer(.error(UserNotificationError.overFiveMinutes))
-            }
-            
-            var dateMatching    = DateComponents()
-            dateMatching.hour   = fiveMinAgo.hour
-            dateMatching.minute = fiveMinAgo.minute
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
-            
-            let content     = UNMutableNotificationContent()
-            content.title   = ""
-            content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
-            content.sound   = .default
-            
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    observer(.error(error))
+            } else {
+                var dateMatching    = DateComponents()
+                dateMatching.hour   = fiveMinAgo.hour
+                dateMatching.minute = fiveMinAgo.minute
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
+                
+                let content     = UNMutableNotificationContent()
+                content.title   = ""
+                content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
+                content.sound   = .default
+                
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error = error {
+                        observer(.error(error))
+                    }
+                    observer(.completed)
                 }
-                observer(.completed)
             }
             
             return Disposables.create()
