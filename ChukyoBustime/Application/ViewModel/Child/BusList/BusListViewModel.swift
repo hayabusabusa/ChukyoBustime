@@ -44,7 +44,7 @@ final class BusListViewModel: BusListViewModelInputs, BusListViewModelOutputs {
     
     struct Dependency {
         let destination: Destination
-        let busTimesDriver: Driver<[BusTime]>
+        let busTimes: Driver<[BusTime]>
         let model: BusListModel
     }
     let dependency: Dependency
@@ -75,7 +75,7 @@ final class BusListViewModel: BusListViewModelInputs, BusListViewModelOutputs {
         busList = busListRelay.asDriver()
         
         // NOTE: バス一覧から3件取り出して、表示のために変換して流す
-        dependency.busTimesDriver
+        dependency.busTimes
             .translate(with: BusListViewableTranslator())
             .drive(busListRelay)
             .disposed(by: disposeBag)
