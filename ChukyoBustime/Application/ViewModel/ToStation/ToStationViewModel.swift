@@ -111,7 +111,7 @@ extension ToStationViewModel: ViewModelType {
         let busTimesDriver: Driver<[BusTime]> = busTimesRelay.asDriver()
         let diagramViewModel = DiagramViewModel(dependency: DiagramViewModel.Dependency(diagramNameDriver: diagramDriver))
         let countdownViewModel = CountdownViewModel(dependency: CountdownViewModel.Dependency(busTimes: busTimesDriver, destination: .station, countupRelay: countupRelay))
-        let busListViewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimesDriver, model: BusListModelImpl()))
+        let busListViewModel = BusListViewModel(dependency: BusListViewModel.Dependency(destination: .station, busTimes: busTimesDriver, model: BusListModelImpl()))
         
         return Output(children: Children(diagramViewModel: diagramViewModel,
                                          countdownViewModel: countdownViewModel,

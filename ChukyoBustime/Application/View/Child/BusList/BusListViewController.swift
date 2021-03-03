@@ -19,8 +19,7 @@ final class BusListViewController: BaseViewController {
     
     // MARK: Properties
     
-    private var viewModel: BusListViewModel!
-    private let confirmAlertOkTrigger: PublishRelay<BusTime> = .init()
+    private var viewModel: BusListViewModelType!
     
     // MARK: Lifecycle
     
@@ -35,8 +34,6 @@ final class BusListViewController: BaseViewController {
         bindViewModel()
         bindView()
     }
-    
-    // MARK: IBAction
 }
 
 // MARK: - Setup
@@ -70,7 +67,9 @@ extension BusListViewController {
             firstBusListView.show(departureTime: String(format: "%i:%02i", first.hour, first.minute),
                                   arrivalTime: String(format: "%i:%02i", first.arrivalHour, first.arrivalMinute))
             firstBusListView.backgroundColor = UIColor.primary.withAlphaComponent(0.1)
-            firstBusListView.onTapOpaqueButton = { [weak self] in self?.showConfirmAlert(with: first) }
+            firstBusListView.onTapOpaqueButton = { [weak self] in
+                self?.showConfirmAlert(with: first)
+            }
         } else {
             firstBusListView.hide()
             firstBusListView.backgroundColor = UIColor.background
@@ -79,7 +78,9 @@ extension BusListViewController {
         if let second = second {
             secondBusListView.show(departureTime: String(format: "%i:%02i", second.hour, second.minute),
                                    arrivalTime: String(format: "%i:%02i", second.arrivalHour, second.arrivalMinute))
-            secondBusListView.onTapOpaqueButton = { [weak self] in self?.showConfirmAlert(with: second) }
+            secondBusListView.onTapOpaqueButton = { [weak self] in
+                self?.showConfirmAlert(with: second)
+            }
         } else {
             secondBusListView.hide()
             secondBusListView.onTapOpaqueButton = nil
@@ -87,7 +88,9 @@ extension BusListViewController {
         if let third = third {
             thirdBusListView.show(departureTime: String(format: "%i:%02i", third.hour, third.minute),
                                   arrivalTime: String(format: "%i:%02i", third.arrivalHour, third.arrivalMinute))
-            thirdBusListView.onTapOpaqueButton = { [weak self] in self?.showConfirmAlert(with: third) }
+            thirdBusListView.onTapOpaqueButton = { [weak self] in
+                self?.showConfirmAlert(with: third)
+            }
         } else {
             thirdBusListView.hide()
             thirdBusListView.onTapOpaqueButton = nil
@@ -100,20 +103,17 @@ extension BusListViewController {
 extension BusListViewController {
     
     private func bindViewModel() {
-        let input = BusListViewModel.Input(confirmAlertOkDidTap: confirmAlertOkTrigger.asSignal())
-        let output = viewModel.transform(input: input)
-        
-        output.busListDriver
+        viewModel.output.busList
             .drive(onNext: { [weak self] busList in
                 self?.updateBusList(first: busList.first, second: busList.second, third: busList.third)
             })
             .disposed(by: disposeBag)
-        output.messageSignal
+        viewModel.output.message
             .emit(onNext: { [weak self] message in
                 self?.presentAlertController(title: "", message: message)
             })
             .disposed(by: disposeBag)
-        output.errorSignal
+        viewModel.output.error
             .emit(onNext: { [weak self] message in
                 self?.presentAlertController(title: "エラー", message: message)
             })
@@ -121,7 +121,7 @@ extension BusListViewController {
     }
     
     private func bindView() {
-        setupBusListViews(with: viewModel.dependency.destination)
+        setupBusListViews(with: viewModel.output.destination)
     }
 }
 
@@ -130,10 +130,11 @@ extension BusListViewController {
 extension BusListViewController {
     
     private func showConfirmAlert(with busTime: BusTime) {
-        let ac = UIAlertController(title: "", message: String(format: "%02i:%02i の5分前に\n通知が来るように設定しますか？\n※これより前に登録した通知は上書きされます。", busTime.hour, busTime.minute), preferredStyle: .alert)
+        let message = String(format: "%02i:%02i の5分前に\n通知が来るように設定しますか？\n※これより前に登録した通知は上書きされます。", busTime.hour, busTime.minute)
+        let ac = UIAlertController(title: "", message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
-            self?.confirmAlertOkTrigger.accept(busTime)
+            self?.viewModel.input.confirmAlertOKTapped(busTime: busTime)
         }))
         present(ac, animated: true, completion: nil)
     }

@@ -13,9 +13,10 @@ struct BusListViewableTranslator: ViewableTranslator {
     typealias Output = (first: BusTime?, second: BusTime?, third: BusTime?)
     
     func translate(_ input: [BusTime]) -> (first: BusTime?, second: BusTime?, third: BusTime?) {
-        let first = input.enumerated().first(where: { $0.offset == 0 })?.element
-        let second = input.enumerated().first(where: { $0.offset == 1 })?.element
-        let third = input.enumerated().first(where: { $0.offset == 2 })?.element
+        let enumerated = input.enumerated()
+        let first = enumerated.first(where: { $0.offset == 0 })?.element
+        let second = enumerated.first(where: { $0.offset == 1 })?.element
+        let third = enumerated.first(where: { $0.offset == 2 })?.element
         return (first: first, second: second, third: third)
     }
 }
