@@ -32,7 +32,7 @@ class BusListViewModelTests: XCTestCase {
         .asDriver(onErrorDriveWith: .empty())
         
         let model = MockBusListModelImpl()
-        let dependency = BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimes, model: model)
+        let dependency = BusListViewModel.Dependency(destination: .station, busTimes: busTimes, model: model)
         let viewModel = BusListViewModel(dependency: dependency)
         
         // MOTE: `nil` のものを除去して、結果として流れる件数のみ比較する
@@ -74,7 +74,7 @@ class BusListViewModelTests: XCTestCase {
             let testableObserver = scheduler.createObserver(String.self)
             
             let model = MockBusListModelImpl()
-            let dependency = BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimes, model: model)
+            let dependency = BusListViewModel.Dependency(destination: .station, busTimes: busTimes, model: model)
             let viewModel = BusListViewModel(dependency: dependency)
             
             viewModel.output.message
@@ -98,7 +98,7 @@ class BusListViewModelTests: XCTestCase {
             let testableObserver = scheduler.createObserver(String.self)
             
             let model = MockBusListModelImpl(isAuthorized: false)
-            let dependency = BusListViewModel.Dependency(destination: .station, busTimesDriver: busTimes, model: model)
+            let dependency = BusListViewModel.Dependency(destination: .station, busTimes: busTimes, model: model)
             let viewModel = BusListViewModel(dependency: dependency)
             
             viewModel.output.error
