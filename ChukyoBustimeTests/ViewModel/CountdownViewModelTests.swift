@@ -14,6 +14,8 @@ import RxBlocking
 import SwiftDate
 @testable import ChukyoBustime
 
+// NOTE: `countupRelay` によるカウントアップの動作は親 ViewModel 側のテストで動作確認する
+
 class CountdownViewModelTests: XCTestCase {
     
     // TODO: タイマーのテストは外部からインターバルを指定できるようにしたいので
