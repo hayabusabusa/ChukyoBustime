@@ -105,19 +105,12 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
             .subscribe(onNext: { [weak self] in
                 var busTimes = self?.busTimesRelay.value ?? []
                 
-                // NOTE: `removeFirst()` は要素があるときにしか使えないので、まず要素を確認する
+                busTimes.popFirst()
+                
                 if busTimes.isEmpty {
-                    self?.busTimesRelay.accept([])
-                    self?.stateRelay.accept(.empty) // Show empty state
-                } else {
-                    busTimes.removeFirst()
-                    
-                    // NOTE: 要素削除後に空の場合は運行終了を画面に表示する
-                    if busTimes.isEmpty {
-                        self?.stateRelay.accept(.empty)
-                    }
-                    self?.busTimesRelay.accept(busTimes)
+                    self?.stateRelay.accept(.empty)
                 }
+                self?.busTimesRelay.accept(busTimes)
             })
             .disposed(by: disposeBag)
     }
