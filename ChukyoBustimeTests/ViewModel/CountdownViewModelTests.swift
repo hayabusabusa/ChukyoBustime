@@ -22,9 +22,8 @@ class CountdownViewModelTests: XCTestCase {
     // タイマーの処理をModelに閉じ込めてからテストを作成する
 
     func test_各種ラベルが表示されることを確認() {
-        // TODO: モック用のデータ生成クラスを別で作って、そこで作成させたい。
-        let now = DateInRegion(Date(), region: .current)
-        let busTimes = Observable.of([BusTime(hour: now.hour, minute: now.minute, second: now.second, arrivalHour: now.hour + 1, arrivalMinute: now.minute + 1, arrivalSecond: now.second + 1, isReturn: true, isLast: true, isKaizu: true)]).asDriver(onErrorDriveWith: .empty())
+        let busTime = Mock.createBusTime(isReturn: true, isLast: true, isKaizu: true)
+        let busTimes = Observable.of([busTime]).asDriver(onErrorDriveWith: .empty())
         let countupRelay = PublishRelay<Void>()
         
         let dependency = CountdownViewModel.Dependency(busTimes: busTimes, destination: .station, countupRelay: countupRelay)
@@ -91,13 +90,10 @@ class CountdownViewModelTests: XCTestCase {
         let testableObserver = scheduler.createObserver(String.self)
         let disposeBag = DisposeBag()
         
-        // TODO: モック用のデータ生成クラスを別で作って、そこで作成させたい。
-        let now = DateInRegion(Date(), region: .current)
-        let second = now.hour * 3600 + now.minute * 60 + now.second + 1
-        
         // NOTE: 1秒先のデータを用意して `HotObserver` に流す
+        let busTime = Mock.createBusTime()
         let busTimes = scheduler.createHotObservable([
-            .next(100, [BusTime(hour: now.hour, minute: now.minute, second: second, arrivalHour: now.hour, arrivalMinute: now.minute, arrivalSecond: second + 1, isReturn: true, isLast: true, isKaizu: true)])
+            .next(100, [busTime])
         ])
         .asDriver(onErrorDriveWith: .empty())
         

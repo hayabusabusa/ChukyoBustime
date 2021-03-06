@@ -35,7 +35,7 @@ final class MockToStationModelImpl: ToStationModel {
     func getPdfUrl() -> Single<PdfUrl> {
         return Single.create { [unowned self] observer in
             observer(self.isErrorOccured
-                        ? .success(PdfUrl(calendar: "TEST", timeTable: "TEST"))
+                        ? .success(Mock.pdfURL)
                         : .failure(MockError.somethingWentWrong))
             
             return Disposables.create()

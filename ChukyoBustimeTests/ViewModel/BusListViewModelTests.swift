@@ -19,15 +19,8 @@ class BusListViewModelTests: XCTestCase {
         let testableObserver = scheduler.createObserver(Int.self)
         let disposeBag = DisposeBag()
         
-        let now = DateInRegion(Date(), region: .current)
-        let second = now.hour * 3600 + now.minute * 60 + now.second
         let busTimes = scheduler.createHotObservable([
-            .next(100,
-                  [
-                    BusTime(hour: now.hour, minute: now.minute, second: second + 1, arrivalHour: now.hour + 2, arrivalMinute: now.minute + 2, arrivalSecond: second + 2, isReturn: true, isLast: true, isKaizu: true),
-                    BusTime(hour: now.hour, minute: now.minute, second: second + 2, arrivalHour: now.hour + 3, arrivalMinute: now.minute + 3, arrivalSecond: second + 3, isReturn: true, isLast: true, isKaizu: true)
-                  ]
-            )
+            .next(100, Mock.createBusTimes(count: 2, interval: 1))
         ])
         .asDriver(onErrorDriveWith: .empty())
         
@@ -55,22 +48,16 @@ class BusListViewModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let disposeBag = DisposeBag()
         
-        let now = DateInRegion(Date(), region: .current)
-        let second = now.hour * 3600 + now.minute * 60 + now.second
         let busTimes = scheduler.createHotObservable([
-            .next(100,
-                  [
-                    BusTime(hour: now.hour, minute: now.minute, second: second + 1, arrivalHour: now.hour + 2, arrivalMinute: now.minute + 2, arrivalSecond: second + 2, isReturn: true, isLast: true, isKaizu: true)
-                  ]
-            )
+            .next(100, Mock.createBusTimes(count: 1))
         ])
         .asDriver(onErrorDriveWith: .empty())
         
         // NOTE: 6分後のデータを用意
-        let busTime = BusTime(hour: now.hour, minute: now.minute + 6, second: second + 360, arrivalHour: now.hour, arrivalMinute: now.minute + 6, arrivalSecond: second + 360, isReturn: true, isLast: true, isKaizu: true)
+        let busTimeAfterSixMinutes = Mock.createBusTime(interval: 360)
         
         XCTContext.runActivity(named: "通知が許可済みの場合はメッセージが表示されることを確認") { _ in
-            let message = String(format: "%02i:%02i の5分前に\n通知が来るように設定しました。", busTime.hour, busTime.minute)
+            let message = String(format: "%02i:%02i の5分前に\n通知が来るように設定しました。", busTimeAfterSixMinutes.hour, busTimeAfterSixMinutes.minute)
             let testableObserver = scheduler.createObserver(String.self)
             
             let model = MockBusListModelImpl()
@@ -82,7 +69,7 @@ class BusListViewModelTests: XCTestCase {
                 .disposed(by: disposeBag)
             
             scheduler.scheduleAt(100) {
-                viewModel.input.confirmAlertOKTapped(busTime: busTime)
+                viewModel.input.confirmAlertOKTapped(busTime: busTimeAfterSixMinutes)
             }
             
             scheduler.start()
@@ -106,7 +93,7 @@ class BusListViewModelTests: XCTestCase {
                 .disposed(by: disposeBag)
             
             scheduler.scheduleAt(100) {
-                viewModel.input.confirmAlertOKTapped(busTime: busTime)
+                viewModel.input.confirmAlertOKTapped(busTime: busTimeAfterSixMinutes)
             }
             
             scheduler.start()
