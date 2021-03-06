@@ -25,8 +25,8 @@ final class MockToStationModelImpl: ToStationModel {
     func getBusTimes(at date: Date) -> Single<(busDate: BusDate, busTimes: [BusTime])> {
         return Single.create { [unowned self] observer in
             observer(self.isErrorOccured
-                        ? .success((self.busDate, self.busTimes))
-                        : .failure(MockError.somethingWentWrong))
+                        ? .failure(MockError.somethingWentWrong)
+                        : .success((self.busDate, self.busTimes)))
             
             return Disposables.create()
         }
@@ -35,8 +35,8 @@ final class MockToStationModelImpl: ToStationModel {
     func getPdfUrl() -> Single<PdfUrl> {
         return Single.create { [unowned self] observer in
             observer(self.isErrorOccured
-                        ? .success(Mock.pdfURL)
-                        : .failure(MockError.somethingWentWrong))
+                        ? .failure(MockError.somethingWentWrong)
+                        : .success(Mock.pdfURL))
             
             return Disposables.create()
         }

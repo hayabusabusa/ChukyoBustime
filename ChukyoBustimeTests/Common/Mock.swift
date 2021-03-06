@@ -12,6 +12,7 @@ import SwiftDate
 
 enum Mock {
     static let pdfURL = PdfUrl(calendar: "http://example.com", timeTable: "http://example.org")
+    static let busDate = BusDate(diagramName: "TEST")
     
     static func createBusTime(isReturn: Bool = false, isLast: Bool = false, isKaizu: Bool = false, interval: Int = 1) -> BusTime {
         let now = Self.now()
