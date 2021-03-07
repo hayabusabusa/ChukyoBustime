@@ -12,7 +12,7 @@ enum SettingSectionType {
     case config(rows: [SettingCellType])
     case about(rows: [SettingCellType])
     
-    enum SettingCellType {
+    enum SettingCellType: Equatable {
         case tabSetting(setting: String)
         case version(version: String)
         case app
