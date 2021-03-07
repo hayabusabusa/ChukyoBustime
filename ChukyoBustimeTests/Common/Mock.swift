@@ -44,6 +44,20 @@ enum Mock {
         return array
     }
     
+    static func createSettingSections(tabSetting: TabBarItem) -> [SettingSectionType] {
+        return [
+            .config(rows: [
+                .tabSetting(setting: tabSetting.title)
+            ]),
+            .about(rows: [
+                .version(version: "TEST"),
+                .app,
+                .precations,
+                .privacyPolicy
+            ])
+        ]
+    }
+    
     static private func now() -> (dateInRegion: DateInRegion, second: Int) {
         let nowDateInRegion = DateInRegion(Date(), region: .current)
         let second = nowDateInRegion.hour * 3600 + nowDateInRegion.minute * 60 + nowDateInRegion.second
