@@ -111,4 +111,83 @@ class ToStationViewModelTests: XCTestCase {
         ])
         XCTAssertEqual(testableObserver.events, expression)
     }
+    
+    func test_設定ボタンタップ時に遷移のイベントが流れることを確認() {
+        let disposeBag = DisposeBag()
+        let scheduler = TestScheduler(initialClock: 0)
+        let testableObserver = scheduler.createObserver(Bool.self)
+        
+        let busDate = Mock.busDate
+        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
+        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let viewModel = ToStationViewModel(model: model)
+        
+        viewModel.output.presentSetting
+            .map { return true }
+            .emit(to: testableObserver)
+            .disposed(by: disposeBag)
+        
+        scheduler.scheduleAt(100) {
+            viewModel.input.settingButtonTapped()
+        }
+        
+        scheduler.start()
+        
+        let expression = Recorded.events([
+            .next(100, true)
+        ])
+        XCTAssertEqual(testableObserver.events, expression)
+    }
+    
+    func test_StateViewのボタンタップ時にWebへ遷移するイベントが流れることを確認() {
+        let disposeBag = DisposeBag()
+        
+        
+        let busDate = Mock.busDate
+        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
+        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let viewModel = ToStationViewModel(model: model)
+        
+        XCTContext.runActivity(named: "カレンダーボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in
+            let url = URL(string: Mock.pdfURL.calendar)!
+            let scheduler = TestScheduler(initialClock: 0)
+            let testableObserver = scheduler.createObserver(URL.self)
+            
+            viewModel.output.presentSafari
+                .emit(to: testableObserver)
+                .disposed(by: disposeBag)
+            
+            scheduler.scheduleAt(100) {
+                viewModel.input.calendarButtonTapped()
+            }
+            
+            scheduler.start()
+            
+            let expression = Recorded.events([
+                .next(100, url)
+            ])
+            XCTAssertEqual(testableObserver.events, expression)
+        }
+        
+        XCTContext.runActivity(named: "時刻表ボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in
+            let url = URL(string: Mock.pdfURL.timeTable)!
+            let scheduler = TestScheduler(initialClock: 0)
+            let testableObserver = scheduler.createObserver(URL.self)
+            
+            viewModel.output.presentSafari
+                .emit(to: testableObserver)
+                .disposed(by: disposeBag)
+            
+            scheduler.scheduleAt(100) {
+                viewModel.input.timeTableButtonTapped()
+            }
+            
+            scheduler.start()
+            
+            let expression = Recorded.events([
+                .next(100, url)
+            ])
+            XCTAssertEqual(testableObserver.events, expression)
+        }
+    }
 }
