@@ -1,8 +1,8 @@
 //
-//  MockToStationModelImpl.swift
+//  MockToCollegeModelImpl.swift
 //  ChukyoBustimeTests
 //
-//  Created by Shunya Yamada on 2021/03/06.
+//  Created by Shunya Yamada on 2021/03/07.
 //  Copyright © 2021 Shunya Yamada. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 @testable import ChukyoBustime
 
-final class MockToStationModelImpl: ToStationModel {
+final class MockToCollegeModelImpl: ToCollegeModel {
     let busDate: BusDate
     let busTimes: [BusTime]
     let isErrorOccured: Bool
