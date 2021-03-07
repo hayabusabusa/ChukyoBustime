@@ -10,7 +10,42 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class SettingViewModel {
+// MARK: - Protocols
+
+protocol SettingViewModelInputs {
+    /// Call when the view did load.
+    func viewDidLoad()
+    
+    /// Call when the close bar button item is tapped.
+    func closeButtonTapped()
+    
+    /// Call when cell on table view is selected.
+    /// - Parameter cellType: type of cell.
+    func didSelectRow(of cellType: SettingSectionType.SettingCellType)
+}
+
+protocol SettingViewModelOutputs {
+    /// Emits `SettingSectionType` enum array that should be used as data source of table view.
+    var sections: Driver<[SettingSectionType]> { get }
+    
+    /// Emits message that should be presented with alert controller.
+    var message: Signal<String> { get }
+    
+    /// Emits event to dimiss this view controller.
+    var dismiss: Signal<Void> { get }
+    
+    /// Emits url that should be used to present `SFSafariViewController`.
+    var presentSafari: Signal<URL> { get }
+}
+
+protocol SettingViewModelType {
+    var input: SettingViewModelInputs { get }
+    var output: SettingViewModelOutputs { get }
+}
+
+// MARK: - ViewModel
+
+final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
     
     // MARK: Dependency
     
@@ -19,69 +54,68 @@ final class SettingViewModel {
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
+    private let messageRelay: PublishRelay<String>
+    private let sectionsRelay: BehaviorRelay<[SettingSectionType]>
+    private let dismissRelay: PublishRelay<Void>
+    private let presentSafariRelay: PublishRelay<URL>
+    
+    // MARK: Outputs
+    
+    let sections: Driver<[SettingSectionType]>
+    let message: Signal<String>
+    let dismiss: Signal<Void>
+    let presentSafari: Signal<URL>
     
     // MARK: Initializer
     
     init(model: SettingModel = SettingModelImpl()) {
         self.model = model
+        self.messageRelay = .init()
+        self.sectionsRelay = .init(value: [])
+        self.dismissRelay = .init()
+        self.presentSafariRelay = .init()
+        
+        sections = sectionsRelay.asDriver()
+        message = messageRelay.asSignal()
+        dismiss = dismissRelay.asSignal()
+        presentSafari = presentSafariRelay.asSignal()
+    }
+    
+    // MARK: Inputs
+    
+    func viewDidLoad() {
+        let sections = model.getSettings()
+        sectionsRelay.accept(sections)
+    }
+    
+    func closeButtonTapped() {
+        dismissRelay.accept(())
+    }
+    
+    func didSelectRow(of cellType: SettingSectionType.SettingCellType) {
+        switch cellType {
+        case.tabSetting(let current):
+            let new = current == TabBarItem.toStation.title ? TabBarItem.toCollege : TabBarItem.toStation
+            
+            // NOTE: TableView を更新する
+            model.saveTabSetting(tabBarItem: new)
+            
+            let sections = model.getSettings()
+            sectionsRelay.accept(sections)
+            
+            messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
+        case .app:
+            presentSafariRelay.accept(Configurations.kAboutThisAppURL)
+        case .precations:
+            presentSafariRelay.accept(Configurations.kPrecautionsURL)
+        case .privacyPolicy:
+            presentSafariRelay.accept(Configurations.kPrivacyPolicyURL)
+        default: break
+        }
     }
 }
 
-extension SettingViewModel: ViewModelType {
-    
-    // MARK: I/O
-    
-    struct Input {
-        let closeBarButtonDidTap: Signal<Void>
-        let didSelectRow: Signal<SettingSectionType.SettingCellType>
-    }
-    
-    struct Output {
-        let settingsDriver: Driver<[SettingSectionType]>
-        let messageSignal: Signal<String>
-        let presentSafariSignal: Signal<URL>
-        let dismissSignal: Signal<Void>
-    }
-    
-    // MARK: Transform I/O
-    
-    func transform(input: SettingViewModel.Input) -> SettingViewModel.Output {
-        let settingsRelay: BehaviorRelay<[SettingSectionType]> = .init(value: [])
-        let messageRelay: PublishRelay<String> = .init()
-        let reloadRelay: PublishRelay<Void> = .init()
-        let presentSafariRelay: PublishRelay<URL> = .init()
-        
-        reloadRelay.asSignal()
-            .map { [weak self] in self?.model.getSettings() ?? [] }
-            .emit(onNext: { settingsRelay.accept($0) })
-            .disposed(by: disposeBag)
-        
-        // NOTE: Initial load.
-        reloadRelay.accept(())
-        
-        // NOTE: On tap table view cell
-        input.didSelectRow
-            .emit(onNext: { [weak self] row in
-                switch row {
-                case.tabSetting(let current):
-                    let new = current == TabBarItem.toStation.title ? TabBarItem.toCollege : TabBarItem.toStation
-                    self?.model.saveTabSetting(tabBarItem: new)
-                    reloadRelay.accept(()) // Reload table view
-                    messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
-                case .app:
-                    presentSafariRelay.accept(Configurations.kAboutThisAppURL)
-                case .precations:
-                    presentSafariRelay.accept(Configurations.kPrecautionsURL)
-                case .privacyPolicy:
-                    presentSafariRelay.accept(Configurations.kPrivacyPolicyURL)
-                default: break
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        return Output(settingsDriver: settingsRelay.asDriver(),
-                      messageSignal: messageRelay.asSignal(),
-                      presentSafariSignal: presentSafariRelay.asSignal(),
-                      dismissSignal: input.closeBarButtonDidTap)
-    }
+extension SettingViewModel: SettingViewModelType {
+    var input: SettingViewModelInputs { return self }
+    var output: SettingViewModelOutputs { return self }
 }
