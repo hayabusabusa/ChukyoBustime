@@ -14,7 +14,7 @@ import RxTest
 class PDFButtonsViewModelTests: XCTestCase {
 
     func test_カレンダーボタンを押した際にURLが流れてくることを確認() {
-        let url = URL(string: "http://example.com")!
+        let url = URL(string: Mock.pdfURL.calendar)!
         let model = MockPDFButtonsModelImpl()
         let viewModel = PdfButtonsViewModel(model: model)
         let disposeBag = DisposeBag()
@@ -41,7 +41,7 @@ class PDFButtonsViewModelTests: XCTestCase {
     }
     
     func test_時刻表ボタンを押した際にURLが流れてくることを確認() {
-        let url = URL(string: "http://example.org")!
+        let url = URL(string: Mock.pdfURL.timeTable)!
         let model = MockPDFButtonsModelImpl()
         let viewModel = PdfButtonsViewModel(model: model)
         let disposeBag = DisposeBag()

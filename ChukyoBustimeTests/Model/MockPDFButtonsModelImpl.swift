@@ -12,6 +12,6 @@ import RxSwift
 final class MockPDFButtonsModelImpl: PdfButtonsModel {
     
     func getPdfUrl() -> Single<PdfUrl> {
-        return Single.just(PdfUrl(calendar: "http://example.com", timeTable: "http://example.org"))
+        return Single.just(Mock.pdfURL)
     }
 }
