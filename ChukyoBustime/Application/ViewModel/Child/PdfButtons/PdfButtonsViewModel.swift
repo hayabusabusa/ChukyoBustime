@@ -10,7 +10,29 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class PdfButtonsViewModel {
+// MARK: - Protocols
+
+protocol PdfButtonsViewModelInputs {
+    /// Call when the calendar button is tapped.
+    func calendarButtonTapped()
+    
+    /// Call when the time table button is tapped.
+    func timeTableButtonTapped()
+}
+
+protocol PdfButtonsViewModelOutputs {
+    /// Emits a URL that should be used to present `SFSafariViewController`.
+    var presentSafari: Signal<URL> { get }
+}
+
+protocol PdfButtonsViewModelType {
+    var input: PdfButtonsViewModelInputs { get }
+    var output: PdfButtonsViewModelOutputs { get }
+}
+
+// MARK: - ViewModel
+
+final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelOutputs {
     
     // MARK: Dependency
     
@@ -19,52 +41,41 @@ final class PdfButtonsViewModel {
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
+    private let presentSafariRelay: PublishRelay<URL>
+    
+    // MARK: Outputs
+    
+    let presentSafari: Signal<URL>
     
     // MARK: Initializer
     
     init(model: PdfButtonsModel = PdfButtonsModelImpl()) {
         self.model = model
+        self.presentSafariRelay = .init()
+        
+        presentSafari = presentSafariRelay.asSignal()
+    }
+    
+    // MARK: Inputs
+    
+    func calendarButtonTapped() {
+        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
+            .map { URL(string: $0.calendar) }
+            .compactMap { $0 }
+            .emit(to: presentSafariRelay)
+            .disposed(by: disposeBag)
+    }
+    
+    func timeTableButtonTapped() {
+        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
+            .map { URL(string: $0.timeTable) }
+            .compactMap { $0 }
+            .emit(to: presentSafariRelay)
+            .disposed(by: disposeBag)
     }
 }
 
-extension PdfButtonsViewModel: ViewModelType {
-    
-    // MARK: I/O
-    
-    struct Input {
-        let calendarButtonDidTap: Signal<Void>
-        let timeTableButtonDidTap: Signal<Void>
-    }
-    
-    struct Output {
-        let presentSafari: Driver<URL>
-    }
-    
-    // MARK: Transform I/O
-    
-    func transform(input: PdfButtonsViewModel.Input) -> PdfButtonsViewModel.Output {
-        let presentSafariRelay: PublishRelay<URL> = .init()
-        let pdfUrlSignal: Signal<PdfUrl> = model.getPdfUrl()
-            .asSignal { error -> SharedSequence<SignalSharingStrategy, PdfUrl> in
-                // TODO: Error handling
-                return .empty()
-            }
-        
-        input.calendarButtonDidTap
-            .flatMapLatest { return pdfUrlSignal }
-            .map { URL(string: $0.calendar) }
-            .filter { $0 != nil }
-            .map { $0! }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
-        input.timeTableButtonDidTap
-            .flatMapLatest { return pdfUrlSignal }
-            .map { URL(string: $0.timeTable) }
-            .filter { $0 != nil } // RxOptional ?
-            .map { $0! }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
-        
-        return Output(presentSafari: presentSafariRelay.asDriver(onErrorDriveWith: .empty()))
-    }
+extension PdfButtonsViewModel: PdfButtonsViewModelType {
+    var input: PdfButtonsViewModelInputs { return self }
+    var output: PdfButtonsViewModelOutputs { return self }
 }

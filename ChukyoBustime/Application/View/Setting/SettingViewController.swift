@@ -16,9 +16,9 @@ final class SettingViewController: BaseViewController {
     
     // MARK: Properties
     
-    private var viewModel: SettingViewModel!
+    private var viewModel: SettingViewModelType!
     
-    private var dataSource: [SettingSectionType] = [SettingSectionType]() {
+    private var sectinos: [SettingSectionType] = [SettingSectionType]() {
         didSet {
             tableView.reloadData()
         }
@@ -35,6 +35,12 @@ final class SettingViewController: BaseViewController {
         setupNavigation()
         setupTableView()
         bindViewModel()
+        
+        viewModel.input.viewDidLoad()
+    }
+    
+    @objc private func barButtonItemTapped() {
+        viewModel.input.closeButtonTapped()
     }
 }
 
@@ -44,7 +50,7 @@ extension SettingViewController {
     
     private func setupNavigation() {
         navigationItem.title = "設定"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: .done, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: .done, target: self, action: #selector(barButtonItemTapped))
     }
     
     private func setupTableView() {
@@ -62,28 +68,18 @@ extension SettingViewController {
 extension SettingViewController {
     
     private func bindViewModel() {
-        let viewModel = SettingViewModel()
-        self.viewModel = viewModel
+        viewModel = SettingViewModel()
         
-        let closeBarButton = navigationItem.rightBarButtonItem!
-        let didSelecteRow = tableView.rx.itemSelected
-            .map { [weak self] indexPath in self?.dataSource[indexPath.section].rows[indexPath.row] }
-            .compactMap { $0 }
-            .asSignal(onErrorSignalWith: .empty())
-        let input = SettingViewModel.Input(closeBarButtonDidTap: closeBarButton.rx.tap.asSignal(),
-                                           didSelectRow: didSelecteRow)
-        let output = viewModel.transform(input: input)
-        
-        output.settingsDriver
-            .drive(onNext: { [weak self] settings in self?.dataSource = settings })
+        viewModel.output.sections
+            .drive(onNext: { [weak self] sections in self?.sectinos = sections })
             .disposed(by: disposeBag)
-        output.messageSignal
+        viewModel.output.message
             .emit(onNext: { [weak self] message in self?.presentAlertController(title: "", message: message) })
             .disposed(by: disposeBag)
-        output.presentSafariSignal
+        viewModel.output.presentSafari
             .emit(onNext: { [weak self] url in self?.presentSafari(url: url) })
             .disposed(by: disposeBag)
-        output.dismissSignal
+        viewModel.output.dismiss
             .emit(onNext: { [weak self] in self?.dismiss(animated: true, completion: nil) })
             .disposed(by: disposeBag)
     }
@@ -104,19 +100,19 @@ extension SettingViewController {
 extension SettingViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataSource.count
+        return sectinos.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataSource[section].headerTitle
+        return sectinos[section].headerTitle
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource[section].rows.count
+        return sectinos[section].rows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch dataSource[indexPath.section].rows[indexPath.row] {
+        switch sectinos[indexPath.section].rows[indexPath.row] {
         case .tabSetting(let setting):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.reuseIdentifier, for: indexPath) as? SettingItemCell else {
                 return UITableViewCell()
@@ -157,5 +153,6 @@ extension SettingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.input.didSelectRow(of: sectinos[indexPath.section].rows[indexPath.row])
     }
 }

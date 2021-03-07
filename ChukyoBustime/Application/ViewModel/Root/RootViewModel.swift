@@ -10,7 +10,26 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class RootViewModel {
+// MARK: - Protocols
+
+protocol RootViewModelInputs {
+    /// Call when the view did load..
+    func viewDidLoad()
+}
+
+protocol RootViewModelOutputs {
+    /// Emits a void event to replace root to tab bar controller.
+    var replaceRootToTabBar: Signal<Void> { get }
+}
+
+protocol RootViewModelType {
+    var input: RootViewModelInputs { get }
+    var output: RootViewModelOutputs { get }
+}
+
+// MARK: - ViewModel
+
+final class RootViewModel: RootViewModelInputs, RootViewModelOutputs {
     
     // MARK: Dependency
     
@@ -18,48 +37,34 @@ final class RootViewModel {
     
     // MARK: Properties
     
+    private let replaceRootToTabBarRelay: PublishRelay<Void>
     private let disposeBag = DisposeBag()
+    
+    var replaceRootToTabBar: Signal<Void> {
+        return replaceRootToTabBarRelay.asSignal()
+    }
     
     // MARK: Initializer
     
     init(model: RootModel = RootModelImpl()) {
         self.model = model
+        self.replaceRootToTabBarRelay = .init()
+    }
+    
+    // MARK: Inputs
+    
+    func viewDidLoad() {
+        model.fetchAndActivate()
+            .subscribe(onCompleted: { [weak self] in
+                self?.replaceRootToTabBarRelay.accept(())
+            }, onError: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
-extension RootViewModel: ViewModelType {
-    
-    // MARK: I/O
-    
-    struct Input {
-        let viewDidAppear: Signal<Void>
-    }
-    
-    struct Output {
-        let replaceRootToTabBar: Driver<Void>
-    }
-    
-    // MARK: Transform I/O
-    
-    func transform(input: RootViewModel.Input) -> RootViewModel.Output {
-        let replaceRootToTabBarRelay: PublishRelay<Void> = .init()
-        
-        input.viewDidAppear
-            .emit(onNext: { [weak self] in
-                guard let self = self else { return }
-                
-                // NOTE: Activate Firebase Remote Config values.
-                self.model.fetchAndActivate()
-                    .subscribe(onCompleted: {
-                        replaceRootToTabBarRelay.accept(())
-                    }, onError: { error in
-                        // TODO: Error handling.
-                        print(error)
-                    })
-                    .disposed(by: self.disposeBag)
-            })
-            .disposed(by: disposeBag)
-        
-        return Output(replaceRootToTabBar: replaceRootToTabBarRelay.asDriver(onErrorDriveWith: .empty()))
-    }
+extension RootViewModel: RootViewModelType {
+    var input: RootViewModelInputs { return self }
+    var output: RootViewModelOutputs { return self }
 }

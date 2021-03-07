@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,15 +35,9 @@
 		715D9A4A2420A8ED0018F526 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A492420A8ED0018F526 /* TodayViewController.swift */; };
 		715D9A4D2420A8ED0018F526 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 715D9A4B2420A8ED0018F526 /* MainInterface.storyboard */; };
 		715D9A512420A8ED0018F526 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 715D9A452420A8ED0018F526 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		715D9A5B2420AA400018F526 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
-		715D9A5C2420AA400018F526 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
-		715D9A5D2420AA400018F526 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
-		715D9A5E2420AA630018F526 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
-		715D9A602420AA630018F526 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
 		715D9A632420BCCD0018F526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */; };
 		715D9A652420C61D0018F526 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A642420C61D0018F526 /* Configurations.swift */; };
 		715D9A682420C98C0018F526 /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D9A672420C98C0018F526 /* TodayModel.swift */; };
-		715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A1246FBFB1002BA1DE /* ContainedButton.swift */; };
 		716234A6246FDA96002BA1DE /* UserNotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */; };
 		716234A9246FFDA8002BA1DE /* BusListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716234A8246FFDA8002BA1DE /* BusListModel.swift */; };
@@ -61,15 +55,9 @@
 		71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
 		71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		71A32A5F23E0836500EB7A55 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A5E23E0836500EB7A55 /* FirestoreError.swift */; };
-		71A32A6023E0838600EB7A55 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
-		71A32A6223E0838600EB7A55 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
-		71A32A6423E0838600EB7A55 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
-		71A32A6623E0838600EB7A55 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
 		71A32A6A23E083A000EB7A55 /* FirestoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */; };
 		71A32A6E23E083C800EB7A55 /* BusTimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */; };
 		71A5A62023E453730033E2CB /* BusListViewableTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */; };
-		71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B3241F0E280087B373 /* RealmSwift.framework */; };
-		71D278B7241F0E280087B373 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		71F660C92448374800E1DA90 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660C82448374800E1DA90 /* StateView.swift */; };
 		71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F660CA244941DA00E1DA90 /* StateViewable.swift */; };
 		71FF5C1723E1B25900456D75 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FF5C1623E1B25900456D75 /* RoundedView.swift */; };
@@ -124,11 +112,48 @@
 		A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */; };
 		A4B03E9C23DE7FED0069F7E8 /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */; };
 		A4B03E9E23DE80090069F7E8 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B03E9D23DE80090069F7E8 /* Storyboard.swift */; };
-		A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */; };
-		A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0123DE8B130069F7E8 /* RxRelay.framework */; };
-		A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */; };
-		A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */; };
+		A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */; };
+		A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4AA25E7F6F70003164A /* MockError.swift */; };
+		A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4AE25E7FA5B0003164A /* BusListViewModelTests.swift */; };
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
+		A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */; };
+		A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */; };
+		A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */; };
+		A51894B525F3B47500D9792C /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894B425F3B47500D9792C /* Mock.swift */; };
+		A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */; };
+		A51894BF25F3DFDA00D9792C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BE25F3DFDA00D9792C /* Array+Extension.swift */; };
+		A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894C425F3E38A00D9792C /* Array+ExtensionTests.swift */; };
+		A51894CB25F495C100D9792C /* MockToCollegeModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */; };
+		A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */; };
+		A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */; };
+		A51894DB25F4A93100D9792C /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */; };
+		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
+		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
+		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
+		A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
+		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
+		A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */; };
+		A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */; };
+		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
+		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
+		A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
+		A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
+		A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
+		A5DA4BB025D152E100BC4F96 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
+		A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BD925D160D400BC4F96 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; };
+		A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; };
+		A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A555CC5E25CFB9580064A295 /* RxTest.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */; };
+		A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */; };
+		A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */; };
+		A5E0603B25D76E2200DCB7EB /* CountdownViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E0603A25D76E2200DCB7EB /* CountdownViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +178,13 @@
 			remoteGlobalIDString = 71A329E223E04FB700EB7A55;
 			remoteInfo = Infra;
 		};
+		A57F695C25CFE05B000D0528 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4B03E7823DE7CAB0069F7E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4B03E7F23DE7CAB0069F7E8;
+			remoteInfo = ChukyoBustime;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,9 +205,25 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A5DA4BB025D152E100BC4F96 /* RxSwift.xcframework in Embed Frameworks */,
 				71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */,
+				A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */,
+				A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */,
+				A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */,
+				A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5DA4AEF25D02BF200BC4F96 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5DA4BDD25D1615E00BC4F96 /* RxBlocking.xcframework in CopyFiles */,
+				A5DA4BDE25D1615E00BC4F96 /* RxTest.xcframework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -239,7 +287,6 @@
 		71A32A6923E083A000EB7A55 /* FirestoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreProvider.swift; sourceTree = "<group>"; };
 		71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeEntity.swift; sourceTree = "<group>"; };
 		71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewableTranslator.swift; sourceTree = "<group>"; };
-		71D278B3241F0E280087B373 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		71D278B4241F0E280087B373 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		71F660C82448374800E1DA90 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		71F660CA244941DA00E1DA90 /* StateViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewable.swift; sourceTree = "<group>"; };
@@ -297,12 +344,38 @@
 		A4B03E9923DE7FD00069F7E8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A4B03E9B23DE7FED0069F7E8 /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A4B03E9D23DE80090069F7E8 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
-		A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		A4B03F0123DE8B130069F7E8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusListModelImpl.swift; sourceTree = "<group>"; };
+		A50AF4AA25E7F6F70003164A /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		A50AF4AE25E7FA5B0003164A /* BusListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewModelTests.swift; sourceTree = "<group>"; };
 		A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayRelease.entitlements; sourceTree = "<group>"; };
+		A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarModelImple.swift; sourceTree = "<group>"; };
+		A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
+		A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToStationModelImpl.swift; sourceTree = "<group>"; };
+		A51894B425F3B47500D9792C /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModelTests.swift; sourceTree = "<group>"; };
+		A51894BE25F3DFDA00D9792C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		A51894C425F3E38A00D9792C /* Array+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionTests.swift"; sourceTree = "<group>"; };
+		A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToCollegeModelImpl.swift; sourceTree = "<group>"; };
+		A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModelTests.swift; sourceTree = "<group>"; };
+		A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingModelImpl.swift; sourceTree = "<group>"; };
+		A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
+		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
+		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		A555CC5C25CFB9570064A295 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		A555CC5E25CFB9580064A295 /* RxTest.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxTest.xcframework; path = Carthage/Build/RxTest.xcframework; sourceTree = "<group>"; };
+		A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
+		A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPDFButtonsModelImpl.swift; sourceTree = "<group>"; };
+		A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButtonsViewModelTests.swift; sourceTree = "<group>"; };
+		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
+		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
+		A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootModelImpl.swift; sourceTree = "<group>"; };
+		A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
+		A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramViewModelTests.swift; sourceTree = "<group>"; };
+		A5E0603A25D76E2200DCB7EB /* CountdownViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,10 +383,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				715D9A5B2420AA400018F526 /* RxCocoa.framework in Frameworks */,
-				715D9A692420CED80018F526 /* SwiftDate.framework in Frameworks */,
-				715D9A5C2420AA400018F526 /* RxRelay.framework in Frameworks */,
-				715D9A5D2420AA400018F526 /* RxSwift.framework in Frameworks */,
 				715D9A472420A8ED0018F526 /* NotificationCenter.framework in Frameworks */,
 				A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */,
 			);
@@ -323,12 +392,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71A32A6223E0838600EB7A55 /* RxRelay.framework in Frameworks */,
-				71A32A6023E0838600EB7A55 /* RxCocoa.framework in Frameworks */,
-				715D9A602420AA630018F526 /* RealmSwift.framework in Frameworks */,
-				71A32A6623E0838600EB7A55 /* SwiftDate.framework in Frameworks */,
-				71A32A6423E0838600EB7A55 /* RxSwift.framework in Frameworks */,
-				715D9A5E2420AA630018F526 /* Realm.framework in Frameworks */,
+				A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */,
+				A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */,
+				A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */,
+				A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */,
+				A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */,
+				A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,13 +405,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4B03F0523DE8B130069F7E8 /* RxCocoa.framework in Frameworks */,
+				A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */,
+				A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */,
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
-				71D278B5241F0E280087B373 /* RealmSwift.framework in Frameworks */,
-				A4B03F0A23DE9BBD0069F7E8 /* SwiftDate.framework in Frameworks */,
-				71D278B7241F0E280087B373 /* Realm.framework in Frameworks */,
-				A4B03EFF23DE8B130069F7E8 /* RxSwift.framework in Frameworks */,
-				A4B03F0323DE8B130069F7E8 /* RxRelay.framework in Frameworks */,
+				A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */,
+				A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */,
+				A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */,
+				A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57F695425CFE05B000D0528 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5DA4BD925D160D400BC4F96 /* RxBlocking.xcframework in Frameworks */,
+				A5DA4BDA25D160D400BC4F96 /* RxTest.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +796,7 @@
 		A42D0DB423E13AE900E95FED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A51894BE25F3DFDA00D9792C /* Array+Extension.swift */,
 				717D147A244FE12A003944DB /* Bundle+Extention.swift */,
 				A42D0DB523E13AFE00E95FED /* UIViewController+Extension.swift */,
 				A42D0DBE23E15CF500E95FED /* UIColor+Extension.swift */,
@@ -975,6 +1054,7 @@
 				A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */,
 				71A329E423E04FB700EB7A55 /* Infra */,
 				715D9A482420A8ED0018F526 /* Today */,
+				A57F695825CFE05B000D0528 /* ChukyoBustimeTests */,
 				A4B03E8123DE7CAB0069F7E8 /* Products */,
 				A4B03EFC23DE8A960069F7E8 /* Frameworks */,
 			);
@@ -986,6 +1066,7 @@
 				A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */,
 				71A329E323E04FB700EB7A55 /* Infra.framework */,
 				715D9A452420A8ED0018F526 /* Today.appex */,
+				A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1033,12 +1114,14 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */,
+				A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */,
+				A555CC5925CFB9570064A295 /* RxCocoa.xcframework */,
+				A555CC5A25CFB9570064A295 /* RxRelay.xcframework */,
+				A555CC5C25CFB9570064A295 /* RxSwift.xcframework */,
+				A555CC5E25CFB9580064A295 /* RxTest.xcframework */,
+				A555CC5825CFB9570064A295 /* SwiftDate.xcframework */,
 				71D278B4241F0E280087B373 /* Realm.framework */,
-				71D278B3241F0E280087B373 /* RealmSwift.framework */,
-				A4B03F0923DE9BBD0069F7E8 /* SwiftDate.framework */,
-				A4B03F0223DE8B130069F7E8 /* RxCocoa.framework */,
-				A4B03F0123DE8B130069F7E8 /* RxRelay.framework */,
-				A4B03EFD23DE8A960069F7E8 /* RxSwift.framework */,
 				715D9A462420A8ED0018F526 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -1050,6 +1133,58 @@
 				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A51894B325F3B46600D9792C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A51894B425F3B47500D9792C /* Mock.swift */,
+				A51894C425F3E38A00D9792C /* Array+ExtensionTests.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A57F695825CFE05B000D0528 /* ChukyoBustimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A51894B325F3B46600D9792C /* Common */,
+				A5DA4BE825D1657600BC4F96 /* Model */,
+				A5DA4BF525D1662500BC4F96 /* ViewModel */,
+				A57F695B25CFE05B000D0528 /* Info.plist */,
+				A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */,
+			);
+			path = ChukyoBustimeTests;
+			sourceTree = "<group>";
+		};
+		A5DA4BE825D1657600BC4F96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */,
+				A50AF4AA25E7F6F70003164A /* MockError.swift */,
+				A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */,
+				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
+				A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */,
+				A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */,
+				A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */,
+				A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5DA4BF525D1662500BC4F96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A50AF4AE25E7FA5B0003164A /* BusListViewModelTests.swift */,
+				A5E0603A25D76E2200DCB7EB /* CountdownViewModelTests.swift */,
+				A5E0603225D4C26100DCB7EB /* DiagramViewModelTests.swift */,
+				A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */,
+				A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */,
+				A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */,
+				A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */,
+				A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */,
+				A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1111,7 +1246,7 @@
 				A4B03E7E23DE7CAB0069F7E8 /* Resources */,
 				A4B03EF023DE861E0069F7E8 /* Embed Frameworks */,
 				71A32A5923E05DA400EB7A55 /* Copy Dynamic Frameworks */,
-				A4B03F0823DE8B240069F7E8 /* Carthage */,
+				A57F696425CFE616000D0528 /* Carthage */,
 				71FF5C1D23E1E8B400456D75 /* Crashlytics */,
 				715D9A522420A8ED0018F526 /* Embed App Extensions */,
 			);
@@ -1126,14 +1261,33 @@
 			productReference = A4B03E8023DE7CAB0069F7E8 /* ChukyoBustime.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A57F695625CFE05B000D0528 /* ChukyoBustimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A57F695E25CFE05B000D0528 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */;
+			buildPhases = (
+				A57F695325CFE05B000D0528 /* Sources */,
+				A57F695425CFE05B000D0528 /* Frameworks */,
+				A57F695525CFE05B000D0528 /* Resources */,
+				A5DA4AEF25D02BF200BC4F96 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A57F695D25CFE05B000D0528 /* PBXTargetDependency */,
+			);
+			name = ChukyoBustimeTests;
+			productName = ChukyoBustimeTests;
+			productReference = A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A4B03E7823DE7CAB0069F7E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Shunya Yamada";
 				TargetAttributes = {
 					715D9A442420A8ED0018F526 = {
@@ -1145,6 +1299,10 @@
 					};
 					A4B03E7F23DE7CAB0069F7E8 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					A57F695625CFE05B000D0528 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = A4B03E7F23DE7CAB0069F7E8;
 					};
 				};
 			};
@@ -1165,6 +1323,7 @@
 				A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */,
 				71A329E223E04FB700EB7A55 /* Infra */,
 				715D9A442420A8ED0018F526 /* Today */,
+				A57F695625CFE05B000D0528 /* ChukyoBustimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1210,6 +1369,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A57F695525CFE05B000D0528 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1240,6 +1406,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			name = Crashlytics;
@@ -1249,9 +1416,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		A4B03F0823DE8B240069F7E8 /* Carthage */ = {
+		A57F696425CFE616000D0528 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1259,12 +1426,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -1374,9 +1536,36 @@
 				A42D0DD823E1690E00E95FED /* ToStationViewController.swift in Sources */,
 				71059428241A251D003CA820 /* OutlinedButton.swift in Sources */,
 				A4A7393723E3B4B600F7C1A9 /* ToStationViewModel.swift in Sources */,
+				A51894BF25F3DFDA00D9792C /* Array+Extension.swift in Sources */,
 				A4A7394323E3BF1100F7C1A9 /* BusDate.swift in Sources */,
 				A4B03E8423DE7CAB0069F7E8 /* AppDelegate.swift in Sources */,
 				A401275B23F3D5BF007FDD82 /* SettingSectionType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A57F695325CFE05B000D0528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */,
+				A5E0603B25D76E2200DCB7EB /* CountdownViewModelTests.swift in Sources */,
+				A51894CB25F495C100D9792C /* MockToCollegeModelImpl.swift in Sources */,
+				A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */,
+				A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */,
+				A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */,
+				A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */,
+				A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */,
+				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,
+				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
+				A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */,
+				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
+				A51894DB25F4A93100D9792C /* SettingViewModelTests.swift in Sources */,
+				A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */,
+				A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */,
+				A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */,
+				A51894B525F3B47500D9792C /* Mock.swift in Sources */,
+				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
+				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,6 +1586,12 @@
 			isa = PBXTargetDependency;
 			target = 71A329E223E04FB700EB7A55 /* Infra */;
 			targetProxy = A511F04F24A4DFA300DDD4AC /* PBXContainerItemProxy */;
+		};
+		A57F695D25CFE05B000D0528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = A4B03E7F23DE7CAB0069F7E8 /* ChukyoBustime */;
+			targetProxy = A57F695C25CFE05B000D0528 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1428,7 +1623,7 @@
 				CODE_SIGN_ENTITLEMENTS = Today/TodayDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1442,7 +1637,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime Today Extension development";
@@ -1459,7 +1654,7 @@
 				CODE_SIGN_ENTITLEMENTS = Today/TodayRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1472,7 +1667,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime Today Extension release";
@@ -1486,12 +1681,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1509,7 +1703,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1527,12 +1721,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71A32A5823E0594F00EB7A55 /* Infra-Config.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1550,7 +1743,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = Shunya.yamada.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1690,7 +1883,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1702,7 +1895,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
 				PRODUCT_NAME = ChukyoBustime;
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Development";
@@ -1720,7 +1913,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Shunya Yamada (7NJH5NAV4T)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1732,12 +1925,71 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shunya.yamada.ChukyoBustime;
 				PRODUCT_NAME = ChukyoBustime;
 				PROVISIONING_PROFILE_SPECIFIER = "ChukyoBustime iOS App Release";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A57F695F25CFE05B000D0528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
+			};
+			name = Debug;
+		};
+		A57F696025CFE05B000D0528 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7NJH5NAV4T;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+				);
+				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ShunyaYamada.ChukyoBustimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChukyoBustime.app/ChukyoBustime";
 			};
 			name = Release;
 		};
@@ -1776,6 +2028,15 @@
 			buildConfigurations = (
 				A4B03E9523DE7CB20069F7E8 /* Debug */,
 				A4B03E9623DE7CB20069F7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A57F695E25CFE05B000D0528 /* Build configuration list for PBXNativeTarget "ChukyoBustimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A57F695F25CFE05B000D0528 /* Debug */,
+				A57F696025CFE05B000D0528 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

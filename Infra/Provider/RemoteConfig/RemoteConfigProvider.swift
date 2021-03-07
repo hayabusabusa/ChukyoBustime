@@ -64,10 +64,10 @@ public final class RemoteConfigProvider {
                     let value = try JSONDecoder().decode(T.self, from: data)
                     observer(.success(value))
                 } catch {
-                    observer(.error(error))
+                    observer(.failure(error))
                 }
             } else {
-                observer(.error(RemoteConfigError.notJsonValue))
+                observer(.failure(RemoteConfigError.notJsonValue))
             }
             return Disposables.create()
         }

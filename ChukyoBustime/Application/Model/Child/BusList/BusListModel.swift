@@ -13,7 +13,7 @@ import RxSwift
 // MARK: - Interface
 
 protocol BusListModel: AnyObject {
-    func requestAuthorization() -> Single<Bool>
+    func requestAuthorization() -> Completable
     func setNotification(at busTime: BusTime) -> Completable
 }
 
@@ -33,7 +33,7 @@ class BusListModelImpl: BusListModel {
     
     // MARK: UserNotification
     
-    func requestAuthorization() -> Single<Bool> {
+    func requestAuthorization() -> Completable {
         return userNotificationRepository.requestAuthorization()
     }
     

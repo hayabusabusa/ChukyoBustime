@@ -10,7 +10,24 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class TabBarViewModel {
+// MARK: - Protocols
+
+protocol TabBarViewModelInputs {
+    
+}
+
+protocol TabBarViewModelOutputs {
+    var selectedTab: Driver<Int> { get }
+}
+
+protocol TabBarViewModelType {
+    var input: TabBarViewModelInputs { get }
+    var output: TabBarViewModelOutputs { get }
+}
+
+// MARK: - ViewModel
+
+final class TabBarViewModel: TabBarViewModelInputs, TabBarViewModelOutputs {
     
     // MARK: Dependency
     
@@ -19,29 +36,21 @@ final class TabBarViewModel {
     // MARK: Properties
     
     private let disposeBag = DisposeBag()
+    private let selectedTabRelay: BehaviorRelay<Int>
+    
+    let selectedTab: Driver<Int>
     
     // MARK: Initializer
     
     init(model: TabBarModel = TabBarModelImpl()) {
         self.model = model
+        self.selectedTabRelay = .init(value: model.getInitialTab().rawValue)
+        
+        selectedTab = selectedTabRelay.asDriver()
     }
 }
 
-extension TabBarViewModel: ViewModelType {
-    
-    // MARK: I/O
-    
-    struct Input {
-    }
-    
-    struct Output {
-        let selectedTabDriver: Driver<Int>
-    }
-    
-    // MARK: Transform I/O
-    
-    func transform(input: Input) -> Output {
-        let selectedTabRelay: BehaviorRelay<Int> = .init(value: model.getInitialTab().rawValue)
-        return Output(selectedTabDriver: selectedTabRelay.asDriver())
-    }
+extension TabBarViewModel: TabBarViewModelType {
+    var input: TabBarViewModelInputs { return self }
+    var output: TabBarViewModelOutputs { return self }
 }

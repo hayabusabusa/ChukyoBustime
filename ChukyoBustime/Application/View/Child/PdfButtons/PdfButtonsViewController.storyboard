@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tEG-bY-JtT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tEG-bY-JtT">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExB-aQ-Mw8">
                                         <rect key="frame" x="0.0" y="0.0" width="159.5" height="80"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="tintColor" name="Primary"/>
                                         <state key="normal" title=" カレンダー" image="ic_calendar">
                                             <color key="titleColor" name="Primary"/>
@@ -39,10 +39,13 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="calendarButtonTapped:" destination="tEG-bY-JtT" eventType="touchUpInside" id="eLX-5b-gzl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tc-cK-MvN">
                                         <rect key="frame" x="160.5" y="0.0" width="159.5" height="80"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="tintColor" name="Primary"/>
                                         <state key="normal" title=" 時刻表" image="ic_time_table">
                                             <color key="titleColor" name="Primary"/>
@@ -52,10 +55,14 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="timeTableButtonTapped:" destination="tEG-bY-JtT" eventType="touchUpInside" id="Yzd-XQ-MIe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="4mL-ik-M52"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="9Da-iR-njV" firstAttribute="leading" secondItem="4mL-ik-M52" secondAttribute="leading" id="5NG-1n-zHn"/>
@@ -66,13 +73,8 @@
                             <constraint firstItem="OzV-nA-XYI" firstAttribute="centerX" secondItem="zYq-fr-C8t" secondAttribute="centerX" id="aGO-Bg-2RB"/>
                             <constraint firstItem="4mL-ik-M52" firstAttribute="bottom" secondItem="9Da-iR-njV" secondAttribute="bottom" id="jKM-G3-JZv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4mL-ik-M52"/>
                     </view>
                     <size key="freeformSize" width="320" height="80"/>
-                    <connections>
-                        <outlet property="calendarButton" destination="ExB-aQ-Mw8" id="N6z-PP-SVn"/>
-                        <outlet property="timeTableButton" destination="7Tc-cK-MvN" id="M5B-2E-LEc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HjX-yT-8sK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

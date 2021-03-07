@@ -17,7 +17,7 @@ final class TabBarController: UITabBarController {
     // MARK: Properties
     
     private let disposeBag = DisposeBag()
-    private var viewModel: TabBarViewModel!
+    private var viewModel: TabBarViewModelType!
     
     // MARK: Lifecycle
     
@@ -61,10 +61,8 @@ extension TabBarController {
         let viewModel = TabBarViewModel()
         self.viewModel = viewModel
         
-        let output = viewModel.transform(input: TabBarViewModel.Input())
-        
-        output.selectedTabDriver
-            .drive(onNext: { [weak self] index in self?.selectedIndex = index })
+        viewModel.output.selectedTab
+            .drive(self.rx.selectedIndex)
             .disposed(by: disposeBag)
     }
 }
