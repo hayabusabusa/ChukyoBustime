@@ -34,6 +34,7 @@ final class ToStationViewController: BaseViewController, StateViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStateView()
+        setupObserver()
         setupNavigation()
         setupScrollView()
         setupStateViewHandler()
@@ -56,6 +57,10 @@ final class ToStationViewController: BaseViewController, StateViewable {
 // MARK: - Setup
 
 extension ToStationViewController {
+    
+    private func setupObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleWillEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
     
     private func setupNavigation() {
         navigationItem.title = "浄水駅行き"
