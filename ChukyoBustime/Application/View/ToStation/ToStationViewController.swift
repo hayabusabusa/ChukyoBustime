@@ -33,9 +33,9 @@ final class ToStationViewController: BaseViewController, StateViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStateView()
         setupNavigation()
         setupScrollView()
-        setupStateView()
         setupStateViewHandler()
         setupChildViewContoller()
         bindViewModel()
@@ -79,8 +79,8 @@ extension ToStationViewController {
     }
     
     private func setupChildViewContoller() {
-        let pdfButtons = PdfButtonsViewController.configure()
-        embed(pdfButtons, to: layoutPdfButtonsView)
+        let pdfButtonsViewController = PdfButtonsViewController.configure()
+        embed(pdfButtonsViewController, to: layoutPdfButtonsView)
     }
 }
 

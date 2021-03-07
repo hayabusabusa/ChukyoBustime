@@ -33,11 +33,11 @@ final class ToCollegeViewController: BaseViewController, StateViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStateView()
         setupNavigation()
         setupScrollView()
-        setupStateView()
-        setupChildren()
         setupStateViewHandler()
+        setupChildViewController()
         bindViewModel()
         bindView()
         
@@ -68,11 +68,6 @@ extension ToCollegeViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
    }
-       
-    private func setupChildren() {
-        let pdfButtonsViewController = PdfButtonsViewController.configure()
-        embed(pdfButtonsViewController, to: layoutPdfButtonsView)
-    }
 
     private func setupStateViewHandler() {
         stateView.onTapCalendarButton = { [weak self] in
@@ -81,6 +76,11 @@ extension ToCollegeViewController {
         stateView.onTapTimeTableButton = { [weak self] in
             self?.viewModel.input.timeTableButtonTapped()
         }
+    }
+    
+    private func setupChildViewController() {
+        let pdfButtonsViewController = PdfButtonsViewController.configure()
+        embed(pdfButtonsViewController, to: layoutPdfButtonsView)
     }
 }
 
