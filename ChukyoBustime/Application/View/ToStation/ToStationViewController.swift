@@ -33,9 +33,10 @@ final class ToStationViewController: BaseViewController, StateViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStateView()
+        setupObserver()
         setupNavigation()
         setupScrollView()
-        setupStateView()
         setupStateViewHandler()
         setupChildViewContoller()
         bindViewModel()
@@ -56,6 +57,10 @@ final class ToStationViewController: BaseViewController, StateViewable {
 // MARK: - Setup
 
 extension ToStationViewController {
+    
+    private func setupObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleWillEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
     
     private func setupNavigation() {
         navigationItem.title = "浄水駅行き"
@@ -79,8 +84,8 @@ extension ToStationViewController {
     }
     
     private func setupChildViewContoller() {
-        let pdfButtons = PdfButtonsViewController.configure()
-        embed(pdfButtons, to: layoutPdfButtonsView)
+        let pdfButtonsViewController = PdfButtonsViewController.configure()
+        embed(pdfButtonsViewController, to: layoutPdfButtonsView)
     }
 }
 

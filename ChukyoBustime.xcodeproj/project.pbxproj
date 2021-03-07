@@ -123,6 +123,8 @@
 		A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */; };
 		A51894BF25F3DFDA00D9792C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BE25F3DFDA00D9792C /* Array+Extension.swift */; };
 		A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894C425F3E38A00D9792C /* Array+ExtensionTests.swift */; };
+		A51894CB25F495C100D9792C /* MockToCollegeModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */; };
+		A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
@@ -351,6 +353,8 @@
 		A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModelTests.swift; sourceTree = "<group>"; };
 		A51894BE25F3DFDA00D9792C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		A51894C425F3E38A00D9792C /* Array+ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionTests.swift"; sourceTree = "<group>"; };
+		A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToCollegeModelImpl.swift; sourceTree = "<group>"; };
+		A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModelTests.swift; sourceTree = "<group>"; };
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -1157,6 +1161,7 @@
 				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
 				A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */,
 				A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */,
+				A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1171,6 +1176,7 @@
 				A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */,
 				A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */,
 				A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */,
+				A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1537,6 +1543,7 @@
 			files = (
 				A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */,
 				A5E0603B25D76E2200DCB7EB /* CountdownViewModelTests.swift in Sources */,
+				A51894CB25F495C100D9792C /* MockToCollegeModelImpl.swift in Sources */,
 				A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */,
 				A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */,
 				A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */,
@@ -1549,6 +1556,7 @@
 				A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */,
 				A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */,
 				A51894B525F3B47500D9792C /* Mock.swift in Sources */,
+				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
 				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
