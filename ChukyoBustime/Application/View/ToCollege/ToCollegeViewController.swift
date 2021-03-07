@@ -22,9 +22,8 @@ final class ToCollegeViewController: BaseViewController, StateViewable {
     // MARK: Properties
     
     let stateView = StateView(of: .toCollege)
-    private let calendarButtonTapTrigger: PublishRelay<Void> = .init()
-    private let timeTableButtonTapTrigger: PublishRelay<Void> = .init()
-    private var viewModel: ToCollegeViewModel!
+    
+    private var viewModel: ToCollegeViewModelType!
     
     // MARK: Lifecycle
     
@@ -40,6 +39,17 @@ final class ToCollegeViewController: BaseViewController, StateViewable {
         setupChildren()
         setupStateViewHandler()
         bindViewModel()
+        bindView()
+        
+        viewModel.input.viewDidLoad()
+    }
+    
+    @objc private func barButtonItemTapped() {
+        viewModel.input.settingButtonTapped()
+    }
+    
+    @objc private func handleWillEnterForegroundNotification() {
+        viewModel.input.willEnterForeground()
     }
 }
 
@@ -49,7 +59,7 @@ extension ToCollegeViewController {
     
     private func setupNavigation() {
         navigationItem.title = "大学行き"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_setting"), style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_setting"), style: .plain, target: self, action: #selector(barButtonItemTapped))
     }
     
     private func setupScrollView() {
@@ -60,13 +70,17 @@ extension ToCollegeViewController {
    }
        
     private func setupChildren() {
-        let pdfButtons = PdfButtonsViewController.configure()
-        embed(pdfButtons, to: layoutPdfButtonsView)
+        let pdfButtonsViewController = PdfButtonsViewController.configure()
+        embed(pdfButtonsViewController, to: layoutPdfButtonsView)
     }
 
     private func setupStateViewHandler() {
-        stateView.onTapCalendarButton = { [weak self] in self?.calendarButtonTapTrigger.accept(()) }
-        stateView.onTapTimeTableButton = { [weak self] in self?.timeTableButtonTapTrigger.accept(()) }
+        stateView.onTapCalendarButton = { [weak self] in
+            self?.viewModel.input.calendarButtonTapped()
+        }
+        stateView.onTapTimeTableButton = { [weak self] in
+            self?.viewModel.input.timeTableButtonTapped()
+        }
     }
 }
 
@@ -75,37 +89,30 @@ extension ToCollegeViewController {
 extension ToCollegeViewController {
     
     private func bindViewModel() {
-        let viewModel = ToCollegeViewModel()
-        self.viewModel = viewModel
-        
-        let settingBarButton = navigationItem.rightBarButtonItem!
-        let foregroundNotification = NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).map { _ in () }
-        let input = ToCollegeViewModel.Input(foregroundSignal: foregroundNotification.asSignal(onErrorSignalWith: .empty()),
-                                             calendarButtonDidTap: calendarButtonTapTrigger.asSignal(),
-                                             timeTableButtonDidTap: timeTableButtonTapTrigger.asSignal(),
-                                             settingBarButtonDidTap: settingBarButton.rx.tap.asSignal())
-        let output = viewModel.transform(input: input)
-        
-        let diagram = DiagramViewController.configure(with: output.children.diagramViewModel)
-        embed(diagram, to: layoutDiagramView)
-        let countdown = CountdownViewController.configure(with: output.children.countdownViewModel)
-        embed(countdown, to: layoutCountdownView)
-        let busList = BusListViewController.configure(with: output.children.busListViewModel)
-        embed(busList, to: layoutBusListView)
+        viewModel = ToCollegeViewModel()
         
         // NOTE: Scroll view animation and state view animation
-        output.stateDriver
+        viewModel.output.state
             .drive(onNext: { [weak self] state in
                 self?.startScrollViewAnimation(isHidden: state == .none ? false : true)
                 self?.stateView.setState(of: state)
             })
             .disposed(by: disposeBag)
-        output.presentSettingSignal
+        viewModel.output.presentSetting
             .emit(onNext: { [weak self] in self?.presentSetting() })
             .disposed(by: disposeBag)
-        output.presentSafariSignal
+        viewModel.output.presentSafari
             .emit(onNext: { [weak self] url in self?.presentSafari(with: url) })
             .disposed(by: disposeBag)
+    }
+    
+    private func bindView() {
+        let diagramViewController = DiagramViewController.configure(with: viewModel.output.childViewModels.diagramViewModel)
+        embed(diagramViewController, to: layoutDiagramView)
+        let countdownViewController = CountdownViewController.configure(with: viewModel.output.childViewModels.countdownViewModel)
+        embed(countdownViewController, to: layoutCountdownView)
+        let busListViewController = BusListViewController.configure(with: viewModel.output.childViewModels.busListViewModel)
+        embed(busListViewController, to: layoutBusListView)
     }
 }
 
