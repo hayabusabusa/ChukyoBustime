@@ -8,31 +8,49 @@
 
 import Foundation
 import Infra
+import RxRelay
 import RxSwift
 
 // MARK: - Interface
 
 protocol RootModel: AnyObject {
-    func fetchAndActivate() -> Completable
+    /// Emits void event when all configuration finished.
+    var isCompletedRelay: PublishRelay<Void> { get }
+    
+    /// Fetch firebase remote config objects.
+    func fetch()
 }
 
 // MARK: - Implementation
 
-class RootModelImpl: RootModel {
+final class RootModelImpl: RootModel {
     
-    // MARK: Dependency
+    // MARK: Property
     
+    private let disposeBag = DisposeBag()
     private let remoteConfigProvider: RemoteConfigProvider
+    
+    let isCompletedRelay: PublishRelay<Void>
     
     // MARK: Initializer
     
     init(remoteConfigProvider: RemoteConfigProvider = RemoteConfigProvider.shared) {
+        self.isCompletedRelay = .init()
         self.remoteConfigProvider = remoteConfigProvider
+        
     }
     
     // MARK: Remote Config
     
-    func fetchAndActivate() -> Completable {
-        return remoteConfigProvider.fetchAndActivate()
+    func fetch() {
+        remoteConfigProvider.fetchAndActivate()
+            .subscribe(onCompleted: { [weak self] in
+                self?.isCompletedRelay.accept(())
+            }, onError: { [weak self] error in
+                // NOTE: 必要があればエラーを表示する
+                print(error)
+                self?.isCompletedRelay.accept(())
+            })
+            .disposed(by: disposeBag)
     }
 }
