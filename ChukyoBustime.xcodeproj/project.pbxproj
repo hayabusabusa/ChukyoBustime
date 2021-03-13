@@ -135,6 +135,7 @@
 		A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */; };
 		A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */; };
 		A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */; };
+		A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEF325FC99310006CFE0 /* RootModelTests.swift */; };
 		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
@@ -370,6 +371,7 @@
 		A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPDFButtonsModelImpl.swift; sourceTree = "<group>"; };
 		A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButtonsViewModelTests.swift; sourceTree = "<group>"; };
 		A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRemoteConfigProvider.swift; sourceTree = "<group>"; };
+		A57AFEF325FC99310006CFE0 /* RootModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModelTests.swift; sourceTree = "<group>"; };
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
@@ -1178,6 +1180,7 @@
 			isa = PBXGroup;
 			children = (
 				A57AFEE325FC8C6E0006CFE0 /* Mock */,
+				A57AFEF325FC99310006CFE0 /* RootModelTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1576,6 +1579,7 @@
 				A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */,
 				A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */,
 				A51894B525F3B47500D9792C /* Mock.swift in Sources */,
+				A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */,
 				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
 				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,
 			);
