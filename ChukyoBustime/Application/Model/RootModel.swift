@@ -28,13 +28,13 @@ final class RootModelImpl: RootModel {
     // MARK: Property
     
     private let disposeBag = DisposeBag()
-    private let remoteConfigProvider: RemoteConfigProvider
+    private let remoteConfigProvider: RemoteConfigProviderProtocol
     
     let isCompletedRelay: PublishRelay<Void>
     
     // MARK: Initializer
     
-    init(remoteConfigProvider: RemoteConfigProvider = RemoteConfigProvider.shared) {
+    init(remoteConfigProvider: RemoteConfigProviderProtocol = RemoteConfigProvider.shared) {
         self.isCompletedRelay = .init()
         self.remoteConfigProvider = remoteConfigProvider
         
