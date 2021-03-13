@@ -136,6 +136,7 @@
 		A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */; };
 		A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */; };
 		A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEF325FC99310006CFE0 /* RootModelTests.swift */; };
+		A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */; };
 		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
@@ -372,6 +373,7 @@
 		A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButtonsViewModelTests.swift; sourceTree = "<group>"; };
 		A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRemoteConfigProvider.swift; sourceTree = "<group>"; };
 		A57AFEF325FC99310006CFE0 /* RootModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootModelTests.swift; sourceTree = "<group>"; };
+		A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelTests.swift; sourceTree = "<group>"; };
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
@@ -496,14 +498,6 @@
 				71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */,
 			);
 			path = PdfButtons;
-			sourceTree = "<group>";
-		};
-		71536D7823F43507004A330C /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				71536D7923F43521004A330C /* SettingModel.swift */,
-			);
-			path = Setting;
 			sourceTree = "<group>";
 		};
 		715D9A2F242080B60018F526 /* Realm */ = {
@@ -895,11 +889,11 @@
 				A4A7394023E3BEDF00F7C1A9 /* Entity */,
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				71536D5D23F17604004A330C /* RootModel.swift */,
+				71536D7923F43521004A330C /* SettingModel.swift */,
 				71536D6923F17DFE004A330C /* Child */,
 				717D148324511F4A003944DB /* TabBar */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
-				71536D7823F43507004A330C /* Setting */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1181,6 +1175,7 @@
 			children = (
 				A57AFEE325FC8C6E0006CFE0 /* Mock */,
 				A57AFEF325FC99310006CFE0 /* RootModelTests.swift */,
+				A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1567,6 +1562,7 @@
 				A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */,
 				A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */,
 				A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */,
+				A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */,
 				A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */,
 				A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */,
 				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,

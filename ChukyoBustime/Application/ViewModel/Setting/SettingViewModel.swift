@@ -53,9 +53,6 @@ final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
     
     // MARK: Propreties
     
-    private let disposeBag = DisposeBag()
-    private let messageRelay: PublishRelay<String>
-    private let sectionsRelay: BehaviorRelay<[SettingSectionType]>
     private let dismissRelay: PublishRelay<Void>
     private let presentSafariRelay: PublishRelay<URL>
     
@@ -70,13 +67,11 @@ final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
     
     init(model: SettingModel = SettingModelImpl()) {
         self.model = model
-        self.messageRelay = .init()
-        self.sectionsRelay = .init(value: [])
         self.dismissRelay = .init()
         self.presentSafariRelay = .init()
         
-        sections = sectionsRelay.asDriver()
-        message = messageRelay.asSignal()
+        sections = model.sectionsRelay.asDriver()
+        message = model.messageRelay.asSignal()
         dismiss = dismissRelay.asSignal()
         presentSafari = presentSafariRelay.asSignal()
     }
@@ -84,8 +79,7 @@ final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
     // MARK: Inputs
     
     func viewDidLoad() {
-        let sections = model.getSettings()
-        sectionsRelay.accept(sections)
+        model.getSettings()
     }
     
     func closeButtonTapped() {
@@ -96,14 +90,7 @@ final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
         switch cellType {
         case.tabSetting(let current):
             let new = current == TabBarItem.toStation.title ? TabBarItem.toCollege : TabBarItem.toStation
-            
-            // NOTE: TableView を更新する
             model.saveTabSetting(tabBarItem: new)
-            
-            let sections = model.getSettings()
-            sectionsRelay.accept(sections)
-            
-            messageRelay.accept("起動時に表示する画面を\n \(new.title) の画面に設定しました。")
         case .app:
             presentSafariRelay.accept(Configurations.kAboutThisAppURL)
         case .precations:
