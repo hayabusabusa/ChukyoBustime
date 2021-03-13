@@ -28,6 +28,7 @@ final class MockRemoteConfigProvider: RemoteConfigProviderProtocol {
     
     func getConfigValue<T: RemoteConfigType>(for key: RemoteConfigProvider.Key, configType: T.Type) -> Single<T> {
         return Single.create { observer in
+            // NOTE: `.success()` 時に流している Entity は、RemoteConfig にオブジェクトが増えたときに変更が必要
             observer(self.isErrorOccured
                         ? .failure(MockError.somethingWentWrong)
                         : .success(Mock.pdfURLEntity as! T))
