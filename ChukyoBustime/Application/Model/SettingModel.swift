@@ -14,7 +14,17 @@ import RxCocoa
 // MARK: - Interface
 
 protocol SettingModel: AnyObject {
-    func getSettings() -> [SettingSectionType]
+    /// Emits message about error or other.
+    var messageRelay: PublishRelay<String> { get }
+    
+    /// Emits `SettingSectionType` enum array.
+    var sectionsRelay: BehaviorRelay<[SettingSectionType]> { get }
+    
+    /// Get `UserDefaults` value and create `SettingSectionType` enum array.
+    func getSettings()
+    
+    /// Save tab bar setting to `UserDefaults`.
+    /// - Parameter tabBarItem: `TabBarItem ` enum.
     func saveTabSetting(tabBarItem: TabBarItem)
 }
 
@@ -22,22 +32,28 @@ protocol SettingModel: AnyObject {
 
 class SettingModelImpl: SettingModel {
     
-    // MARK: Dependency
+    // MARK: Properies
     
+    private let disposeBag = DisposeBag()
     private let userDefaultsProvider: UserDefaultsProvider
+    
+    let messageRelay: PublishRelay<String>
+    let sectionsRelay: BehaviorRelay<[SettingSectionType]>
     
     // MARK: Initializer
     
     init(userDefaultsProvider: UserDefaultsProvider = UserDefaultsProvider.shared) {
+        self.messageRelay = .init()
+        self.sectionsRelay = .init(value: [])
         self.userDefaultsProvider = userDefaultsProvider
     }
     
-    // MARK: Setting
+    // MARK: UserDefaults
     
-    func getSettings() -> [SettingSectionType] {
+    func getSettings() {
         let storedTabSetting = userDefaultsProvider.enumObject(type: TabBarItem.self, forKey: .initialTab) ?? TabBarItem.toStation
         let version = Bundle.main.bundleShortVersionString ?? "unknown"
-        return [
+        let sections: [SettingSectionType] = [
             .config(rows: [
                 .tabSetting(setting: storedTabSetting.title)
             ]),
@@ -48,9 +64,14 @@ class SettingModelImpl: SettingModel {
                 .privacyPolicy
             ])
         ]
+        sectionsRelay.accept(sections)
     }
     
     func saveTabSetting(tabBarItem: TabBarItem) {
         userDefaultsProvider.setEnum(value: tabBarItem, forKey: .initialTab)
+        
+        // NOTE: TableView を更新する
+        getSettings()
+        messageRelay.accept("起動時に表示する画面を\n \(tabBarItem.title) の画面に設定しました。")
     }
 }
