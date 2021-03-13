@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import Infra
 import SwiftDate
 @testable import ChukyoBustime
 
 enum Mock {
     static let pdfURL = PdfUrl(calendar: "http://example.com", timeTable: "http://example.org")
+    static let pdfURLEntity = RCPdfUrlEntity(calendar: "http://example.com", timeTable: "http://example.org")
     static let busDate = BusDate(diagramName: "TEST")
     
     static func createBusTime(isReturn: Bool = false, isLast: Bool = false, isKaizu: Bool = false, interval: Int = 1) -> BusTime {

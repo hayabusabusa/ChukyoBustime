@@ -37,30 +37,21 @@ final class RootViewModel: RootViewModelInputs, RootViewModelOutputs {
     
     // MARK: Properties
     
-    private let replaceRootToTabBarRelay: PublishRelay<Void>
-    private let disposeBag = DisposeBag()
-    
-    var replaceRootToTabBar: Signal<Void> {
-        return replaceRootToTabBarRelay.asSignal()
-    }
+    let replaceRootToTabBar: Signal<Void>
     
     // MARK: Initializer
     
     init(model: RootModel = RootModelImpl()) {
         self.model = model
-        self.replaceRootToTabBarRelay = .init()
+        
+        // NOTE: 全ての処理が完了時に TabBar に切り替えるので、`Signal` に変換する
+        replaceRootToTabBar = model.isCompletedRelay.asSignal()
     }
     
     // MARK: Inputs
     
     func viewDidLoad() {
-        model.fetchAndActivate()
-            .subscribe(onCompleted: { [weak self] in
-                self?.replaceRootToTabBarRelay.accept(())
-            }, onError: { error in
-                print(error)
-            })
-            .disposed(by: disposeBag)
+        model.fetch()
     }
 }
 
