@@ -1044,9 +1044,9 @@
 			isa = PBXGroup;
 			children = (
 				A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */,
+				A57F695825CFE05B000D0528 /* ChukyoBustimeTests */,
 				71A329E423E04FB700EB7A55 /* Infra */,
 				715D9A482420A8ED0018F526 /* Today */,
-				A57F695825CFE05B000D0528 /* ChukyoBustimeTests */,
 				A4B03E8123DE7CAB0069F7E8 /* Products */,
 				A4B03EFC23DE8A960069F7E8 /* Frameworks */,
 			);
@@ -1136,6 +1136,21 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		A57AFEE325FC8C6E0006CFE0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */,
+				A50AF4AA25E7F6F70003164A /* MockError.swift */,
+				A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */,
+				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
+				A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */,
+				A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */,
+				A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */,
+				A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		A57F695825CFE05B000D0528 /* ChukyoBustimeTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,14 +1166,7 @@
 		A5DA4BE825D1657600BC4F96 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A50AF4A425E7F4390003164A /* MockBusListModelImpl.swift */,
-				A50AF4AA25E7F6F70003164A /* MockError.swift */,
-				A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */,
-				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
-				A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */,
-				A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */,
-				A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */,
-				A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */,
+				A57AFEE325FC8C6E0006CFE0 /* Mock */,
 			);
 			path = Model;
 			sourceTree = "<group>";
