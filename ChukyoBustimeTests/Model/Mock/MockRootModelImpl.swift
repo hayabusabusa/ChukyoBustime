@@ -8,14 +8,18 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 @testable import ChukyoBustime
 
 final class MockRootModelImpl: RootModel {
     
-    func fetchAndActivate() -> Completable {
-        return Completable.create { observer in
-            observer(.completed)
-            return Disposables.create()
-        }
+    let isCompletedRelay: PublishRelay<Void>
+    
+    init() {
+        isCompletedRelay = .init()
+    }
+    
+    func fetch() {
+        isCompletedRelay.accept(())
     }
 }
