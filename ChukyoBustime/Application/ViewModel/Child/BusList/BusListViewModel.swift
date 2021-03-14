@@ -69,8 +69,8 @@ final class BusListViewModel: BusListViewModelInputs, BusListViewModelOutputs {
         self.messageRelay = .init()
         self.busListRelay = .init(value: (first: nil, second: nil, third: nil))
         
-        error = errorRelay.asSignal()
-        message = messageRelay.asSignal()
+        error = dependency.model.errorStream.asSignal(onErrorSignalWith: .empty())
+        message = dependency.model.messageStream.asSignal(onErrorSignalWith: .empty())
         destination = dependency.destination
         busList = busListRelay.asDriver()
         
@@ -84,15 +84,7 @@ final class BusListViewModel: BusListViewModelInputs, BusListViewModelOutputs {
     // MARK: Inputs
     
     func confirmAlertOKTapped(busTime: BusTime) {
-        dependency.model.requestAuthorization()
-            .andThen(dependency.model.setNotification(at: busTime))
-            .subscribe(onCompleted: { [weak self] in
-                self?.messageRelay.accept(String(format: "%02i:%02i の5分前に\n通知が来るように設定しました。", busTime.hour, busTime.minute))
-            }, onError: { [weak self] error in
-                let message = (error as CustomStringConvertible).description
-                self?.errorRelay.accept(message)
-            })
-            .disposed(by: disposeBag)
+        dependency.model.setNotification(at: busTime)
     }
 }
 
