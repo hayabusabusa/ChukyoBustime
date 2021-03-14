@@ -486,7 +486,6 @@
 		71536D6923F17DFE004A330C /* Child */ = {
 			isa = PBXGroup;
 			children = (
-				716234A7246FFD9B002BA1DE /* BusList */,
 				71536D6A23F17E0A004A330C /* PdfButtons */,
 			);
 			path = Child;
@@ -580,14 +579,6 @@
 				716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */,
 			);
 			path = UserNotification;
-			sourceTree = "<group>";
-		};
-		716234A7246FFD9B002BA1DE /* BusList */ = {
-			isa = PBXGroup;
-			children = (
-				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
-			);
-			path = BusList;
 			sourceTree = "<group>";
 		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
@@ -890,6 +881,7 @@
 				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				71536D5D23F17604004A330C /* RootModel.swift */,
 				71536D7923F43521004A330C /* SettingModel.swift */,
+				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
 				71536D6923F17DFE004A330C /* Child */,
 				717D148324511F4A003944DB /* TabBar */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
