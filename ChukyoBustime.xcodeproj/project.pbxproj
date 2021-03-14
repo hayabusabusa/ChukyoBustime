@@ -137,6 +137,7 @@
 		A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */; };
 		A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEF325FC99310006CFE0 /* RootModelTests.swift */; };
 		A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */; };
+		A5AA4E0E25FE04520078423D /* MockUserNotificationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */; };
 		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
@@ -377,6 +378,7 @@
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
+		A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserNotificationRepositoryImpl.swift; sourceTree = "<group>"; };
 		A5DA4AC325D00D5500BC4F96 /* Tests-Config.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Tests-Config.debug.xcconfig"; sourceTree = "<group>"; };
 		A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootModelImpl.swift; sourceTree = "<group>"; };
 		A5DA4BF625D1664100BC4F96 /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
@@ -1145,6 +1147,7 @@
 			isa = PBXGroup;
 			children = (
 				A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */,
+				A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -1566,6 +1569,7 @@
 				A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */,
 				A51894C525F3E38A00D9792C /* Array+ExtensionTests.swift in Sources */,
 				A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */,
+				A5AA4E0E25FE04520078423D /* MockUserNotificationRepositoryImpl.swift in Sources */,
 				A51894B525F3B47500D9792C /* Mock.swift in Sources */,
 				A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */,
 				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
