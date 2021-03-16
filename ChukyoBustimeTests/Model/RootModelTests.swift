@@ -23,7 +23,7 @@ class RootModelTests: XCTestCase {
             let testableObserver = scheduler.createObserver(Bool.self)
             
             // NOTE: `Void` では比較できないので、`Bool` に変換して比較する
-            model.isCompletedRelay
+            model.isCompletedStream
                 .map { return true }
                 .bind(to: testableObserver)
                 .disposed(by: disposeBag)
@@ -49,7 +49,7 @@ class RootModelTests: XCTestCase {
             let testableObserver = scheduler.createObserver(Bool.self)
             
             // NOTE: `Void` では比較できないので、`Bool` に変換して比較する
-            model.isCompletedRelay
+            model.isCompletedStream
                 .map { return true }
                 .bind(to: testableObserver)
                 .disposed(by: disposeBag)

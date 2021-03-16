@@ -40,7 +40,7 @@ class SettingModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let testableObserver = scheduler.createObserver(Int.self)
         
-        model.sectionsRelay
+        model.sectionsStream
             .map { self.getNumberOfRows(of: $0) }
             .bind(to: testableObserver)
             .disposed(by: disposeBag)
@@ -68,7 +68,7 @@ class SettingModelTests: XCTestCase {
             let scheduler = TestScheduler(initialClock: 0)
             let testableObserver = scheduler.createObserver(String?.self)
             
-            model.sectionsRelay
+            model.sectionsStream
                 .map { self.getTabBarSettingTitle(from: $0) }
                 .bind(to: testableObserver)
                 .disposed(by: disposeBag)
@@ -90,7 +90,7 @@ class SettingModelTests: XCTestCase {
             let scheduler = TestScheduler(initialClock: 0)
             let testableObserver = scheduler.createObserver(String.self)
             
-            model.messageRelay
+            model.messageStream
                 .bind(to: testableObserver)
                 .disposed(by: disposeBag)
             

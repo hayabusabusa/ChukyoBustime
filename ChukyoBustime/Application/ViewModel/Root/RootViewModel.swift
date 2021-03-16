@@ -45,7 +45,7 @@ final class RootViewModel: RootViewModelInputs, RootViewModelOutputs {
         self.model = model
         
         // NOTE: 全ての処理が完了時に TabBar に切り替えるので、`Signal` に変換する
-        replaceRootToTabBar = model.isCompletedRelay.asSignal()
+        replaceRootToTabBar = model.isCompletedStream.asSignal(onErrorSignalWith: .empty())
     }
     
     // MARK: Inputs

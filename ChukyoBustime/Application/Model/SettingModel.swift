@@ -15,10 +15,10 @@ import RxCocoa
 
 protocol SettingModel: AnyObject {
     /// Emits message about error or other.
-    var messageRelay: PublishRelay<String> { get }
+    var messageStream: Observable<String> { get }
     
     /// Emits `SettingSectionType` enum array.
-    var sectionsRelay: BehaviorRelay<[SettingSectionType]> { get }
+    var sectionsStream: Observable<[SettingSectionType]> { get }
     
     /// Get `UserDefaults` value and create `SettingSectionType` enum array.
     func getSettings()
@@ -35,10 +35,12 @@ class SettingModelImpl: SettingModel {
     // MARK: Properies
     
     private let disposeBag = DisposeBag()
+    private let messageRelay: PublishRelay<String>
+    private let sectionsRelay: BehaviorRelay<[SettingSectionType]>
     private let userDefaultsProvider: UserDefaultsProvider
     
-    let messageRelay: PublishRelay<String>
-    let sectionsRelay: BehaviorRelay<[SettingSectionType]>
+    let messageStream: Observable<String>
+    let sectionsStream: Observable<[SettingSectionType]>
     
     // MARK: Initializer
     
@@ -46,6 +48,9 @@ class SettingModelImpl: SettingModel {
         self.messageRelay = .init()
         self.sectionsRelay = .init(value: [])
         self.userDefaultsProvider = userDefaultsProvider
+        
+        messageStream = messageRelay.asObservable()
+        sectionsStream = sectionsRelay.asObservable()
     }
     
     // MARK: UserDefaults

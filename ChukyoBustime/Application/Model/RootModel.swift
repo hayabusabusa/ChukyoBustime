@@ -15,7 +15,7 @@ import RxSwift
 
 protocol RootModel: AnyObject {
     /// Emits void event when all configuration finished.
-    var isCompletedRelay: PublishRelay<Void> { get }
+    var isCompletedStream: Observable<Void> { get }
     
     /// Fetch firebase remote config objects.
     func fetch()
@@ -28,9 +28,10 @@ final class RootModelImpl: RootModel {
     // MARK: Property
     
     private let disposeBag = DisposeBag()
+    private let isCompletedRelay: PublishRelay<Void>
     private let remoteConfigProvider: RemoteConfigProviderProtocol
     
-    let isCompletedRelay: PublishRelay<Void>
+    let isCompletedStream: Observable<Void>
     
     // MARK: Initializer
     
@@ -38,6 +39,7 @@ final class RootModelImpl: RootModel {
         self.isCompletedRelay = .init()
         self.remoteConfigProvider = remoteConfigProvider
         
+        isCompletedStream = isCompletedRelay.asObservable()
     }
     
     // MARK: Remote Config

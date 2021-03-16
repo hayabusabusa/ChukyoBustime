@@ -70,8 +70,8 @@ final class SettingViewModel: SettingViewModelInputs, SettingViewModelOutputs {
         self.dismissRelay = .init()
         self.presentSafariRelay = .init()
         
-        sections = model.sectionsRelay.asDriver()
-        message = model.messageRelay.asSignal()
+        sections = model.sectionsStream.asDriver(onErrorDriveWith: .empty())
+        message = model.messageStream.asSignal(onErrorSignalWith: .empty())
         dismiss = dismissRelay.asSignal()
         presentSafari = presentSafariRelay.asSignal()
     }
