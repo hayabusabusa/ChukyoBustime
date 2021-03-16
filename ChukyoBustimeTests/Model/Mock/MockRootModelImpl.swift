@@ -13,10 +13,12 @@ import RxRelay
 
 final class MockRootModelImpl: RootModel {
     
-    let isCompletedRelay: PublishRelay<Void>
+    private let isCompletedRelay: PublishRelay<Void>
+    let isCompletedStream: Observable<Void>
     
     init() {
-        isCompletedRelay = .init()
+        self.isCompletedRelay = .init()
+        isCompletedStream = isCompletedRelay.asObservable()
     }
     
     func fetch() {
