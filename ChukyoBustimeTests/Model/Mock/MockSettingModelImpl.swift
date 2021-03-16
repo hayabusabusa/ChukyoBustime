@@ -15,14 +15,20 @@ final class MockSettingModelImpl: SettingModel {
     private var tabSetting: TabBarItem
     private let sections: [SettingSectionType]?
     
-    let messageRelay: PublishRelay<String>
-    let sectionsRelay: BehaviorRelay<[SettingSectionType]>
+    private let messageRelay: PublishRelay<String>
+    private let sectionsRelay: BehaviorRelay<[SettingSectionType]>
+    
+    let messageStream: Observable<String>
+    let sectionsStream: Observable<[SettingSectionType]>
     
     init(tabSetting: TabBarItem, sections: [SettingSectionType]? = nil) {
         self.tabSetting = tabSetting
         self.sections = sections
         self.messageRelay = .init()
         self.sectionsRelay = .init(value: [])
+        
+        messageStream = messageRelay.asObservable()
+        sectionsStream = sectionsRelay.asObservable()
     }
     
     func getSettings() {
