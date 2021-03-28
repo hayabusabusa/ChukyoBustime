@@ -36,7 +36,7 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
     
     // MARK: Dependency
     
-    private let model: PdfButtonsModel
+    private let model: PDFButtonsModel
     
     // MARK: Propreties
     
@@ -49,7 +49,7 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
     
     // MARK: Initializer
     
-    init(model: PdfButtonsModel = PdfButtonsModelImpl()) {
+    init(model: PDFButtonsModel = PDFButtonsModelImpl()) {
         self.model = model
         self.presentSafariRelay = .init()
         

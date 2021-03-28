@@ -19,7 +19,7 @@
 		71536D6323F17706004A330C /* PdfUrlTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6223F17706004A330C /* PdfUrlTranslator.swift */; };
 		71536D6623F177BB004A330C /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6523F177BB004A330C /* RootViewModel.swift */; };
 		71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6723F17922004A330C /* UIViewController+Rx.swift */; };
-		71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */; };
+		71536D6C23F17E1B004A330C /* PDFButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */; };
 		71536D6F23F41B27004A330C /* SettingLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D6D23F41B27004A330C /* SettingLabelCell.swift */; };
 		71536D7023F41B27004A330C /* SettingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71536D6E23F41B27004A330C /* SettingLabelCell.xib */; };
 		71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71536D7423F4216A004A330C /* SettingItemCell.swift */; };
@@ -248,7 +248,7 @@
 		71536D6223F17706004A330C /* PdfUrlTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfUrlTranslator.swift; sourceTree = "<group>"; };
 		71536D6523F177BB004A330C /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		71536D6723F17922004A330C /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfButtonsModel.swift; sourceTree = "<group>"; };
+		71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButtonsModel.swift; sourceTree = "<group>"; };
 		71536D6D23F41B27004A330C /* SettingLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLabelCell.swift; sourceTree = "<group>"; };
 		71536D6E23F41B27004A330C /* SettingLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingLabelCell.xib; sourceTree = "<group>"; };
 		71536D7423F4216A004A330C /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
@@ -485,22 +485,6 @@
 				71536D6523F177BB004A330C /* RootViewModel.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		71536D6923F17DFE004A330C /* Child */ = {
-			isa = PBXGroup;
-			children = (
-				71536D6A23F17E0A004A330C /* PdfButtons */,
-			);
-			path = Child;
-			sourceTree = "<group>";
-		};
-		71536D6A23F17E0A004A330C /* PdfButtons */ = {
-			isa = PBXGroup;
-			children = (
-				71536D6B23F17E1B004A330C /* PdfButtonsModel.swift */,
-			);
-			path = PdfButtons;
 			sourceTree = "<group>";
 		};
 		715D9A2F242080B60018F526 /* Realm */ = {
@@ -886,7 +870,7 @@
 				71536D5D23F17604004A330C /* RootModel.swift */,
 				71536D7923F43521004A330C /* SettingModel.swift */,
 				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
-				71536D6923F17DFE004A330C /* Child */,
+				71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */,
 				717D148324511F4A003944DB /* TabBar */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
@@ -1514,7 +1498,7 @@
 				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */,
-				71536D6C23F17E1B004A330C /* PdfButtonsModel.swift in Sources */,
+				71536D6C23F17E1B004A330C /* PDFButtonsModel.swift in Sources */,
 				716234A2246FBFB1002BA1DE /* ContainedButton.swift in Sources */,
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,

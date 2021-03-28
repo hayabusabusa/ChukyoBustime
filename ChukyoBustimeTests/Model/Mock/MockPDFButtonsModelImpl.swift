@@ -9,7 +9,7 @@
 import RxSwift
 @testable import ChukyoBustime
 
-final class MockPDFButtonsModelImpl: PdfButtonsModel {
+final class MockPDFButtonsModelImpl: PDFButtonsModel {
     
     func getPdfUrl() -> Single<PdfUrl> {
         return Single.just(Mock.pdfURL)

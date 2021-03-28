@@ -1,5 +1,5 @@
 //
-//  PdfButtonsModel.swift
+//  PDFButtonsModel.swift
 //  ChukyoBustime
 //
 //  Created by 山田隼也 on 2020/02/10.
@@ -12,13 +12,13 @@ import RxSwift
 
 // MARK: - Interface
 
-protocol PdfButtonsModel: AnyObject {
+protocol PDFButtonsModel: AnyObject {
     func getPdfUrl() -> Single<PdfUrl>
 }
 
 // MARK: - Implementation
 
-class PdfButtonsModelImpl: PdfButtonsModel {
+class PDFButtonsModelImpl: PDFButtonsModel {
     
     // MARK: Dependency
     
