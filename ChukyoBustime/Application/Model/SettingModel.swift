@@ -9,7 +9,7 @@
 import Foundation
 import Infra
 import RxSwift
-import RxCocoa
+import RxRelay
 
 // MARK: - Interface
 

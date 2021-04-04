@@ -6,12 +6,27 @@
 //  Copyright © 2021 Shunya Yamada. All rights reserved.
 //
 
+import Foundation
 import RxSwift
+import RxRelay
 @testable import ChukyoBustime
 
-final class MockPDFButtonsModelImpl: PdfButtonsModel {
+final class MockPDFButtonsModelImpl: PDFButtonsModel {
+    private let pdfURLRelay: PublishRelay<URL>
+    let pdfURLStream: Observable<URL>
     
-    func getPdfUrl() -> Single<PdfUrl> {
-        return Single.just(Mock.pdfURL)
+    init() {
+        self.pdfURLRelay = .init()
+        
+        pdfURLStream = pdfURLRelay.asObservable()
+    }
+    
+    func getPDFURL(of type: PDFURLType) {
+        switch type {
+        case .calendar:
+            pdfURLRelay.accept(URL(string: Mock.pdfURLEntity.calendar)!)
+        case .timeTable:
+            pdfURLRelay.accept(URL(string: Mock.pdfURLEntity.timeTable)!)
+        }
     }
 }

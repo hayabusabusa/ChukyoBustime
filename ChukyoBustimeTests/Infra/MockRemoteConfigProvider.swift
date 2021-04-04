@@ -13,7 +13,7 @@ import RxSwift
 final class MockRemoteConfigProvider: RemoteConfigProviderProtocol {
     private let isErrorOccured: Bool
     
-    internal init(isErrorOccured: Bool = false) {
+    init(isErrorOccured: Bool = false) {
         self.isErrorOccured = isErrorOccured
     }
 
