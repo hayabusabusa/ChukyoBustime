@@ -27,7 +27,7 @@ class PDFButtonsModelImpl: PDFButtonsModel {
     
     // MARK: Properties
     
-    private let remoteConfigProvider: RemoteConfigProvider
+    private let remoteConfigProvider: RemoteConfigProviderProtocol
     
     private let disposeBag = DisposeBag()
     private let pdfURLRelay: PublishRelay<URL>
@@ -36,7 +36,7 @@ class PDFButtonsModelImpl: PDFButtonsModel {
     
     // MARK: Initializer
     
-    init(remoteConfigProvider: RemoteConfigProvider = RemoteConfigProvider.shared) {
+    init(remoteConfigProvider: RemoteConfigProviderProtocol = RemoteConfigProvider.shared) {
         self.pdfURLRelay = .init()
         self.remoteConfigProvider = remoteConfigProvider
         
