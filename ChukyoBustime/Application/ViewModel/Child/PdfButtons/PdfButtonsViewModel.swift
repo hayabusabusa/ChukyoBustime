@@ -41,7 +41,6 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
     // MARK: Propreties
     
     private let disposeBag = DisposeBag()
-    private let presentSafariRelay: PublishRelay<URL>
     
     // MARK: Outputs
     
@@ -51,27 +50,18 @@ final class PdfButtonsViewModel: PdfButtonsViewModelInputs, PdfButtonsViewModelO
     
     init(model: PDFButtonsModel = PDFButtonsModelImpl()) {
         self.model = model
-        self.presentSafariRelay = .init()
         
-        presentSafari = presentSafariRelay.asSignal()
+        presentSafari = model.pdfURLStream.asSignal(onErrorSignalWith: .empty())
     }
     
     // MARK: Inputs
     
     func calendarButtonTapped() {
-        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
-            .map { URL(string: $0.calendar) }
-            .compactMap { $0 }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
+        model.getPDFURL(of: .calendar)
     }
     
     func timeTableButtonTapped() {
-        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
-            .map { URL(string: $0.timeTable) }
-            .compactMap { $0 }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
+        model.getPDFURL(of: .timeTable)
     }
 }
 
