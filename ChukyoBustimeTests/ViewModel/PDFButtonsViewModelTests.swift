@@ -59,10 +59,16 @@ class PDFButtonsViewModelTests: XCTestCase {
             viewModel.input.timeTableButtonTapped()
         }
         
+        // NOTE: 2回目のタップも動作するか確認
+        scheduler.scheduleAt(300) {
+            viewModel.input.timeTableButtonTapped()
+        }
+        
         scheduler.start()
         
         let expression = Recorded.events([
-            .next(200, url)
+            .next(200, url),
+            .next(300, url)
         ])
         XCTAssertEqual(testableObserver.events, expression)
     }
