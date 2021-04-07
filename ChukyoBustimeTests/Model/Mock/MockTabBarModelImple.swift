@@ -7,16 +7,17 @@
 //
 
 import RxSwift
+import RxRelay
 @testable import ChukyoBustime
 
 final class MockTabBarModelImpl: TabBarModel {
-    private let initialTab: TabBarItem
+    private let initialTabRelay: BehaviorRelay<TabBarItem>
+    
+    let initialTabStream: Observable<TabBarItem>
     
     init(initialTab: TabBarItem) {
-        self.initialTab = initialTab
-    }
-
-    func getInitialTab() -> TabBarItem {
-        return initialTab
+        self.initialTabRelay = .init(value: initialTab)
+        
+        initialTabStream = initialTabRelay.asObservable()
     }
 }

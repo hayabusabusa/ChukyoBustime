@@ -76,7 +76,7 @@ final class CountdownViewModel: CountdownViewModelInputs, CountdownViewModelOutp
         
         timer = timerRelay
             .map { $0 < 0 ? 0 : $0 } // NOTE: 負の数は 0 として流す.
-            .map { $0 >= 21600 ? "60分以上" : String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) } // NOTE: 1時間以上なら 1時間以上 と表記する.
+            .map { $0 >= 3600 ? "60分以上" : String(format: "%02i:%02i", $0 / 60 % 60, $0 % 60) } // NOTE: 1時間以上なら 1時間以上 と表記する.
             .asDriver(onErrorDriveWith: .empty())
         arrivalTime = dependency.busTimes
             .map { busTimes in

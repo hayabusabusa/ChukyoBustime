@@ -16,4 +16,9 @@ public struct RCPdfUrlEntity: RemoteConfigType {
         case calendar
         case timeTable = "time_table"
     }
+    
+    public init(calendar: String, timeTable: String) {
+        self.calendar = calendar
+        self.timeTable = timeTable
+    }
 }

@@ -136,7 +136,7 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
     
     func willEnterForeground() {
         let now = DateInRegion(Date(), region: .current)
-        let second = now.hour * 3600 + now.minute + 60 + now.second
+        let second = now.hour * 3600 + now.minute * 60 + now.second
         let newArray = busTimesRelay.value.filter { $0.second >= second }
         busTimesRelay.accept(newArray)
     }
