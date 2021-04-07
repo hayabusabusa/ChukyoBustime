@@ -35,18 +35,16 @@ final class TabBarViewModel: TabBarViewModelInputs, TabBarViewModelOutputs {
     
     // MARK: Properties
     
-    private let disposeBag = DisposeBag()
-    private let selectedTabRelay: BehaviorRelay<Int>
-    
     let selectedTab: Driver<Int>
     
     // MARK: Initializer
     
     init(model: TabBarModel = TabBarModelImpl()) {
         self.model = model
-        self.selectedTabRelay = .init(value: model.getInitialTab().rawValue)
         
-        selectedTab = selectedTabRelay.asDriver()
+        selectedTab = model.initialTabStream
+            .map { $0.rawValue }
+            .asDriver(onErrorDriveWith: .empty())
     }
 }
 

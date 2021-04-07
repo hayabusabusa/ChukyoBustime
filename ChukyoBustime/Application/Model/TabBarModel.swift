@@ -7,31 +7,35 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 import Infra
 
 // MARK: - Interface
 
 protocol TabBarModel: AnyObject {
-    func getInitialTab() -> TabBarItem
+    /// Emits tab bar item enum object.
+    var initialTabStream: Observable<TabBarItem> { get }
 }
 
 // MARK: - Implementation
 
 class TabBarModelImpl: TabBarModel {
     
-    // MARK: Dependency
+    // MARK: Properties
     
     private let userDefaultsProvider: UserDefaultsProvider
+    
+    private let initialTabRelay: BehaviorRelay<TabBarItem>
+    
+    let initialTabStream: Observable<TabBarItem>
     
     // MARK: Initializer
     
     init(userDefaultsProvider: UserDefaultsProvider = UserDefaultsProvider.shared) {
         self.userDefaultsProvider = userDefaultsProvider
-    }
-    
-    // MARK: UserDefaults
-    
-    func getInitialTab() -> TabBarItem {
-        return userDefaultsProvider.enumObject(type: TabBarItem.self, forKey: .initialTab) ?? .toStation
+        self.initialTabRelay = .init(value: userDefaultsProvider.enumObject(type: TabBarItem.self, forKey: .initialTab) ?? .toStation)
+        
+        initialTabStream = initialTabRelay.asObservable()
     }
 }
