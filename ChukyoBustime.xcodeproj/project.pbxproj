@@ -127,6 +127,7 @@
 		A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */; };
 		A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */; };
 		A51894DB25F4A93100D9792C /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */; };
+		A52B91F7261DCE5300811FD1 /* TabBarModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
@@ -366,6 +367,7 @@
 		A51894CE25F4966A00D9792C /* ToCollegeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModelTests.swift; sourceTree = "<group>"; };
 		A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingModelImpl.swift; sourceTree = "<group>"; };
 		A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
+		A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModelTests.swift; sourceTree = "<group>"; };
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -1156,6 +1158,7 @@
 				A5B081812619AA7000493905 /* PDFButtonsModelTests.swift */,
 				A57AFEF325FC99310006CFE0 /* RootModelTests.swift */,
 				A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */,
+				A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1548,6 +1551,7 @@
 				A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */,
 				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,
 				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
+				A52B91F7261DCE5300811FD1 /* TabBarModelTests.swift in Sources */,
 				A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */,
 				A5AA4E1425FE05C60078423D /* BusListModelTests.swift in Sources */,
 				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
