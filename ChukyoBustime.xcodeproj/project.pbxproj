@@ -581,14 +581,6 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		717D148324511F4A003944DB /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				717D148424511F61003944DB /* TabBarModel.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		717D148624512138003944DB /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,7 +867,7 @@
 				71536D7923F43521004A330C /* SettingModel.swift */,
 				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
 				71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */,
-				717D148324511F4A003944DB /* TabBar */,
+				717D148424511F61003944DB /* TabBarModel.swift */,
 				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 			);
