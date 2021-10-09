@@ -131,15 +131,16 @@
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
-		A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
 		A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */; };
 		A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */; };
 		A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */; };
 		A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEF325FC99310006CFE0 /* RootModelTests.swift */; };
 		A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */; };
+		A586C0AF27116275000FA647 /* ToDestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586C0AE27116275000FA647 /* ToDestinationModel.swift */; };
 		A5AA4E0E25FE04520078423D /* MockUserNotificationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */; };
 		A5AA4E1425FE05C60078423D /* BusListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA4E1325FE05C60078423D /* BusListModelTests.swift */; };
+		A5AD81DF26551DD2003CF30B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A5B0817E2619A6C700493905 /* PDFURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0817D2619A6C700493905 /* PDFURLType.swift */; };
 		A5B081822619AA7000493905 /* PDFButtonsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B081812619AA7000493905 /* PDFButtonsModelTests.swift */; };
 		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
@@ -383,6 +384,7 @@
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
+		A586C0AE27116275000FA647 /* ToDestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDestinationModel.swift; sourceTree = "<group>"; };
 		A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserNotificationRepositoryImpl.swift; sourceTree = "<group>"; };
 		A5AA4E1325FE05C60078423D /* BusListModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListModelTests.swift; sourceTree = "<group>"; };
 		A5B0817D2619A6C700493905 /* PDFURLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFURLType.swift; sourceTree = "<group>"; };
@@ -411,9 +413,9 @@
 				A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */,
 				A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */,
 				A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */,
+				A5AD81DF26551DD2003CF30B /* RxSwift.xcframework in Frameworks */,
 				A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */,
 				A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */,
-				A555CC7925CFB99B0064A295 /* RxSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,18 +872,11 @@
 				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
 				71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */,
 				717D148424511F61003944DB /* TabBarModel.swift */,
-				A4A7393123E3B2FD00F7C1A9 /* ToStation */,
+				A586C0AE27116275000FA647 /* ToDestinationModel.swift */,
+				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
 				71910BBF23EB100300132A7D /* ToCollege */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A4A7393123E3B2FD00F7C1A9 /* ToStation */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
-			);
-			path = ToStation;
 			sourceTree = "<group>";
 		};
 		A4A7393423E3B49500F7C1A9 /* ViewModel */ = {
@@ -1505,6 +1500,7 @@
 				A42D0DAD23E11F9200E95FED /* BaseViewController.swift in Sources */,
 				A4B03E9A23DE7FD00069F7E8 /* RootViewController.swift in Sources */,
 				A4A7394523E3BF2E00F7C1A9 /* BusTime.swift in Sources */,
+				A586C0AF27116275000FA647 /* ToDestinationModel.swift in Sources */,
 				A403366B23ED034A003F1A45 /* SettingViewController.swift in Sources */,
 				A4A7394D23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift in Sources */,
 				71536D6623F177BB004A330C /* RootViewModel.swift in Sources */,
