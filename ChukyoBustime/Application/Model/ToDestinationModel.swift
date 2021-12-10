@@ -10,6 +10,7 @@ import Foundation
 import Infra
 import RxRelay
 import RxSwift
+import SwiftDate
 
 // MARK: - Interface
 
@@ -30,20 +31,25 @@ protocol ToDestinationModel: AnyObject {
     /// 一覧の表示を行なっている `BusListViewModel` に渡してあげる.
     var busTimesStream: Observable<[BusTime]> { get }
     
-    /// Remote Config から取得した PDF 関連のデータを流す `Observable<PdfUrl>`
-    var pdfURLStream: Observable<PdfUrl> { get }
+    /// Remote Config から取得した PDF の URL 文字列を流す `Observable<String>`
+    var pdfURLStream: Observable<String> { get }
     
-    /// タイマーのカウントアップのイベントを流す `Observable<Void>`
+    /// タイマーのカウントアップのイベントを流すための `PublishRelay<Void>`
     ///
     /// タイマーの処理を行なっている `CountdownViewModel` に渡してあげる.
-    var countupStream: Observable<Void> { get }
+    var countupRelay: PublishRelay<Void> { get }
     
     /// 時刻表のデータをFirestoreから取得する.
     /// - Parameter date: 取得するタイミングの`Date`.
     func getBusTimes(at date: Date)
     
+    /// 現在の時間で時刻表のデータを更新する.
+    ///
+    /// バックグラウンドから戻ってきた時などに実行する.
+    func updateBusTimes()
+    
     /// Remote Config から PDF の URL を取得する.
-    func getPDFURL()
+    func getPDFURL(for type: PDFURLType)
 }
 
 // MARK: - Implementation
@@ -62,19 +68,19 @@ final class ToDestinationModelImpl: ToDestinationModel {
     private let disposeBag = DisposeBag()
     private let isLoadingRelay: BehaviorRelay<Bool>
     private let errorRelay: PublishRelay<Error>
-    private let countupRelay: PublishRelay<Void>
     private let diagramRelay: BehaviorRelay<String>
     private let busTimesRelay: BehaviorRelay<[BusTime]>
-    private let pdfURLRelay: PublishRelay<PdfUrl>
+    private let calendarPDFURLRelay: PublishRelay<String>
+    private let timeTablePDFURLRelay: PublishRelay<String>
     
     // MARK: Output
     
     let isLoadingStream: Observable<Bool>
     let errorStream: Observable<Error>
-    let countupStream: Observable<Void>
+    let countupRelay: PublishRelay<Void>
     let diagramStream: Observable<String>
     let busTimesStream: Observable<[BusTime]>
-    let pdfURLStream: Observable<PdfUrl>
+    let pdfURLStream: Observable<String>
     
     // MARK: Initializer
     
@@ -92,13 +98,14 @@ final class ToDestinationModelImpl: ToDestinationModel {
         self.errorRelay = .init()
         self.errorStream = errorRelay.asObservable()
         self.countupRelay = .init()
-        self.countupStream = countupRelay.asObservable()
         self.diagramRelay = .init(value: "")
         self.diagramStream = diagramRelay.asObservable()
         self.busTimesRelay = .init(value: [])
         self.busTimesStream = busTimesRelay.asObservable()
-        self.pdfURLRelay = .init()
-        self.pdfURLStream = pdfURLRelay.asObservable()
+        self.calendarPDFURLRelay = .init()
+        self.timeTablePDFURLRelay = .init()
+        self.pdfURLStream = Observable.merge([calendarPDFURLRelay.asObservable(),
+                                              timeTablePDFURLRelay.asObservable()])
         
         // NOTE: カウントアップのイベントが流れてきたら直近の時刻を削除する
         // 一覧が全てなくなった場合は運行終了したことを画面に表示する
@@ -131,18 +138,32 @@ final class ToDestinationModelImpl: ToDestinationModel {
                 self?.busTimesRelay.accept(value.busTimes)
             }, onFailure: { [weak self] error in
                 self?.isLoadingRelay.accept(false)
+                self?.errorRelay.accept(error)
             })
             .disposed(by: disposeBag)
     }
     
+    func updateBusTimes() {
+        let now = DateInRegion(Date(), region: .current)
+        let second = now.hour * 3600 + now.minute * 60 + now.second
+        let newArray = busTimesRelay.value.filter { $0.second >= second }
+        busTimesRelay.accept(newArray)
+    }
+    
     // MARK: Remote Config
     
-    func getPDFURL() {
+    func getPDFURL(for type: PDFURLType) {
         remoteConfigProvider
             .getConfigValue(for: .pdfUrl, configType: RCPdfUrlEntity.self)
             .translate(PdfUrlTranslator())
             .subscribe(onSuccess: { [weak self] value in
-                self?.pdfURLRelay.accept(value)
+                // NOTE: PDF の種類に応じて URL を流す.
+                switch type {
+                case .calendar:
+                    self?.calendarPDFURLRelay.accept(value.calendar)
+                case .timeTable:
+                    self?.timeTablePDFURLRelay.accept(value.timeTable)
+                }
             }, onFailure: { _ in
                 // NOTE: 必要ならエラーハンドリングをする( 現状 Remote Config のエラーは表示させない ).
             })
