@@ -57,7 +57,7 @@ final class ToCollegeViewModel: ToCollegeViewModelInputs, ToCollegeViewModelOutp
     
     // MARK: Dependency
     
-    private let model: ToCollegeModel
+    private let model: ToDestinationModel
     
     // MARK: Outputs
     
@@ -68,51 +68,39 @@ final class ToCollegeViewModel: ToCollegeViewModelInputs, ToCollegeViewModelOutp
     
     // MARK: Propreties
     
-    private let disposeBag = DisposeBag()
-    private let stateRelay: BehaviorRelay<StateView.State> // Show indicator and hide scroll view
-    private let countupRelay: PublishRelay<Void>
-    private let diagramRelay: BehaviorRelay<String>
-    private let busTimesRelay: BehaviorRelay<[BusTime]>
-    private let presentSafariRelay: PublishRelay<URL>
     private let presentSettingRelay: PublishRelay<Void>
     
     // MARK: Initializer
     
-    init(model: ToCollegeModel = ToCollegeModelImpl()) {
+    init(model: ToDestinationModel = ToDestinationModelImpl(for: .toCollege)) {
         self.model = model
-        self.stateRelay = .init(value: .loading)
-        self.countupRelay = .init()
-        self.diagramRelay = .init(value: "")
-        self.busTimesRelay = .init(value: [])
-        self.presentSafariRelay = .init()
         self.presentSettingRelay = .init()
         
-        state = stateRelay.asDriver()
-        presentSafari = presentSafariRelay.asSignal()
-        presentSetting = presentSettingRelay.asSignal()
-        
         // NOTE: 依存する ViewModel を生成
-        let diagram = diagramRelay.asDriver()
-        let busTimes = busTimesRelay.asDriver()
-        let diagramViewModel = DiagramViewModel(dependency: .init(diagramNameDriver: diagram))
-        let busListViewModel = BusListViewModel(dependency: .init(destination: .college, busTimes: busTimes, model: BusListModelImpl()))
-        let countdownViewModel = CountdownViewModel(dependency: .init(busTimes: busTimes, destination: .college, countupRelay: countupRelay))
+        let diagramStream = model.diagramStream.asDriver(onErrorDriveWith: .empty())
+        let busTimesStream = model.busTimesStream.asDriver(onErrorDriveWith: .empty())
+        let countupRelay = model.countupRelay
+        let diagramViewModel = DiagramViewModel(dependency: .init(diagramNameDriver: diagramStream))
+        let busListViewModel = BusListViewModel(dependency: .init(destination: .station, busTimes: busTimesStream, model: BusListModelImpl()))
+        let countdownViewModel = CountdownViewModel(dependency: .init(busTimes: busTimesStream, destination: .station, countupRelay: countupRelay))
         childViewModels = ChildViewModels(diagramViewModel: diagramViewModel, busListViewModel: busListViewModel, countdownViewModel: countdownViewModel)
         
-        // NOTE: カウントアップのイベントが流れてきたら直近の時刻を削除する
-        // 一覧が全てなくなった場合は運行終了したことを画面に表示する
-        countupRelay
-            .subscribe(onNext: { [weak self] in
-                var busTimes = self?.busTimesRelay.value ?? []
-                
-                busTimes.popFirst()
-                
-                if busTimes.isEmpty {
-                    self?.stateRelay.accept(.empty)
+        state = Observable
+            .combineLatest(model.isLoadingStream, model.busTimesStream) { isLoading, busTimes -> StateView.State in
+                guard !isLoading else {
+                    return .loading
                 }
-                self?.busTimesRelay.accept(busTimes)
-            })
-            .disposed(by: disposeBag)
+                // NOTE: 一覧が全てなくなった場合は運行終了したことを画面に表示する
+                guard !busTimes.isEmpty else {
+                    return .empty
+                }
+                return .none
+            }
+            .asDriver(onErrorDriveWith: .empty())
+        presentSafari = model.pdfURLStream
+            .compactMap { URL(string: $0) }
+            .asSignal(onErrorSignalWith: .empty())
+        presentSetting = presentSettingRelay.asSignal()
     }
     
     // MARK: Inputs
@@ -120,14 +108,6 @@ final class ToCollegeViewModel: ToCollegeViewModelInputs, ToCollegeViewModelOutp
     func viewDidLoad() {
         let today = Date()
         model.getBusTimes(at: today)
-            .subscribe(onSuccess: { [weak self] result in
-                self?.diagramRelay.accept(result.busDate.diagramName)
-                self?.busTimesRelay.accept(result.busTimes)
-                self?.stateRelay.accept(result.busTimes.isEmpty ? .empty : .none) // Hide indicator and show scroll view
-            }, onFailure: { [weak self] _ in
-                self?.stateRelay.accept(.error)
-            })
-            .disposed(by: disposeBag)
     }
     
     func settingButtonTapped() {
@@ -135,26 +115,15 @@ final class ToCollegeViewModel: ToCollegeViewModelInputs, ToCollegeViewModelOutp
     }
     
     func willEnterForeground() {
-        let now = DateInRegion(Date(), region: .current)
-        let second = now.hour * 3600 + now.minute * 60 + now.second
-        let newArray = busTimesRelay.value.filter { $0.second >= second }
-        busTimesRelay.accept(newArray)
+        model.updateBusTimes()
     }
     
     func calendarButtonTapped() {
-        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
-            .map { URL(string: $0.calendar) }
-            .compactMap { $0 }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
+        model.getPDFURL(for: .calendar)
     }
     
     func timeTableButtonTapped() {
-        model.getPdfUrl().asSignal(onErrorSignalWith: .empty())
-            .map { URL(string: $0.timeTable) }
-            .compactMap { $0 }
-            .emit(to: presentSafariRelay)
-            .disposed(by: disposeBag)
+        model.getPDFURL(for: .timeTable)
     }
 }
 
