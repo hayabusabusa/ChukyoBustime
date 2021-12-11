@@ -20,7 +20,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let busDate = Mock.busDate
         let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToStationViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -49,7 +49,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let busDate = Mock.busDate
         let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToStationViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -79,7 +79,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let busDate = Mock.busDate
         let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToStationViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -119,7 +119,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let busDate = Mock.busDate
         let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToStationViewModel(model: model)
         
         viewModel.output.presentSetting
@@ -145,7 +145,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let busDate = Mock.busDate
         let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToStationModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToStationViewModel(model: model)
         
         XCTContext.runActivity(named: "カレンダーボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in

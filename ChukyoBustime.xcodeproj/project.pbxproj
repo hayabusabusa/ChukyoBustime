@@ -118,7 +118,6 @@
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
 		A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */; };
 		A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */; };
-		A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */; };
 		A51894B525F3B47500D9792C /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894B425F3B47500D9792C /* Mock.swift */; };
 		A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */; };
 		A51894BF25F3DFDA00D9792C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894BE25F3DFDA00D9792C /* Array+Extension.swift */; };
@@ -137,6 +136,7 @@
 		A57AFEEE25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */; };
 		A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFEF325FC99310006CFE0 /* RootModelTests.swift */; };
 		A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */; };
+		A585DB752763BA1D00DEA4E5 /* MockToDestinationModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A585DB742763BA1D00DEA4E5 /* MockToDestinationModelImpl.swift */; };
 		A586C0AF27116275000FA647 /* ToDestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586C0AE27116275000FA647 /* ToDestinationModel.swift */; };
 		A5AA4E0E25FE04520078423D /* MockUserNotificationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */; };
 		A5AA4E1425FE05C60078423D /* BusListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA4E1325FE05C60078423D /* BusListModelTests.swift */; };
@@ -359,7 +359,6 @@
 		A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayRelease.entitlements; sourceTree = "<group>"; };
 		A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarModelImple.swift; sourceTree = "<group>"; };
 		A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
-		A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToStationModelImpl.swift; sourceTree = "<group>"; };
 		A51894B425F3B47500D9792C /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		A51894BA25F3BC0000D9792C /* ToStationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModelTests.swift; sourceTree = "<group>"; };
 		A51894BE25F3DFDA00D9792C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -383,6 +382,7 @@
 		A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelTests.swift; sourceTree = "<group>"; };
 		A57F695725CFE05B000D0528 /* ChukyoBustimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChukyoBustimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57F695B25CFE05B000D0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A585DB742763BA1D00DEA4E5 /* MockToDestinationModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDestinationModelImpl.swift; sourceTree = "<group>"; };
 		A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChukyoBustimeRelease.entitlements; sourceTree = "<group>"; };
 		A586C0AE27116275000FA647 /* ToDestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDestinationModel.swift; sourceTree = "<group>"; };
 		A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserNotificationRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -1117,7 +1117,7 @@
 				A5DA4BF125D165C400BC4F96 /* MockRootModelImpl.swift */,
 				A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */,
 				A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */,
-				A51894AF25F3B1ED00D9792C /* MockToStationModelImpl.swift */,
+				A585DB742763BA1D00DEA4E5 /* MockToDestinationModelImpl.swift */,
 				A51894CA25F495C100D9792C /* MockToCollegeModelImpl.swift */,
 			);
 			path = Mock;
@@ -1539,7 +1539,6 @@
 				A51894BB25F3BC0000D9792C /* ToStationViewModelTests.swift in Sources */,
 				A5E0603B25D76E2200DCB7EB /* CountdownViewModelTests.swift in Sources */,
 				A51894CB25F495C100D9792C /* MockToCollegeModelImpl.swift in Sources */,
-				A51894B025F3B1ED00D9792C /* MockToStationModelImpl.swift in Sources */,
 				A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */,
 				A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */,
 				A57AFF0225FCC5D50006CFE0 /* SettingModelTests.swift in Sources */,
@@ -1562,6 +1561,7 @@
 				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
 				A5B081822619AA7000493905 /* PDFButtonsModelTests.swift in Sources */,
 				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,
+				A585DB752763BA1D00DEA4E5 /* MockToDestinationModelImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
