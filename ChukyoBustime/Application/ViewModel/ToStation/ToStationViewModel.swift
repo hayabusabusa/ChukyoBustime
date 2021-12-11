@@ -99,8 +99,7 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
             }
             .asDriver(onErrorDriveWith: .empty())
         presentSafari = model.pdfURLStream
-            .map { URL(string: $0) }
-            .compactMap { $0 }
+            .compactMap { URL(string: $0) }
             .asSignal(onErrorSignalWith: .empty())
         presentSetting = presentSettingRelay.asSignal()
     }
