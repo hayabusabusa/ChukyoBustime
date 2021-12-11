@@ -22,7 +22,7 @@ class CountdownViewModelTests: XCTestCase {
     // タイマーの処理をModelに閉じ込めてからテストを作成する
 
     func test_各種ラベルが表示されることを確認() {
-        let busTime = Mock.createBusTime(isReturn: true, isLast: true, isKaizu: true)
+        let busTime = Stub.createBusTime(isReturn: true, isLast: true, isKaizu: true)
         let busTimes = Observable.of([busTime]).asDriver(onErrorDriveWith: .empty())
         let countupRelay = PublishRelay<Void>()
         
@@ -91,7 +91,7 @@ class CountdownViewModelTests: XCTestCase {
         let disposeBag = DisposeBag()
         
         // NOTE: 1秒先のデータを用意して `HotObserver` に流す
-        let busTime = Mock.createBusTime()
+        let busTime = Stub.createBusTime()
         let busTimes = scheduler.createHotObservable([
             .next(100, [busTime])
         ])

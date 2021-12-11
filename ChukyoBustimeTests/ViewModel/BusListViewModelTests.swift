@@ -20,7 +20,7 @@ class BusListViewModelTests: XCTestCase {
         let disposeBag = DisposeBag()
         
         let busTimes = scheduler.createHotObservable([
-            .next(100, Mock.createBusTimes(count: 2, interval: 1))
+            .next(100, Stub.createBusTimes(count: 2, interval: 1))
         ])
         .asDriver(onErrorDriveWith: .empty())
         
@@ -49,12 +49,12 @@ class BusListViewModelTests: XCTestCase {
         let disposeBag = DisposeBag()
         
         let busTimes = scheduler.createHotObservable([
-            .next(100, Mock.createBusTimes(count: 1))
+            .next(100, Stub.createBusTimes(count: 1))
         ])
         .asDriver(onErrorDriveWith: .empty())
         
         // NOTE: 6分後のデータを用意
-        let busTimeAfterSixMinutes = Mock.createBusTime(interval: 360)
+        let busTimeAfterSixMinutes = Stub.createBusTime(interval: 360)
         
         XCTContext.runActivity(named: "通知が許可済みの場合はメッセージが表示されることを確認") { _ in
             let message = String(format: "%02i:%02i の5分前に\n通知が来るように設定しました。", busTimeAfterSixMinutes.hour, busTimeAfterSixMinutes.minute)

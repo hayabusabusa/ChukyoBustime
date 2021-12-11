@@ -35,7 +35,7 @@ final class MockToCollegeModelImpl: ToCollegeModel {
         return Single.create { [unowned self] observer in
             observer(self.isErrorOccured
                         ? .failure(MockError.somethingWentWrong)
-                        : .success(Mock.pdfURL))
+                        : .success(Stub.pdfURL))
             
             return Disposables.create()
         }

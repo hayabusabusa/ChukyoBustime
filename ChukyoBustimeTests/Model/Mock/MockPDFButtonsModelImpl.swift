@@ -24,9 +24,9 @@ final class MockPDFButtonsModelImpl: PDFButtonsModel {
     func getPDFURL(of type: PDFURLType) {
         switch type {
         case .calendar:
-            pdfURLRelay.accept(URL(string: Mock.pdfURLEntity.calendar)!)
+            pdfURLRelay.accept(URL(string: Stub.pdfURLEntity.calendar)!)
         case .timeTable:
-            pdfURLRelay.accept(URL(string: Mock.pdfURLEntity.timeTable)!)
+            pdfURLRelay.accept(URL(string: Stub.pdfURLEntity.timeTable)!)
         }
     }
 }

@@ -32,7 +32,7 @@ final class MockSettingModelImpl: SettingModel {
     }
     
     func getSettings() {
-        sectionsRelay.accept(sections ?? Mock.createSettingSections(tabSetting: tabSetting))
+        sectionsRelay.accept(sections ?? Stub.createSettingSections(tabSetting: tabSetting))
     }
     
     func saveTabSetting(tabBarItem: TabBarItem) {
