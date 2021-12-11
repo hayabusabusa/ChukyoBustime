@@ -91,6 +91,7 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
                 guard !isLoading else {
                     return .loading
                 }
+                // NOTE: 一覧が全てなくなった場合は運行終了したことを画面に表示する
                 guard !busTimes.isEmpty else {
                     return .empty
                 }

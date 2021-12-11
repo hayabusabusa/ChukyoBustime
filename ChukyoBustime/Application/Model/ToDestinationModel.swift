@@ -108,7 +108,6 @@ final class ToDestinationModelImpl: ToDestinationModel {
                                               timeTablePDFURLRelay.asObservable()])
         
         // NOTE: カウントアップのイベントが流れてきたら直近の時刻を削除する
-        // 一覧が全てなくなった場合は運行終了したことを画面に表示する
         countupRelay
             .subscribe(onNext: { [weak self] in
                 var busTimes = self?.busTimesRelay.value ?? []
