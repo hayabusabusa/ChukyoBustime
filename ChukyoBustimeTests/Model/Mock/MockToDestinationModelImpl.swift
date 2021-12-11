@@ -74,9 +74,9 @@ final class MockToDestinationModelImpl: ToDestinationModel {
     func getPDFURL(for type: PDFURLType) {
         switch type {
         case .calendar:
-            calendarPDFURLRelay.accept("Calendar")
+            calendarPDFURLRelay.accept(Stub.pdfURL.calendar)
         case .timeTable:
-            timeTablePDFURLRelay.accept("TimeTable")
+            timeTablePDFURLRelay.accept(Stub.pdfURL.timeTable)
         }
     }
 }

@@ -14,7 +14,7 @@ import RxTest
 class BusListModelTests: XCTestCase {
 
     func test_ローカル通知設定時に正しいイベントが流れることを確認() {
-        let busTime = Mock.createBusTime()
+        let busTime = Stub.createBusTime()
         let disposeBag = DisposeBag()
         
         XCTContext.runActivity(named: "設定完了後に完了のメッセージが流れること") { _ in

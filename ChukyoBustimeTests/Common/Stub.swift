@@ -1,5 +1,5 @@
 //
-//  Mock.swift
+//  Stub.swift
 //  ChukyoBustimeTests
 //
 //  Created by Shunya Yamada on 2021/03/06.
@@ -11,7 +11,7 @@ import Infra
 import SwiftDate
 @testable import ChukyoBustime
 
-enum Mock {
+enum Stub {
     static let pdfURL = PdfUrl(calendar: "http://example.com", timeTable: "http://example.org")
     static let pdfURLEntity = RCPdfUrlEntity(calendar: "http://example.com", timeTable: "http://example.org")
     static let busDate = BusDate(diagramName: "TEST")

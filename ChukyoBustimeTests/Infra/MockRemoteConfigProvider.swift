@@ -31,7 +31,7 @@ final class MockRemoteConfigProvider: RemoteConfigProviderProtocol {
             // NOTE: `.success()` 時に流している Entity は、RemoteConfig にオブジェクトが増えたときに変更が必要
             observer(self.isErrorOccured
                         ? .failure(MockError.somethingWentWrong)
-                        : .success(Mock.pdfURLEntity as! T))
+                        : .success(Stub.pdfURLEntity as! T))
             return Disposables.create()
         }
     }

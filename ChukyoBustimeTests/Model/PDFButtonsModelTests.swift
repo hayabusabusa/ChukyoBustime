@@ -14,7 +14,7 @@ import RxTest
 class PDFButtonsModelTests: XCTestCase {
 
     func test_指定したPDFのURLが流れることを確認() {
-        let pdfURLEntity = Mock.pdfURLEntity
+        let pdfURLEntity = Stub.pdfURLEntity
         let disposeBag = DisposeBag()
         
         XCTContext.runActivity(named: "運行カレンダーPDFのURLが流れること") { _ in
