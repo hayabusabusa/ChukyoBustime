@@ -54,13 +54,14 @@ final class MockToDestinationModelImpl: ToDestinationModel {
     }
     
     func getBusTimes(at date: Date) {
+        isLoadingRelay.accept(false)
+        
         if isErrorOccured {
             errorRelay.accept(MockError.somethingWentWrong)
         } else {
             diagramRelay.accept(busDate.diagramName)
             busTimesRelay.accept(busTimes)
         }
-        
     }
     
     func updateBusTimes() {

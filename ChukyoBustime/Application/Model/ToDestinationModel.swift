@@ -121,8 +121,6 @@ final class ToDestinationModelImpl: ToDestinationModel {
     // MARK: Firestore
     
     func getBusTimes(at date: Date) {
-        isLoadingRelay.accept(true)
-        
         firestoreRepository
             .getBusTimes(at: date, destination: destination)
             .flatMap { value -> Single<(busDate: BusDate, busTimes: [BusTime])> in
