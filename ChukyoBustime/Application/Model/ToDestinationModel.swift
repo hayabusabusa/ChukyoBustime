@@ -131,8 +131,8 @@ final class ToDestinationModelImpl: ToDestinationModel {
             }
             .subscribe(onSuccess: { [weak self] value in
                 self?.isLoadingRelay.accept(false)
-                self?.diagramRelay.accept(value.busDate.diagramName)
                 self?.busTimesRelay.accept(value.busTimes)
+                self?.diagramRelay.accept(value.busDate.diagramName)
             }, onFailure: { [weak self] error in
                 self?.isLoadingRelay.accept(false)
                 self?.errorRelay.accept(error)

@@ -87,7 +87,8 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
         childViewModels = ChildViewModels(diagramViewModel: diagramViewModel, busListViewModel: busListViewModel, countdownViewModel: countdownViewModel)
         
         state = Observable
-            .combineLatest(model.isLoadingStream, model.busTimesStream) { isLoading, busTimes -> StateView.State in
+            .zip(model.isLoadingStream, model.busTimesStream)
+            .map { isLoading, busTimes -> StateView.State in
                 guard !isLoading else {
                     return .loading
                 }
