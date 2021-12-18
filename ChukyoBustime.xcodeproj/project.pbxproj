@@ -48,7 +48,6 @@
 		717D148524511F61003944DB /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148424511F61003944DB /* TabBarModel.swift */; };
 		717D148824512149003944DB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148724512149003944DB /* TabBarViewModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
-		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
 		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
 		71A329E723E04FB700EB7A55 /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A329E523E04FB700EB7A55 /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -280,7 +279,6 @@
 		717D148424511F61003944DB /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		717D148724512149003944DB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
-		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
 		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		71A329E323E04FB700EB7A55 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -477,22 +475,6 @@
 			path = RCPdfUrl;
 			sourceTree = "<group>";
 		};
-		71536D6123F176F6004A330C /* PdfUrl */ = {
-			isa = PBXGroup;
-			children = (
-				71536D6223F17706004A330C /* PdfUrlTranslator.swift */,
-			);
-			path = PdfUrl;
-			sourceTree = "<group>";
-		};
-		71536D6423F177A7004A330C /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				71536D6523F177BB004A330C /* RootViewModel.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		715D9A2F242080B60018F526 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,35 +565,13 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		717D148624512138003944DB /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				717D148724512149003944DB /* TabBarViewModel.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		71910BBF23EB100300132A7D /* ToCollege */ = {
-			isa = PBXGroup;
-			children = (
-				71910BC023EB101E00132A7D /* ToCollegeModel.swift */,
-			);
-			path = ToCollege;
-			sourceTree = "<group>";
-		};
-		71910BC223EB113200132A7D /* ToCollege */ = {
-			isa = PBXGroup;
-			children = (
-				71910BC323EB116200132A7D /* ToCollegeViewModel.swift */,
-			);
-			path = ToCollege;
-			sourceTree = "<group>";
-		};
 		71A329D323DF03F000EB7A55 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
+				A4A7394023E3BEDF00F7C1A9 /* Entity */,
 				A4A7393023E3B2E100F7C1A9 /* Model */,
+				A4A7393B23E3BDB500F7C1A9 /* Translator */,
 				A4B03E9823DE7FC20069F7E8 /* View */,
 				A4A7393423E3B49500F7C1A9 /* ViewModel */,
 				A42D0DB323E13ACC00E95FED /* Common */,
@@ -665,14 +625,6 @@
 			path = BusTime;
 			sourceTree = "<group>";
 		};
-		71A5A61E23E453550033E2CB /* BusList */ = {
-			isa = PBXGroup;
-			children = (
-				71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */,
-			);
-			path = BusList;
-			sourceTree = "<group>";
-		};
 		71FF5C1823E1B6A900456D75 /* BusList */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,14 +654,6 @@
 				A403366A23ED034A003F1A45 /* SettingViewController.swift */,
 				A403366C23ED03B6003F1A45 /* SettingViewController.storyboard */,
 				A401275323F3CCEE007FDD82 /* Cell */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		A403366F23ED0B5C003F1A45 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				A403367023ED0B6A003F1A45 /* SettingViewModel.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -811,24 +755,16 @@
 		A42D0DDE23E1739200E95FED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A42D0DE023E173D500E95FED /* BusListView.swift */,
+				A42D0DE223E1768100E95FED /* BusListView.xib */,
 				716234A1246FBFB1002BA1DE /* ContainedButton.swift */,
 				71059427241A251D003CA820 /* OutlinedButton.swift */,
 				71FF5C1623E1B25900456D75 /* RoundedView.swift */,
 				71F660C82448374800E1DA90 /* StateView.swift */,
 				71F660CA244941DA00E1DA90 /* StateViewable.swift */,
 				71039738244A06A100997DBD /* StateViewType.swift */,
-				A42D0DDF23E173B900E95FED /* BusListView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A42D0DDF23E173B900E95FED /* BusListView */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DE023E173D500E95FED /* BusListView.swift */,
-				A42D0DE223E1768100E95FED /* BusListView.xib */,
-			);
-			path = BusListView;
 			sourceTree = "<group>";
 		};
 		A42D0DE823E17F7000E95FED /* Child */ = {
@@ -863,16 +799,13 @@
 		A4A7393023E3B2E100F7C1A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A4A7394023E3BEDF00F7C1A9 /* Entity */,
-				A4A7393B23E3BDB500F7C1A9 /* Translator */,
-				71536D5D23F17604004A330C /* RootModel.swift */,
-				71536D7923F43521004A330C /* SettingModel.swift */,
 				716234A8246FFDA8002BA1DE /* BusListModel.swift */,
 				71536D6B23F17E1B004A330C /* PDFButtonsModel.swift */,
+				71536D5D23F17604004A330C /* RootModel.swift */,
+				71536D7923F43521004A330C /* SettingModel.swift */,
 				717D148424511F61003944DB /* TabBarModel.swift */,
 				A586C0AE27116275000FA647 /* ToDestinationModel.swift */,
 				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
-				71910BBF23EB100300132A7D /* ToCollege */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -880,33 +813,28 @@
 		A4A7393423E3B49500F7C1A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A4A7395B23E3F7FA00F7C1A9 /* BusListViewModel.swift */,
+				A4A7395723E3EAFC00F7C1A9 /* CountdownViewModel.swift */,
+				A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */,
+				A4A7395E23E4072400F7C1A9 /* PdfButtonsViewModel.swift */,
+				71536D6523F177BB004A330C /* RootViewModel.swift */,
+				A403367023ED0B6A003F1A45 /* SettingViewModel.swift */,
+				717D148724512149003944DB /* TabBarViewModel.swift */,
+				71910BC323EB116200132A7D /* ToCollegeViewModel.swift */,
+				A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */,
 				A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */,
-				71536D6423F177A7004A330C /* Root */,
-				A4A7394E23E3CFA000F7C1A9 /* Child */,
-				717D148624512138003944DB /* TabBar */,
-				A4A7393523E3B4A800F7C1A9 /* ToStation */,
-				71910BC223EB113200132A7D /* ToCollege */,
-				A403366F23ED0B5C003F1A45 /* Setting */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A4A7393523E3B4A800F7C1A9 /* ToStation */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */,
-			);
-			path = ToStation;
 			sourceTree = "<group>";
 		};
 		A4A7393B23E3BDB500F7C1A9 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */,
+				71A5A61F23E453730033E2CB /* BusListViewableTranslator.swift */,
+				71536D6223F17706004A330C /* PdfUrlTranslator.swift */,
 				A4A7393C23E3BDE400F7C1A9 /* Translator.swift */,
 				A4A7393E23E3BE0B00F7C1A9 /* ViewableTranslator.swift */,
-				A4A7394B23E3C02F00F7C1A9 /* BusDate */,
-				71A5A61E23E453550033E2CB /* BusList */,
-				71536D6123F176F6004A330C /* PdfUrl */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -921,57 +849,6 @@
 				A5B0817D2619A6C700493905 /* PDFURLType.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		A4A7394B23E3C02F00F7C1A9 /* BusDate */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7394C23E3CACA00F7C1A9 /* BusDateAndBusTimesTranslator.swift */,
-			);
-			path = BusDate;
-			sourceTree = "<group>";
-		};
-		A4A7394E23E3CFA000F7C1A9 /* Child */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7394F23E3CFB400F7C1A9 /* Diagram */,
-				A4A7395623E3EAE300F7C1A9 /* Countdown */,
-				A4A7395D23E4071300F7C1A9 /* PdfButtons */,
-				A4A7395A23E3F7E900F7C1A9 /* BusList */,
-			);
-			path = Child;
-			sourceTree = "<group>";
-		};
-		A4A7394F23E3CFB400F7C1A9 /* Diagram */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7395023E3CFC200F7C1A9 /* DiagramViewModel.swift */,
-			);
-			path = Diagram;
-			sourceTree = "<group>";
-		};
-		A4A7395623E3EAE300F7C1A9 /* Countdown */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7395723E3EAFC00F7C1A9 /* CountdownViewModel.swift */,
-			);
-			path = Countdown;
-			sourceTree = "<group>";
-		};
-		A4A7395A23E3F7E900F7C1A9 /* BusList */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7395B23E3F7FA00F7C1A9 /* BusListViewModel.swift */,
-			);
-			path = BusList;
-			sourceTree = "<group>";
-		};
-		A4A7395D23E4071300F7C1A9 /* PdfButtons */ = {
-			isa = PBXGroup;
-			children = (
-				A4A7395E23E4072400F7C1A9 /* PdfButtonsViewModel.swift */,
-			);
-			path = PdfButtons;
 			sourceTree = "<group>";
 		};
 		A4AC23A323E2C1870012439D /* PdfButtons */ = {
@@ -1489,7 +1366,6 @@
 				71039739244A06A100997DBD /* StateViewType.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
-				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */,
 				71536D6C23F17E1B004A330C /* PDFButtonsModel.swift in Sources */,
