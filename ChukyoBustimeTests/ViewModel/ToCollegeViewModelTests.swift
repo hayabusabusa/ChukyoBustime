@@ -37,6 +37,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.none)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -66,6 +67,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.error)
         ])
         XCTAssertEqual(testableObserver.events, expression)
