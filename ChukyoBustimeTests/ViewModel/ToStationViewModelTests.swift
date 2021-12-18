@@ -35,8 +35,12 @@ class ToStationViewModelTests: XCTestCase {
         
         scheduler.start()
         
+        // NOTE: ここ `combineLatest` で合成された値は
+        // `(true, nil, [])` -> `(true, nil, [BusTime])` -> `(false, nil, [BusTime])` という順でイベントが流れるので
+        // 200 のタイミングでもう1度 `.loading` が流れてしまう...
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.none)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -66,6 +70,7 @@ class ToStationViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.error)
         ])
         XCTAssertEqual(testableObserver.events, expression)

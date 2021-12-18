@@ -18,14 +18,14 @@ final class MockToDestinationModelImpl: ToDestinationModel {
     let isErrorOccured: Bool
     
     private let isLoadingRelay: BehaviorRelay<Bool>
-    private let errorRelay: PublishRelay<Error>
+    private let errorRelay: BehaviorRelay<Error?>
     private let diagramRelay: BehaviorRelay<String>
     private let busTimesRelay: BehaviorRelay<[BusTime]>
     private let calendarPDFURLRelay: PublishRelay<String>
     private let timeTablePDFURLRelay: PublishRelay<String>
     
     let isLoadingStream: Observable<Bool>
-    let errorStream: Observable<Error>
+    let errorStream: Observable<Error?>
     let countupRelay: PublishRelay<Void>
     let diagramStream: Observable<String>
     let busTimesStream: Observable<[BusTime]>
@@ -40,7 +40,7 @@ final class MockToDestinationModelImpl: ToDestinationModel {
         
         self.isLoadingRelay = .init(value: true)
         self.isLoadingStream = isLoadingRelay.asObservable()
-        self.errorRelay = .init()
+        self.errorRelay = .init(value: nil)
         self.errorStream = errorRelay.asObservable()
         self.countupRelay = .init()
         self.diagramRelay = .init(value: "")
@@ -57,10 +57,10 @@ final class MockToDestinationModelImpl: ToDestinationModel {
         if isErrorOccured {
             errorRelay.accept(MockError.somethingWentWrong)
         } else {
-            diagramRelay.accept(busDate.diagramName)
             busTimesRelay.accept(busTimes)
+            diagramRelay.accept(busDate.diagramName)
         }
-        
+        isLoadingRelay.accept(false)
     }
     
     func updateBusTimes() {

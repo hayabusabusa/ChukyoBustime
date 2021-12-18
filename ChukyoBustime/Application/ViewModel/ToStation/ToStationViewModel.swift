@@ -87,9 +87,14 @@ final class ToStationViewModel: ToStationViewModelInputs, ToStationViewModelOutp
         childViewModels = ChildViewModels(diagramViewModel: diagramViewModel, busListViewModel: busListViewModel, countdownViewModel: countdownViewModel)
         
         state = Observable
-            .combineLatest(model.isLoadingStream, model.busTimesStream) { isLoading, busTimes -> StateView.State in
+            .combineLatest(model.isLoadingStream, model.errorStream, model.busTimesStream)
+            .map { isLoading, error, busTimes -> StateView.State in
                 guard !isLoading else {
                     return .loading
+                }
+                // NOTE: エラーの場合はエラーの表示
+                guard error == nil else {
+                    return .error
                 }
                 // NOTE: 一覧が全てなくなった場合は運行終了したことを画面に表示する
                 guard !busTimes.isEmpty else {

@@ -20,7 +20,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let busDate = Stub.busDate
         let busTimes = Stub.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -37,6 +37,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.none)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -49,7 +50,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let busDate = Stub.busDate
         let busTimes = Stub.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -66,6 +67,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.error)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -79,7 +81,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let busDate = Stub.busDate
         let busTimes = Stub.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -119,7 +121,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let busDate = Stub.busDate
         let busTimes = Stub.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         viewModel.output.presentSetting
@@ -145,7 +147,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let busDate = Stub.busDate
         let busTimes = Stub.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         XCTContext.runActivity(named: "カレンダーボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in
