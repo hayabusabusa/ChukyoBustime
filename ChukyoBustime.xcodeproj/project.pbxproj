@@ -116,6 +116,7 @@
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
 		A512653D276DC1DD00907E8A /* ToDestinationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A512653C276DC1DD00907E8A /* ToDestinationModelTests.swift */; };
 		A5126541276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */; };
+		A5126549276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */; };
 		A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */; };
 		A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */; };
 		A51894B525F3B47500D9792C /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894B425F3B47500D9792C /* Stub.swift */; };
@@ -356,6 +357,7 @@
 		A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayRelease.entitlements; sourceTree = "<group>"; };
 		A512653C276DC1DD00907E8A /* ToDestinationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDestinationModelTests.swift; sourceTree = "<group>"; };
 		A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirestoreRepositoryImpl.swift; sourceTree = "<group>"; };
+		A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalCacheRepositoryImpl.swift; sourceTree = "<group>"; };
 		A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarModelImple.swift; sourceTree = "<group>"; };
 		A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		A51894B425F3B47500D9792C /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
@@ -1002,6 +1004,7 @@
 			isa = PBXGroup;
 			children = (
 				A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */,
+				A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */,
 				A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */,
 				A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */,
 			);
@@ -1419,6 +1422,7 @@
 				A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */,
 				A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */,
 				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,
+				A5126549276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift in Sources */,
 				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
 				A52B91F7261DCE5300811FD1 /* TabBarModelTests.swift in Sources */,
 				A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */,
