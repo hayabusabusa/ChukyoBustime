@@ -64,7 +64,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
     private let destination: BusDestination
     private let firestoreRepository: FirestoreRepository
     private let localCacheRepository: LocalCacheRepository
-    private let remoteConfigProvider: RemoteConfigProvider
+    private let remoteConfigProvider: RemoteConfigProviderProtocol
     
     // MARK: Properties
     
@@ -90,7 +90,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
     init(for destination: BusDestination,
          firestoreRepository: FirestoreRepository = FirestoreRepositoryImpl(),
          localCacheRepository: LocalCacheRepository = LocalCacheRepositoryImpl(),
-         remoteConfigProvider: RemoteConfigProvider = RemoteConfigProvider.shared) {
+         remoteConfigProvider: RemoteConfigProviderProtocol = RemoteConfigProvider.shared) {
         self.destination = destination
         self.firestoreRepository = firestoreRepository
         self.localCacheRepository = localCacheRepository
