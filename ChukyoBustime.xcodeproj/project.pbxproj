@@ -48,7 +48,6 @@
 		717D148524511F61003944DB /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148424511F61003944DB /* TabBarModel.swift */; };
 		717D148824512149003944DB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717D148724512149003944DB /* TabBarViewModel.swift */; };
 		717F0D7523EEFB6700354AC4 /* RemoteConfigError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */; };
-		71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC023EB101E00132A7D /* ToCollegeModel.swift */; };
 		71910BC423EB116200132A7D /* ToCollegeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71910BC323EB116200132A7D /* ToCollegeViewModel.swift */; };
 		71A329D823DF0E4A00EB7A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */; };
 		71A329E723E04FB700EB7A55 /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A329E523E04FB700EB7A55 /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -280,7 +279,6 @@
 		717D148424511F61003944DB /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		717D148724512149003944DB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
-		71910BC023EB101E00132A7D /* ToCollegeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeModel.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
 		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		71A329E323E04FB700EB7A55 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -591,14 +589,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		71910BBF23EB100300132A7D /* ToCollege */ = {
-			isa = PBXGroup;
-			children = (
-				71910BC023EB101E00132A7D /* ToCollegeModel.swift */,
-			);
-			path = ToCollege;
-			sourceTree = "<group>";
-		};
 		71910BC223EB113200132A7D /* ToCollege */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,7 +862,6 @@
 				717D148424511F61003944DB /* TabBarModel.swift */,
 				A586C0AE27116275000FA647 /* ToDestinationModel.swift */,
 				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
-				71910BBF23EB100300132A7D /* ToCollege */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1489,7 +1478,6 @@
 				71039739244A06A100997DBD /* StateViewType.swift in Sources */,
 				A42D0DCA23E1666B00E95FED /* TabBarController.swift in Sources */,
 				A42D0DBC23E15C2200E95FED /* SafariViewController.swift in Sources */,
-				71910BC123EB101E00132A7D /* ToCollegeModel.swift in Sources */,
 				A42D0DBF23E15CF500E95FED /* UIColor+Extension.swift in Sources */,
 				71F660CB244941DA00E1DA90 /* StateViewable.swift in Sources */,
 				71536D6C23F17E1B004A330C /* PDFButtonsModel.swift in Sources */,
