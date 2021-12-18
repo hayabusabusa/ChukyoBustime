@@ -128,7 +128,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
             .getBusTimes(at: date, destination: destination)
             .flatMap { value -> Single<(busDate: BusDate, busTimes: [BusTime])> in
                 // NOTE: キャッシュを保存して完了した後にFirestoreから取得したものを流す.
-                return self.localCacheRepository.saveCache(of: .toStation, date: date, busDate: value.busDate, busTimes: value.busTimes)
+                return self.localCacheRepository.saveCache(of: self.destination, date: date, busDate: value.busDate, busTimes: value.busTimes)
                     .andThen(Single.just((busDate: value.busDate, busTimes: value.busTimes)))
                     .translate(BusDateAndBusTimesTranslator())
             }
