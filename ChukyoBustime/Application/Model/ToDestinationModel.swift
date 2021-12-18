@@ -18,8 +18,11 @@ protocol ToDestinationModel: AnyObject {
     /// ロード中かどうかを流す `Observable<Bool>`
     var isLoadingStream: Observable<Bool> { get }
     
-    /// 発生したエラーを流す `Observable<Error>`
-    var errorStream: Observable<Error> { get }
+    /// 発生したエラーを流す `Observable<Error?>`
+    ///
+    /// ViewModel 側で `StateView.State` に変換する際に `combineLatest()` で合成したいので、
+    /// 初期値を持たせるために `BehaviorRelay<Error?>`にするので `Observable<Error?>` にしている.
+    var errorStream: Observable<Error?> { get }
     
     /// ダイヤ名を流す `Observable<String>`
     ///
@@ -67,7 +70,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
     
     private let disposeBag = DisposeBag()
     private let isLoadingRelay: BehaviorRelay<Bool>
-    private let errorRelay: PublishRelay<Error>
+    private let errorRelay: BehaviorRelay<Error?>
     private let diagramRelay: BehaviorRelay<String>
     private let busTimesRelay: BehaviorRelay<[BusTime]>
     private let calendarPDFURLRelay: PublishRelay<String>
@@ -76,7 +79,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
     // MARK: Output
     
     let isLoadingStream: Observable<Bool>
-    let errorStream: Observable<Error>
+    let errorStream: Observable<Error?>
     let countupRelay: PublishRelay<Void>
     let diagramStream: Observable<String>
     let busTimesStream: Observable<[BusTime]>
@@ -95,7 +98,7 @@ final class ToDestinationModelImpl: ToDestinationModel {
         
         self.isLoadingRelay = .init(value: true)
         self.isLoadingStream = isLoadingRelay.asObservable()
-        self.errorRelay = .init()
+        self.errorRelay = .init(value: nil)
         self.errorStream = errorRelay.asObservable()
         self.countupRelay = .init()
         self.diagramRelay = .init(value: "")
@@ -130,12 +133,12 @@ final class ToDestinationModelImpl: ToDestinationModel {
                     .translate(BusDateAndBusTimesTranslator())
             }
             .subscribe(onSuccess: { [weak self] value in
-                self?.isLoadingRelay.accept(false)
                 self?.busTimesRelay.accept(value.busTimes)
                 self?.diagramRelay.accept(value.busDate.diagramName)
-            }, onFailure: { [weak self] error in
                 self?.isLoadingRelay.accept(false)
+            }, onFailure: { [weak self] error in
                 self?.errorRelay.accept(error)
+                self?.isLoadingRelay.accept(false)
             })
             .disposed(by: disposeBag)
     }
