@@ -174,4 +174,39 @@ class ToDestinationModelTests: XCTestCase {
             XCTAssertEqual(testableObserver.events, expected)
         }
     }
+    
+    func test_PDFのURL取得の動作を確認() {
+        let disposeBag = DisposeBag()
+        
+        XCTContext.runActivity(named: "PDF の種類に応じた URL を取得できること") { _ in
+            let busDate = Stub.busDateEntity
+            let busTimes = Stub.createBusTimeEntities(count: 1)
+            let firestoreRepository = MockFirestoreRepositoryImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
+            let localCacheRepository = MockLocalCacheRepositoryImpl()
+            let remoteConfigProvider = MockRemoteConfigProvider()
+            let model = ToDestinationModelImpl(for: .toStation,
+                                               firestoreRepository: firestoreRepository,
+                                               localCacheRepository: localCacheRepository,
+                                               remoteConfigProvider: remoteConfigProvider)
+            
+            let scheduler = TestScheduler(initialClock: 0)
+            let testableObserver = scheduler.createObserver(String.self)
+            
+            model.pdfURLStream
+                .subscribe(testableObserver)
+                .disposed(by: disposeBag)
+            
+            scheduler.scheduleAt(100) {
+                model.getPDFURL(for: .calendar)
+            }
+            
+            scheduler.start()
+            
+            let expected = Recorded.events([
+                .next(100, Stub.pdfURL.calendar)
+            ])
+            
+            XCTAssertEqual(testableObserver.events, expected)
+        }
+    }
 }
