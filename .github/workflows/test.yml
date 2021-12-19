@@ -6,7 +6,7 @@ on:
     branches: [ develop ]
 
 jobs:
-  build:
+  test:
 
     runs-on: macos-latest
 
@@ -63,8 +63,8 @@ jobs:
     - name: Install Carthage frameworks
       run: carthage bootstrap --platform iOS --cache-builds --no-use-binaries --use-xcframeworks
 
-    # 10. App Store Connect に ipa をアップロード
-    - name: Upload a new build to App Store Connect
+    # 10. Unit test を実行
+    - name: Run unit test
       env:
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
