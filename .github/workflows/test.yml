@@ -1,8 +1,9 @@
-name: Swift
+name: Test
 
 on:
-  push:
-    branches: [ master ]
+  pull_request:
+    types: [ opened, synchronize ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -72,4 +73,4 @@ jobs:
         CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         APPLE_ID: ${{ secrets.APPLE_ID }}
       run: |
-        fastlane release
+        fastlane unit_test

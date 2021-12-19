@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    # 1. ソースのチェックアウト
+    - uses: actions/checkout@v2
+
+    # 2. GoogleService-info.plist を Secrets から取得
+    - name: Setup GoogleService-info.plist
+      run: |
+        echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > GoogleService-Info.plist.txt
+        base64 --decode GoogleService-Info.plist.txt > Firebase/GoogleService-Info.plist
+
+    # 3. 証明書を Secrets から取得
+    - name: Setup p12 certificate file
+      run: |
+        echo "${{ secrets.CERTIFICATE }}" > distribution.p12.txt
+        base64 --decode distribution.p12.txt > distribution.p12
+
+    # 4. アプリ本体用のプロファイルを Secrets から取得
+    - name: Setup iOS app provisioning profile
+      run: |
+        echo "${{ secrets.IOS_APP_PROVISIONING_PROFILE }}" > ios_app_distribution.mobileprovision.txt
+        base64 --decode ios_app_distribution.mobileprovision.txt > ios_app_distribution.mobileprovision
+
+    # 5. ウィジェット用のプロファイルを Secrets から取得
+    - name: Setup Today extension provisioning profile
+      run: |
+        echo "${{ secrets.TODAY_EXTENSION_PROVISIONING_PROFILE }}" > today_extension_distribution.mobileprovision.txt
+        base64 --decode today_extension_distribution.mobileprovision.txt > today_extension_distribution.mobileprovision
+
+    # 6. CocoaPods のキャッシュの設定
+    - uses: actions/cache@v2
+      with: 
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+
+    # 7. キャッシュから Pods ファイルを取得、なければそのまま pod install して自前ビルド
+    - name: Install CocoaPods frameworks and build with custom scripts
+      if: steps.cache-cocoapods.outputs.cache-hit != 'true'
+      run: pod install && sh Scripts/pods_build.sh
+
+    # 8. Carthage のキャッシュの設定
+    - uses: actions/cache@v2
+      with:
+        path: Carthage
+        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-carthage-
+
+    # 9. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage bootstrap
+    - name: Install Carthage frameworks
+      run: carthage bootstrap --platform iOS --cache-builds --no-use-binaries --use-xcframeworks
+
+    # 10. App Store Connect に ipa をアップロード
+    - name: Upload a new build to App Store Connect
+      env:
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+        KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+        APPLE_ID: ${{ secrets.APPLE_ID }}
+      run: |
+        fastlane release
