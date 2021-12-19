@@ -21,7 +21,8 @@ jobs:
         base64 --decode GoogleService-Info.plist.txt > Firebase/GoogleService-Info.plist
 
     # 3. CocoaPods のキャッシュの設定
-    - uses: actions/cache@v2
+    - id: cache-cocoapods
+      uses: actions/cache@v2
       with: 
         path: Pods
         key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
