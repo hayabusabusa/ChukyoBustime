@@ -50,3 +50,10 @@ jobs:
     - name: Run unit test
       run: |
         fastlane unit_test
+
+    # 8. Unit test の結果を GitHub Action に表示
+    - name: Post unit test result bundle
+      uses: kishikawakatsumi/xcresulttool@v1
+      with:
+        path: TestResults.xcresult
+      if: success() || failure()
