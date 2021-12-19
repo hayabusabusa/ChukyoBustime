@@ -130,8 +130,6 @@
 		A54330C8276EE13000B63CA6 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; };
 		A54330CB276EE13E00B63CA6 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; };
 		A54330CC276EE13E00B63CA6 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A54330CE276EE61F00B63CA6 /* RxCocoaRuntime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330CD276EE61F00B63CA6 /* RxCocoaRuntime.xcframework */; };
-		A54330CF276EE61F00B63CA6 /* RxCocoaRuntime.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A54330CD276EE61F00B63CA6 /* RxCocoaRuntime.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
@@ -220,7 +218,6 @@
 				71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */,
 				A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */,
 				A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */,
-				A54330CF276EE61F00B63CA6 /* RxCocoaRuntime.xcframework in Embed Frameworks */,
 				A54330CC276EE13E00B63CA6 /* Realm.xcframework in Embed Frameworks */,
 				A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */,
 				A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */,
@@ -432,7 +429,6 @@
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
 				A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */,
 				A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */,
-				A54330CE276EE61F00B63CA6 /* RxCocoaRuntime.xcframework in Frameworks */,
 				A54330CB276EE13E00B63CA6 /* Realm.xcframework in Frameworks */,
 				A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */,
 				A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */,
@@ -1745,7 +1741,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
