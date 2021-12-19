@@ -50,7 +50,7 @@ platform :ios do
   lane :unit_test do
     run_tests(
       scheme: "ChukyoBustime", 
-      result_bundle: "TestResults"
+      result_bundle: true
     )
   end
 
