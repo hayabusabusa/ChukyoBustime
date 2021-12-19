@@ -89,7 +89,6 @@
 		A42D0DED23E17FA700E95FED /* DiagramViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */; };
 		A42D0DF023E186FD00E95FED /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */; };
 		A42D0DF223E1873700E95FED /* CountdownViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */; };
-		A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */; };
 		A4A7393723E3B4B600F7C1A9 /* ToStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */; };
 		A4A7393923E3B4F700F7C1A9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */; };
 		A4A7393D23E3BDE400F7C1A9 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7393C23E3BDE400F7C1A9 /* Translator.swift */; };
@@ -115,6 +114,9 @@
 		A50AF4AB25E7F6F70003164A /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4AA25E7F6F70003164A /* MockError.swift */; };
 		A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AF4AE25E7FA5B0003164A /* BusListViewModelTests.swift */; };
 		A511F04A24A4DCE800DDD4AC /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A329E323E04FB700EB7A55 /* Infra.framework */; };
+		A512653D276DC1DD00907E8A /* ToDestinationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A512653C276DC1DD00907E8A /* ToDestinationModelTests.swift */; };
+		A5126541276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */; };
+		A5126549276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */; };
 		A518949825EFE09B00D9792C /* MockTabBarModelImple.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */; };
 		A518949C25EFE13C00D9792C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */; };
 		A51894B525F3B47500D9792C /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894B425F3B47500D9792C /* Stub.swift */; };
@@ -326,7 +328,6 @@
 		A42D0DEC23E17FA700E95FED /* DiagramViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiagramViewController.storyboard; sourceTree = "<group>"; };
 		A42D0DEF23E186FD00E95FED /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		A42D0DF123E1873700E95FED /* CountdownViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountdownViewController.storyboard; sourceTree = "<group>"; };
-		A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationModel.swift; sourceTree = "<group>"; };
 		A4A7393623E3B4B600F7C1A9 /* ToStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToStationViewModel.swift; sourceTree = "<group>"; };
 		A4A7393823E3B4F700F7C1A9 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		A4A7393C23E3BDE400F7C1A9 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
@@ -354,6 +355,9 @@
 		A50AF4AA25E7F6F70003164A /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		A50AF4AE25E7FA5B0003164A /* BusListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusListViewModelTests.swift; sourceTree = "<group>"; };
 		A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayRelease.entitlements; sourceTree = "<group>"; };
+		A512653C276DC1DD00907E8A /* ToDestinationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDestinationModelTests.swift; sourceTree = "<group>"; };
+		A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirestoreRepositoryImpl.swift; sourceTree = "<group>"; };
+		A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalCacheRepositoryImpl.swift; sourceTree = "<group>"; };
 		A518949725EFE09B00D9792C /* MockTabBarModelImple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarModelImple.swift; sourceTree = "<group>"; };
 		A518949B25EFE13C00D9792C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		A51894B425F3B47500D9792C /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
@@ -805,7 +809,6 @@
 				71536D7923F43521004A330C /* SettingModel.swift */,
 				717D148424511F61003944DB /* TabBarModel.swift */,
 				A586C0AE27116275000FA647 /* ToDestinationModel.swift */,
-				A4A7393223E3B30E00F7C1A9 /* ToStationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1000,6 +1003,8 @@
 		A57AFEEC25FC92B70006CFE0 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				A5126540276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift */,
+				A5126548276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift */,
 				A57AFEED25FC92CE0006CFE0 /* MockRemoteConfigProvider.swift */,
 				A5AA4E0D25FE04520078423D /* MockUserNotificationRepositoryImpl.swift */,
 			);
@@ -1028,6 +1033,7 @@
 				A57AFEF325FC99310006CFE0 /* RootModelTests.swift */,
 				A57AFF0125FCC5D50006CFE0 /* SettingModelTests.swift */,
 				A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */,
+				A512653C276DC1DD00907E8A /* ToDestinationModelTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1357,7 +1363,6 @@
 				71536D6823F17922004A330C /* UIViewController+Rx.swift in Sources */,
 				A42D0DB923E13B7000E95FED /* UIScrollView+Rx.swift in Sources */,
 				717D148824512149003944DB /* TabBarViewModel.swift in Sources */,
-				A4A7393323E3B30E00F7C1A9 /* ToStationModel.swift in Sources */,
 				71536D7623F4216A004A330C /* SettingItemCell.swift in Sources */,
 				71FF5C1A23E1B6BF00456D75 /* BusListViewController.swift in Sources */,
 				717D148224511D35003944DB /* Configurations.swift in Sources */,
@@ -1417,10 +1422,12 @@
 				A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */,
 				A50AF4AF25E7FA5B0003164A /* BusListViewModelTests.swift in Sources */,
 				A5E0603325D4C26100DCB7EB /* DiagramViewModelTests.swift in Sources */,
+				A5126549276DC79000907E8A /* MockLocalCacheRepositoryImpl.swift in Sources */,
 				A5DA4BF225D165C400BC4F96 /* MockRootModelImpl.swift in Sources */,
 				A52B91F7261DCE5300811FD1 /* TabBarModelTests.swift in Sources */,
 				A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */,
 				A5AA4E1425FE05C60078423D /* BusListModelTests.swift in Sources */,
+				A5126541276DC4A400907E8A /* MockFirestoreRepositoryImpl.swift in Sources */,
 				A5DA4BF725D1664100BC4F96 /* RootViewModelTests.swift in Sources */,
 				A51894DB25F4A93100D9792C /* SettingViewModelTests.swift in Sources */,
 				A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */,
@@ -1430,6 +1437,7 @@
 				A5AA4E0E25FE04520078423D /* MockUserNotificationRepositoryImpl.swift in Sources */,
 				A51894B525F3B47500D9792C /* Stub.swift in Sources */,
 				A57AFEF425FC99310006CFE0 /* RootModelTests.swift in Sources */,
+				A512653D276DC1DD00907E8A /* ToDestinationModelTests.swift in Sources */,
 				A51894CF25F4966A00D9792C /* ToCollegeViewModelTests.swift in Sources */,
 				A5B081822619AA7000493905 /* PDFButtonsModelTests.swift in Sources */,
 				A50AF4A525E7F4390003164A /* MockBusListModelImpl.swift in Sources */,

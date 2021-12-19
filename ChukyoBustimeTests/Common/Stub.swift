@@ -7,14 +7,32 @@
 //
 
 import Foundation
-import Infra
 import SwiftDate
+
+@testable import Infra
 @testable import ChukyoBustime
 
 enum Stub {
     static let pdfURL = PdfUrl(calendar: "http://example.com", timeTable: "http://example.org")
     static let pdfURLEntity = RCPdfUrlEntity(calendar: "http://example.com", timeTable: "http://example.org")
+    static let busDateEntity = BusDateEntity(diagram: "TEST", diagramName: "TEST")
     static let busDate = BusDate(diagramName: "TEST")
+    
+    static func createBusTimeEntities(count: Int, interval: Int = 1) -> [BusTimeEntity] {
+        let now = Self.now()
+        let entities = (1 ... count).map {
+            BusTimeEntity(hour: now.dateInRegion.hour,
+                          minute: now.dateInRegion.minute,
+                          second: now.dateInRegion.second + interval * $0,
+                          arrivalHour: now.dateInRegion.hour,
+                          arrivalMinute: now.dateInRegion.minute,
+                          arrivalSecond: now.dateInRegion.second,
+                          isReturn: false,
+                          isLast: false,
+                          isKaizu: false)
+        }
+        return entities
+    }
     
     static func createBusTime(isReturn: Bool = false, isLast: Bool = false, isKaizu: Bool = false, interval: Int = 1) -> BusTime {
         let now = Self.now()
@@ -59,8 +77,11 @@ enum Stub {
             ])
         ]
     }
+}
+
+private extension Stub {
     
-    static private func now() -> (dateInRegion: DateInRegion, second: Int) {
+    static func now() -> (dateInRegion: DateInRegion, second: Int) {
         let nowDateInRegion = DateInRegion(Date(), region: .current)
         let second = nowDateInRegion.hour * 3600 + nowDateInRegion.minute * 60 + nowDateInRegion.second
         return (nowDateInRegion, second)
