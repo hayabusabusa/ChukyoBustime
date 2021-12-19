@@ -370,7 +370,6 @@
 		A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 		A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModelTests.swift; sourceTree = "<group>"; };
 		A54330C7276EE13000B63CA6 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
-		A54330CD276EE61F00B63CA6 /* RxCocoaRuntime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoaRuntime.xcframework; path = Carthage/Build/RxCocoaRuntime.xcframework; sourceTree = "<group>"; };
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -958,7 +957,6 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A54330CD276EE61F00B63CA6 /* RxCocoaRuntime.xcframework */,
 				A54330C7276EE13000B63CA6 /* Realm.xcframework */,
 				A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */,
 				A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */,
