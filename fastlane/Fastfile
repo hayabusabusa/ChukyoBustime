@@ -46,6 +46,14 @@ platform :ios do
     install_provisioning_profile(path: "today_extension_distribution.mobileprovision")
   end
 
+  desc "Run unit tests"
+  lane :unit_test do
+    run_tests(
+      scheme: "ChukyoBustime", 
+      result_bundle: true
+    )
+  end
+
   desc "Upload a new build to App Store"
   lane :release do
     import_certificates_and_provisioning_profile

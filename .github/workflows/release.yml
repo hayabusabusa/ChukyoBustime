@@ -1,11 +1,11 @@
-name: Swift
+name: Release
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  build:
+  release:
 
     runs-on: macos-latest
 
@@ -38,7 +38,8 @@ jobs:
         base64 --decode today_extension_distribution.mobileprovision.txt > today_extension_distribution.mobileprovision
 
     # 6. CocoaPods のキャッシュの設定
-    - uses: actions/cache@v2
+    - id: cache-cocoapods
+      uses: actions/cache@v2
       with: 
         path: Pods
         key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
@@ -58,9 +59,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-carthage-
 
-    # 9. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage update
+    # 9. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage bootstrap
     - name: Install Carthage frameworks
-      run: carthage bootstrap --platform iOS --cache-builds
+      run: carthage bootstrap --platform iOS --cache-builds --no-use-binaries --use-xcframeworks
 
     # 10. App Store Connect に ipa をアップロード
     - name: Upload a new build to App Store Connect

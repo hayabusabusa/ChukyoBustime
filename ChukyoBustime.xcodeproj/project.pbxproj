@@ -127,9 +127,11 @@
 		A51894D525F4A15E00D9792C /* MockSettingModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */; };
 		A51894DB25F4A93100D9792C /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */; };
 		A52B91F7261DCE5300811FD1 /* TabBarModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */; };
+		A54330C8276EE13000B63CA6 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; };
+		A54330CB276EE13E00B63CA6 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; };
+		A54330CC276EE13E00B63CA6 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A54330C7276EE13000B63CA6 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5825CFB9570064A295 /* SwiftDate.xcframework */; };
 		A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
-		A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
 		A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5A25CFB9570064A295 /* RxRelay.xcframework */; };
 		A55A388125E687B100D4DC90 /* MockPDFButtonsModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388025E687B100D4DC90 /* MockPDFButtonsModelImpl.swift */; };
 		A55A388525E688EE00D4DC90 /* PDFButtonsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A388425E688EE00D4DC90 /* PDFButtonsViewModelTests.swift */; };
@@ -143,8 +145,6 @@
 		A5AD81DF26551DD2003CF30B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5C25CFB9570064A295 /* RxSwift.xcframework */; };
 		A5B0817E2619A6C700493905 /* PDFURLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0817D2619A6C700493905 /* PDFURLType.swift */; };
 		A5B081822619AA7000493905 /* PDFButtonsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B081812619AA7000493905 /* PDFButtonsModelTests.swift */; };
-		A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
-		A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D278B4241F0E280087B373 /* Realm.framework */; };
 		A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; };
 		A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A555CC5925CFB9570064A295 /* RxCocoa.xcframework */; };
@@ -218,6 +218,7 @@
 				71A329EB23E04FB700EB7A55 /* Infra.framework in Embed Frameworks */,
 				A5DA4BAE25D152E100BC4F96 /* RxRelay.xcframework in Embed Frameworks */,
 				A5DA4BB225D152E100BC4F96 /* SwiftDate.xcframework in Embed Frameworks */,
+				A54330CC276EE13E00B63CA6 /* Realm.xcframework in Embed Frameworks */,
 				A5DA4BAA25D152E100BC4F96 /* RealmSwift.xcframework in Embed Frameworks */,
 				A5DA4BAC25D152E100BC4F96 /* RxCocoa.xcframework in Embed Frameworks */,
 			);
@@ -368,6 +369,7 @@
 		A51894D425F4A15E00D9792C /* MockSettingModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingModelImpl.swift; sourceTree = "<group>"; };
 		A51894DA25F4A93100D9792C /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 		A52B91F6261DCE5300811FD1 /* TabBarModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModelTests.swift; sourceTree = "<group>"; };
+		A54330C7276EE13000B63CA6 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		A555CC5825CFB9570064A295 /* SwiftDate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftDate.xcframework; path = Carthage/Build/SwiftDate.xcframework; sourceTree = "<group>"; };
 		A555CC5925CFB9570064A295 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		A555CC5A25CFB9570064A295 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -410,12 +412,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5DA4A9425CFFFD200BC4F96 /* Realm.framework in Frameworks */,
 				A555CC7425CFB99B0064A295 /* SwiftDate.xcframework in Frameworks */,
 				A555CC7B25CFB99B0064A295 /* RxRelay.xcframework in Frameworks */,
 				A5AD81DF26551DD2003CF30B /* RxSwift.xcframework in Frameworks */,
 				A555CC7525CFB99B0064A295 /* RealmSwift.xcframework in Frameworks */,
-				A555CC7625CFB99B0064A295 /* RxCocoa.xcframework in Frameworks */,
+				A54330C8276EE13000B63CA6 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +425,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DA4BAB25D152E100BC4F96 /* RxCocoa.xcframework in Frameworks */,
-				A5DA4A9325CFFFD100BC4F96 /* Realm.framework in Frameworks */,
 				71A329EA23E04FB700EB7A55 /* Infra.framework in Frameworks */,
 				A5DA4BAF25D152E100BC4F96 /* RxSwift.xcframework in Frameworks */,
 				A5DA4BA925D152E100BC4F96 /* RealmSwift.xcframework in Frameworks */,
+				A54330CB276EE13E00B63CA6 /* Realm.xcframework in Frameworks */,
 				A5DA4BB125D152E100BC4F96 /* SwiftDate.xcframework in Frameworks */,
 				A5DA4BAD25D152E100BC4F96 /* RxRelay.xcframework in Frameworks */,
 			);
@@ -956,6 +957,7 @@
 		A4B03EFC23DE8A960069F7E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A54330C7276EE13000B63CA6 /* Realm.xcframework */,
 				A555CC5D25CFB9570064A295 /* RealmSwift.xcframework */,
 				A555CC5F25CFB9580064A295 /* RxBlocking.xcframework */,
 				A555CC5925CFB9570064A295 /* RxCocoa.xcframework */,
@@ -1113,7 +1115,6 @@
 				A4B03E7E23DE7CAB0069F7E8 /* Resources */,
 				A4B03EF023DE861E0069F7E8 /* Embed Frameworks */,
 				71A32A5923E05DA400EB7A55 /* Copy Dynamic Frameworks */,
-				A57F696425CFE616000D0528 /* Carthage */,
 				71FF5C1D23E1E8B400456D75 /* Crashlytics */,
 				715D9A522420A8ED0018F526 /* Embed App Extensions */,
 			);
@@ -1284,25 +1285,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		A57F696425CFE616000D0528 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1757,7 +1739,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ChukyoBustime/ChukyoBustimeDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7NJH5NAV4T;
