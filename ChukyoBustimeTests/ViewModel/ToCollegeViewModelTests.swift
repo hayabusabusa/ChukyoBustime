@@ -18,9 +18,9 @@ class ToCollegeViewModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let testableObserver = scheduler.createObserver(StateView.State.self)
         
-        let busDate = Mock.busDate
-        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let busDate = Stub.busDate
+        let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -37,6 +37,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.none)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -47,9 +48,9 @@ class ToCollegeViewModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let testableObserver = scheduler.createObserver(StateView.State.self)
         
-        let busDate = Mock.busDate
-        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
+        let busDate = Stub.busDate
+        let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes, isErrorOccured: true)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -66,6 +67,7 @@ class ToCollegeViewModelTests: XCTestCase {
         
         let expression = Recorded.events([
             .next(100, StateView.State.loading),
+            .next(200, StateView.State.loading),
             .next(200, StateView.State.error)
         ])
         XCTAssertEqual(testableObserver.events, expression)
@@ -77,9 +79,9 @@ class ToCollegeViewModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let testableObserver = scheduler.createObserver(StateView.State.self)
         
-        let busDate = Mock.busDate
-        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let busDate = Stub.busDate
+        let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         scheduler.scheduleAt(100) {
@@ -117,9 +119,9 @@ class ToCollegeViewModelTests: XCTestCase {
         let scheduler = TestScheduler(initialClock: 0)
         let testableObserver = scheduler.createObserver(Bool.self)
         
-        let busDate = Mock.busDate
-        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let busDate = Stub.busDate
+        let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         viewModel.output.presentSetting
@@ -143,13 +145,13 @@ class ToCollegeViewModelTests: XCTestCase {
         let disposeBag = DisposeBag()
         
         
-        let busDate = Mock.busDate
-        let busTimes = Mock.createBusTimes(count: 1, interval: 1)
-        let model = MockToCollegeModelImpl(busDate: busDate, busTimes: busTimes)
+        let busDate = Stub.busDate
+        let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+        let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
         let viewModel = ToCollegeViewModel(model: model)
         
         XCTContext.runActivity(named: "カレンダーボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in
-            let url = URL(string: Mock.pdfURL.calendar)!
+            let url = URL(string: Stub.pdfURL.calendar)!
             let scheduler = TestScheduler(initialClock: 0)
             let testableObserver = scheduler.createObserver(URL.self)
             
@@ -170,7 +172,7 @@ class ToCollegeViewModelTests: XCTestCase {
         }
         
         XCTContext.runActivity(named: "時刻表ボタンタップ時にはカレンダーのPDFを表示するイベントが流れること") { _ in
-            let url = URL(string: Mock.pdfURL.timeTable)!
+            let url = URL(string: Stub.pdfURL.timeTable)!
             let scheduler = TestScheduler(initialClock: 0)
             let testableObserver = scheduler.createObserver(URL.self)
             

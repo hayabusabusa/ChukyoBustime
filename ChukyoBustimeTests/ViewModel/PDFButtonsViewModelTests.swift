@@ -14,7 +14,7 @@ import RxTest
 class PDFButtonsViewModelTests: XCTestCase {
 
     func test_カレンダーボタンを押した際にURLが流れてくることを確認() {
-        let url = URL(string: Mock.pdfURL.calendar)!
+        let url = URL(string: Stub.pdfURL.calendar)!
         let model = MockPDFButtonsModelImpl()
         let viewModel = PdfButtonsViewModel(model: model)
         let disposeBag = DisposeBag()
@@ -41,7 +41,7 @@ class PDFButtonsViewModelTests: XCTestCase {
     }
     
     func test_時刻表ボタンを押した際にURLが流れてくることを確認() {
-        let url = URL(string: Mock.pdfURL.timeTable)!
+        let url = URL(string: Stub.pdfURL.timeTable)!
         let model = MockPDFButtonsModelImpl()
         let viewModel = PdfButtonsViewModel(model: model)
         let disposeBag = DisposeBag()
@@ -59,10 +59,16 @@ class PDFButtonsViewModelTests: XCTestCase {
             viewModel.input.timeTableButtonTapped()
         }
         
+        // NOTE: 2回目のタップも動作するか確認
+        scheduler.scheduleAt(300) {
+            viewModel.input.timeTableButtonTapped()
+        }
+        
         scheduler.start()
         
         let expression = Recorded.events([
-            .next(200, url)
+            .next(200, url),
+            .next(300, url)
         ])
         XCTAssertEqual(testableObserver.events, expression)
     }
