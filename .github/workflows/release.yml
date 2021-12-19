@@ -38,7 +38,8 @@ jobs:
         base64 --decode today_extension_distribution.mobileprovision.txt > today_extension_distribution.mobileprovision
 
     # 6. CocoaPods のキャッシュの設定
-    - uses: actions/cache@v2
+    - id: cache-cocoapods
+      uses: actions/cache@v2
       with: 
         path: Pods
         key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
