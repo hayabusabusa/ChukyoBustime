@@ -9,9 +9,22 @@
 import XCTest
 import RxSwift
 import RxTest
+
 @testable import ChukyoBustime
 
 class ToStationViewModelTests: XCTestCase {
+    
+    func test_初期状態が正しいことを確認() {
+        XCTContext.runActivity(named: "行き先が正しく Child View Model に伝わっていること") { _ in
+            let busDate = Stub.busDate
+            let busTimes = Stub.createBusTimes(count: 1, interval: 1)
+            let model = MockToDestinationModelImpl(busDate: busDate, busTimes: busTimes)
+            let viewModel = ToStationViewModel(model: model)
+            
+            XCTAssertEqual(viewModel.childViewModels.busListViewModel.destination, Destination.station)
+            XCTAssertEqual(viewModel.childViewModels.countdownViewModel.dependency.destination, Destination.station)
+        }
+    }
     
     func test_正常系の動作でStateの変化が正しいことを確認() {
         let disposeBag = DisposeBag()
