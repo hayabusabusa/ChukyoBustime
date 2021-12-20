@@ -1808,7 +1808,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1837,7 +1837,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = ChukyoBustimeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
