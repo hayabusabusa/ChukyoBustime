@@ -81,8 +81,8 @@ final class ToCollegeViewModel: ToCollegeViewModelInputs, ToCollegeViewModelOutp
         let busTimesStream = model.busTimesStream.asDriver(onErrorDriveWith: .empty())
         let countupRelay = model.countupRelay
         let diagramViewModel = DiagramViewModel(dependency: .init(diagramNameDriver: diagramStream))
-        let busListViewModel = BusListViewModel(dependency: .init(destination: .station, busTimes: busTimesStream, model: BusListModelImpl()))
-        let countdownViewModel = CountdownViewModel(dependency: .init(busTimes: busTimesStream, destination: .station, countupRelay: countupRelay))
+        let busListViewModel = BusListViewModel(dependency: .init(destination: .college, busTimes: busTimesStream, model: BusListModelImpl()))
+        let countdownViewModel = CountdownViewModel(dependency: .init(busTimes: busTimesStream, destination: .college, countupRelay: countupRelay))
         childViewModels = ChildViewModels(diagramViewModel: diagramViewModel, busListViewModel: busListViewModel, countdownViewModel: countdownViewModel)
         
         state = Observable
