@@ -49,7 +49,7 @@ jobs:
     # 7. Unit test を Fastlane で実行
     - name: Run unit test
       run: |
-        fastlane unit_test --verbose
+        fastlane unit_test
 
     # 8. Unit test の結果を GitHub Action に表示
     - name: Post unit test result bundle
