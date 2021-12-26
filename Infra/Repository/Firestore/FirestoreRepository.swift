@@ -34,9 +34,9 @@ public struct FirestoreRepositoryImpl: FirestoreRepository {
     
     public func getBusTimes(at date: Date, destination: BusDestination) -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> {
         // NOTE: デフォルトの `Date` は GMT で設定されているため、9時間ずれる.
-        // SwiftDate の `DateInRegion` で日本の日付にした上で YYYY-MM-dd のフォーマットにする.
+        // SwiftDate の `DateInRegion` で日本の日付にした上で yyyy-MM-dd のフォーマットにする.
         let dateInRegion = DateInRegion(date, region: .current)
-        return provider.getBusDate(at: dateInRegion.toFormat("YYYY-MM-dd"))
+        return provider.getBusDate(at: dateInRegion.toFormat("yyyy-MM-dd"))
             .flatMap { busDate -> Single<(busDate: BusDateEntity, busTimes: [BusTimeEntity])> in
                 let second = dateInRegion.hour * 3600 + dateInRegion.minute * 60 + dateInRegion.second
                 return self.provider.getBusTimes(at: busDate, destination: destination, second: second)

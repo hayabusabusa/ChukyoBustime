@@ -49,12 +49,12 @@ public struct LocalCacheRepositoryImpl: LocalCacheRepository {
     ///   - busTimes: 保存する`BusTimeEntity`のオブジェクト配列.
     private func overwriteStationLocalCache(date: Date, busDate: BusDateEntity, busTimes: [BusTimeEntity]) -> Completable {
         // NOTE: デフォルトの `Date` は GMT で設定されているため、9時間ずれる.
-        // SwiftDate の `DateInRegion` で日本の日付にした上で YYYY-MM-dd のフォーマットにする.
+        // SwiftDate の `DateInRegion` で日本の日付にした上で yyyy-MM-dd のフォーマットにする.
         let dateInRegion = DateInRegion(date, region: .current)
         return provider.get(StationLocalCache.self)
             .flatMapCompletable { object -> Completable in
                 // NOTE: 既にキャッシュを保存済みかどうかをチェック、正しくリレーションされているかどうかも確認
-                let newCache = StationLocalCache(lastUpdatedDate: dateInRegion.toFormat("YYYY-MM-dd"), busDate: busDate, busTimes: busTimes)
+                let newCache = StationLocalCache(lastUpdatedDate: dateInRegion.toFormat("yyyy-MM-dd"), busDate: busDate, busTimes: busTimes)
                 guard let object = object,
                     let relatedBusDate = object.busDate else {
                     return self.provider.save(newCache)
@@ -75,12 +75,12 @@ public struct LocalCacheRepositoryImpl: LocalCacheRepository {
     ///   - busTimes: 保存する`BusTimeEntity`のオブジェクト配列.
     private func overwriteCollegeLocalCache(date: Date, busDate: BusDateEntity, busTimes: [BusTimeEntity]) -> Completable {
         // NOTE: デフォルトの `Date` は GMT で設定されているため、9時間ずれる.
-        // SwiftDate の `DateInRegion` で日本の日付にした上で YYYY-MM-dd のフォーマットにする.
+        // SwiftDate の `DateInRegion` で日本の日付にした上で yyyy-MM-dd のフォーマットにする.
         let dateInRegion = DateInRegion(date, region: .current)
         return provider.get(CollegeLocalCache.self)
             .flatMapCompletable { object -> Completable in
                 // NOTE: 既にキャッシュを保存済みかどうかをチェック、正しくリレーションされているかどうかも確認
-                let newCache = CollegeLocalCache(lastUpdatedDate: dateInRegion.toFormat("YYYY-MM-dd"), busDate: busDate, busTimes: busTimes)
+                let newCache = CollegeLocalCache(lastUpdatedDate: dateInRegion.toFormat("yyyy-MM-dd"), busDate: busDate, busTimes: busTimes)
                 guard let object = object,
                     let relatedBusDate = object.busDate else {
                         return self.provider.save(newCache)
@@ -103,23 +103,23 @@ public struct LocalCacheRepositoryImpl: LocalCacheRepository {
     
     private func checkStationLocalCache(at date: Date) -> Single<Bool> {
         // NOTE: デフォルトの `Date` は GMT で設定されているため、9時間ずれる.
-        // SwiftDate の `DateInRegion` で日本の日付にした上で YYYY-MM-dd のフォーマットにする.
+        // SwiftDate の `DateInRegion` で日本の日付にした上で yyyy-MM-dd のフォーマットにする.
         let dateInRegion = DateInRegion(date, region: .current)
         return provider.get(StationLocalCache.self)
             .map { object -> Bool in
                 guard let object = object else { return false }
-                return object.lastUpdatedDate == dateInRegion.toFormat("YYYY-MM-dd")
+                return object.lastUpdatedDate == dateInRegion.toFormat("yyyy-MM-dd")
             }
     }
     
     private func checkCollegeLocalCache(at date: Date) -> Single<Bool> {
         // NOTE: デフォルトの `Date` は GMT で設定されているため、9時間ずれる.
-        // SwiftDate の `DateInRegion` で日本の日付にした上で YYYY-MM-dd のフォーマットにする.
+        // SwiftDate の `DateInRegion` で日本の日付にした上で yyyy-MM-dd のフォーマットにする.
         let dateInRegion = DateInRegion(date, region: .current)
         return provider.get(CollegeLocalCache.self)
             .map { object -> Bool in
                 guard let object = object else { return false }
-                return object.lastUpdatedDate == dateInRegion.toFormat("YYYY-MM-dd")
+                return object.lastUpdatedDate == dateInRegion.toFormat("yyyy-MM-dd")
             }
     }
     
