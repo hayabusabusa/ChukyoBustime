@@ -151,7 +151,7 @@ public final class RealmProvider: RealmProviderProtocol {
                 let stored = realm.objects(type).first
                 observer(.success(stored))
             } catch {
-                observer(.error(error))
+                observer(.failure(error))
             }
             return Disposables.create()
         }
@@ -167,7 +167,7 @@ public final class RealmProvider: RealmProviderProtocol {
                 let stored = Array(realm.objects(type))
                 observer(.success(stored))
             } catch {
-                observer(.error(error))
+                observer(.failure(error))
             }
             return Disposables.create()
         }

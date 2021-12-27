@@ -68,25 +68,22 @@ extension CountdownViewController {
 extension CountdownViewController {
     
     private func bindViewModel() {
-        let input = CountdownViewModel.Input()
-        let output = viewModel.transform(input: input)
-        
-        output.isHideLastButtonDriver
+        viewModel.output.isHideLastButton
             .drive(isLastButton.rx.isHidden)
             .disposed(by: disposeBag)
-        output.isHideReturnButtonDriver
+        viewModel.output.isHideReturnButton
             .drive(isReturnButton.rx.isHidden)
             .disposed(by: disposeBag)
-        output.isHideKaizuButtonDriver
+        viewModel.output.isHideKaizuButton
             .drive(isKaizuButton.rx.isHidden)
             .disposed(by: disposeBag)
-        output.timerDriver
+        viewModel.output.timer
             .drive(countdownLabel.rx.text)
             .disposed(by: disposeBag)
-        output.departureTimeDriver
+        viewModel.output.departureTime
             .drive(departureTimeLabel.rx.text)
             .disposed(by: disposeBag)
-        output.arrivalTimeDriver
+        viewModel.output.arrivalTime
             .drive(arrivalTimeLabel.rx.text)
             .disposed(by: disposeBag)
     }

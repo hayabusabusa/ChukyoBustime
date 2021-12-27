@@ -33,17 +33,17 @@ public final class FirestoreProvider {
                 .document(date)
                 .getDocument { (documentSnapshot, error) in
                     if let error = error {
-                        observer(.error(error))
+                        observer(.failure(error))
                     }
                     if let data = documentSnapshot?.data() {
                         do {
                             let entity = try Firestore.Decoder().decode(BusDateEntity.self, from: data)
                             observer(.success(entity))
                         } catch {
-                            observer(.error(error))
+                            observer(.failure(error))
                         }
                     } else {
-                        observer(.error(FirestoreError.dateNotFound))
+                        observer(.failure(FirestoreError.dateNotFound))
                     }
             }
             return Disposables.create()
@@ -55,14 +55,14 @@ public final class FirestoreProvider {
             self.db.collection(diagram + destination.rawValue)
                 .whereField("second", isGreaterThanOrEqualTo: second).getDocuments { (querySnapshot, error) in
                     if let error = error {
-                        observer(.error(error))
+                        observer(.failure(error))
                     }
                     if let documents = querySnapshot?.documents {
                         do {
                             let entities = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
                             observer(.success(entities))
                         } catch {
-                            observer(.error(error))
+                            observer(.failure(error))
                         }
                     } else {
                         observer(.success([]))
@@ -77,14 +77,14 @@ public final class FirestoreProvider {
             self.db.collection(date.diagram + destination.rawValue)
                 .whereField("second", isGreaterThanOrEqualTo: second).getDocuments { (querySnapshot, error) in
                     if let error = error {
-                        observer(.error(error))
+                        observer(.failure(error))
                     }
                     if let documents = querySnapshot?.documents {
                         do {
                             let busTimes = try documents.map { try Firestore.Decoder().decode(BusTimeEntity.self, from: $0.data()) }
                             observer(.success((busDate: date, busTimes: busTimes)))
                         } catch {
-                            observer(.error(error))
+                            observer(.failure(error))
                         }
                     } else {
                         observer(.success((busDate: date, busTimes: [])))

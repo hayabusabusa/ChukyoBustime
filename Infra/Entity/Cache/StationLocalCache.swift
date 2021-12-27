@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 public final class StationLocalCache: Object, LocalCacheable {
-    @objc public dynamic var lastUpdatedDate: String = "" // YYYY-MM-dd
+    @objc public dynamic var lastUpdatedDate: String = "" // yyyy-MM-dd
     @objc public dynamic var busDate: BusDateEntity?
     public var busTimes = List<BusTimeEntity>()
     
@@ -19,9 +19,5 @@ public final class StationLocalCache: Object, LocalCacheable {
         self.lastUpdatedDate = lastUpdatedDate
         self.busDate = busDate
         self.busTimes = busTimes.reduce(List<BusTimeEntity>()) { $0.append($1); return $0 }
-    }
-    
-    required init() {
-        super.init()
     }
 }

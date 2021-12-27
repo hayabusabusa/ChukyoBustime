@@ -12,12 +12,15 @@ import SwiftDate
 import UserNotifications
 
 enum UserNotificationError: Error {
+    case notAuthorized
     case overFiveMinutes
 }
 
 extension UserNotificationError: CustomStringConvertible {
     var description: String {
         switch self {
+        case .notAuthorized:
+            return "通知の表示が許可されていません。\n設定から通知の表示を許可してください。"
         case .overFiveMinutes:
             return "すでに5分前の時間を過ぎています"
         }
@@ -27,7 +30,7 @@ extension UserNotificationError: CustomStringConvertible {
 // MARK: - Interface
 
 public protocol UserNotificationRepository {
-    func requestAuthorization() -> Single<Bool>
+    func requestAuthorization() -> Completable
     func setNotification(at hour: Int, minute: Int) -> Completable
     func removeAllNotifications()
 }
@@ -39,22 +42,24 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
     public init() {}
     
     /// 通知の許可をリクエストする
-    /// - Returns: 許可された or 許可済みの場合は `true`、許可されなかった or 許可されていない場合は `false`,
-    public func requestAuthorization() -> Single<Bool> {
-        return Single.create { observer in
+    /// - Returns: 許可された or 許可済みの場合は `completed`、許可されなかった or 許可されていない場合は `error`,
+    public func requestAuthorization() -> Completable {
+        return Completable.create { observer -> Disposable in
             UNUserNotificationCenter.current().getNotificationSettings { settings in
                 switch settings.authorizationStatus {
                 case .authorized:
-                    observer(.success(true))
+                    observer(.completed)
                 case .notDetermined:
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                         if let error = error {
                             observer(.error(error))
                         }
-                        observer(.success(granted))
+                        granted
+                            ? observer(.completed)
+                            : observer(.error(UserNotificationError.notAuthorized))
                     }
                 default:
-                    observer(.success(false))
+                    observer(.error(UserNotificationError.notAuthorized))
                 }
             }
             return Disposables.create()
@@ -72,28 +77,28 @@ public struct UserNotificationRepositoryImpl: UserNotificationRepository {
             let today = DateInRegion(Date(), region: .current)
             let fiveMinAgo = DateInRegion(year: today.year, month: today.month, day: today.day, hour: hour, minute: minute, second: 0, nanosecond: 0, region: .current) - 5.minutes
             
-            // NOTE: 5分前と今を比較
+            // NOTE: 5分前と今を比較して、すでに時間を過ぎていたらエラーを流す
             if today >= fiveMinAgo {
                 observer(.error(UserNotificationError.overFiveMinutes))
-            }
-            
-            var dateMatching    = DateComponents()
-            dateMatching.hour   = fiveMinAgo.hour
-            dateMatching.minute = fiveMinAgo.minute
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
-            
-            let content     = UNMutableNotificationContent()
-            content.title   = ""
-            content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
-            content.sound   = .default
-            
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    observer(.error(error))
+            } else {
+                var dateMatching    = DateComponents()
+                dateMatching.hour   = fiveMinAgo.hour
+                dateMatching.minute = fiveMinAgo.minute
+                
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateMatching, repeats: false)
+                
+                let content     = UNMutableNotificationContent()
+                content.title   = ""
+                content.body    = String(format: "🚍 もうすぐ %02i:%02i 発のバスが出発します。", hour, minute)
+                content.sound   = .default
+                
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error = error {
+                        observer(.error(error))
+                    }
+                    observer(.completed)
                 }
-                observer(.completed)
             }
             
             return Disposables.create()

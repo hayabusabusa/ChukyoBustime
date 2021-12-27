@@ -16,7 +16,7 @@ pod-update:
 
 # Carthage
 carthage-update:
-	carthage update --platform iOS
+	carthage update --platform ios --use-xcframeworks
 
 carthage-bootstrap:
-	carthage bootstrap --platform iOS
+	carthage bootstrap --platform ios --use-xcframeworks

@@ -52,8 +52,4 @@ public final class BusTimeEntity: Object, Decodable {
         self.isLast = isLast
         self.isKaizu = isKaizu
     }
-    
-    public required init() {
-        super.init()
-    }
 }
