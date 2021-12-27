@@ -56,20 +56,31 @@ platform :ios do
 
   desc "Upload a new build to App Store"
   lane :release do
+    # 各ターゲットの証明書とプロファイルをインポート
     import_certificates_and_provisioning_profile
+    # App Store Connect API のキーを使う
+    # 以降のアクションではここで設定した API キーを利用する
+    app_store_connect_api_key(
+      key_id: ENV['ASC_KEY_ID'],
+      issuer_id: ENV['ASC_ISSUER_ID'],
+      key_content: ENV['ASC_KEY_CONTENT']
+    )
+    # アプリのビルド
     build_app(
       scheme: "ChukyoBustime",
       export_options: {
         method: "app-store"
       }
     )
+    # App Store Connect へのアップロード
     deliver(
       username: ENV["APPLE_ID"],
       app_identifier: "jp.shunya.yamada.ChukyoBustime",
       submit_for_review: false,
       force: true,
       skip_screenshots: true,
-      skip_metadata: true
+      skip_metadata: true,
+      precheck_include_in_app_purchases: false
     )
   end
 end
