@@ -48,6 +48,12 @@ platform :ios do
 
   desc "Run unit tests"
   lane :unit_test do
+    # TEST: 確認用
+    app_store_connect_api_key(
+      key_id: ENV['ASC_KEY_ID'],
+      issuer_id: ENV['ASC_ISSUER_ID'],
+      key_content: ENV['ASC_KEY_CONTENT']
+    )
     run_tests(
       scheme: "ChukyoBustime", 
       result_bundle: true

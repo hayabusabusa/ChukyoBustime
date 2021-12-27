@@ -48,6 +48,10 @@ jobs:
 
     # 7. Unit test を Fastlane で実行
     - name: Run unit test
+      env:
+        ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        ASC_KEY_CONTENT: ${{ secrets.ASC_KEY_CONTENT }}
+        ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       run: |
         fastlane unit_test
 
