@@ -476,23 +476,15 @@
 		715D9A482420A8ED0018F526 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				715D9A562420A91F0018F526 /* Application */,
-				715D9A582420A9460018F526 /* Configs */,
+				715D9A662420C9740018F526 /* Model */,
+				715D9A572420A9360018F526 /* View */,
+				710E88B22421A6DE0049D717 /* ViewModel */,
+				715D9A642420C61D0018F526 /* Configurations.swift */,
 				A511F04724A4D5E900DDD4AC /* TodayRelease.entitlements */,
 				714E1022242270960094FD38 /* TodayDebug.entitlements */,
 				715D9A4E2420A8ED0018F526 /* Info.plist */,
 			);
 			path = Today;
-			sourceTree = "<group>";
-		};
-		715D9A562420A91F0018F526 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				715D9A662420C9740018F526 /* Model */,
-				715D9A572420A9360018F526 /* View */,
-				710E88B22421A6DE0049D717 /* ViewModel */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		715D9A572420A9360018F526 /* View */ = {
@@ -502,14 +494,6 @@
 				715D9A4B2420A8ED0018F526 /* MainInterface.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		715D9A582420A9460018F526 /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				715D9A642420C61D0018F526 /* Configurations.swift */,
-			);
-			path = Configs;
 			sourceTree = "<group>";
 		};
 		715D9A662420C9740018F526 /* Model */ = {
