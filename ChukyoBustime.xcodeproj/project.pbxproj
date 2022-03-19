@@ -283,7 +283,7 @@
 		717D148724512149003944DB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		717F0D7423EEFB6700354AC4 /* RemoteConfigError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigError.swift; sourceTree = "<group>"; };
 		71910BC323EB116200132A7D /* ToCollegeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToCollegeViewModel.swift; sourceTree = "<group>"; };
-		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Firebase/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "ChukyoBustime/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		71A329E323E04FB700EB7A55 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A329E523E04FB700EB7A55 /* Infra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infra.h; sourceTree = "<group>"; };
 		71A329E623E04FB700EB7A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -570,20 +570,6 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		71A329D323DF03F000EB7A55 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
-				A4A7394023E3BEDF00F7C1A9 /* Entity */,
-				A4A7393023E3B2E100F7C1A9 /* Model */,
-				A4A7393B23E3BDB500F7C1A9 /* Translator */,
-				A4B03E9823DE7FC20069F7E8 /* View */,
-				A4A7393423E3B49500F7C1A9 /* ViewModel */,
-				A42D0DB323E13ACC00E95FED /* Common */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
 		71A329E423E04FB700EB7A55 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,16 +675,6 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		A42D0DAE23E1207D00E95FED /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				717D148124511D35003944DB /* Configurations.swift */,
-				71A329EF23E056EC00EB7A55 /* Config.debug.xcconfig */,
-				71A32A5623E057B400EB7A55 /* Config.release.xcconfig */,
-			);
-			path = Configs;
-			sourceTree = "<group>";
-		};
 		A42D0DB323E13ACC00E95FED /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,17 +746,6 @@
 				71039738244A06A100997DBD /* StateViewType.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A42D0DE823E17F7000E95FED /* Child */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DE923E17F8100E95FED /* Diagram */,
-				A42D0DEE23E1868000E95FED /* Countdown */,
-				A4AC23A323E2C1870012439D /* PdfButtons */,
-				71FF5C1823E1B6A900456D75 /* BusList */,
-			);
-			path = Child;
 			sourceTree = "<group>";
 		};
 		A42D0DE923E17F8100E95FED /* Diagram */ = {
@@ -917,15 +882,23 @@
 		A4B03E8223DE7CAB0069F7E8 /* ChukyoBustime */ = {
 			isa = PBXGroup;
 			children = (
-				71A329D323DF03F000EB7A55 /* Application */,
-				A42D0DAE23E1207D00E95FED /* Configs */,
-				A4B03F6023DED07F0069F7E8 /* Resource */,
+				A4A7394023E3BEDF00F7C1A9 /* Entity */,
+				A4A7393023E3B2E100F7C1A9 /* Model */,
+				A4A7393B23E3BDB500F7C1A9 /* Translator */,
+				A4B03E9823DE7FC20069F7E8 /* View */,
+				A4A7393423E3B49500F7C1A9 /* ViewModel */,
+				A42D0DB323E13ACC00E95FED /* Common */,
+				A4B03E8323DE7CAB0069F7E8 /* AppDelegate.swift */,
 				A4B03E8C23DE7CB20069F7E8 /* Assets.xcassets */,
-				A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */,
-				71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */,
 				A5867D9224A4D15E0031799D /* ChukyoBustimeRelease.entitlements */,
 				714E102124226E650094FD38 /* ChukyoBustimeDebug.entitlements */,
+				717D148124511D35003944DB /* Configurations.swift */,
+				71A329EF23E056EC00EB7A55 /* Config.debug.xcconfig */,
+				71A32A5623E057B400EB7A55 /* Config.release.xcconfig */,
+				71A32A5A23E05DE900EB7A55 /* DynamicFrameworks.xcfilelist */,
+				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
 				A4B03E9123DE7CB20069F7E8 /* Info.plist */,
+				A4B03E8E23DE7CB20069F7E8 /* LaunchScreen.storyboard */,
 			);
 			path = ChukyoBustime;
 			sourceTree = "<group>";
@@ -945,7 +918,10 @@
 				A4B03E9D23DE80090069F7E8 /* Storyboard.swift */,
 				A42D0DAB23E11F8400E95FED /* Base */,
 				A4B03E9723DE7FBD0069F7E8 /* Root */,
-				A42D0DE823E17F7000E95FED /* Child */,
+				A42D0DE923E17F8100E95FED /* Diagram */,
+				A42D0DEE23E1868000E95FED /* Countdown */,
+				A4AC23A323E2C1870012439D /* PdfButtons */,
+				71FF5C1823E1B6A900456D75 /* BusList */,
 				A42D0DC823E1665200E95FED /* TabBar */,
 				A42D0DD623E168F900E95FED /* ToStation */,
 				A42D0DCF23E167B000E95FED /* ToCollege */,
@@ -969,14 +945,6 @@
 				715D9A462420A8ED0018F526 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A4B03F6023DED07F0069F7E8 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				71A329D723DF0E4A00EB7A55 /* GoogleService-Info.plist */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		A51894B325F3B46600D9792C /* Common */ = {
