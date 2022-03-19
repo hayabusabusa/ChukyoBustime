@@ -454,14 +454,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		710E88B62421C0510049D717 /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				710E88B72421C06B0049D717 /* Configurations.swift */,
-			);
-			path = Configs;
-			sourceTree = "<group>";
-		};
 		7114165823EE84E600FBFB7E /* RemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,14 +464,6 @@
 			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
-		71536D5423F1614F004A330C /* RCPdfUrl */ = {
-			isa = PBXGroup;
-			children = (
-				71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */,
-			);
-			path = RCPdfUrl;
-			sourceTree = "<group>";
-		};
 		715D9A2F242080B60018F526 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,24 +471,6 @@
 				715D9A30242080C30018F526 /* RealmProvider.swift */,
 			);
 			path = Realm;
-			sourceTree = "<group>";
-		};
-		715D9A32242081D10018F526 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				715D9A33242082900018F526 /* LocalCacheable.swift */,
-				715D9A352420854E0018F526 /* StationLocalCache.swift */,
-				715D9A37242086C80018F526 /* CollegeLocalCache.swift */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
-		715D9A39242087D00018F526 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */,
-			);
-			path = Cache;
 			sourceTree = "<group>";
 		};
 		715D9A482420A8ED0018F526 /* Today */ = {
@@ -554,14 +520,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		716234A4246FDA80002BA1DE /* UserNotification */ = {
-			isa = PBXGroup;
-			children = (
-				716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */,
-			);
-			path = UserNotification;
-			sourceTree = "<group>";
-		};
 		717D147C244FE7AE003944DB /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,7 +534,7 @@
 				71A32A6B23E083B500EB7A55 /* Entity */,
 				71A32A5D23E0835200EB7A55 /* Provider */,
 				A4AC23AB23E2D7320012439D /* Repository */,
-				710E88B62421C0510049D717 /* Configs */,
+				710E88B72421C06B0049D717 /* Configurations.swift */,
 				71A32A5723E057E900EB7A55 /* Infra-Config.debug.xcconfig */,
 				71A32A5823E0594F00EB7A55 /* Infra-Config.release.xcconfig */,
 				71A329E523E04FB700EB7A55 /* Infra.h */,
@@ -599,21 +557,15 @@
 		71A32A6B23E083B500EB7A55 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A42D0DA323E112F100E95FED /* Enum */,
-				A42D0DA023E112A100E95FED /* BusDate */,
-				71A32A6C23E083BB00EB7A55 /* BusTime */,
-				715D9A32242081D10018F526 /* Cache */,
-				71536D5423F1614F004A330C /* RCPdfUrl */,
+				A42D0DB123E1282B00E95FED /* BusDestination.swift */,
+				A42D0DA123E112C400E95FED /* BusDateEntity.swift */,
+				71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */,
+				715D9A37242086C80018F526 /* CollegeLocalCache.swift */,
+				715D9A33242082900018F526 /* LocalCacheable.swift */,
+				71536D5923F16DC1004A330C /* RCPdfUrlEntity.swift */,
+				715D9A352420854E0018F526 /* StationLocalCache.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		71A32A6C23E083BB00EB7A55 /* BusTime */ = {
-			isa = PBXGroup;
-			children = (
-				71A32A6D23E083C800EB7A55 /* BusTimeEntity.swift */,
-			);
-			path = BusTime;
 			sourceTree = "<group>";
 		};
 		71FF5C1823E1B6A900456D75 /* BusList */ = {
@@ -647,22 +599,6 @@
 				A401275323F3CCEE007FDD82 /* Cell */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		A42D0DA023E112A100E95FED /* BusDate */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DA123E112C400E95FED /* BusDateEntity.swift */,
-			);
-			path = BusDate;
-			sourceTree = "<group>";
-		};
-		A42D0DA323E112F100E95FED /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				A42D0DB123E1282B00E95FED /* BusDestination.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		A42D0DAB23E11F8400E95FED /* Base */ = {
@@ -841,19 +777,11 @@
 		A4AC23AB23E2D7320012439D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				715D9A39242087D00018F526 /* Cache */,
-				A4AC23AC23E2D73C0012439D /* Firestore */,
-				716234A4246FDA80002BA1DE /* UserNotification */,
+				A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */,
+				715D9A3C2420880C0018F526 /* LocalCacheRepository.swift */,
+				716234A5246FDA96002BA1DE /* UserNotificationRepository.swift */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		A4AC23AC23E2D73C0012439D /* Firestore */ = {
-			isa = PBXGroup;
-			children = (
-				A4AC23AD23E2D7590012439D /* FirestoreRepository.swift */,
-			);
-			path = Firestore;
 			sourceTree = "<group>";
 		};
 		A4B03E7723DE7CAB0069F7E8 = {
