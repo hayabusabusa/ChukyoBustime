@@ -18,7 +18,7 @@ jobs:
     - name: Setup GoogleService-info.plist
       run: |
         echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > GoogleService-Info.plist.txt
-        base64 --decode GoogleService-Info.plist.txt > Firebase/GoogleService-Info.plist
+        base64 --decode GoogleService-Info.plist.txt > ChukyoBustime/GoogleService-Info.plist
 
     # 3. CocoaPods のキャッシュの設定
     - id: cache-cocoapods
