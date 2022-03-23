@@ -1,9 +1,6 @@
 # Core
-## RxSwift
-github "ReactiveX/RxSwift" ~> 6.2.0
-
 ## Realm
-github "realm/realm-swift" 
+github "realm/realm-swift" == 10.20.1
 
 # Util
 ## SwiftDate
