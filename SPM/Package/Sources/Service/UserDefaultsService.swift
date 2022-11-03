@@ -44,7 +44,7 @@ public struct UserDefaultsService: UserDefaultsServiceProtocol {
 
     private let userDefaults: UserDefaults
 
-    public init(userDefaults: UserDefaults) {
+    public init(userDefaults: UserDefaults = .standard) {
         self.userDefaults = userDefaults
     }
 
@@ -60,7 +60,7 @@ public struct UserDefaultsService: UserDefaultsServiceProtocol {
         userDefaults.object(forKey: key.rawValue) as? T
     }
 
-    public func object<T>(type: T.Type, forKey key: UserDefaultsService.Key) -> T? where T: RawRepresentable {
+    public func object<T>(type: T.Type, forKey key: Key) -> T? where T: RawRepresentable {
         guard let rawValue = userDefaults.object(forKey: key.rawValue) as? T.RawValue else { return nil }
         return T.init(rawValue: rawValue)
     }
@@ -72,7 +72,7 @@ public struct UserDefaultsService: UserDefaultsServiceProtocol {
 
 public extension UserDefaultsService {
     /// UserDefaults で保存する際のキー.
-    enum Key: String {
+    enum Key: String, CaseIterable {
         /// 初回起動時に表示するタブのインデックスを保存するキー.
         case initialTab
     }
