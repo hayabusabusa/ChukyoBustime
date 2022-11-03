@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Package",
+    platforms: [.iOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -25,7 +26,8 @@ let package = Package(
         .target(
             name: "Service",
             dependencies: [
-                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
+                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
             ]),
         .testTarget(
             name: "PackageTests",
