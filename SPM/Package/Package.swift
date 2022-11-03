@@ -7,7 +7,6 @@ let package = Package(
     name: "Package",
     platforms: [.iOS(.v14)],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "AppFeature",
             targets: ["AppFeature"]),
@@ -16,6 +15,9 @@ let package = Package(
         .package(
             url: "https://github.com/firebase/firebase-ios-sdk.git",
             .upToNextMajor(from: "10.1.0")),
+        .package(
+            url: "https://github.com/malcommac/SwiftDate.git",
+            .upToNextMajor(from: "7.0.0")),
     ],
     targets: [
         .target(
@@ -28,6 +30,7 @@ let package = Package(
             dependencies: [
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
+                .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
         .testTarget(
             name: "PackageTests",
