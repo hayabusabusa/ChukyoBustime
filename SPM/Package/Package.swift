@@ -30,6 +30,8 @@ let package = Package(
             dependencies: [
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk"),
                 .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
         .target(
