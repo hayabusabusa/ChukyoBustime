@@ -13,6 +13,7 @@ let package = Package(
         .library(
             name: "Preview",
             targets: [
+                "CountdownView",
                 "DiagramView",
             ]),
     ],
@@ -33,6 +34,11 @@ let package = Package(
             ]),
 
         // MARK: View
+        .target(name: "CountdownView",
+                dependencies: [
+                    "Shared",
+                ],
+                path: "./Sources/View/CountdownView"),
         .target(name: "DiagramView",
                 dependencies: [],
                 path: "./Sources/View/DiagramView"),
