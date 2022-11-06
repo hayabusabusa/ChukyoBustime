@@ -10,6 +10,11 @@ let package = Package(
         .library(
             name: "AppFeature",
             targets: ["AppFeature"]),
+        .library(
+            name: "Preview",
+            targets: [
+                "DiagramView",
+            ]),
     ],
     dependencies: [
         .package(
@@ -20,11 +25,19 @@ let package = Package(
             .upToNextMajor(from: "7.0.0")),
     ],
     targets: [
+        // MARK: Features
         .target(
             name: "AppFeature",
             dependencies: [
                 "Service",
             ]),
+
+        // MARK: View
+        .target(name: "DiagramView",
+                dependencies: [],
+                path: "./Sources/View/DiagramView"),
+
+        // MARK: Core
         .target(
             name: "Service",
             dependencies: [
@@ -37,6 +50,8 @@ let package = Package(
         .target(
             name: "Shared",
             dependencies: []),
+
+        // MARK: Tests
         .testTarget(
             name: "PackageTests",
             dependencies: [
