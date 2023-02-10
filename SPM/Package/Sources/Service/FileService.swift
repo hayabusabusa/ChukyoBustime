@@ -37,7 +37,7 @@ public final class FileService: FileServiceProtocol {
     /// データ保存領域までのパス.
     private let path: URL
 
-    private init(with name: String = "jp.shunya.yamada.ChukyoBustime.FileService") {
+    init(with name: String = "jp.shunya.yamada.ChukyoBustime.FileService") {
         // NOTE: AppGroups の ID を指定して URL を生成
         guard let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.jp.shunya.yamada.ChukyoBustime") else {
             fatalError()
