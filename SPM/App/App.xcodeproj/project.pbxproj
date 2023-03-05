@@ -9,18 +9,15 @@
 /* Begin PBXBuildFile section */
 		A52A29D82912B98600314C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D72912B98600314C37 /* AppDelegate.swift */; };
 		A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D92912B98600314C37 /* SceneDelegate.swift */; };
-		A52A29DC2912B98600314C37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29DB2912B98600314C37 /* ViewController.swift */; };
-		A52A29DF2912B98600314C37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52A29DD2912B98600314C37 /* Main.storyboard */; };
 		A52A29E12912B98700314C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E02912B98700314C37 /* Assets.xcassets */; };
 		A52A29E42912B98700314C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E22912B98700314C37 /* LaunchScreen.storyboard */; };
+		A5953BA329B4C26F004B4C26 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A5953BA229B4C26F004B4C26 /* AppFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A52A29D42912B98600314C37 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52A29D72912B98600314C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52A29D92912B98600314C37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A52A29DB2912B98600314C37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A52A29DE2912B98600314C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A52A29E02912B98700314C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52A29E32912B98700314C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52A29E52912B98700314C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5953BA329B4C26F004B4C26 /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +42,7 @@
 			children = (
 				A52A29D62912B98600314C37 /* App */,
 				A52A29D52912B98600314C37 /* Products */,
+				A5953BA129B4C26E004B4C26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,13 +61,18 @@
 				A58B9A452913CA1F00EBA879 /* AppDebug.entitlements */,
 				A52A29D72912B98600314C37 /* AppDelegate.swift */,
 				A52A29D92912B98600314C37 /* SceneDelegate.swift */,
-				A52A29DB2912B98600314C37 /* ViewController.swift */,
-				A52A29DD2912B98600314C37 /* Main.storyboard */,
 				A52A29E02912B98700314C37 /* Assets.xcassets */,
 				A52A29E22912B98700314C37 /* LaunchScreen.storyboard */,
 				A52A29E52912B98700314C37 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		A5953BA129B4C26E004B4C26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +91,9 @@
 			dependencies = (
 			);
 			name = App;
+			packageProductDependencies = (
+				A5953BA229B4C26F004B4C26 /* AppFeature */,
+			);
 			productName = App;
 			productReference = A52A29D42912B98600314C37 /* App.app */;
 			productType = "com.apple.product-type.application";
@@ -131,7 +138,6 @@
 			files = (
 				A52A29E42912B98700314C37 /* LaunchScreen.storyboard in Resources */,
 				A52A29E12912B98700314C37 /* Assets.xcassets in Resources */,
-				A52A29DF2912B98600314C37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +148,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52A29DC2912B98600314C37 /* ViewController.swift in Sources */,
 				A52A29D82912B98600314C37 /* AppDelegate.swift in Sources */,
 				A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */,
 			);
@@ -151,14 +156,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A52A29DD2912B98600314C37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A52A29DE2912B98600314C37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A52A29E22912B98700314C37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -299,7 +296,7 @@
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +329,7 @@
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -372,6 +369,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5953BA229B4C26F004B4C26 /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A52A29CC2912B98600314C37 /* Project object */;
 }
