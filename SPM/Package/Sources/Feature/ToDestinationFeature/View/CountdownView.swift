@@ -10,7 +10,7 @@ import SwiftUI
 
 /// 出発までのカウントダウンを表示する View.
 struct CountdownView: View {
-    @ObservedObject var dataSource: DataSource
+    let dataSource: DataSource
 
     var body: some View {
         VStack {
@@ -43,10 +43,6 @@ struct CountdownView: View {
         .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
     }
 
-    init(dataSource: CountdownView.DataSource) {
-        self.dataSource = dataSource
-    }
-
     func outlinedText(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12, weight: .medium))
@@ -69,14 +65,14 @@ struct CountdownView: View {
 }
 
 extension CountdownView {
-    class DataSource: ObservableObject {
-        @Published var destination: BusDestination
-        @Published var countdownTime: String
-        @Published var departureTime: String
-        @Published var arrivalTime: String
-        @Published var isLast: Bool
-        @Published var isViaKaizu: Bool
-        @Published var isReturn: Bool
+    final class DataSource: ObservableObject {
+        let destination: BusDestination
+        let countdownTime: String
+        let departureTime: String
+        let arrivalTime: String
+        let isLast: Bool
+        let isViaKaizu: Bool
+        let isReturn: Bool
 
         init(destination: BusDestination,
              countdownTime: String,

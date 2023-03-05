@@ -9,7 +9,7 @@ import SwiftUI
 
 /// ダイヤ名を表示する View.
 struct DiagramView: View {
-    @ObservedObject var dataSource: DataSource
+    let dataSource: DataSource
 
     var body: some View {
         VStack {
@@ -26,7 +26,7 @@ struct DiagramView: View {
 
 extension DiagramView {
     class DataSource: ObservableObject {
-        @Published var diagramName: String
+        let diagramName: String
 
         init(diagramName: String) {
             self.diagramName = diagramName

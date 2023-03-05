@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BusListView: View {
-    @ObservedObject var dataSource: DataSource
+    let dataSource: DataSource
 
     var body: some View {
         VStack(spacing: 0) {
@@ -34,7 +34,7 @@ struct BusListView: View {
 
 extension BusListView {
     final class DataSource: ObservableObject {
-        @Published var items: [BusListItemView.DataSource]
+        let items: [BusListItemView.DataSource]
 
         init(items: [BusListItemView.DataSource]) {
             self.items = items
