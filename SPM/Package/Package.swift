@@ -32,7 +32,8 @@ let package = Package(
             name: "AppFeature",
             dependencies: [
                 "Service",
-            ]),
+            ],
+            path: "./Sources/Feature/AppFeature"),
         .target(name: "ToDestinationFeature",
                 dependencies: [
                     "Service",
