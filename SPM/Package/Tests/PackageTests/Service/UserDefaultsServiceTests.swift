@@ -62,10 +62,8 @@ private extension UserDefaultsServiceTests {
     /// 現在保存している値などを一時退避.
     static func evacuateStoredValues() {
         let service = UserDefaultsService()
-        UserDefaultsService.Key.allCases.forEach { key in
-            if let value = service.object(type: Any.self, forKey: key) {
-                storedValues[key] = value
-            }
+        if let initialTab = service.object(type: Int.self, forKey: .initialTab) {
+            storedValues[.initialTab] = initialTab
         }
     }
 
