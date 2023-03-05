@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct BusListView: View {
+struct BusListView: View {
     @ObservedObject var dataSource: DataSource
 
-    public var body: some View {
+    var body: some View {
         VStack(spacing: 0) {
             HStack {
                 Text("次にくるバス一覧")
@@ -30,17 +30,13 @@ public struct BusListView: View {
         }
         .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
     }
-
-    public init(dataSource: DataSource) {
-        self.dataSource = dataSource
-    }
 }
 
-public extension BusListView {
+extension BusListView {
     final class DataSource: ObservableObject {
-        @Published public var items: [BusListItemView.DataSource]
+        @Published var items: [BusListItemView.DataSource]
 
-        public init(items: [BusListItemView.DataSource]) {
+        init(items: [BusListItemView.DataSource]) {
             self.items = items
         }
     }

@@ -8,14 +8,10 @@
 import SwiftUI
 
 /// ダイヤ名を表示する View.
-public struct DiagramView: View {
+struct DiagramView: View {
     @ObservedObject var dataSource: DataSource
 
-    public init(dataSource: DiagramView.DataSource) {
-        self.dataSource = dataSource
-    }
-
-    public var body: some View {
+    var body: some View {
         VStack {
             Text("今日の運行ダイヤ")
                 .font(.system(size: 14))
@@ -28,11 +24,11 @@ public struct DiagramView: View {
     }
 }
 
-public extension DiagramView {
+extension DiagramView {
     class DataSource: ObservableObject {
-        @Published public var diagramName: String
+        @Published var diagramName: String
 
-        public init(diagramName: String) {
+        init(diagramName: String) {
             self.diagramName = diagramName
         }
     }

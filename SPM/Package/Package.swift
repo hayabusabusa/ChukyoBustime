@@ -7,16 +7,14 @@ let package = Package(
     name: "Package",
     platforms: [.iOS(.v14)],
     products: [
-        .library(
-            name: "AppFeature",
-            targets: ["AppFeature"]),
-        .library(
-            name: "Preview",
-            targets: [
-                "BusListView",
-                "CountdownView",
-                "DiagramView",
-            ]),
+        .library(name: "AppFeature",
+                 targets: [
+                    "AppFeature"
+                 ]),
+        .library(name: "ToDestinationFeature",
+                 targets: [
+                    "ToDestinationFeature"
+                 ])
     ],
     dependencies: [
         .package(
@@ -31,32 +29,15 @@ let package = Package(
         .target(
             name: "AppFeature",
             dependencies: [
-                "Service",
+                "ToDestinationFeature",
             ],
             path: "./Sources/Feature/AppFeature"),
         .target(name: "ToDestinationFeature",
                 dependencies: [
                     "Service",
-                    "BusListView",
-                    "CountdownView",
-                    "DiagramView",
+                    "Shared",
                 ],
                 path: "./Sources/Feature/ToDestinationFeature"),
-
-        // MARK: View
-        .target(name: "BusListView",
-                dependencies: [
-                    "Shared",
-                ],
-                path: "./Sources/View/BusListView"),
-        .target(name: "CountdownView",
-                dependencies: [
-                    "Shared",
-                ],
-                path: "./Sources/View/CountdownView"),
-        .target(name: "DiagramView",
-                dependencies: [],
-                path: "./Sources/View/DiagramView"),
 
         // MARK: Core
         .target(

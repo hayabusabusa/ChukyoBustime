@@ -9,14 +9,10 @@ import Shared
 import SwiftUI
 
 /// 出発までのカウントダウンを表示する View.
-public struct CountdownView: View {
+struct CountdownView: View {
     @ObservedObject var dataSource: DataSource
 
-    public init(dataSource: CountdownView.DataSource) {
-        self.dataSource = dataSource
-    }
-
-    public var body: some View {
+    var body: some View {
         VStack {
             HStack {
                 outlinedText("最終バス")
@@ -47,6 +43,10 @@ public struct CountdownView: View {
         .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
     }
 
+    init(dataSource: CountdownView.DataSource) {
+        self.dataSource = dataSource
+    }
+
     func outlinedText(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12, weight: .medium))
@@ -68,23 +68,23 @@ public struct CountdownView: View {
     }
 }
 
-public extension CountdownView {
+extension CountdownView {
     class DataSource: ObservableObject {
-        @Published public var destination: BusDestination
-        @Published public var countdownTime: String
-        @Published public var departureTime: String
-        @Published public var arrivalTime: String
-        @Published public var isLast: Bool
-        @Published public var isViaKaizu: Bool
-        @Published public var isReturn: Bool
+        @Published var destination: BusDestination
+        @Published var countdownTime: String
+        @Published var departureTime: String
+        @Published var arrivalTime: String
+        @Published var isLast: Bool
+        @Published var isViaKaizu: Bool
+        @Published var isReturn: Bool
 
-        public init(destination: BusDestination,
-                    countdownTime: String,
-                    departureTime: String,
-                    arrivalTime: String,
-                    isLast: Bool,
-                    isViaKaizu: Bool,
-                    isReturn: Bool) {
+        init(destination: BusDestination,
+             countdownTime: String,
+             departureTime: String,
+             arrivalTime: String,
+             isLast: Bool,
+             isViaKaizu: Bool,
+             isReturn: Bool) {
             self.destination = destination
             self.countdownTime = countdownTime
             self.departureTime = departureTime

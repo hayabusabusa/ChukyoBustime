@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct BusListItemView: View {
-    private let dataSource: DataSource
+struct BusListItemView: View {
+    let dataSource: DataSource
 
-    public var body: some View {
+    var body: some View {
         ZStack(alignment: .bottom) {
             Button {
                 dataSource.action()
@@ -47,13 +47,9 @@ public struct BusListItemView: View {
         }
         .background(dataSource.isHighlighted ? Color.blue.opacity(0.2) : Color.clear)
     }
-
-    public init(dataSource: DataSource) {
-        self.dataSource = dataSource
-    }
 }
 
-public extension BusListItemView {
+extension BusListItemView {
     final class DataSource: Identifiable {
         let index: Int
         let departureName: String
@@ -63,13 +59,13 @@ public extension BusListItemView {
         let isHighlighted: Bool
         let action: (() -> Void)
 
-        public init(index: Int,
-                    departureName: String,
-                    departureTime: String,
-                    arrivalName: String,
-                    arrivalTime: String,
-                    isHighlighted: Bool,
-                    action: @escaping (() -> Void)) {
+        init(index: Int,
+             departureName: String,
+             departureTime: String,
+             arrivalName: String,
+             arrivalTime: String,
+             isHighlighted: Bool,
+             action: @escaping (() -> Void)) {
             self.index = index
             self.departureName = departureName
             self.departureTime = departureTime
