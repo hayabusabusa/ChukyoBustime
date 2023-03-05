@@ -17,17 +17,17 @@ final class TabBarController: UITabBarController {
 
 private extension TabBarController {
     func configureViewControllers() {
-        let toCollegeVC = ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toCollege))
+        let toCollegeVC = UINavigationController(rootViewController: ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toCollege)))
         let toCollegeTabBarItem = UITabBarItem(title: "大学行き", image: nil, tag: 0)
         toCollegeVC.tabBarItem = toCollegeTabBarItem
 
-        let toStationVC = ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toStation))
-        let toStationTabBarItem = UITabBarItem(title: "浄水駅行き", image: nil, tag: 0)
+        let toStationVC = UINavigationController(rootViewController: ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toStation)))
+        let toStationTabBarItem = UITabBarItem(title: "浄水駅行き", image: nil, tag: 1)
         toStationVC.tabBarItem = toStationTabBarItem
 
         setViewControllers([
-            UINavigationController(rootViewController: toCollegeVC),
-            UINavigationController(rootViewController: toStationVC)
+            toCollegeVC,
+            toStationVC
         ], animated: false)
     }
 }

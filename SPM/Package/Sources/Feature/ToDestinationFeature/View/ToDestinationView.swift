@@ -14,15 +14,15 @@ struct ToDestinationView: View {
         if dataSource.isLoading {
             ProgressView()
                 .progressViewStyle(.circular)
-        }
-
-        ScrollView {
-            VStack {
-                DiagramView(dataSource: dataSource.diagram)
-                    .frame(height: 96)
-                CountdownView(dataSource: dataSource.countdown)
-                    .frame(height: 200)
-                BusListView(dataSource: dataSource.busList)
+        } else {
+            ScrollView {
+                VStack {
+                    DiagramView(dataSource: dataSource.diagram)
+                        .frame(height: 96)
+                    CountdownView(dataSource: dataSource.countdown)
+                        .frame(height: 200)
+                    BusListView(dataSource: dataSource.busList)
+                }
             }
         }
     }
