@@ -33,6 +33,14 @@ let package = Package(
             dependencies: [
                 "Service",
             ]),
+        .target(name: "ToDestinationFeature",
+                dependencies: [
+                    "Service",
+                    "BusListView",
+                    "CountdownView",
+                    "DiagramView",
+                ],
+                path: "./Sources/Feature/ToDestinationFeature"),
 
         // MARK: View
         .target(name: "BusListView",
