@@ -34,7 +34,7 @@ let package = Package(
             path: "./Sources/Feature/AppFeature"),
         .target(name: "ToDestinationFeature",
                 dependencies: [
-                    "Service",
+                    "ServiceProtocol",
                     "Shared",
                 ],
                 path: "./Sources/Feature/ToDestinationFeature"),
@@ -43,12 +43,15 @@ let package = Package(
         .target(
             name: "Service",
             dependencies: [
+                "ServiceProtocol",
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk"),
                 .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
+        .target(name: "ServiceProtocol",
+                dependencies: []),
         .target(
             name: "Shared",
             dependencies: []),

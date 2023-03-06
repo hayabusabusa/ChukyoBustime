@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ServiceProtocol
 import UserNotifications
 
 public protocol UserNotificationServiceProtocol {
