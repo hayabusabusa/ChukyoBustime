@@ -49,12 +49,26 @@ let package = Package(
             ],
             path: "./Sources/Feature/AppFeature"),
         .target(
+            name: "SettingFeature",
+            dependencies: [
+                .serviceProtocol,
+                .shared,
+            ],
+            path: "./Sources/Feature/SettingFeature"),
+        .target(
             name: "ToDestinationFeature",
             dependencies: [
                 .serviceProtocol,
                 .shared,
             ],
             path: "./Sources/Feature/ToDestinationFeature"),
+        .target(
+            name: "WidgetFeature",
+            dependencies: [
+                .serviceProtocol,
+                .shared,
+            ],
+            path: "./Sources/Feature/WidgetFeature"),
 
         // MARK: Core
         .target(
