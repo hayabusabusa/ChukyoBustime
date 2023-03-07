@@ -11,6 +11,7 @@ private extension Target.Dependency {
     static let remoteConfigSwift = Target.Dependency.product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk")
     static let service = Target.Dependency(stringLiteral: "Service")
     static let serviceProtocol = Target.Dependency(stringLiteral: "ServiceProtocol")
+    static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
     static let shared = Target.Dependency(stringLiteral: "Shared")
     static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
     static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
@@ -45,6 +46,8 @@ let package = Package(
             name: "AppFeature",
             dependencies: [
                 .service,
+                .settingFeature,
+                .shared,
                 .toDestinationFeature,
             ],
             path: "./Sources/Feature/AppFeature"),
