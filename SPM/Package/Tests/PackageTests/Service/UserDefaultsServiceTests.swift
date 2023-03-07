@@ -6,12 +6,13 @@
 //
 
 import XCTest
+import Shared
 
 @testable import Service
 
 final class UserDefaultsServiceTests: XCTestCase {
     /// すでに保存されている値などを一時保存しておくための辞書配列.
-    static private var storedValues: [UserDefaultsService.Key: Any] = [:]
+    static private var storedValues: [UserDefaultsKey: Any] = [:]
 
     override class func setUp() {
         super.setUp()

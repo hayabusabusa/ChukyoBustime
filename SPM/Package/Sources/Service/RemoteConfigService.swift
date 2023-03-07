@@ -8,18 +8,8 @@
 import Foundation
 import FirebaseRemoteConfig
 import FirebaseRemoteConfigSwift
-
-public protocol RemoteConfigServiceProtocol {
-    /// Remote Config からデータを取得する.
-    func fetchActivate() async throws
-
-    /// Remote Config に設定した値を取り出す.
-    /// - Parameters:
-    ///   - key: 値に設定したキー.
-    ///   - type: 値の型.
-    /// - Returns: 型変換した値.
-    func configValue<T: Decodable>(for key: RemoteConfigService.Key, type: T.Type) -> T?
-}
+import ServiceProtocol
+import Shared
 
 public final class RemoteConfigService: RemoteConfigServiceProtocol {
     /// シングルトン.
@@ -38,17 +28,9 @@ public final class RemoteConfigService: RemoteConfigServiceProtocol {
         return
     }
 
-    public func configValue<T: Decodable>(for key: RemoteConfigService.Key, type: T.Type) -> T? {
+    public func configValue<T: Decodable>(for key: RemoteConfigKey, type: T.Type) -> T? {
         guard let data = remoteConfig[key.rawValue].stringValue?.data(using: .utf8),
               let decoded = try? JSONDecoder().decode(type, from: data) else { return nil }
         return decoded
-    }
-}
-
-public extension RemoteConfigService {
-    /// Remote Config の設定値に利用するキー.
-    enum Key: String, CaseIterable {
-        /// カレンダーと時刻表の PDF の URL をまとめたデータを取得するキー.
-        case pdfURL = "pdf_url"
     }
 }

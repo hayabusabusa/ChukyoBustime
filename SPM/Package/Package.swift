@@ -60,16 +60,19 @@ let package = Package(
         .target(
             name: "Service",
             dependencies: [
-                .serviceProtocol,
                 .firestore,
                 .firestoreSwift,
                 .remoteConfig,
                 .remoteConfigSwift,
+                .serviceProtocol,
+                .shared,
                 .swiftDate,
             ]),
         .target(
             name: "ServiceProtocol",
-            dependencies: []),
+            dependencies: [
+                .shared,
+            ]),
         .target(
             name: "Shared",
             dependencies: []),
