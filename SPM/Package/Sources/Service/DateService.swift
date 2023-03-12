@@ -25,6 +25,8 @@ public struct DateService: DateServiceProtocol {
         now.date
     }
 
+    public init() {}
+
     public func isToday(_ date: Date) -> Bool {
         let dateInRegion = DateInRegion(date, region: .current)
         return dateInRegion.isToday
