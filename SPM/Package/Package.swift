@@ -4,17 +4,20 @@
 import PackageDescription
 
 private extension Target.Dependency {
-    static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
     static let firestore = Target.Dependency.product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
     static let firestoreSwift = Target.Dependency.product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk")
+    static let needle = Target.Dependency.product(name: "NeedleFoundation", package: "needle")
     static let remoteConfig = Target.Dependency.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk")
     static let remoteConfigSwift = Target.Dependency.product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk")
+    static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
+
+    static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
+    static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
+    static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
+
     static let service = Target.Dependency(stringLiteral: "Service")
     static let serviceProtocol = Target.Dependency(stringLiteral: "ServiceProtocol")
-    static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
     static let shared = Target.Dependency(stringLiteral: "Shared")
-    static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
-    static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
 }
 
 let package = Package(
@@ -37,6 +40,9 @@ let package = Package(
             url: "https://github.com/firebase/firebase-ios-sdk.git",
             .upToNextMajor(from: "10.1.0")),
         .package(
+            url: "https://github.com/uber/needle.git",
+            .upToNextMajor(from: "0.22.0")),
+        .package(
             url: "https://github.com/malcommac/SwiftDate.git",
             .upToNextMajor(from: "7.0.0")),
     ],
@@ -45,6 +51,7 @@ let package = Package(
         .target(
             name: "AppFeature",
             dependencies: [
+                .needle,
                 .service,
                 .settingFeature,
                 .shared,
