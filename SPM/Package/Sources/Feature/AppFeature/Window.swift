@@ -20,6 +20,10 @@ public final class Window: UIWindow {
 
 private extension Window {
     func configure() {
-        rootViewController = TabBarController()
+        // Needle のセットアップ.
+        registerProviderFactories()
+        
+        let rootComponent = RootComponent()
+        rootViewController = rootComponent.rootViewController
     }
 }
