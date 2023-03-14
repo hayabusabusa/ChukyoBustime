@@ -68,6 +68,7 @@ let package = Package(
         .target(
             name: "ToDestinationFeature",
             dependencies: [
+                .needle,
                 .serviceProtocol,
                 .shared,
             ],
