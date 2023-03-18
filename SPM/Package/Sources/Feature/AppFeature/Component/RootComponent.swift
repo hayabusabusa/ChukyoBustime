@@ -38,11 +38,11 @@ final class RootComponent: BootstrapComponent {
     }
 
     var toCollegeRouter: ToDestinationRouterProtocol {
-        ToDestinationRouter(viewController: toCollegeComponent.viewController)
+        ToCollegeRouter(component: toCollegeComponent)
     }
 
     var toStationRouter: ToDestinationRouterProtocol {
-        ToDestinationRouter(viewController: toStationComponent.viewController)
+        ToStationRouter(component: toStationComponent)
     }
 }
 

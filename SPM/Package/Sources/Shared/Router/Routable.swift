@@ -11,3 +11,9 @@ import UIKit
 public protocol Routable {
     var viewController: UIViewController? { get }
 }
+
+public extension Routable {
+    func dismiss() {
+        viewController?.dismiss(animated: true)
+    }
+}

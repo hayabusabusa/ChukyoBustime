@@ -3,6 +3,7 @@
 import NeedleFoundation
 import Service
 import ServiceProtocol
+import SettingFeature
 import Shared
 import ToDestinationFeature
 import UIKit
@@ -16,10 +17,50 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
     return component.parent
 }
 
+private func parent2(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Scope {
+    return component.parent.parent
+}
+
 // MARK: - Providers
 
 #if !NEEDLE_DYNAMIC
 
+private class SettingDependencyeb81f4a491e62d25bd63Provider: SettingDependency {
+    var userDefaultsService: UserDefaultsServiceProtocol {
+        return rootComponent.userDefaultsService
+    }
+    var settingRouter: SettingRouterProtocol {
+        return toStationComponent.settingRouter
+    }
+    private let rootComponent: RootComponent
+    private let toStationComponent: ToStationComponent
+    init(rootComponent: RootComponent, toStationComponent: ToStationComponent) {
+        self.rootComponent = rootComponent
+        self.toStationComponent = toStationComponent
+    }
+}
+/// ^->RootComponent->ToStationComponent->SettingComponent
+private func factory665ba82bdea0118a424686805bdcd23f41633fbd(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SettingDependencyeb81f4a491e62d25bd63Provider(rootComponent: parent2(component) as! RootComponent, toStationComponent: parent1(component) as! ToStationComponent)
+}
+private class SettingDependency9050f3d0d3edcca96e66Provider: SettingDependency {
+    var userDefaultsService: UserDefaultsServiceProtocol {
+        return rootComponent.userDefaultsService
+    }
+    var settingRouter: SettingRouterProtocol {
+        return toCollegeComponent.settingRouter
+    }
+    private let rootComponent: RootComponent
+    private let toCollegeComponent: ToCollegeComponent
+    init(rootComponent: RootComponent, toCollegeComponent: ToCollegeComponent) {
+        self.rootComponent = rootComponent
+        self.toCollegeComponent = toCollegeComponent
+    }
+}
+/// ^->RootComponent->ToCollegeComponent->SettingComponent
+private func factorya91c7545f599c7da16739c93a8ea40ef30c70274(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SettingDependency9050f3d0d3edcca96e66Provider(rootComponent: parent2(component) as! RootComponent, toCollegeComponent: parent1(component) as! ToCollegeComponent)
+}
 private class ToStationDependencyc82a022d3fcc5dcda0c6Provider: ToStationDependency {
     var dateService: DateServiceProtocol {
         return rootComponent.dateService
@@ -78,10 +119,10 @@ private func factoryd53809cef5d4c4c1e460b3a8f24c1d289f2c0f2e(_ component: Needle
 }
 
 #else
-extension RootComponent: Registration {
+extension SettingComponent: Registration {
     public func registerItems() {
-
-
+        keyPathToName[\SettingDependency.userDefaultsService] = "userDefaultsService-UserDefaultsServiceProtocol"
+        keyPathToName[\SettingDependency.settingRouter] = "settingRouter-SettingRouterProtocol"
     }
 }
 extension ToStationComponent: Registration {
@@ -92,6 +133,13 @@ extension ToStationComponent: Registration {
         keyPathToName[\ToStationDependency.remoteConfigService] = "remoteConfigService-RemoteConfigServiceProtocol"
         keyPathToName[\ToStationDependency.userNotificationService] = "userNotificationService-UserNotificationServiceProtocol"
         keyPathToName[\ToStationDependency.toStationRouter] = "toStationRouter-ToDestinationRouterProtocol"
+
+    }
+}
+extension RootComponent: Registration {
+    public func registerItems() {
+
+
     }
 }
 extension ToCollegeComponent: Registration {
@@ -102,6 +150,7 @@ extension ToCollegeComponent: Registration {
         keyPathToName[\ToCollegeDependency.remoteConfigService] = "remoteConfigService-RemoteConfigServiceProtocol"
         keyPathToName[\ToCollegeDependency.userNotificationService] = "userNotificationService-UserNotificationServiceProtocol"
         keyPathToName[\ToCollegeDependency.toCollegeRouter] = "toCollegeRouter-ToDestinationRouterProtocol"
+
     }
 }
 
@@ -120,8 +169,10 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 #if !NEEDLE_DYNAMIC
 
 @inline(never) private func register1() {
-    registerProviderFactory("^->RootComponent", factoryEmptyDependencyProvider)
+    registerProviderFactory("^->RootComponent->ToStationComponent->SettingComponent", factory665ba82bdea0118a424686805bdcd23f41633fbd)
+    registerProviderFactory("^->RootComponent->ToCollegeComponent->SettingComponent", factorya91c7545f599c7da16739c93a8ea40ef30c70274)
     registerProviderFactory("^->RootComponent->ToStationComponent", factoryce11505cf466f1bc1658b3a8f24c1d289f2c0f2e)
+    registerProviderFactory("^->RootComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->RootComponent->ToCollegeComponent", factoryd53809cef5d4c4c1e460b3a8f24c1d289f2c0f2e)
 }
 #endif

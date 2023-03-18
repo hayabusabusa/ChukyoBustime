@@ -9,13 +9,15 @@ import UIKit
 import NeedleFoundation
 import ServiceProtocol
 import Shared
+import SettingFeature
 
-public protocol SettingDependency: Dependency {
+protocol SettingDependency: Dependency {
     var userDefaultsService: UserDefaultsServiceProtocol { get }
+    var settingRouter: SettingRouterProtocol { get }
 }
 
-public final class SettingComponent: Component<SettingDependency>, ViewControllerBuilder {
-    public var viewController: UIViewController {
+final class SettingComponent: Component<SettingDependency>, ViewControllerBuilder {
+    var viewController: UIViewController {
         SettingViewController()
     }
 }

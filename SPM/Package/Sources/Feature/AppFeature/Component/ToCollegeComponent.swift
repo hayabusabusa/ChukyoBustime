@@ -9,8 +9,9 @@ import UIKit
 import NeedleFoundation
 import ServiceProtocol
 import Shared
+import ToDestinationFeature
 
-public protocol ToCollegeDependency: Dependency {
+protocol ToCollegeDependency: Dependency {
     var dateService: DateServiceProtocol { get }
     var fileService: FileServiceProtocol { get }
     var firestoreService: FirestoreServiceProtocol { get }
@@ -19,8 +20,20 @@ public protocol ToCollegeDependency: Dependency {
     var toCollegeRouter: ToDestinationRouterProtocol { get }
 }
 
-public final class ToCollegeComponent: Component<ToCollegeDependency>, ViewControllerBuilder {
-    public var viewController: UIViewController {
+final class ToCollegeComponent: Component<ToCollegeDependency> {
+    var settingRouter: SettingRouterProtocol {
+        SettingRouter(component: settingComponent)
+    }
+}
+
+// MARK: Components
+
+extension ToCollegeComponent: ViewControllerBuilder {
+    var settingComponent: SettingComponent {
+        SettingComponent(parent: self)
+    }
+
+    var viewController: UIViewController {
         ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toCollege))
     }
 }
