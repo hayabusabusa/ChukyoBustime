@@ -34,6 +34,11 @@ let package = Package(
             targets: [
                 "ToDestinationFeature"
             ]),
+        .library(
+            name: "SettingFeature",
+            targets: [
+                "SettingFeature"
+            ]),
     ],
     dependencies: [
         .package(
@@ -61,6 +66,7 @@ let package = Package(
         .target(
             name: "SettingFeature",
             dependencies: [
+                .needle,
                 .serviceProtocol,
                 .shared,
             ],
