@@ -69,7 +69,19 @@ extension SettingViewModel: SettingViewModelInput {
     }
 
     func didTapItemView(for item: SettingItem) {
-        
+        switch item {
+        case .about:
+            guard let url = URL(string: "https://chukyo-bustime-app.web.app") else { return }
+            router.transitionToSafariViewController(with: url)
+        case .disclaimer:
+            guard let url = URL(string: "https://chukyo-bustime-app.web.app/#/precautions") else { return }
+            router.transitionToSafariViewController(with: url)
+        case .privacyPolicy:
+            guard let url = URL(string: "https://chukyo-bustime-app.web.app/#/privacy-policy") else { return }
+            router.transitionToSafariViewController(with: url)
+        default:
+            break
+        }
     }
 
     func didTapCloseButton() {

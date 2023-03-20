@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 import Shared
 import SettingFeature
 
@@ -18,5 +19,10 @@ final class SettingRouter: SettingRouterProtocol {
 
     func dismiss() {
         viewController?.dismiss(animated: true)
+    }
+
+    func transitionToSafariViewController(with url: URL) {
+        let vc = SFSafariViewController(url: url)
+        viewController?.present(vc, animated: true)
     }
 }

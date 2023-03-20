@@ -7,4 +7,7 @@
 
 import Foundation
 
-public protocol SettingRouterProtocol: Routable {}
+public protocol SettingRouterProtocol: Routable {
+    /// Web ページを `SFSafariViewController` で表示する.
+    func transitionToSafariViewController(with url: URL)
+}
