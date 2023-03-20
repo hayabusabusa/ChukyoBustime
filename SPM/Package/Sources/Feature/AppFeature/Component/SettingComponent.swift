@@ -18,6 +18,7 @@ protocol SettingDependency: Dependency {
 
 final class SettingComponent: Component<SettingDependency>, ViewControllerBuilder {
     var viewController: UIViewController {
-        SettingViewController()
+        SettingViewController(userDefaultsService: dependency.userDefaultsService,
+                              router: dependency.settingRouter)
     }
 }

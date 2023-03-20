@@ -5,15 +5,27 @@
 //  Created by Shunya Yamada on 2023/03/08.
 //
 
+import Combine
+import ServiceProtocol
 import Shared
 import SwiftUI
 import UIKit
 
 public final class SettingViewController: UIViewController {
 
+    // MARK: Properties
+
+    private let viewModel: SettingViewModelProtocol
+    private var dataSource = SettingView.DataSource(sections: [])
+    private var subscriptions = Set<AnyCancellable>()
+
     // MARK: Lifecycle
 
-    public init() {
+    public init(userDefaultsService: UserDefaultsServiceProtocol,
+                router: SettingRouterProtocol) {
+        let model = SettingModel(userDefaultsService: userDefaultsService)
+        self.viewModel = SettingViewModel(model: model,
+                                          router: router)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -26,6 +38,9 @@ public final class SettingViewController: UIViewController {
         configureNavigation()
         configureSubviews()
         configureView()
+        configureSubscriptions()
+
+        viewModel.input.viewDidLoad()
     }
 }
 
@@ -34,6 +49,14 @@ public final class SettingViewController: UIViewController {
 private extension SettingViewController {
     func configureNavigation() {
         navigationItem.title = "設定"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "閉じる", style: .done, target: self, action: #selector(didTapCloseButton))
+    }
+
+    func configureSubscriptions() {
+        viewModel.output.dataSource
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.dataSource, on: self)
+            .store(in: &subscriptions)
     }
 
     func configureSubviews() {
@@ -41,9 +64,17 @@ private extension SettingViewController {
     }
 
     func configureView() {
-        let rootView = SettingView(dataSource: SettingView.DataSource(sections: []))
+        let rootView = SettingView(dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
         embed(hostingVC, to: view)
+    }
+}
+
+// MARK: - Private
+
+private extension SettingViewController {
+    @objc func didTapCloseButton() {
+        viewModel.input.didTapCloseButton()
     }
 }
 
@@ -51,6 +82,6 @@ private extension SettingViewController {
 
 extension SettingViewController: SettingViewDelegate {
     func settingViewDidTapItemView(for item: SettingItem) {
-        print(item)
+        viewModel.input.didTapItemView(for: item)
     }
 }
