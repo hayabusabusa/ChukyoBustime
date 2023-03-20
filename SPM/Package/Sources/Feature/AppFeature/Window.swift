@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 public final class Window: UIWindow {
     public override init(windowScene: UIWindowScene) {
@@ -20,6 +21,9 @@ public final class Window: UIWindow {
 
 private extension Window {
     func configure() {
+        // Firebase のセットアップ.
+        FirebaseApp.configure()
+        
         // Needle のセットアップ.
         registerProviderFactories()
         

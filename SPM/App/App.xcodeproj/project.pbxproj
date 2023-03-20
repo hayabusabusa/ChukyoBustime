@@ -11,6 +11,7 @@
 		A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D92912B98600314C37 /* SceneDelegate.swift */; };
 		A52A29E12912B98700314C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E02912B98700314C37 /* Assets.xcassets */; };
 		A52A29E42912B98700314C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E22912B98700314C37 /* LaunchScreen.storyboard */; };
+		A561DD2029C8885A00BDA8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A561DD1F29C8885A00BDA8ED /* GoogleService-Info.plist */; };
 		A5953BA329B4C26F004B4C26 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = A5953BA229B4C26F004B4C26 /* AppFeature */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		A52A29E02912B98700314C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52A29E32912B98700314C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52A29E52912B98700314C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A561DD1F29C8885A00BDA8ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A58B9A452913CA1F00EBA879 /* AppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppDebug.entitlements; sourceTree = "<group>"; };
 		A58B9A462913CA7800EBA879 /* AppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 				A58B9A462913CA7800EBA879 /* AppRelease.entitlements */,
 				A58B9A452913CA1F00EBA879 /* AppDebug.entitlements */,
 				A52A29D72912B98600314C37 /* AppDelegate.swift */,
+				A561DD1F29C8885A00BDA8ED /* GoogleService-Info.plist */,
 				A52A29D92912B98600314C37 /* SceneDelegate.swift */,
 				A52A29E02912B98700314C37 /* Assets.xcassets */,
 				A52A29E22912B98700314C37 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				A52A29E42912B98700314C37 /* LaunchScreen.storyboard in Resources */,
 				A52A29E12912B98700314C37 /* Assets.xcassets in Resources */,
+				A561DD2029C8885A00BDA8ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
