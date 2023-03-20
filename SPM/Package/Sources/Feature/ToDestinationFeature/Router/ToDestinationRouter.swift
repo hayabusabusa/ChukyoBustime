@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 public protocol ToDestinationRouterProtocol: Routable {
     /// 設定画面に遷移する.

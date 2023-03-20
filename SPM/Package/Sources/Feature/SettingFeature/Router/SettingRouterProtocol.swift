@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 
 public protocol SettingRouterProtocol: Routable {
     /// Web ページを `SFSafariViewController` で表示する.
