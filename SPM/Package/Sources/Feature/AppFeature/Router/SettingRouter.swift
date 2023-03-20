@@ -11,10 +11,10 @@ import Shared
 import SettingFeature
 
 final class SettingRouter: SettingRouterProtocol {
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     init(component: SettingComponent) {
-        self.viewController = component.viewController
+        self.viewController = nil
     }
 
     func dismiss() {

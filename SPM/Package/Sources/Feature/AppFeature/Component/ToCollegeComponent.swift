@@ -17,18 +17,17 @@ protocol ToCollegeDependency: Dependency {
     var firestoreService: FirestoreServiceProtocol { get }
     var remoteConfigService: RemoteConfigServiceProtocol { get }
     var userNotificationService: UserNotificationServiceProtocol { get }
-    var toCollegeRouter: ToDestinationRouterProtocol { get }
 }
 
-final class ToCollegeComponent: Component<ToCollegeDependency> {
-    var settingRouter: SettingRouterProtocol {
-        SettingRouter(component: settingComponent)
+final class ToCollegeComponent: Component<ToCollegeDependency>, ViewControllerBuilder {
+    var router: ToDestinationRouterProtocol {
+        ToCollegeRouter(component: self)
     }
 }
 
 // MARK: Components
 
-extension ToCollegeComponent: ViewControllerBuilder {
+extension ToCollegeComponent {
     var settingComponent: SettingComponent {
         SettingComponent(parent: self)
     }
@@ -39,6 +38,6 @@ extension ToCollegeComponent: ViewControllerBuilder {
                                     fileService: dependency.fileService,
                                     firestoreService: dependency.firestoreService,
                                     remoteConfigService: dependency.remoteConfigService,
-                                    router: dependency.toCollegeRouter)
+                                    router: router)
     }
 }

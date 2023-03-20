@@ -35,6 +35,7 @@ public final class ToDestinationViewController: UIViewController {
         self.viewModel = ToDestinationViewModel(model: model,
                                                 router: router)
         super.init(nibName: nil, bundle: nil)
+        router.start(with: self)
     }
 
     required init?(coder: NSCoder) {

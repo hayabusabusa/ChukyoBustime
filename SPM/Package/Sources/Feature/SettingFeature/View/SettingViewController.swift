@@ -27,6 +27,7 @@ public final class SettingViewController: UIViewController {
         self.viewModel = SettingViewModel(model: model,
                                           router: router)
         super.init(nibName: nil, bundle: nil)
+        router.start(with: self)
     }
 
     required init?(coder: NSCoder) {

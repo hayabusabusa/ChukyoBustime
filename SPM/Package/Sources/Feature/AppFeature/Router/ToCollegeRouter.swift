@@ -10,15 +10,16 @@ import Shared
 
 final class ToCollegeRouter: ToDestinationRouterProtocol {
     var component: ToCollegeComponent
-    var viewController: UIViewController?
+    weak var viewController: UIViewController?
 
     init(component: ToCollegeComponent) {
         self.component = component
-        self.viewController = component.viewController
+        self.viewController = nil
     }
 
     func transitionToSettings() {
         let settingViewController = component.settingComponent.viewController
-        viewController?.present(settingViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: settingViewController)
+        viewController?.present(navigationController, animated: true)
     }
 }

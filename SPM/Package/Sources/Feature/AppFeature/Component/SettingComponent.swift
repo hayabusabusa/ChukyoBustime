@@ -13,12 +13,15 @@ import SettingFeature
 
 protocol SettingDependency: Dependency {
     var userDefaultsService: UserDefaultsServiceProtocol { get }
-    var settingRouter: SettingRouterProtocol { get }
 }
 
 final class SettingComponent: Component<SettingDependency>, ViewControllerBuilder {
+    var router: SettingRouterProtocol {
+        SettingRouter(component: self)
+    }
+
     var viewController: UIViewController {
         SettingViewController(userDefaultsService: dependency.userDefaultsService,
-                              router: dependency.settingRouter)
+                              router: router)
     }
 }

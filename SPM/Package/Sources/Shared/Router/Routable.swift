@@ -8,11 +8,15 @@
 import UIKit
 
 /// 各ルーターに準拠させる Protocol.
-public protocol Routable {
-    var viewController: UIViewController? { get }
+public protocol Routable: AnyObject {
+    var viewController: UIViewController? { get set }
 }
 
 public extension Routable {
+    func start(with viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
     func dismiss() {
         viewController?.dismiss(animated: true)
     }

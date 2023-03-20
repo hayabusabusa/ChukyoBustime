@@ -36,14 +36,6 @@ final class RootComponent: BootstrapComponent {
     var userNotificationService: UserNotificationServiceProtocol {
         UserNotificationService.shared
     }
-
-    var toCollegeRouter: ToDestinationRouterProtocol {
-        ToCollegeRouter(component: toCollegeComponent)
-    }
-
-    var toStationRouter: ToDestinationRouterProtocol {
-        ToStationRouter(component: toStationComponent)
-    }
 }
 
 // MARK: - Components
