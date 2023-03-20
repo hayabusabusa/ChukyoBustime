@@ -21,9 +21,6 @@ protocol ToStationDependency: Dependency {
 
 final class ToStationComponent: Component<ToStationDependency> {
     var router: ToDestinationRouterProtocol {
-        // ViewController を作るために Router が必要だが、Router も ViewController が必要になっているので無限ループになる.
-        // なので一旦 ViewController を nil の状態にして、後から ViewController をセットしたいが、Component から返している ViewController はプロパティにできず
-        // Router 側から Component の ViewController を受け取ろうにも getter なので別インスタンスになってしまうというジレンマが発生している.
         ToStationRouter(component: self)
     }
 }
