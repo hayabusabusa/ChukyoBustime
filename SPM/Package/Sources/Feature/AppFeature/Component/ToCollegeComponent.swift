@@ -34,6 +34,11 @@ extension ToCollegeComponent: ViewControllerBuilder {
     }
 
     var viewController: UIViewController {
-        ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toCollege))
+        ToDestinationViewController(destination: .toCollege,
+                                    dateService: dependency.dateService,
+                                    fileService: dependency.fileService,
+                                    firestoreService: dependency.firestoreService,
+                                    remoteConfigService: dependency.remoteConfigService,
+                                    router: dependency.toCollegeRouter)
     }
 }

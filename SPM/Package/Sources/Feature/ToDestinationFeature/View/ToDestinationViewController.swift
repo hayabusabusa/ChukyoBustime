@@ -5,7 +5,9 @@
 //  Created by Shunya Yamada on 2023/03/05.
 //
 
+import Combine
 import UIKit
+import ServiceProtocol
 import Shared
 import SwiftUI
 
@@ -13,13 +15,25 @@ public final class ToDestinationViewController: UIViewController {
 
     // MARK: Properties
 
-    private let dependency: Dependency
+    private let viewModel: ToDestinationViewModelProtocol
     private var dataSource: ToDestinationView.DataSource = .empty
+    private var subscriptions = Set<AnyCancellable>()
 
     // MARK: Lifecycle
 
-    public init(dependency: Dependency) {
-        self.dependency = dependency
+    public init(destination: BusDestination,
+                dateService: DateServiceProtocol,
+                fileService: FileServiceProtocol,
+                firestoreService: FirestoreServiceProtocol,
+                remoteConfigService: RemoteConfigServiceProtocol,
+                router: ToDestinationRouterProtocol) {
+        let model = ToDestinationModel(destination: destination,
+                                       dateService: dateService,
+                                       fileService: fileService,
+                                       firestoreService: firestoreService,
+                                       remoteConfigService: remoteConfigService)
+        self.viewModel = ToDestinationViewModel(model: model,
+                                                router: router)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,6 +46,11 @@ public final class ToDestinationViewController: UIViewController {
         configureNavigation()
         configureSubviews()
         configureView()
+        configureSubscriptions()
+
+        Task {
+            await viewModel.input.viewDidLoad()
+        }
     }
 }
 
@@ -39,7 +58,17 @@ public final class ToDestinationViewController: UIViewController {
 
 private extension ToDestinationViewController {
     func configureNavigation() {
-        navigationItem.title = dependency.destination == .toCollege ? "大学行き" : "浄水駅行き"
+        navigationItem.title = viewModel.output.destination == .toCollege ? "大学行き" : "浄水駅行き"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(didTapSettingButton))
+    }
+
+    func configureSubscriptions() {
+        viewModel.output.isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                self?.dataSource.isLoading = isLoading
+            }
+            .store(in: &subscriptions)
     }
 
     func configureSubviews() {
@@ -53,12 +82,11 @@ private extension ToDestinationViewController {
     }
 }
 
-public extension ToDestinationViewController {
-    struct Dependency {
-        public let destination: BusDestination
+// MARK: - Private
 
-        public init(destination: BusDestination) {
-            self.destination = destination
-        }
+private extension ToDestinationViewController {
+    @objc
+    func didTapSettingButton() {
+        viewModel.input.didTapSettingButton()
     }
 }

@@ -11,11 +11,16 @@ import ServiceProtocol
 import Shared
 
 protocol ToDestinationModelProtocol {
+    /// バスの行き先.
+    var destination: BusDestination { get }
+    /// ロード中かどうかのフラグ.
+    var isLoading: AnyPublisher<Bool, Never> { get }
+    /// バスの時刻表データを取得する.
     func fetchBusTimes() async
 }
 
 final class ToDestinationModel: ToDestinationModelProtocol {
-    private let destination: BusDestination
+    let destination: BusDestination
     private let dateService: DateServiceProtocol
     private let fileService: FileServiceProtocol
     private let firestoreService: FirestoreServiceProtocol
@@ -23,7 +28,7 @@ final class ToDestinationModel: ToDestinationModelProtocol {
     private let isLoadingSubject: CurrentValueSubject<Bool, Never>
     private let errorSubject: PassthroughSubject<Error, Never>
 
-    var isLoadingPublisher: AnyPublisher<Bool, Never> {
+    var isLoading: AnyPublisher<Bool, Never> {
         isLoadingSubject.eraseToAnyPublisher()
     }
 

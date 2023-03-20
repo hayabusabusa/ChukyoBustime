@@ -34,6 +34,11 @@ extension ToStationComponent: ViewControllerBuilder {
     }
 
     var viewController: UIViewController {
-        ToDestinationViewController(dependency: ToDestinationViewController.Dependency(destination: .toStation))
+        ToDestinationViewController(destination: .toStation,
+                                    dateService: dependency.dateService,
+                                    fileService: dependency.fileService,
+                                    firestoreService: dependency.firestoreService,
+                                    remoteConfigService: dependency.remoteConfigService,
+                                    router: dependency.toStationRouter)
     }
 }
