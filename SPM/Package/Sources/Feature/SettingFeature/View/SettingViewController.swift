@@ -53,9 +53,11 @@ private extension SettingViewController {
     }
 
     func configureSubscriptions() {
-        viewModel.output.dataSource
+        viewModel.output.sections
             .receive(on: DispatchQueue.main)
-            .assign(to: \.dataSource, on: self)
+            .sink(receiveValue: { [weak self] sections in
+                self?.dataSource.sections = sections
+            })
             .store(in: &subscriptions)
     }
 

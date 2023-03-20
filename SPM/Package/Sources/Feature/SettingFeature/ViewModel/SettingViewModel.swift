@@ -22,7 +22,7 @@ protocol SettingViewModelInput {
 
 protocol SettingViewModelOutput {
     /// 画面に表示するデータ.
-    var dataSource: AnyPublisher<SettingView.DataSource, Never> { get }
+    var sections: AnyPublisher<[SettingSection], Never> { get }
 }
 
 protocol SettingViewModelProtocol {
@@ -35,13 +35,13 @@ protocol SettingViewModelProtocol {
 final class SettingViewModel {
     private let model: SettingModelProtocol
     private let router: SettingRouterProtocol
-    private let dataSourceSubject: CurrentValueSubject<SettingView.DataSource, Never>
+    private let sectionsSubject: CurrentValueSubject<[SettingSection], Never>
 
     init(model: SettingModelProtocol,
          router: SettingRouterProtocol) {
         self.model = model
         self.router = router
-        self.dataSourceSubject = CurrentValueSubject<SettingView.DataSource, Never>(SettingView.DataSource(sections: []))
+        self.sectionsSubject = CurrentValueSubject<[SettingSection], Never>([])
     }
 }
 
@@ -65,7 +65,7 @@ extension SettingViewModel: SettingViewModelInput {
                             .privacyPolicy
                            ])
         ]
-        dataSourceSubject.send(SettingView.DataSource(sections: sections))
+        sectionsSubject.send(sections)
     }
 
     func didTapItemView(for item: SettingItem) {
@@ -92,8 +92,8 @@ extension SettingViewModel: SettingViewModelInput {
 // MARK: - Output
 
 extension SettingViewModel: SettingViewModelOutput {
-    var dataSource: AnyPublisher<SettingView.DataSource, Never> {
-        dataSourceSubject.eraseToAnyPublisher()
+    var sections: AnyPublisher<[SettingSection], Never> {
+        sectionsSubject.eraseToAnyPublisher()
     }
 }
 
