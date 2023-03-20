@@ -73,7 +73,7 @@ private extension ToDestinationViewController {
     }
 
     func configureSubviews() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGroupedBackground
     }
 
     func configureView() {
