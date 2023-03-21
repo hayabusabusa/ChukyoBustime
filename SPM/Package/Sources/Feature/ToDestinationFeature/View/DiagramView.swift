@@ -21,6 +21,7 @@ struct DiagramView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 80)
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .background(Color(UIColor.secondarySystemGroupedBackground))
     }
 }
 

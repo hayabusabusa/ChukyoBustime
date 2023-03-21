@@ -45,7 +45,7 @@ struct BusListItemView: View {
                 .foregroundColor(Color(UIColor.systemGray2.withAlphaComponent(0.3)))
                 .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0))
         }
-        .background(dataSource.isHighlighted ? Color.blue.opacity(0.2) : Color.clear)
+        .background(dataSource.isHighlighted ? Color.blue.opacity(0.2) : Color(UIColor.secondarySystemGroupedBackground))
     }
 }
 

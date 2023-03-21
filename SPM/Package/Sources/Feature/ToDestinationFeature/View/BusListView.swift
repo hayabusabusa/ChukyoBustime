@@ -29,6 +29,7 @@ struct BusListView: View {
             }
         }
         .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+        .background(Color(UIColor.secondarySystemGroupedBackground))
     }
 }
 

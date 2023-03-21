@@ -41,6 +41,7 @@ struct CountdownView: View {
             }
         }
         .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+        .background(Color(UIColor.secondarySystemGroupedBackground))
     }
 
     func outlinedText(_ text: String) -> some View {

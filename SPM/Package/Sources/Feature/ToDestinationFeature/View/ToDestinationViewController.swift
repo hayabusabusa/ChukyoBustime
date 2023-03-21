@@ -79,6 +79,7 @@ private extension ToDestinationViewController {
     func configureView() {
         let rootView = ToDestinationView(dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
+        hostingVC.view.backgroundColor = .systemGroupedBackground
         embed(hostingVC, to: view)
     }
 }
