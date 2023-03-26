@@ -15,6 +15,7 @@ protocol SettingViewModelInput {
     /// 画面初回表示時.
     func viewDidLoad()
     /// リストの項目タップ時.
+    /// - Parameter item: タップしたリストの項目.
     func didTapItemView(for item: SettingItem)
     /// ナビゲージョンバーの閉じるボタンタップ時.
     func didTapCloseButton()
@@ -49,27 +50,15 @@ final class SettingViewModel {
 
 extension SettingViewModel: SettingViewModelInput {
     func viewDidLoad() {
-        let version = model.version ?? ""
-        let initialTab = model.initialTab ?? 0
-
-        let sections = [
-            SettingSection(title: "アプリの設定",
-                           items: [
-                            .tabSetting(setting: initialTab == 0 ? "浄水駅行き" : "大学行き")
-                           ]),
-            SettingSection(title: "このアプリについて",
-                           items: [
-                            .version(version: version),
-                            .about,
-                            .disclaimer,
-                            .privacyPolicy
-                           ])
-        ]
-        sectionsSubject.send(sections)
+        sectionsSubject.send(makeSections())
     }
 
     func didTapItemView(for item: SettingItem) {
         switch item {
+        case .tabSetting:
+            let toggledTab = model.toggleTab()
+            sectionsSubject.send(makeSections())
+            router.presentAlert(with: toggledTab)
         case .about:
             guard let url = URL(string: "https://chukyo-bustime-app.web.app") else { return }
             router.transitionToSafariViewController(with: url)
@@ -100,4 +89,26 @@ extension SettingViewModel: SettingViewModelOutput {
 extension SettingViewModel: SettingViewModelProtocol {
     var input: SettingViewModelInput { self }
     var output: SettingViewModelOutput { self }
+}
+
+// MARK: - Private
+
+private extension SettingViewModel {
+    func makeSections() -> [SettingSection] {
+        let version = model.version
+        let initialTab = model.initialTab
+        return  [
+            SettingSection(title: "アプリの設定",
+                           items: [
+                            .tabSetting(setting: initialTab == 0 ? "浄水駅行き" : "大学行き")
+                           ]),
+            SettingSection(title: "このアプリについて",
+                           items: [
+                            .version(version: version),
+                            .about,
+                            .disclaimer,
+                            .privacyPolicy
+                           ])
+        ]
+    }
 }

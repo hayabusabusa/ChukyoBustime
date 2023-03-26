@@ -67,7 +67,7 @@ private extension SettingViewController {
     }
 
     func configureView() {
-        let rootView = SettingView(dataSource: dataSource)
+        let rootView = SettingView(dataSource: dataSource, delegate: self)
         let hostingVC = UIHostingController(rootView: rootView)
         embed(hostingVC, to: view)
     }
@@ -76,7 +76,8 @@ private extension SettingViewController {
 // MARK: - Private
 
 private extension SettingViewController {
-    @objc func didTapCloseButton() {
+    @objc
+    func didTapCloseButton() {
         viewModel.input.didTapCloseButton()
     }
 }
