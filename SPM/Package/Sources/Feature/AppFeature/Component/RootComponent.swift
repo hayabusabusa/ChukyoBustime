@@ -51,6 +51,7 @@ extension RootComponent {
 
     var rootViewController: UIViewController {
         TabBarController(toCollegeViewController: toCollegeComponent.viewController,
-                         toStationViewController: toStationComponent.viewController)
+                         toStationViewController: toStationComponent.viewController,
+                         userDefaultsService: userDefaultsService)
     }
 }
