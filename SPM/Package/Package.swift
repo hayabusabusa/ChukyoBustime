@@ -1,20 +1,20 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 private extension Target.Dependency {
     static let firestore = Target.Dependency.product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
-    static let firestoreSwift = Target.Dependency.product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk")
     static let needle = Target.Dependency.product(name: "NeedleFoundation", package: "needle")
     static let remoteConfig = Target.Dependency.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk")
-    static let remoteConfigSwift = Target.Dependency.product(name: "FirebaseRemoteConfigSwift", package: "firebase-ios-sdk")
+    static let composableArchitecture = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+    static let swiftDependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
+    static let swiftDependenciesMacro = Target.Dependency.product(name: "DependenciesMacros", package: "swift-dependencies")
     static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
-
     static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
+    static let firestoreClient = Target.Dependency(stringLiteral: "FirestoreClient")
     static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
     static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
-
     static let service = Target.Dependency(stringLiteral: "Service")
     static let serviceProtocol = Target.Dependency(stringLiteral: "ServiceProtocol")
     static let shared = Target.Dependency(stringLiteral: "Shared")
@@ -43,10 +43,16 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/firebase/firebase-ios-sdk.git",
-            .upToNextMajor(from: "10.1.0")),
+            .upToNextMajor(from: "11.6.0")),
         .package(
             url: "https://github.com/uber/needle.git",
             .upToNextMajor(from: "0.22.0")),
+        .package(
+            url: "https://github.com/pointfreeco/swift-composable-architecture.git",
+            .upToNextMajor(from: "1.17.0")),
+        .package(
+            url: "https://github.com/pointfreeco/swift-dependencies",
+            .upToNextMajor(from: "1.6.2")),
         .package(
             url: "https://github.com/malcommac/SwiftDate.git",
             .upToNextMajor(from: "7.0.0")),
