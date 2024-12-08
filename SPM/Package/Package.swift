@@ -30,6 +30,16 @@ let package = Package(
                 "AppFeature"
             ]),
         .library(
+            name: "FirestoreClient",
+            targets: [
+                "FirestoreClient"
+            ]),
+        .library(
+            name: "FirestoreClientLive",
+            targets: [
+                "FirestoreClientLive"
+            ]),
+        .library(
             name: "ToDestinationFeature",
             targets: [
                 "ToDestinationFeature"
@@ -98,9 +108,7 @@ let package = Package(
             name: "Service",
             dependencies: [
                 .firestore,
-                .firestoreSwift,
                 .remoteConfig,
-                .remoteConfigSwift,
                 .serviceProtocol,
                 .shared,
                 .swiftDate,
@@ -109,6 +117,21 @@ let package = Package(
             name: "ServiceProtocol",
             dependencies: [
                 .shared,
+            ]),
+        .target(
+            name: "FirestoreClient",
+            dependencies: [
+                .shared,
+                .swiftDependencies,
+                .swiftDependenciesMacro
+            ]),
+        .target(
+            name: "FirestoreClientLive",
+            dependencies: [
+                .firestore,
+                .firestoreClient,
+                .shared,
+                .swiftDependencies,
             ]),
         .target(
             name: "Shared",
