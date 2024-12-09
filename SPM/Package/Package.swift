@@ -12,6 +12,7 @@ private extension Target.Dependency {
     static let swiftDependenciesMacro = Target.Dependency.product(name: "DependenciesMacros", package: "swift-dependencies")
     static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
     static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
+    static let fileClient = Target.Dependency(stringLiteral: "FileClient")
     static let firestoreClient = Target.Dependency(stringLiteral: "FirestoreClient")
     static let remoteConfigClient = Target.Dependency(stringLiteral: "RemoteConfigClient")
     static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
@@ -29,6 +30,16 @@ let package = Package(
             name: "AppFeature",
             targets: [
                 "AppFeature"
+            ]),
+        .library(
+            name: "FileClient",
+            targets: [
+                "FileClient"
+            ]),
+        .library(
+            name: "FileClientLive",
+            targets: [
+                "FileClientLive"
             ]),
         .library(
             name: "FirestoreClient",
@@ -128,6 +139,18 @@ let package = Package(
             name: "ServiceProtocol",
             dependencies: [
                 .shared,
+            ]),
+        .target(
+            name: "FileClient",
+            dependencies: [
+                .swiftDependencies,
+                .swiftDependenciesMacro
+            ]),
+        .target(
+            name: "FileClientLive",
+            dependencies: [
+                .fileClient,
+                .swiftDependencies
             ]),
         .target(
             name: "FirestoreClient",
