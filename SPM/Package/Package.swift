@@ -13,6 +13,7 @@ private extension Target.Dependency {
     static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
     static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
     static let firestoreClient = Target.Dependency(stringLiteral: "FirestoreClient")
+    static let remoteConfigClient = Target.Dependency(stringLiteral: "RemoteConfigClient")
     static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
     static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
     static let service = Target.Dependency(stringLiteral: "Service")
@@ -38,6 +39,16 @@ let package = Package(
             name: "FirestoreClientLive",
             targets: [
                 "FirestoreClientLive"
+            ]),
+        .library(
+            name: "RemoteConfigClient",
+            targets: [
+                "RemoteConfigClient"
+            ]),
+        .library(
+            name: "RemoteConfigClientLive",
+            targets: [
+                "RemoteConfigClientLive"
             ]),
         .library(
             name: "ToDestinationFeature",
@@ -132,6 +143,21 @@ let package = Package(
                 .firestoreClient,
                 .shared,
                 .swiftDependencies,
+            ]),
+        .target(
+            name: "RemoteConfigClient",
+            dependencies: [
+                .shared,
+                .swiftDependencies,
+                .swiftDependenciesMacro
+            ]),
+        .target(
+            name: "RemoteConfigClientLive",
+            dependencies: [
+                .remoteConfig,
+                .remoteConfigClient,
+                .shared,
+                .swiftDependencies
             ]),
         .target(
             name: "Shared",
