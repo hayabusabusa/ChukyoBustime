@@ -20,6 +20,7 @@ private extension Target.Dependency {
     static let service = Target.Dependency(stringLiteral: "Service")
     static let serviceProtocol = Target.Dependency(stringLiteral: "ServiceProtocol")
     static let shared = Target.Dependency(stringLiteral: "Shared")
+    static let userDefaultsClient = Target.Dependency(stringLiteral: "UserDefaultsClient")
     static let userNotificationClient = Target.Dependency(stringLiteral: "UserNotificationClient")
 }
 
@@ -71,6 +72,16 @@ let package = Package(
             name: "SettingFeature",
             targets: [
                 "SettingFeature"
+            ]),
+        .library(
+            name: "UserDefaultsClient",
+            targets: [
+                "UserDefaultsClient"
+            ]),
+        .library(
+            name: "UserDefaultsClientLive",
+            targets: [
+                "UserDefaultsClientLive"
             ]),
         .library(
             name: "UserNotificationClient",
@@ -196,6 +207,18 @@ let package = Package(
         .target(
             name: "Shared",
             dependencies: []),
+        .target(
+            name: "UserDefaultsClient",
+            dependencies: [
+                .swiftDependencies,
+                .swiftDependenciesMacro
+            ]),
+        .target(
+            name: "UserDefaultsClientLive",
+            dependencies: [
+                .swiftDependencies,
+                .userDefaultsClient
+            ]),
         .target(
             name: "UserNotificationClient",
             dependencies: [
