@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A39F80772D0DC60100653618 /* DateClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80762D0DC60100653618 /* DateClientLive */; };
+		A39F80792D0DC60100653618 /* FileClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80782D0DC60100653618 /* FileClientLive */; };
+		A39F807B2D0DC60100653618 /* FirebaseClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F807A2D0DC60100653618 /* FirebaseClientLive */; };
+		A39F807D2D0DC60100653618 /* FirestoreClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F807C2D0DC60100653618 /* FirestoreClientLive */; };
+		A39F807F2D0DC60100653618 /* RemoteConfigClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F807E2D0DC60100653618 /* RemoteConfigClientLive */; };
+		A39F80812D0DC60100653618 /* UserDefaultsClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80802D0DC60100653618 /* UserDefaultsClientLive */; };
+		A39F80832D0DC60100653618 /* UserNotificationClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80822D0DC60100653618 /* UserNotificationClientLive */; };
 		A52A29D82912B98600314C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D72912B98600314C37 /* AppDelegate.swift */; };
 		A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D92912B98600314C37 /* SceneDelegate.swift */; };
 		A52A29E12912B98700314C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E02912B98700314C37 /* Assets.xcassets */; };
@@ -32,7 +39,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39F80792D0DC60100653618 /* FileClientLive in Frameworks */,
+				A39F807D2D0DC60100653618 /* FirestoreClientLive in Frameworks */,
 				A5953BA329B4C26F004B4C26 /* AppFeature in Frameworks */,
+				A39F807F2D0DC60100653618 /* RemoteConfigClientLive in Frameworks */,
+				A39F807B2D0DC60100653618 /* FirebaseClientLive in Frameworks */,
+				A39F80812D0DC60100653618 /* UserDefaultsClientLive in Frameworks */,
+				A39F80772D0DC60100653618 /* DateClientLive in Frameworks */,
+				A39F80832D0DC60100653618 /* UserNotificationClientLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +111,13 @@
 			name = App;
 			packageProductDependencies = (
 				A5953BA229B4C26F004B4C26 /* AppFeature */,
+				A39F80762D0DC60100653618 /* DateClientLive */,
+				A39F80782D0DC60100653618 /* FileClientLive */,
+				A39F807A2D0DC60100653618 /* FirebaseClientLive */,
+				A39F807C2D0DC60100653618 /* FirestoreClientLive */,
+				A39F807E2D0DC60100653618 /* RemoteConfigClientLive */,
+				A39F80802D0DC60100653618 /* UserDefaultsClientLive */,
+				A39F80822D0DC60100653618 /* UserNotificationClientLive */,
 			);
 			productName = App;
 			productReference = A52A29D42912B98600314C37 /* App.app */;
@@ -405,6 +426,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A39F80762D0DC60100653618 /* DateClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DateClientLive;
+		};
+		A39F80782D0DC60100653618 /* FileClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileClientLive;
+		};
+		A39F807A2D0DC60100653618 /* FirebaseClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseClientLive;
+		};
+		A39F807C2D0DC60100653618 /* FirestoreClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirestoreClientLive;
+		};
+		A39F807E2D0DC60100653618 /* RemoteConfigClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RemoteConfigClientLive;
+		};
+		A39F80802D0DC60100653618 /* UserDefaultsClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserDefaultsClientLive;
+		};
+		A39F80822D0DC60100653618 /* UserNotificationClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UserNotificationClientLive;
+		};
 		A5953BA229B4C26F004B4C26 /* AppFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppFeature;
