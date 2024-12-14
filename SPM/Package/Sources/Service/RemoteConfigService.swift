@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseRemoteConfig
-import FirebaseRemoteConfigSwift
 import ServiceProtocol
 import Shared
 
@@ -29,7 +28,7 @@ public final class RemoteConfigService: RemoteConfigServiceProtocol {
     }
 
     public func configValue<T: Decodable>(for key: RemoteConfigKey, type: T.Type) -> T? {
-        guard let data = remoteConfig[key.rawValue].stringValue?.data(using: .utf8),
+        guard let data = remoteConfig[key.rawValue].stringValue.data(using: .utf8),
               let decoded = try? JSONDecoder().decode(type, from: data) else { return nil }
         return decoded
     }
