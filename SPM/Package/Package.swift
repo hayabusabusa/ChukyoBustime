@@ -4,6 +4,7 @@
 import PackageDescription
 
 private extension Target.Dependency {
+    static let firebaseAnalytics = Target.Dependency.product(name: "FirebaseAnalytics", package: "firebase-ios-sdk")
     static let firestore = Target.Dependency.product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
     static let needle = Target.Dependency.product(name: "NeedleFoundation", package: "needle")
     static let remoteConfig = Target.Dependency.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk")
@@ -14,6 +15,7 @@ private extension Target.Dependency {
     static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
     static let dateClient = Target.Dependency(stringLiteral: "DateClient")
     static let fileClient = Target.Dependency(stringLiteral: "FileClient")
+    static let firebaseClient = Target.Dependency(stringLiteral: "FirebaseClient")
     static let firestoreClient = Target.Dependency(stringLiteral: "FirestoreClient")
     static let remoteConfigClient = Target.Dependency(stringLiteral: "RemoteConfigClient")
     static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
@@ -53,6 +55,16 @@ let package = Package(
             name: "FileClientLive",
             targets: [
                 "FileClientLive"
+            ]),
+        .library(
+            name: "FirebaseClient",
+            targets: [
+                "FirebaseClient"
+            ]),
+        .library(
+            name: "FirebaseClientLive",
+            targets: [
+                "FirebaseClientLive"
             ]),
         .library(
             name: "FirestoreClient",
@@ -197,6 +209,19 @@ let package = Package(
             name: "FileClientLive",
             dependencies: [
                 .fileClient,
+                .swiftDependencies
+            ]),
+        .target(
+            name: "FirebaseClient",
+            dependencies: [
+                .swiftDependencies,
+                .swiftDependenciesMacro
+            ]),
+        .target(
+            name: "FirebaseClientLive",
+            dependencies: [
+                .firebaseAnalytics,
+                .firebaseClient,
                 .swiftDependencies
             ]),
         .target(
