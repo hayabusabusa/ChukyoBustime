@@ -152,6 +152,7 @@ let package = Package(
                 .needle,
                 .serviceProtocol,
                 .shared,
+                "_SettingFeature",
             ],
             path: "./Sources/Feature/SettingFeature"),
         .target(
@@ -169,6 +170,14 @@ let package = Package(
                 .shared,
             ],
             path: "./Sources/Feature/WidgetFeature"),
+        .target(
+            name: "_SettingFeature",
+            dependencies: [
+                .composableArchitecture,
+                .shared,
+                .swiftDependencies,
+                .userDefaultsClient,
+            ]),
 
         // MARK: Core
         .target(
