@@ -29,7 +29,7 @@ private extension Target.Dependency {
 
 let package = Package(
     name: "Package",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v16)],
     products: [
         .library(
             name: "AppFeature",
