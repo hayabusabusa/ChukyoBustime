@@ -18,11 +18,11 @@ public struct SettingReducer {
         /// 初回起動時に開くタブ.
         public var initialTab: Int = 0
         /// アプリのバージョン.
-        public var version: String?
+        public var version: String = ""
 
         public init(
             initialTab: Int = 0,
-            version: String? = nil
+            version: String = ""
         ) {
             self.initialTab = initialTab
             self.version = version
@@ -42,7 +42,8 @@ public struct SettingReducer {
             case .task:
                 // 値がない場合は初期値として `0` を設定する.
                 let initialTab = userDefaultsClient.initialTab ?? 0
-                let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+                // 基本的には `Bundle` からバージョンを取れるものとする.
+                let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0"
 
                 state.version = version
                 state.initialTab = initialTab
@@ -61,11 +62,114 @@ public struct SettingView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            Text("Setting")
+            List {
+                Section(
+                    header: Text("アプリの設定")
+                ) {
+                    Button {
+                        // TODO: アラートで切り替え
+                    } label: {
+                        HStack {
+                            Text("起動時に表示")
+                                .foregroundColor(
+                                    Color(UIColor.label)
+                                )
+                            Spacer()
+                            Text(store.state.initialTabText)
+                                .foregroundColor(.blue)
+                        }
+                    }
+                }
+
+                Section(
+                    header: Text("このアプリについて")
+                ) {
+                    HStack {
+                        Text("バージョン")
+                            .foregroundColor(
+                                Color(UIColor.label)
+                            )
+                        Spacer()
+                        Text(store.state.version)
+                            .foregroundColor(.gray)
+                    }
+
+                    Button {
+                        // TODO: WebView を表示
+                    } label: {
+                        HStack {
+                            Text("このアプリについて")
+                                .foregroundColor(
+                                    Color(UIColor.label)
+                                )
+                            Spacer()
+                            Image(systemName: "chevron.forward")
+                                .foregroundColor(
+                                    Color(UIColor.systemGray2)
+                                )
+                        }
+                    }
+
+                    Button {
+                        // TODO: WebView を表示
+                    } label: {
+                        HStack {
+                            Text("利用上の注意")
+                                .foregroundColor(
+                                    Color(UIColor.label)
+                                )
+                            Spacer()
+                            Image(systemName: "chevron.forward")
+                                .foregroundColor(
+                                    Color(UIColor.systemGray2)
+                                )
+                        }
+                    }
+
+                    Button {
+                        // TODO: WebView を表示
+                    } label: {
+                        HStack {
+                            Text("プライバシーポリシー")
+                                .foregroundColor(
+                                    Color(UIColor.label)
+                                )
+                            Spacer()
+                            Image(systemName: "chevron.forward")
+                                .foregroundColor(
+                                    Color(UIColor.systemGray2)
+                                )
+                        }
+                    }
+                }
+            }
+        }
+        .task {
+            store.send(.task)
         }
     }
 
     public init(store: StoreOf<SettingReducer>) {
         self.store = store
     }
+}
+
+extension SettingReducer.State {
+    /// アプリ起動時に開くタブの名称.
+    fileprivate var initialTabText: String {
+        initialTab == 0 ? "浄水駅行き" : "大学行き"
+    }
+}
+
+// MARK: - Preview
+
+#Preview {
+    SettingView(
+        store: Store(
+            initialState: SettingReducer.State(),
+            reducer: {
+                SettingReducer()
+            }
+        )
+    )
 }
