@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import SharedView
 import SwiftUI
 import UserDefaultsClient
 
@@ -13,25 +14,52 @@ import UserDefaultsClient
 
 @Reducer
 public struct SettingReducer {
+    @Reducer(state: .equatable)
+    public enum Destination {
+        /// アラートを表示する.
+        case alert(AlertState<Alert>)
+        /// 外部 Web ページを表示する.
+        case safariView(SafariReducer)
+
+        @CasePathable
+        public enum Alert {
+            /// 初回起動時に開くタブのアラート.
+            case toggleInitialTab
+        }
+    }
+
     @ObservableState
     public struct State: Equatable {
+        @Presents public var destination: Destination.State?
         /// 初回起動時に開くタブ.
         public var initialTab: Int = 0
         /// アプリのバージョン.
         public var version: String = ""
 
         public init(
+            destination: Destination.State? = nil,
             initialTab: Int = 0,
             version: String = ""
         ) {
+            self.destination = destination
             self.initialTab = initialTab
             self.version = version
         }
     }
 
     public enum Action {
+        /// このアプリについての項目タップ時の Action.
+        case aboutButtonTapped
+        /// 画面遷移の Action.
+        case destination(PresentationAction<Destination.Action>)
+        /// 利用規約の項目タップ時の Action.
+        case disclaimerButtonTapped
         /// View 側の `.task` 実行時の Action.
         case task
+        /// プライバシーポリシーの項目タップ時の Action.
+        case privacyPolicyButtonTapped
+        /// 起動時に表示する項目タップ時の Action.
+        case toggleInitialTabButtonTapped
     }
 
     @Dependency(\.userDefaultsClient) var userDefaultsClient
@@ -39,6 +67,27 @@ public struct SettingReducer {
     public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .aboutButtonTapped:
+                guard let url = URL(string: "https://chukyo-bustime-app.web.app") else {
+                    return .none
+                }
+                state.destination = .safariView(
+                    SafariReducer.State(url: url)
+                )
+                return .none
+
+            case .destination:
+                return .none
+
+            case .disclaimerButtonTapped:
+                guard let url = URL(string: "https://chukyo-bustime-app.web.app/#/precautions") else {
+                    return .none
+                }
+                state.destination = .safariView(
+                    SafariReducer.State(url: url)
+                )
+                return .none
+
             case .task:
                 // 値がない場合は初期値として `0` を設定する.
                 let initialTab = userDefaultsClient.initialTab ?? 0
@@ -48,8 +97,33 @@ public struct SettingReducer {
                 state.version = version
                 state.initialTab = initialTab
                 return .none
+
+            case .privacyPolicyButtonTapped:
+                guard let url = URL(string: "https://chukyo-bustime-app.web.app/#/privacy-policy") else {
+                    return .none
+                }
+                state.destination = .safariView(
+                    SafariReducer.State(url: url)
+                )
+                return .none
+
+            case .toggleInitialTabButtonTapped:
+                let toggledInitialTab = state.initialTab == 0 ? 1 : 0
+                let toggledInitialTabText = toggledInitialTab == 0 ? "浄水駅行き" : "大学行き"
+                // 変更後の値を保存.
+                userDefaultsClient.setInitialTab(toggledInitialTab)
+                state.initialTab = toggledInitialTab
+                state.destination = .alert(
+                    AlertState {
+                        TextState("設定完了")
+                    } message: {
+                        TextState("起動時に表示する画面を\n\(toggledInitialTabText) の画面に設定しました。")
+                    }
+                )
+                return .none
             }
         }
+        .ifLet(\.$destination, action: \.destination)
     }
 
     public init() {}
@@ -67,7 +141,7 @@ public struct SettingView: View {
                     header: Text("アプリの設定")
                 ) {
                     Button {
-                        // TODO: アラートで切り替え
+                        store.send(.toggleInitialTabButtonTapped)
                     } label: {
                         HStack {
                             Text("起動時に表示")
@@ -95,7 +169,7 @@ public struct SettingView: View {
                     }
 
                     Button {
-                        // TODO: WebView を表示
+                        store.send(.aboutButtonTapped)
                     } label: {
                         HStack {
                             Text("このアプリについて")
@@ -111,7 +185,7 @@ public struct SettingView: View {
                     }
 
                     Button {
-                        // TODO: WebView を表示
+                        store.send(.disclaimerButtonTapped)
                     } label: {
                         HStack {
                             Text("利用上の注意")
@@ -127,7 +201,7 @@ public struct SettingView: View {
                     }
 
                     Button {
-                        // TODO: WebView を表示
+                        store.send(.privacyPolicyButtonTapped)
                     } label: {
                         HStack {
                             Text("プライバシーポリシー")
@@ -143,9 +217,17 @@ public struct SettingView: View {
                     }
                 }
             }
-        }
-        .task {
-            store.send(.task)
+            .task {
+                store.send(.task)
+            }
+            .fullScreenCover(
+                item: $store.scope(
+                    state: \.destination?.safariView,
+                    action: \.destination.safariView
+                )
+            ) { store in
+                SafariView(store: store)
+            }
         }
     }
 
