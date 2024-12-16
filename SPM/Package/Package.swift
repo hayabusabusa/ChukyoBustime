@@ -97,6 +97,11 @@ let package = Package(
                 "SettingFeature"
             ]),
         .library(
+            name: "SharedView",
+            targets: [
+                "SharedView"
+            ]),
+        .library(
             name: "UserDefaultsClient",
             targets: [
                 "UserDefaultsClient"
@@ -175,6 +180,7 @@ let package = Package(
             dependencies: [
                 .composableArchitecture,
                 .shared,
+                "SharedView",
                 .swiftDependencies,
                 .userDefaultsClient,
             ]),
@@ -266,6 +272,11 @@ let package = Package(
         .target(
             name: "Shared",
             dependencies: []),
+        .target(
+            name: "SharedView",
+            dependencies: [
+                .composableArchitecture
+            ]),
         .target(
             name: "UserDefaultsClient",
             dependencies: [
