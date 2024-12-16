@@ -50,6 +50,8 @@ public struct SettingReducer {
     public enum Action {
         /// このアプリについての項目タップ時の Action.
         case aboutButtonTapped
+        /// 閉じるボタンタップ時の Action.
+        case dismissButtonTapped
         /// 画面遷移の Action.
         case destination(PresentationAction<Destination.Action>)
         /// 利用規約の項目タップ時の Action.
@@ -62,6 +64,7 @@ public struct SettingReducer {
         case toggleInitialTabButtonTapped
     }
 
+    @Dependency(\.dismiss) var dismiss
     @Dependency(\.userDefaultsClient) var userDefaultsClient
 
     public var body: some ReducerOf<Self> {
@@ -75,6 +78,11 @@ public struct SettingReducer {
                     SafariReducer.State(url: url)
                 )
                 return .none
+
+            case .dismissButtonTapped:
+                return .run { _ in
+                    await dismiss()
+                }
 
             case .destination:
                 return .none
@@ -228,6 +236,15 @@ public struct SettingView: View {
             ) { store in
                 SafariView(store: store)
             }
+            .navigationTitle("設定")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("閉じる") {
+                        store.send(.dismissButtonTapped)
+                    }
+                }
+            }
         }
     }
 
@@ -246,12 +263,14 @@ extension SettingReducer.State {
 // MARK: - Preview
 
 #Preview {
-    SettingView(
-        store: Store(
-            initialState: SettingReducer.State(),
-            reducer: {
-                SettingReducer()
-            }
+    NavigationStack {
+        SettingView(
+            store: Store(
+                initialState: SettingReducer.State(),
+                reducer: {
+                    SettingReducer()
+                }
+            )
         )
-    )
+    }
 }
