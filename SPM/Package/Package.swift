@@ -164,6 +164,7 @@ let package = Package(
             name: "ToDestinationFeature",
             dependencies: [
                 .needle,
+                "_ToDestinationFeature",
                 .serviceProtocol,
                 .shared,
             ],
@@ -183,6 +184,16 @@ let package = Package(
                 "SharedView",
                 .swiftDependencies,
                 .userDefaultsClient,
+            ]),
+        .target(
+            name: "_ToDestinationFeature",
+            dependencies: [
+                .composableArchitecture,
+                .remoteConfigClient,
+                .shared,
+                "SharedView",
+                .swiftDependencies,
+                .firestoreClient,
             ]),
 
         // MARK: Core
