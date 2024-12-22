@@ -8,7 +8,7 @@
 import Foundation
 
 /// Firestore に保存している各ダイヤのコレクションに入っているデータ.
-public struct BusTime: Codable {
+public struct BusTime: Codable, Equatable {
     /// バスが来る時刻の時間.
     public let hour: Int
     /// バスが来る時刻の分.

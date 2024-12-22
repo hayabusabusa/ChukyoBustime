@@ -8,7 +8,7 @@
 import Foundation
 
 /// Firestore に保存しているバスのカレンダーのコレクションに入っているデータ.
-public struct BusDate: Codable {
+public struct BusDate: Codable, Equatable {
     /// バスのダイヤ.
     ///
     /// この値を利用してカレンダーのコレクションにアクセスする.
