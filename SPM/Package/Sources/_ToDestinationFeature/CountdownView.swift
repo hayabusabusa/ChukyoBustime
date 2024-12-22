@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Reducer
 
 @Reducer
-public struct ContdownReducer {
+public struct CountdownReducer {
     @ObservableState
     public struct State: Equatable {
         /// バス出発までのカウントダウン用の秒数.
@@ -81,7 +81,7 @@ public struct ContdownReducer {
 public struct CountdownView: View {
     private let formatter = DateComponentsFormatter()
 
-    @Perception.Bindable var store: StoreOf<ContdownReducer>
+    @Perception.Bindable var store: StoreOf<CountdownReducer>
 
     public var body: some View {
         WithPerceptionTracking {
@@ -145,7 +145,7 @@ public struct CountdownView: View {
         }
     }
 
-    public init(store: StoreOf<ContdownReducer>) {
+    public init(store: StoreOf<CountdownReducer>) {
         self.store = store
     }
 }
@@ -167,11 +167,11 @@ private extension CountdownView {
 #Preview {
     CountdownView(
         store: Store(
-            initialState: ContdownReducer.State(
+            initialState: CountdownReducer.State(
                 secondsUntilDeparture: 60
             ),
             reducer: {
-                ContdownReducer()
+                CountdownReducer()
             }
         )
     )
