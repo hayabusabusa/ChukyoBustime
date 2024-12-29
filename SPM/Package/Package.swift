@@ -192,8 +192,10 @@ let package = Package(
                 .remoteConfigClient,
                 .shared,
                 "SharedView",
+                .swiftDate,
                 .swiftDependencies,
                 .firestoreClient,
+                "UserNotificationClient",
             ]),
 
         // MARK: Core
