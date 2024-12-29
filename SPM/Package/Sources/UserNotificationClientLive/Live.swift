@@ -53,6 +53,9 @@ extension UserNotificationClient: @retroactive DependencyKey {
             )
 
             try await UNUserNotificationCenter.current().add(request)
+        } removeAllNotifications: {
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         }
     }
 }

@@ -16,6 +16,8 @@ public struct UserNotificationClient {
     public var authorize: @Sendable () async throws -> Void
     /// ローカル通知を登録する.
     public var addNotification: @Sendable (_ date: Date) async throws -> Void
+    /// 登録済みのローカル通知を全て削除する.
+    public var removeAllNotifications: @Sendable () async throws -> Void
 }
 
 // MARK: - Dependency
@@ -25,6 +27,8 @@ extension UserNotificationClient: TestDependencyKey {
         .init {
             // 何もしない.
         } addNotification: { _ in
+            // 何もしない
+        } removeAllNotifications: {
             // 何もしない
         }
     }
