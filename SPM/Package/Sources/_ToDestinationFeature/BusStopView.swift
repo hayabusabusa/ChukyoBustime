@@ -28,6 +28,7 @@ struct BusStopView: View {
                     width: 24,
                     height: 24
                 )
+                .foregroundStyle(.blue)
             Text(destinationText)
                 .font(
                     .system(
