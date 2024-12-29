@@ -74,6 +74,8 @@ public struct ToDestinationReducer {
         case busTimesEmpty
         /// カウントダウンの `Action`.
         case countdown(CountdownReducer.Action)
+        /// 画面遷移の `Action`.
+        case destination(PresentationAction<Destination.Action>)
         /// 通知登録の結果を受け取った時の `Action`.
         case notificationResponse(Result<BusTime, any Error>)
         /// `firestore` の処理の結果を受け取った際の `Action`.
@@ -146,6 +148,9 @@ public struct ToDestinationReducer {
 
             case .countdown:
                 // `Delegate` で受け取るもの以外は何もしない.
+                return .none
+
+            case .destination:
                 return .none
 
             case let .notificationResponse(.success(busTime)):
@@ -232,6 +237,7 @@ public struct ToDestinationReducer {
                 }
             }
         }
+        .ifLet(\.$destination, action: \.destination)
     }
 
     public init() {}
@@ -349,6 +355,16 @@ public struct ToDestinationView: View {
                                 height: 24
                             )
                     }
+                }
+            }
+            .sheet(
+                item: $store.scope(
+                    state: \.destination?.setting,
+                    action: \.destination.setting
+                )
+            ) { store in
+                NavigationStack {
+                    SettingView(store: store)
                 }
             }
             .task {
