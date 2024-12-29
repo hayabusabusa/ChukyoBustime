@@ -6,7 +6,9 @@
 //
 
 import ComposableArchitecture
+import Shared
 import SwiftUI
+import SwiftDate
 
 // MARK: - Reducer
 
@@ -14,15 +16,27 @@ import SwiftUI
 public struct CountdownReducer {
     @ObservableState
     public struct State: Equatable {
+        /// カウントダウンする時刻表のデータ.
+        public var busTime: BusTime? = nil
+        /// 行先.
+        public var destination: BusDestination? = nil
         /// バス出発までのカウントダウン用の秒数.
         public var secondsUntilDeparture = 0
 
-        public init(secondsUntilDeparture: Int = 0) {
+        public init(
+            busTime: BusTime? = nil,
+            destination: BusDestination? = nil,
+            secondsUntilDeparture: Int = 0
+        ) {
+            self.busTime = busTime
+            self.destination = destination
             self.secondsUntilDeparture = secondsUntilDeparture
         }
     }
 
     public enum Action {
+        /// 親 `Reducer` で次発のバスが変更された時の `Action`.
+        case busTimePopped
         /// 親 `Reducer` への通知用の `Action`.
         case delegate(Delegate)
         /// View の `task` 実行時の `Action`.
@@ -42,14 +56,25 @@ public struct CountdownReducer {
     }
 
     @Dependency(\.continuousClock) var clock
+    @Dependency(\.date) var dateGenerator
 
     public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .busTimePopped:
+                guard let busTime = state.busTime else {
+                    return .none
+                }
+                // 次発バスの出発時間までの秒数をカウントを計算し直す.
+                let interval = intervalUntil(busTime: busTime)
+                state.secondsUntilDeparture = interval
+                return .none
+
             case .delegate:
                 return .none
 
             case .task:
+                // タイマーを開始させておく.
                 return .run { send in
                     for await _ in clock.timer(interval: .seconds(1)) {
                         await send(.timerTicked)
@@ -75,6 +100,17 @@ public struct CountdownReducer {
     public init() {}
 }
 
+private extension CountdownReducer {
+    /// 次発バスの出発時間までの秒数を返す.
+    /// - Parameter busTime: 次発バスのデータ.
+    /// - Returns: 次発バス出発までの秒数.
+    func intervalUntil(busTime: BusTime) -> Int {
+        let now = DateInRegion(dateGenerator.now)
+        let nowSecond = now.hour * 3600 + now.minute * 60 + now.minute
+        return busTime.second - nowSecond
+    }
+}
+
 // MARK: - View
 
 /// カウントダウン部分の `View`.
@@ -86,48 +122,69 @@ public struct CountdownView: View {
     public var body: some View {
         WithPerceptionTracking {
             VStack {
-                HStack {
-                    OutlinedText(text: "最終バス")
-                    OutlinedText(text: "折り返し")
-                    OutlinedText(text: "貝津経由")
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .trailing
-                )
-
-                Spacer()
-
-                Group {
-                    Text("出発まであと")
-                        .font(.system(size: 12))
-                    Text(format(secondsElapsed: store.state.secondsUntilDeparture))
-                        .font(
-                            Font(
-                                UIFont.monospacedDigitSystemFont(
-                                    ofSize: 40,
-                                    weight: .bold
-                                )
-                            )
+                if let busTime = store.busTime {
+                    // 運行のフラグがどれか立っていたら表示する.
+                    if [busTime.isLast, busTime.isKaizu, busTime.isReturn].contains(true) {
+                        HStack {
+                            if busTime.isLast {
+                                OutlinedText(text: "最終バス")
+                            }
+                            if busTime.isReturn {
+                                OutlinedText(text: "折り返し")
+                            }
+                            if busTime.isKaizu {
+                                OutlinedText(text: "貝津経由")
+                            }
+                        }
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .trailing
                         )
-                }
-
-                Spacer()
-
-                HStack {
-                    BusStopView(
-                        timeText: "00:00",
-                        systemImageName: "tram.fill",
-                        destinationText: "大学発"
-                    )
+                    }
 
                     Spacer()
 
-                    BusStopView(
-                        timeText: "00:00",
-                        systemImageName: "tram.fill",
-                        destinationText: "浄水駅着"
-                    )
+                    Group {
+                        Text("出発まであと")
+                            .font(.system(size: 12))
+                        Text(format(secondsElapsed: store.state.secondsUntilDeparture))
+                            .font(
+                                Font(
+                                    UIFont.monospacedDigitSystemFont(
+                                        ofSize: 40,
+                                        weight: .bold
+                                    )
+                                )
+                            )
+                    }
+
+                    Spacer()
+
+                    if let destination = store.destination {
+                        HStack {
+                            BusStopView(
+                                timeText: String(
+                                    format: "%i:%02i",
+                                    busTime.hour,
+                                    busTime.minute
+                                ),
+                                systemImageName: destination == .toCollege ? "building.2.fill" : "tram.fill",
+                                destinationText: destination == .toCollege ? "大学発" : "浄水駅発"
+                            )
+
+                            Spacer()
+
+                            BusStopView(
+                                timeText: String(
+                                    format: "%i:%02i",
+                                    busTime.arrivalHour,
+                                    busTime.arrivalMinute
+                                ),
+                                systemImageName: destination == .toCollege ? "tram.fill" : "building.2.fill",
+                                destinationText: destination == .toCollege ? "浄水駅着" : "大学着"
+                            )
+                        }
+                    }
                 }
             }
             .padding(
@@ -156,7 +213,8 @@ private extension CountdownView {
     /// - Returns: `HH:mm` にフォーマットした文字列.
     func format(secondsElapsed: Int) -> String {
         formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.minute, .second]
+        // 1 時間以上の場合はフォーマットを `hh:mm:ss` に変える.
+        formatter.allowedUnits = secondsElapsed >= 3600 ? [.hour, .minute, .second] : [.minute, .second]
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: TimeInterval(secondsElapsed)) ?? "00:00"
     }
@@ -168,7 +226,19 @@ private extension CountdownView {
     CountdownView(
         store: Store(
             initialState: CountdownReducer.State(
-                secondsUntilDeparture: 60
+                busTime: .init(
+                    hour: 23,
+                    minute: 59,
+                    second: 86340,
+                    arrivalHour: 24,
+                    arrivalMinute: 0,
+                    arrivalSecond: 86400,
+                    isReturn: false,
+                    isLast: true,
+                    isKaizu: true
+                ),
+                destination: .toCollege,
+                secondsUntilDeparture: 600
             ),
             reducer: {
                 CountdownReducer()
