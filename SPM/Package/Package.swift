@@ -190,6 +190,7 @@ let package = Package(
             dependencies: [
                 .composableArchitecture,
                 .remoteConfigClient,
+                "_SettingFeature",
                 .shared,
                 "SharedView",
                 .swiftDate,

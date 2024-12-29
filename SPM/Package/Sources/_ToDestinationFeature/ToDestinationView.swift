@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import FirestoreClient
+import _SettingFeature
 import Shared
 import SwiftDate
 import SwiftUI
@@ -20,6 +21,8 @@ public struct ToDestinationReducer {
     public enum Destination {
         /// アラートを表示する.
         case alert(AlertState<Alert>)
+        /// 設定画面を表示する.
+        case setting(SettingReducer)
 
         public enum Alert: Equatable {}
     }
@@ -75,6 +78,8 @@ public struct ToDestinationReducer {
         case notificationResponse(Result<BusTime, any Error>)
         /// `firestore` の処理の結果を受け取った際の `Action`.
         case response(Result<ToDestinationResponse, any Error>)
+        /// 設定のボタンタップ時の`Action`.
+        case settingButtonTapped
         /// `View` 側の `task` 実行時の `Action`.
         case task
     }
@@ -191,6 +196,12 @@ public struct ToDestinationReducer {
 
             case .response(.failure):
                 // TODO: エラー画面を表示する.
+                return .none
+
+            case .settingButtonTapped:
+                state.destination = .setting(
+                    SettingReducer.State()
+                )
                 return .none
 
             case .task:
@@ -324,6 +335,22 @@ public struct ToDestinationView: View {
             )
             .navigationTitle(store.state.busDestination == .toCollege ? "大学行き" : "浄水駅行き")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        store.send(.settingButtonTapped)
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundStyle(.blue)
+                            .frame(
+                                width: 24,
+                                height: 24
+                            )
+                    }
+                }
+            }
             .task {
                 store.send(.task)
             }
