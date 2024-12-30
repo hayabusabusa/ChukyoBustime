@@ -3,30 +3,6 @@
 
 import PackageDescription
 
-private extension Target.Dependency {
-    static let firebaseAnalytics = Target.Dependency.product(name: "FirebaseAnalytics", package: "firebase-ios-sdk")
-    static let firestore = Target.Dependency.product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
-    static let needle = Target.Dependency.product(name: "NeedleFoundation", package: "needle")
-    static let remoteConfig = Target.Dependency.product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk")
-    static let composableArchitecture = Target.Dependency.product(name: "ComposableArchitecture", package: "swift-composable-architecture")
-    static let swiftDependencies = Target.Dependency.product(name: "Dependencies", package: "swift-dependencies")
-    static let swiftDependenciesMacro = Target.Dependency.product(name: "DependenciesMacros", package: "swift-dependencies")
-    static let swiftDate = Target.Dependency.product(name: "SwiftDate", package: "SwiftDate")
-    static let appFeature = Target.Dependency(stringLiteral: "AppFeature")
-    static let dateClient = Target.Dependency(stringLiteral: "DateClient")
-    static let fileClient = Target.Dependency(stringLiteral: "FileClient")
-    static let firebaseClient = Target.Dependency(stringLiteral: "FirebaseClient")
-    static let firestoreClient = Target.Dependency(stringLiteral: "FirestoreClient")
-    static let remoteConfigClient = Target.Dependency(stringLiteral: "RemoteConfigClient")
-    static let toDestinationFeature = Target.Dependency(stringLiteral: "ToDestinationFeature")
-    static let settingFeature = Target.Dependency(stringLiteral: "SettingFeature")
-    static let service = Target.Dependency(stringLiteral: "Service")
-    static let serviceProtocol = Target.Dependency(stringLiteral: "ServiceProtocol")
-    static let shared = Target.Dependency(stringLiteral: "Shared")
-    static let userDefaultsClient = Target.Dependency(stringLiteral: "UserDefaultsClient")
-    static let userNotificationClient = Target.Dependency(stringLiteral: "UserNotificationClient")
-}
-
 let package = Package(
     name: "Package",
     platforms: [.iOS(.v16)],
@@ -127,9 +103,6 @@ let package = Package(
             url: "https://github.com/firebase/firebase-ios-sdk.git",
             .upToNextMajor(from: "11.6.0")),
         .package(
-            url: "https://github.com/uber/needle.git",
-            .upToNextMajor(from: "0.22.0")),
-        .package(
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
             .upToNextMajor(from: "1.17.0")),
         .package(
@@ -144,154 +117,104 @@ let package = Package(
         .target(
             name: "AppFeature",
             dependencies: [
-                .needle,
-                .service,
-                .settingFeature,
-                .shared,
-                .toDestinationFeature,
-                "_AppFeature",
-            ],
-            path: "./Sources/Feature/AppFeature"),
+                "FirebaseClient",
+                "Shared",
+                "ToDestinationFeature",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "Dependencies", package: "swift-dependencies"),
+            ]),
         .target(
             name: "SettingFeature",
             dependencies: [
-                .needle,
-                .serviceProtocol,
-                .shared,
-                "_SettingFeature",
-            ],
-            path: "./Sources/Feature/SettingFeature"),
+                "Shared",
+                "SharedView",
+                "UserDefaultsClient",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "Dependencies", package: "swift-dependencies"),
+            ]),
         .target(
             name: "ToDestinationFeature",
             dependencies: [
-                .needle,
-                "_ToDestinationFeature",
-                .serviceProtocol,
-                .shared,
-            ],
-            path: "./Sources/Feature/ToDestinationFeature"),
-        .target(
-            name: "WidgetFeature",
-            dependencies: [
-                .serviceProtocol,
-                .shared,
-            ],
-            path: "./Sources/Feature/WidgetFeature"),
-        .target(
-            name: "_AppFeature",
-            dependencies: [
-                "FirebaseClient",
-                .composableArchitecture,
-                .shared,
-                .swiftDependencies,
-                "_ToDestinationFeature",
-            ]),
-        .target(
-            name: "_SettingFeature",
-            dependencies: [
-                .composableArchitecture,
-                .shared,
+                "RemoteConfigClient",
+                "SettingFeature",
+                "Shared",
                 "SharedView",
-                .swiftDependencies,
-                .userDefaultsClient,
-            ]),
-        .target(
-            name: "_ToDestinationFeature",
-            dependencies: [
-                .composableArchitecture,
-                .remoteConfigClient,
-                "_SettingFeature",
-                .shared,
-                "SharedView",
-                .swiftDate,
-                .swiftDependencies,
-                .firestoreClient,
+                "FirestoreClient",
                 "UserNotificationClient",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
 
-        // MARK: Core
-        .target(
-            name: "Service",
-            dependencies: [
-                .firestore,
-                .remoteConfig,
-                .serviceProtocol,
-                .shared,
-                .swiftDate,
-            ]),
-        .target(
-            name: "ServiceProtocol",
-            dependencies: [
-                .shared,
-            ]),
+        // MARK: Client
         .target(
             name: "DateClient",
             dependencies: [
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "DateClientLive",
             dependencies: [
-                .dateClient,
-                .swiftDate,
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                "DateClient",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
+                .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
         .target(
             name: "FileClient",
             dependencies: [
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "FileClientLive",
             dependencies: [
-                .fileClient,
-                .swiftDependencies
+                "FileClient",
+                .product(name: "Dependencies", package: "swift-dependencies"),
             ]),
         .target(
             name: "FirebaseClient",
             dependencies: [
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "FirebaseClientLive",
             dependencies: [
-                .firebaseAnalytics,
-                .firebaseClient,
-                .swiftDependencies
+                "FirebaseClient",
+                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
+                .product(name: "Dependencies", package: "swift-dependencies"),
             ]),
         .target(
             name: "FirestoreClient",
             dependencies: [
-                .shared,
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                "Shared",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "FirestoreClientLive",
             dependencies: [
-                .firestore,
-                .firestoreClient,
-                .shared,
-                .swiftDependencies,
+                "FirestoreClient",
+                "Shared",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
             ]),
         .target(
             name: "RemoteConfigClient",
             dependencies: [
-                .shared,
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                "Shared",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "RemoteConfigClientLive",
             dependencies: [
-                .remoteConfig,
-                .remoteConfigClient,
-                .shared,
-                .swiftDependencies
+                "RemoteConfigClient",
+                "Shared",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk"),
             ]),
         .target(
             name: "Shared",
@@ -299,41 +222,39 @@ let package = Package(
         .target(
             name: "SharedView",
             dependencies: [
-                .composableArchitecture
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]),
         .target(
             name: "UserDefaultsClient",
             dependencies: [
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "UserDefaultsClientLive",
             dependencies: [
-                .swiftDependencies,
-                .userDefaultsClient
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                "UserDefaultsClient",
             ]),
         .target(
             name: "UserNotificationClient",
             dependencies: [
-                .shared,
-                .swiftDependencies,
-                .swiftDependenciesMacro
+                "Shared",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]),
         .target(
             name: "UserNotificationClientLive",
             dependencies: [
-                .shared,
-                .swiftDate,
-                .swiftDependencies,
-                .userNotificationClient,
+                "Shared",
+                "UserNotificationClient",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "SwiftDate", package: "SwiftDate"),
             ]),
 
         // MARK: Tests
         .testTarget(
             name: "PackageTests",
-            dependencies: [
-                .service,
-            ]),
+            dependencies: []),
     ]
 )
