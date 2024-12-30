@@ -149,6 +149,7 @@ let package = Package(
                 .settingFeature,
                 .shared,
                 .toDestinationFeature,
+                "_AppFeature",
             ],
             path: "./Sources/Feature/AppFeature"),
         .target(
@@ -176,6 +177,15 @@ let package = Package(
                 .shared,
             ],
             path: "./Sources/Feature/WidgetFeature"),
+        .target(
+            name: "_AppFeature",
+            dependencies: [
+                "FirebaseClient",
+                .composableArchitecture,
+                .shared,
+                .swiftDependencies,
+                "_ToDestinationFeature",
+            ]),
         .target(
             name: "_SettingFeature",
             dependencies: [
