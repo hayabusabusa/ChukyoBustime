@@ -14,8 +14,8 @@
 		A39F807F2D0DC60100653618 /* RemoteConfigClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F807E2D0DC60100653618 /* RemoteConfigClientLive */; };
 		A39F80812D0DC60100653618 /* UserDefaultsClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80802D0DC60100653618 /* UserDefaultsClientLive */; };
 		A39F80832D0DC60100653618 /* UserNotificationClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = A39F80822D0DC60100653618 /* UserNotificationClientLive */; };
+		A3E4F4692D22633100E5027B /* ChukyoBustimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4F4682D22633100E5027B /* ChukyoBustimeApp.swift */; };
 		A52A29D82912B98600314C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D72912B98600314C37 /* AppDelegate.swift */; };
-		A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A29D92912B98600314C37 /* SceneDelegate.swift */; };
 		A52A29E12912B98700314C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E02912B98700314C37 /* Assets.xcassets */; };
 		A52A29E42912B98700314C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52A29E22912B98700314C37 /* LaunchScreen.storyboard */; };
 		A561DD2029C8885A00BDA8ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A561DD1F29C8885A00BDA8ED /* GoogleService-Info.plist */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3E4F4682D22633100E5027B /* ChukyoBustimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChukyoBustimeApp.swift; sourceTree = "<group>"; };
 		A52A29D42912B98600314C37 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52A29D72912B98600314C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A52A29D92912B98600314C37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A52A29E02912B98700314C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52A29E32912B98700314C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52A29E52912B98700314C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 				A58B9A462913CA7800EBA879 /* AppRelease.entitlements */,
 				A58B9A452913CA1F00EBA879 /* AppDebug.entitlements */,
 				A52A29D72912B98600314C37 /* AppDelegate.swift */,
+				A3E4F4682D22633100E5027B /* ChukyoBustimeApp.swift */,
 				A561DD1F29C8885A00BDA8ED /* GoogleService-Info.plist */,
-				A52A29D92912B98600314C37 /* SceneDelegate.swift */,
 				A52A29E02912B98700314C37 /* Assets.xcassets */,
 				A52A29E22912B98700314C37 /* LaunchScreen.storyboard */,
 				A52A29E52912B98700314C37 /* Info.plist */,
@@ -200,8 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E4F4692D22633100E5027B /* ChukyoBustimeApp.swift in Sources */,
 				A52A29D82912B98600314C37 /* AppDelegate.swift in Sources */,
-				A52A29DA2912B98600314C37 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
