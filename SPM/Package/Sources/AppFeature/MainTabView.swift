@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import Shared
 import SwiftUI
-import _ToDestinationFeature
+import ToDestinationFeature
 
 // MARK: - Reducer
 

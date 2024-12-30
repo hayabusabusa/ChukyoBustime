@@ -7,7 +7,7 @@
 
 import ComposableArchitecture
 import FirestoreClient
-import _SettingFeature
+import SettingFeature
 import Shared
 import SwiftDate
 import SwiftUI

@@ -5,7 +5,7 @@
 //  Created by Shunya Yamada on 2022/11/02.
 //
 
-import _AppFeature
+import AppFeature
 import ComposableArchitecture
 import UIKit
 

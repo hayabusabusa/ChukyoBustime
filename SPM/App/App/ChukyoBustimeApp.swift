@@ -5,7 +5,7 @@
 //  Created by Shunya Yamada on 2024/12/30.
 //
 
-import _AppFeature
+import AppFeature
 import ComposableArchitecture
 import SwiftUI
 
