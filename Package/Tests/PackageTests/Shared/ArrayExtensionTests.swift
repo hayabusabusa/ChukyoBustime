@@ -5,28 +5,37 @@
 //  Created by Shunya Yamada on 2024/12/31.
 //
 
-import Testing
+import XCTest
 @testable import Shared
 
-struct ArrayExtensionTests {
-    @Test("Array.popFrist() のテスト")
-    func popFirst() throws {
-        var array1 = [1, 2, 3]
-        let element1 = array1.popFirst()
-        #expect(element1 == 1)
+final class ArrayExtensionTests: XCTestCase {
+    func testPopFirst() {
+        XCTContext.runActivity(named: "配列から削除した要素を返すこと.") { _ in
+            var array = [1, 2, 3]
 
-        var array2: [Int] = []
-        let element2 = array2.popFirst()
-        #expect(element2 == nil)
+            let element = array.popFirst()
+            XCTAssertEqual(element, 1)
+        }
 
-        var array3 = [1, 2, 3]
-        let firstElement = array3.popFirst()
-        let secondElement = array3.popFirst()
-        let thirdElement = array3.popFirst()
-        let fourthElement = array3.popFirst()
-        #expect(firstElement == 1)
-        #expect(secondElement == 2)
-        #expect(thirdElement == 3)
-        #expect(fourthElement == nil)
+        XCTContext.runActivity(named: "配列が空の場合は nil を返すこと.") { _ in
+            var array: [Int] = []
+
+            let element = array.popFirst()
+            XCTAssertNil(element)
+        }
+
+        XCTContext.runActivity(named: "配列から全ての要素を削除できること.") { _ in
+            var array = [1, 2, 3]
+
+            let firstElement = array.popFirst()
+            let secondElement = array.popFirst()
+            let thirdElement = array.popFirst()
+            let fourthElement = array.popFirst()
+
+            XCTAssertEqual(firstElement, 1)
+            XCTAssertEqual(secondElement, 2)
+            XCTAssertEqual(thirdElement, 3)
+            XCTAssertNil(fourthElement)
+        }
     }
 }
