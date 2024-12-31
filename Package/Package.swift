@@ -261,6 +261,7 @@ let package = Package(
         .testTarget(
             name: "PackageTests",
             dependencies: [
+                "SettingFeature",
                 "Shared"
             ]),
     ]
