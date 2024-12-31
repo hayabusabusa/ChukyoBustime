@@ -228,6 +228,12 @@ public struct SettingView: View {
             .task {
                 store.send(.task)
             }
+            .alert(
+                $store.scope(
+                    state: \.destination?.alert,
+                    action: \.destination.alert
+                )
+            )
             .fullScreenCover(
                 item: $store.scope(
                     state: \.destination?.safariView,

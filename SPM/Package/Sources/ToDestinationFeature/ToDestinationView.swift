@@ -357,6 +357,12 @@ public struct ToDestinationView: View {
                     }
                 }
             }
+            .alert(
+                $store.scope(
+                    state: \.destination?.alert,
+                    action: \.destination.alert
+                )
+            )
             .sheet(
                 item: $store.scope(
                     state: \.destination?.setting,
