@@ -94,7 +94,7 @@ public struct ToDestinationReducer {
         Scope(state: \.countdown, action: \.countdown) {
             CountdownReducer()
         }
-        Reduce { state, action in
+        Reduce<State, Action> { state, action in
             switch action {
             case let .busListButtonTapped(index):
                 let busTime = state.slicedBusTimes[index]
