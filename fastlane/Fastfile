@@ -54,6 +54,7 @@ platform :ios do
       devices: ["iPhone 15 Pro"],
       code_coverage: true,
       result_bundle: true,
+      skip_build: true
     )
   end
 
