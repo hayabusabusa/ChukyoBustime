@@ -53,7 +53,7 @@ platform :ios do
       scheme: "PackageTests",
       code_coverage: true,
       result_bundle: true,
-      destination: "platform=iOS Simulator,name=iPhone 11 Pro Max"
+      destination: "platform=iOS Simulator,name=iPhone 16 Pro Max"
     )
   end
 
