@@ -55,8 +55,7 @@ platform :ios do
       code_coverage: true,
       result_bundle: true,
       skip_build: true,
-      output_directory: Dir.pwd + "/test_output",
-      xcargs: "-skipMacroValidation"
+      output_directory: Dir.pwd + "/test_output"
     )
   end
 
