@@ -73,6 +73,11 @@ let package = Package(
                 "SettingFeature"
             ]),
         .library(
+            name: "Shared",
+            targets: [
+                "Shared"
+            ]),
+        .library(
             name: "SharedView",
             targets: [
                 "SharedView"
