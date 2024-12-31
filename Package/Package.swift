@@ -260,6 +260,8 @@ let package = Package(
         // MARK: Tests
         .testTarget(
             name: "PackageTests",
-            dependencies: []),
+            dependencies: [
+                "Shared"
+            ]),
     ]
 )
