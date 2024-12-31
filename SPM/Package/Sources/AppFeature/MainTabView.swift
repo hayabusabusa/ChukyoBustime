@@ -17,14 +17,14 @@ public struct MainTabReducer {
     @ObservableState
     public struct State: Equatable {
         /// 選択中のタブ.
-        public var selectedTab: Int = 0
+        public var selectedTab: Tab = .toStation
         /// 浄水駅行きのタブに表示する画面の状態.
         public var toStationTab = ToDestinationReducer.State(busDestination: .toStation)
         /// 大学行きのタブに表示する画面の状態.
         public var toCollegeTab = ToDestinationReducer.State(busDestination: .toCollege)
 
         public init(
-            selectedTab: Int = 0,
+            selectedTab: Tab = .toStation,
             toStationTab: ToDestinationReducer.State = ToDestinationReducer.State(busDestination: .toStation),
             toCollegeTab: ToDestinationReducer.State = ToDestinationReducer.State(busDestination: .toCollege)
         ) {
@@ -36,7 +36,7 @@ public struct MainTabReducer {
 
     public enum Action {
         /// 選択中のタブ変更時の `Action`.
-        case tabChanged(Int)
+        case tabChanged(Tab)
         /// 浄水駅行きのタブに表示する画面の `Action`.
         case toStationTab(ToDestinationReducer.Action)
         /// 大学行きのタブに表示する画面の `Action`.
@@ -59,8 +59,8 @@ public struct MainTabReducer {
         }
         Reduce { state, action in
             switch action {
-            case let .tabChanged(index):
-                state.selectedTab = index
+            case let .tabChanged(tab):
+                state.selectedTab = tab
                 return .none
 
             case .toStationTab:
@@ -97,6 +97,7 @@ public struct MainTabView: View {
                         systemImage: "tram.fill"
                     )
                 }
+                .tag(MainTabReducer.Tab.toStation)
 
                 NavigationStack {
                     ToDestinationView(
@@ -112,6 +113,7 @@ public struct MainTabView: View {
                         systemImage: "building.2.fill"
                     )
                 }
+                .tag(MainTabReducer.Tab.toCollege)
             }
         }
     }
