@@ -7,8 +7,10 @@
 
 import ComposableArchitecture
 import FirestoreClient
+import RemoteConfigClient
 import SettingFeature
 import Shared
+import SharedView
 import SwiftDate
 import SwiftUI
 import UserNotificationClient
@@ -21,6 +23,8 @@ public struct ToDestinationReducer {
     public enum Destination {
         /// アラートを表示する.
         case alert(AlertState<Alert>)
+        /// WebView を表示する.
+        case safari(SafariReducer)
         /// 設定画面を表示する.
         case setting(SettingReducer)
 
@@ -41,10 +45,10 @@ public struct ToDestinationReducer {
         public var diagramName: String? = nil
         /// カウントダウンの `State`.
         public var countdown = CountdownReducer.State()
-        /// 次発以降のバスがなくなったかどうか.
-        public var isBusTimesEmpty = false
         /// 表示用に 3 件までに配列を区切った時刻表のデータ一覧.
         public var slicedBusTimes = [BusTime]()
+        /// 画面の表示状態.
+        public var viewState: ViewState = .loading
 
         public init(
             busTimes: [BusTime] = [],
@@ -53,8 +57,8 @@ public struct ToDestinationReducer {
             diagram: String? = nil,
             diagramName: String? = nil,
             countdown: CountdownReducer.State = CountdownReducer.State(),
-            isBusTimesEmpty: Bool = false,
-            slicedBusTimes: [BusTime] = [BusTime]()
+            slicedBusTimes: [BusTime] = [BusTime](),
+            viewState: ViewState = .loading
         ) {
             self.busTimes = busTimes
             self.busDestination = busDestination
@@ -62,9 +66,21 @@ public struct ToDestinationReducer {
             self.diagram = diagram
             self.diagramName = diagramName
             self.countdown = countdown
-            self.isBusTimesEmpty = isBusTimesEmpty
             self.slicedBusTimes = slicedBusTimes
+            self.viewState = viewState
         }
+    }
+
+    /// 画面の表示に関する状態を定義した Enum.
+    public enum ViewState {
+        /// 処理実行中.
+        case loading
+        /// 処理完了.
+        case success
+        /// 処理の結果が空.
+        case empty
+        /// エラー等で失敗.
+        case failure
     }
 
     public enum Action {
@@ -72,6 +88,8 @@ public struct ToDestinationReducer {
         case busListButtonTapped(Int)
         /// 次発以降のバスがなくなった時の `Action`.
         case busTimesEmpty
+        /// カレンダーの PDF を確認するボタンタップ時の `Action`.
+        case calendarButtonTapped
         /// カウントダウンの `Action`.
         case countdown(CountdownReducer.Action)
         /// 画面遷移の `Action`.
@@ -84,10 +102,13 @@ public struct ToDestinationReducer {
         case settingButtonTapped
         /// `View` 側の `task` 実行時の `Action`.
         case task
+        /// 時刻表の PDF を確認するボタンタップ時の `Action`.
+        case timetableButtonTapped
     }
 
     @Dependency(\.date) var dateGenerator
     @Dependency(\.firestoreClient) var firestoreClient
+    @Dependency(\.remoteConfigClient) var remoteConfigClient
     @Dependency(\.userNotificationClient) var userNotificationClient
 
     public var body: some ReducerOf<Self> {
@@ -127,6 +148,20 @@ public struct ToDestinationReducer {
                 }
 
             case .busTimesEmpty:
+                // データが空の場合の表示を行う.
+                state.viewState = .empty
+                return .none
+
+            case .calendarButtonTapped:
+                guard let remoteConfig = try? remoteConfigClient.configuredValue(for: .pdfURL, type: RemoteConfig.self),
+                      let url = URL(string: remoteConfig.calendar) else {
+                    return .none
+                }
+                state.destination = .safari(
+                    SafariReducer.State(
+                        url: url
+                    )
+                )
                 return .none
 
             case .countdown(.delegate(.isTimeRunningUp)):
@@ -187,6 +222,7 @@ public struct ToDestinationReducer {
                         await send(.busTimesEmpty)
                     }
                 }
+                state.viewState = .success
                 // 表示用のデータをセット.
                 state.diagram = response.busDate.diagram
                 state.diagramName = response.busDate.diagramName
@@ -200,7 +236,7 @@ public struct ToDestinationReducer {
                 }
 
             case .response(.failure):
-                // TODO: エラー画面を表示する.
+                state.viewState = .failure
                 return .none
 
             case .settingButtonTapped:
@@ -216,6 +252,8 @@ public struct ToDestinationReducer {
                     await send(
                         .response(
                             Result {
+                                // Firebase Remote Config から設定値を同期する
+                                try await remoteConfigClient.fetchActivate()
                                 // 今日の日付から必要なデータを作成する.
                                 let date = DateInRegion(dateGenerator.now)
                                 let formatted = date.toFormat("yyyy-MM-dd")
@@ -235,6 +273,18 @@ public struct ToDestinationReducer {
                         )
                     )
                 }
+
+            case .timetableButtonTapped:
+                guard let remoteConfig = try? remoteConfigClient.configuredValue(for: .pdfURL, type: RemoteConfig.self),
+                      let url = URL(string: remoteConfig.timeTable) else {
+                    return .none
+                }
+                state.destination = .safari(
+                    SafariReducer.State(
+                        url: url
+                    )
+                )
+                return .none
             }
         }
         .ifLet(\.$destination, action: \.destination)
@@ -250,95 +300,114 @@ public struct ToDestinationView: View {
 
     public var body: some View {
         WithPerceptionTracking {
-            ScrollView {
-                VStack {
-                    if let diagramName = store.state.diagramName {
+            Group {
+                switch store.state.viewState {
+                case .loading:
+                    ProgressView()
+                case .success:
+                    ScrollView {
                         VStack {
-                            Text("今日の運行ダイヤ")
-                                .font(.system(size: 14))
-                                .frame(
-                                    maxWidth: .infinity,
-                                    alignment: .leading
-                                )
+                            if let diagramName = store.state.diagramName {
+                                VStack {
+                                    Text("今日の運行ダイヤ")
+                                        .font(.system(size: 14))
+                                        .frame(
+                                            maxWidth: .infinity,
+                                            alignment: .leading
+                                        )
 
-                            Text(diagramName)
-                                .font(
-                                    .system(
-                                        size: 32,
-                                        weight: .bold
+                                    Text(diagramName)
+                                        .font(
+                                            .system(
+                                                size: 32,
+                                                weight: .bold
+                                            )
+                                        )
+                                        .foregroundStyle(.blue)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(
+                                    EdgeInsets(
+                                        top: 24,
+                                        leading: 16,
+                                        bottom: 24,
+                                        trailing: 16
                                     )
                                 )
-                                .foregroundStyle(.blue)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(
-                            EdgeInsets(
-                                top: 24,
-                                leading: 16,
-                                bottom: 24,
-                                trailing: 16
-                            )
-                        )
-                        .background(
-                            Color(.secondarySystemGroupedBackground)
-                        )
-                    }
-
-                    CountdownView(
-                        store: store.scope(
-                            state: \.countdown,
-                            action: \.countdown
-                        )
-                    )
-                    .frame(height: 200)
-
-                    VStack(spacing: 0) {
-                        HStack {
-                            Text("次にくるバス一覧")
-                            Spacer()
-                            Text("※ 到着時刻は目安です")
-                                .foregroundStyle(.blue)
-                        }
-                        .font(.system(size: 11))
-                        .padding(.horizontal, 16)
-
-                        Spacer()
-                            .frame(height: 8)
-
-                        ForEach(
-                            Array(store.state.slicedBusTimes.enumerated()),
-                            id: \.offset
-                        ) { enumerated in
-                            // ここは Reducer として切り出した方がテスト可能になる.
-                            BusListItemView(
-                                index: enumerated.offset + 1,
-                                departureName: store.state.busDestination == .toCollege ? "大学発" : "浄水駅発",
-                                departureTime: String(
-                                    format: "%i:%02i",
-                                    enumerated.element.hour,
-                                    enumerated.element.minute
-                                ),
-                                arrivalName: store.state.busDestination == .toCollege ? "浄水駅着" : "大学着",
-                                arrivalTime: String(
-                                    format: "%i:%02i",
-                                    enumerated.element.arrivalHour,
-                                    enumerated.element.arrivalMinute
-                                ),
-                                isHighlighted: enumerated.offset == 0
-                            ) {
-                                store.send(.busListButtonTapped(enumerated.offset))
+                                .background(
+                                    Color(.secondarySystemGroupedBackground)
+                                )
                             }
+
+                            CountdownView(
+                                store: store.scope(
+                                    state: \.countdown,
+                                    action: \.countdown
+                                )
+                            )
+                            .frame(height: 200)
+
+                            VStack(spacing: 0) {
+                                HStack {
+                                    Text("次にくるバス一覧")
+                                    Spacer()
+                                    Text("※ 到着時刻は目安です")
+                                        .foregroundStyle(.blue)
+                                }
+                                .font(.system(size: 11))
+                                .padding(.horizontal, 16)
+
+                                Spacer()
+                                    .frame(height: 8)
+
+                                ForEach(
+                                    Array(store.state.slicedBusTimes.enumerated()),
+                                    id: \.offset
+                                ) { enumerated in
+                                    // ここは Reducer として切り出した方がテスト可能になる.
+                                    BusListItemView(
+                                        index: enumerated.offset + 1,
+                                        departureName: store.state.busDestination == .toCollege ? "大学発" : "浄水駅発",
+                                        departureTime: String(
+                                            format: "%i:%02i",
+                                            enumerated.element.hour,
+                                            enumerated.element.minute
+                                        ),
+                                        arrivalName: store.state.busDestination == .toCollege ? "浄水駅着" : "大学着",
+                                        arrivalTime: String(
+                                            format: "%i:%02i",
+                                            enumerated.element.arrivalHour,
+                                            enumerated.element.arrivalMinute
+                                        ),
+                                        isHighlighted: enumerated.offset == 0
+                                    ) {
+                                        store.send(.busListButtonTapped(enumerated.offset))
+                                    }
+                                }
+                            }
+                            .padding(.vertical, 16)
+                            .background(
+                                Color(.secondarySystemGroupedBackground)
+                            )
                         }
                     }
-                    .padding(.vertical, 16)
                     .background(
-                        Color(.secondarySystemGroupedBackground)
+                        Color(.systemGroupedBackground)
                     )
+                case .empty:
+                    DisconnectedView {
+                        store.send(.calendarButtonTapped)
+                    } timetableButtonAction: {
+                        store.send(.timetableButtonTapped)
+                    }
+                case .failure:
+                    ErrorView {
+                        store.send(.calendarButtonTapped)
+                    } timetableButtonAction: {
+                        store.send(.timetableButtonTapped)
+                    }
                 }
             }
-            .background(
-                Color(.systemGroupedBackground)
-            )
             .navigationTitle(store.state.busDestination == .toCollege ? "大学行き" : "浄水駅行き")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -372,6 +441,14 @@ public struct ToDestinationView: View {
                 NavigationStack {
                     SettingView(store: store)
                 }
+            }
+            .fullScreenCover(
+                item: $store.scope(
+                    state: \.destination?.safari,
+                    action: \.destination.safari
+                )
+            ) { store in
+                SafariView(store: store)
             }
             .task {
                 store.send(.task)
