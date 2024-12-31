@@ -53,8 +53,7 @@ platform :ios do
       scheme: "PackageTests",
       code_coverage: true,
       result_bundle: true,
-      destination: "platform=iOS Simulator,name=iPhone 16 Pro",
-      skip_build: true
+      destination: "platform=iOS Simulator,OS=18.1,name=iPhone 15 Pro"
     )
   end
 
