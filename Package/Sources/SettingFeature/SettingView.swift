@@ -245,7 +245,7 @@ public struct SettingView: View {
             .navigationTitle("設定")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("閉じる") {
                         store.send(.dismissButtonTapped)
                     }
