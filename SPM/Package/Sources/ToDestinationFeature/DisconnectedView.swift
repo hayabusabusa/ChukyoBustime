@@ -5,6 +5,7 @@
 //  Created by Shunya Yamada on 2024/12/31.
 //
 
+import Shared
 import SwiftUI
 
 /// 運行終了時の View.
@@ -14,7 +15,7 @@ struct DisconnectedView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            Image(systemName: "star.fill")
+            Image(resource: .imgDisconnected)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)

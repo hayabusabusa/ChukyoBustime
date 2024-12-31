@@ -5,6 +5,7 @@
 //  Created by Shunya Yamada on 2024/12/31.
 //
 
+import Shared
 import SwiftUI
 
 /// エラー発生時の View.
@@ -14,7 +15,7 @@ struct ErrorView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            Image(systemName: "star.fill")
+            Image(resource: .imgError)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
