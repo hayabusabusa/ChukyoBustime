@@ -49,7 +49,7 @@ platform :ios do
   desc "Run unit tests"
   lane :unit_test do
     run_tests(
-      scheme: "ChukyoBustime", 
+      scheme: "PackageTests",
       result_bundle: true
     )
   end
@@ -67,7 +67,7 @@ platform :ios do
     )
     # アプリのビルド
     build_app(
-      scheme: "ChukyoBustime",
+      scheme: "App",
       export_options: {
         method: "app-store"
       }
