@@ -49,6 +49,7 @@ platform :ios do
   desc "Run unit tests"
   lane :unit_test do
     run_tests(
+      workspace: "ChukyoBustime.xcworkspace",
       scheme: "PackageTests",
       result_bundle: true
     )
@@ -67,6 +68,7 @@ platform :ios do
     )
     # アプリのビルド
     build_app(
+      workspace: "ChukyoBustime.xcworkspace",
       scheme: "App",
       export_options: {
         method: "app-store"
