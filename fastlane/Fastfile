@@ -49,8 +49,9 @@ platform :ios do
   desc "Run unit tests"
   lane :unit_test do
     run_tests(
-      workspace: "ChukyoBustime.xcworkspace",
+      package_path: "./Package",
       scheme: "PackageTests",
+      code_coverage: true,
       result_bundle: true
     )
   end
