@@ -51,9 +51,9 @@ platform :ios do
     run_tests(
       package_path: "./Package",
       scheme: "PackageTests",
+      devices: ["iPhone 15 Pro"],
       code_coverage: true,
       result_bundle: true,
-      destination: "platform=iOS Simulator,OS=18.1,name=iPhone 15 Pro"
     )
   end
 
