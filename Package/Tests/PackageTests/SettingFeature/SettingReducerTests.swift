@@ -48,7 +48,7 @@ final class SettingReducerTests: XCTestCase {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         } withDependencies: {
-            $0.userDefaultsClient.integer = { _ in
+            $0.userDefaultsClient.integer = { @Sendable _ in
                 0
             }
         }
@@ -80,10 +80,10 @@ final class SettingReducerTests: XCTestCase {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         } withDependencies: {
-            $0.userDefaultsClient.setInteger = { _, _ in
+            $0.userDefaultsClient.setInteger = { @Sendable _, _ in
                 // 何もしない.
             }
-            $0.userDefaultsClient.integer = { _ in
+            $0.userDefaultsClient.integer = { @Sendable _ in
                 0
             }
         }
