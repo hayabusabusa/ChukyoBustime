@@ -52,10 +52,10 @@ platform :ios do
       package_path: "./Package",
       scheme: "PackageTests",
       devices: ["iPhone 15 Pro"],
-      xcodebuild_formatter: "xcpretty",
       code_coverage: true,
       result_bundle: true,
-      skip_build: true
+      skip_build: true,
+      output_directory: Dir.pwd + "/test_output"
     )
   end
 
