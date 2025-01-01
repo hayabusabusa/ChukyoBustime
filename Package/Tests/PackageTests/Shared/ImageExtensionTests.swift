@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
-import XCTest
+import Testing
 @testable import Shared
 
-final class ImageExtensionTests: XCTestCase {
-    func testInitialize() {
+struct ImageExtensionTests {
+    @Test
+    func initialize() async throws {
         let images = Resource.Image.allCases
                 .map {
                     Image(resource: $0)
                 }
-        XCTAssertEqual(images.count, Resource.Image.allCases.count)
+        #expect(images.count == Resource.Image.allCases.count)
     }
 }

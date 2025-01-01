@@ -6,13 +6,14 @@
 //
 
 import ComposableArchitecture
+import Foundation
 import SharedView
-import XCTest
+import Testing
 @testable import SettingFeature
 
-@MainActor
-final class SettingReducerTests: XCTestCase {
-    func testAboutButtonTapped() async {
+struct SettingReducerTests {
+    @Test
+    func aboutButtonTapped() async {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         }
@@ -28,7 +29,8 @@ final class SettingReducerTests: XCTestCase {
         }
     }
 
-    func testDisclaimerButtonTapped() async {
+    @Test
+    func disclaimerButtonTapped() async {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         }
@@ -44,7 +46,8 @@ final class SettingReducerTests: XCTestCase {
         }
     }
 
-    func testTask() async {
+    @Test
+    func task() async {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         } withDependencies: {
@@ -60,7 +63,8 @@ final class SettingReducerTests: XCTestCase {
         }
     }
 
-    func testPrivacyPolicyButtonTapped() async {
+    @Test
+    func privacyPolicyButtonTapped() async {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         }
@@ -76,7 +80,8 @@ final class SettingReducerTests: XCTestCase {
         }
     }
 
-    func testToggleInitialTabButtonTapped() async {
+    @Test
+    func toggleInitialTabButtonTapped() async {
         let store = TestStore(initialState: SettingReducer.State()) {
             SettingReducer()
         } withDependencies: {
