@@ -11,6 +11,7 @@ import SharedView
 import Testing
 @testable import SettingFeature
 
+@MainActor
 struct SettingReducerTests {
     @Test
     func aboutButtonTapped() async {
