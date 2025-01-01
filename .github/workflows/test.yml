@@ -11,17 +11,20 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    # 1. ソースのチェックアウト
+    # ソースのチェックアウト
     - uses: actions/checkout@v2
 
-    # 2. GoogleService-info.plist を Secrets から取得
+    # GoogleService-info.plist を Secrets から取得
     - name: Setup GoogleService-info.plist
       run: |
         echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > GoogleService-Info.plist.txt
         base64 -Dd -i GoogleService-Info.plist.txt -o App/App/GoogleService-Info.plist
 
-    # 3. Unit test を Fastlane で実行( Swift Macro の許諾突破用にスクリプトも実行 )
+    # Xcode のバージョンを 16.1 に指定
+    - name: Select Xcode version 16.1
+      run: sudo xcode-select -s '/Applications/Xcode_16.1.app/Contents/Developer'
+
+    # Unit test を Fastlane で実行
     - name: Run unit test
       run: |
-        defaults write com.apple.dt.Xcode IDESkipMacroFingerprintValidation -bool YES
         fastlane unit_test
