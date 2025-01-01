@@ -10,7 +10,7 @@ import Dependencies
 import FirebaseRemoteConfig
 import Foundation
 
-extension RemoteConfigClient: @retroactive DependencyKey {
+extension RemoteConfigClient: DependencyKey {
     public static var liveValue: RemoteConfigClient {
         live()
     }

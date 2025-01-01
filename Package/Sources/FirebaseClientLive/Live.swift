@@ -10,7 +10,7 @@ import Firebase
 import FirebaseClient
 import Foundation
 
-extension FirebaseClient: @retroactive DependencyKey {
+extension FirebaseClient: DependencyKey {
     public static var liveValue: FirebaseClient {
         live()
     }

@@ -9,7 +9,7 @@ import Dependencies
 import Foundation
 import UserDefaultsClient
 
-extension UserDefaultsClient: @retroactive DependencyKey {
+extension UserDefaultsClient: DependencyKey {
     public static var liveValue: UserDefaultsClient {
         Self.live()
     }

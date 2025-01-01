@@ -9,7 +9,7 @@ import Dependencies
 import FileClient
 import Foundation
 
-extension FileClient: @retroactive DependencyKey {
+extension FileClient: DependencyKey {
     public static var liveValue: FileClient {
         Self.live()
     }

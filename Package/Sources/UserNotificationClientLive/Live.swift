@@ -11,7 +11,7 @@ import SwiftDate
 import UserNotifications
 import UserNotificationClient
 
-extension UserNotificationClient: @retroactive DependencyKey {
+extension UserNotificationClient: DependencyKey {
     public static var liveValue: UserNotificationClient {
         Self.live()
     }

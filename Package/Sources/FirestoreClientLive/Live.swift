@@ -11,7 +11,7 @@ import FirebaseFirestore
 import Foundation
 import Shared
 
-extension FirestoreClient: @retroactive DependencyKey {
+extension FirestoreClient: DependencyKey {
     public static var liveValue: FirestoreClient {
         Self.live()
     }

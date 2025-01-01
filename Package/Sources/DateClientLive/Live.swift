@@ -10,7 +10,7 @@ import Dependencies
 import Foundation
 import SwiftDate
 
-extension DateClient: @retroactive DependencyKey {
+extension DateClient: DependencyKey {
     public static var liveValue: DateClient {
         .init {
             DateInRegion(Date(), region: .current).date
