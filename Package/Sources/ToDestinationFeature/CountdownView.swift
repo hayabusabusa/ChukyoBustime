@@ -44,6 +44,7 @@ public struct CountdownReducer {
         /// タイマー動作中の `Action`.
         case timerTicked
 
+        @CasePathable
         public enum Delegate {
             /// タイマーのカウントが `0` になった時の `Action`.
             case isTimeRunningUp
