@@ -46,6 +46,8 @@ public struct ToDestinationReducer {
         public var diagramName: String? = nil
         /// カウントダウンの `State`.
         public var countdown = CountdownReducer.State()
+        /// `Firebase Remote Config` から取得した PDF のデータ.
+        public var remoteConfig: RemoteConfig?
         /// 表示用に 3 件までに配列を区切った時刻表のデータ一覧.
         public var slicedBusTimes = [BusTime]()
         /// 画面の表示状態.
@@ -58,6 +60,7 @@ public struct ToDestinationReducer {
             diagram: String? = nil,
             diagramName: String? = nil,
             countdown: CountdownReducer.State = CountdownReducer.State(),
+            remoteConfig: RemoteConfig? = nil,
             slicedBusTimes: [BusTime] = [BusTime](),
             viewState: ViewState = .loading
         ) {
@@ -67,6 +70,7 @@ public struct ToDestinationReducer {
             self.diagram = diagram
             self.diagramName = diagramName
             self.countdown = countdown
+            self.remoteConfig = remoteConfig
             self.slicedBusTimes = slicedBusTimes
             self.viewState = viewState
         }
@@ -235,12 +239,6 @@ public struct ToDestinationReducer {
                 // カウントダウンの `Reducer` にデータの変更を通知する.
                 state.countdown.busTime = busTime
 
-                // Widget で利用するためデータをローカルに保存する.
-                overwriteCache(
-                    busDate: response.busDate,
-                    busTimes: response.busTimes
-                )
-
                 return .run { send in
                     await send(.countdown(.busTimePopped))
                 }
@@ -275,6 +273,11 @@ public struct ToDestinationReducer {
                                     destination: busDestination,
                                     second: second
                                 )
+                                // Widget で利用するためデータをローカルに保存する.
+                                try overwriteCache(
+                                    busDate: busDate,
+                                    busTimes: busTimes
+                                )
                                 return ToDestinationResponse(
                                     busDate: busDate,
                                     busTimes: busTimes
@@ -307,18 +310,16 @@ private extension ToDestinationReducer {
     /// Widget で利用するため今日の時刻表のデータをローカルに上書き保存する.
     /// - Parameter busDate: 今日のダイヤのデータ.
     /// - Parameter busTimes: 今日の時刻表のデータ一覧.
-    func overwriteCache(busDate: BusDate, busTimes: [BusTime]) {
+    func overwriteCache(busDate: BusDate, busTimes: [BusTime]) throws {
         let cache = Cache(
             busDate: busDate,
             busTimes: busTimes,
             lastUpdatedDate: dateGenerator.now.toFormat("yyyy-MM-dd")
         )
-        guard let data = try? JSONEncoder().encode(cache) else {
-            return
-        }
+        let data = try JSONEncoder().encode(cache)
         // 常に上書き保存するため前のデータを削除する.
         fileClient.remove(name: "cache")
-        try? fileClient.write(data: data, name: "cache")
+        try fileClient.write(data: data, name: "cache")
     }
 }
 
