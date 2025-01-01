@@ -136,6 +136,13 @@ public struct ToDestinationReducer {
                 )
                 // すでに出発時刻の 5 分前を過ぎていた場合はアラートを表示して終了する.
                 if dateInRegion.timeIntervalSince(now) < 300 {
+                    state.destination = .alert(
+                        AlertState {
+                            TextState("エラー")
+                        } message: {
+                            TextState("すでに5分前の時間を過ぎています")
+                        }
+                    )
                     return .none
                 }
 
