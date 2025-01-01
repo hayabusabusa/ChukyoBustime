@@ -140,11 +140,12 @@ let package = Package(
         .target(
             name: "ToDestinationFeature",
             dependencies: [
+                "FileClient",
+                "FirestoreClient",
                 "RemoteConfigClient",
                 "SettingFeature",
                 "Shared",
                 "SharedView",
-                "FirestoreClient",
                 "UserNotificationClient",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 .product(name: "Dependencies", package: "swift-dependencies"),

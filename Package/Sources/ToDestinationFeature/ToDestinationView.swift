@@ -6,6 +6,7 @@
 //
 
 import ComposableArchitecture
+import FileClient
 import FirestoreClient
 import RemoteConfigClient
 import SettingFeature
@@ -107,6 +108,7 @@ public struct ToDestinationReducer {
     }
 
     @Dependency(\.date) var dateGenerator
+    @Dependency(\.fileClient) var fileClient
     @Dependency(\.firestoreClient) var firestoreClient
     @Dependency(\.remoteConfigClient) var remoteConfigClient
     @Dependency(\.userNotificationClient) var userNotificationClient
@@ -222,6 +224,7 @@ public struct ToDestinationReducer {
                         await send(.busTimesEmpty)
                     }
                 }
+                // 画面の表示状態を更新.
                 state.viewState = .success
                 // 表示用のデータをセット.
                 state.diagram = response.busDate.diagram
@@ -231,6 +234,13 @@ public struct ToDestinationReducer {
                 state.slicedBusTimes = response.busTimes.suffix(3)
                 // カウントダウンの `Reducer` にデータの変更を通知する.
                 state.countdown.busTime = busTime
+
+                // Widget で利用するためデータをローカルに保存する.
+                overwriteCache(
+                    busDate: response.busDate,
+                    busTimes: response.busTimes
+                )
+
                 return .run { send in
                     await send(.countdown(.busTimePopped))
                 }
@@ -291,6 +301,25 @@ public struct ToDestinationReducer {
     }
 
     public init() {}
+}
+
+private extension ToDestinationReducer {
+    /// Widget で利用するため今日の時刻表のデータをローカルに上書き保存する.
+    /// - Parameter busDate: 今日のダイヤのデータ.
+    /// - Parameter busTimes: 今日の時刻表のデータ一覧.
+    func overwriteCache(busDate: BusDate, busTimes: [BusTime]) {
+        let cache = Cache(
+            busDate: busDate,
+            busTimes: busTimes,
+            lastUpdatedDate: dateGenerator.now.toFormat("yyyy-MM-dd")
+        )
+        guard let data = try? JSONEncoder().encode(cache) else {
+            return
+        }
+        // 常に上書き保存するため前のデータを削除する.
+        fileClient.remove(name: "cache")
+        try? fileClient.write(data: data, name: "cache")
+    }
 }
 
 // MARK: - View
