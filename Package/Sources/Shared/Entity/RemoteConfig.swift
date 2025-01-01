@@ -8,7 +8,7 @@
 import Foundation
 
 /// Firebase Remote Config に保存している PDF の参照先をまとめたデータ.
-public struct RemoteConfig: Decodable {
+public struct RemoteConfig: Equatable, Decodable {
     /// カレンダーの PDF の URL.
     public let calendar: String
     /// 時刻表の PDF の URL.

@@ -10,7 +10,7 @@ import Foundation
 /// Firestore から取得したデータをローカルに保存するキャッシュ.
 ///
 /// 主に Widget からの利用を想定.
-public struct Cache: Codable {
+public struct Cache: Equatable, Codable {
     /// バスのダイヤのデータ.
     public let busDate: BusDate
     /// バスの時刻のデータ.
