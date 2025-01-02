@@ -14,12 +14,16 @@ public struct ToDestinationResponse: Equatable {
     public var busDate: BusDate
     /// ダイヤに紐づく時刻表のデータ一覧.
     public var busTimes: [BusTime]
+    /// Firebase Remote Config から取得した設定値.
+    public var remoteConfig: RemoteConfig?
 
     public init(
         busDate: BusDate,
-        busTimes: [BusTime]
+        busTimes: [BusTime],
+        remoteConfig: RemoteConfig?
     ) {
         self.busDate = busDate
         self.busTimes = busTimes
+        self.remoteConfig = remoteConfig
     }
 }

@@ -48,8 +48,6 @@ public struct ToDestinationReducer {
         public var countdown = CountdownReducer.State()
         /// `Firebase Remote Config` から取得した PDF のデータ.
         public var remoteConfig: RemoteConfig?
-        /// 表示用に 3 件までに配列を区切った時刻表のデータ一覧.
-        public var slicedBusTimes = [BusTime]()
         /// 画面の表示状態.
         public var viewState: ViewState = .loading
 
@@ -61,7 +59,6 @@ public struct ToDestinationReducer {
             diagramName: String? = nil,
             countdown: CountdownReducer.State = CountdownReducer.State(),
             remoteConfig: RemoteConfig? = nil,
-            slicedBusTimes: [BusTime] = [BusTime](),
             viewState: ViewState = .loading
         ) {
             self.busTimes = busTimes
@@ -71,7 +68,6 @@ public struct ToDestinationReducer {
             self.diagramName = diagramName
             self.countdown = countdown
             self.remoteConfig = remoteConfig
-            self.slicedBusTimes = slicedBusTimes
             self.viewState = viewState
         }
     }
@@ -186,8 +182,6 @@ public struct ToDestinationReducer {
                         await send(.busTimesEmpty)
                     }
                 }
-                // 直近出発する時刻表のデータは 3 件までしか表示しない.
-                state.slicedBusTimes = state.busTimes.suffix(3)
                 // カウントダウンの `Reducer` にデータの変更を通知する.
                 state.countdown.busTime = busTime
                 return .run { send in
@@ -241,8 +235,7 @@ public struct ToDestinationReducer {
                 state.diagram = response.busDate.diagram
                 state.diagramName = response.busDate.diagramName
                 state.busTimes = response.busTimes
-                // 直近出発する時刻表のデータは 3 件までしか表示しない.
-                state.slicedBusTimes = response.busTimes.suffix(3)
+                state.remoteConfig = response.remoteConfig
                 // カウントダウンの `Reducer` にデータの変更を通知する.
                 state.countdown.busTime = busTime
 
@@ -269,6 +262,10 @@ public struct ToDestinationReducer {
                             Result {
                                 // Firebase Remote Config から設定値を同期する
                                 try await remoteConfigClient.fetchActivate()
+                                let remoteConfig = try remoteConfigClient.configuredValue(
+                                    for: .pdfURL,
+                                    type: RemoteConfig.self
+                                )
                                 // 今日の日付から必要なデータを作成する.
                                 let date = DateInRegion(dateGenerator.now)
                                 let formatted = date.toFormat("yyyy-MM-dd")
@@ -287,7 +284,8 @@ public struct ToDestinationReducer {
                                 )
                                 return ToDestinationResponse(
                                     busDate: busDate,
-                                    busTimes: busTimes
+                                    busTimes: busTimes,
+                                    remoteConfig: remoteConfig
                                 )
                             }
                         )
