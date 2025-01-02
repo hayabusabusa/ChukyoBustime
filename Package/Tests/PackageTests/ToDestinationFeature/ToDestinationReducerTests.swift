@@ -18,8 +18,7 @@ struct ToDestinationReducerTests {
         // 現在時刻から 30 分後のデータで確認する.
         let store = TestStore(
             initialState: ToDestinationReducer.State(
-                busDestination: .toStation,
-                slicedBusTimes: [
+                busTimes: [
                     BusTime(
                         hour: 12,
                         minute: 30,
@@ -31,14 +30,15 @@ struct ToDestinationReducerTests {
                         isLast: false,
                         isKaizu: false
                     )
-                ]
+                ],
+                busDestination: .toStation
             )
         ) {
             ToDestinationReducer()
         } withDependencies: {
             $0.date.now = {
                 // 現在時刻を `2025/01/01 12:00` で固定する.
-                Date(timeIntervalSince1970: 1735732800)
+                Date(timeIntervalSince1970: 1735700400)
             }()
             $0.userNotificationClient.authorize = {
                 // 何もしない.
@@ -68,8 +68,7 @@ struct ToDestinationReducerTests {
         // 現在時刻から 1 分後のデータで確認する.
         let store = TestStore(
             initialState: ToDestinationReducer.State(
-                busDestination: .toStation,
-                slicedBusTimes: [
+                busTimes: [
                     BusTime(
                         hour: 12,
                         minute: 1,
@@ -81,14 +80,15 @@ struct ToDestinationReducerTests {
                         isLast: false,
                         isKaizu: false
                     )
-                ]
+                ],
+                busDestination: .toStation
             )
         ) {
             ToDestinationReducer()
         } withDependencies: {
             $0.date.now = {
                 // 現在時刻を `2025/01/01 12:00` で固定する.
-                Date(timeIntervalSince1970: 1735732800)
+                Date(timeIntervalSince1970: 1735700400)
             }()
             $0.userNotificationClient.authorize = {
                 // 何もしない.
