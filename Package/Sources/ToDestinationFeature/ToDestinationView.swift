@@ -121,14 +121,18 @@ public struct ToDestinationReducer {
             switch action {
             case let .busListButtonTapped(index):
                 let busTime = state.slicedBusTimes[index]
-                let now = DateInRegion(dateGenerator.now)
+                let now = DateInRegion(
+                    dateGenerator.now,
+                    region: .current
+                )
                 // 通知する時間を指定した日付のデータを作成する.
                 let dateInRegion = DateInRegion(
                     year: now.year,
                     month: now.month,
                     day: now.day,
                     hour: busTime.hour,
-                    minute: busTime.minute
+                    minute: busTime.minute,
+                    region: .current
                 )
                 // すでに出発時刻の 5 分前を過ぎていた場合はアラートを表示して終了する.
                 if dateInRegion.timeIntervalSince(now) < 300 {
@@ -267,7 +271,10 @@ public struct ToDestinationReducer {
                                     type: RemoteConfig.self
                                 )
                                 // 今日の日付から必要なデータを作成する.
-                                let date = DateInRegion(dateGenerator.now)
+                                let date = DateInRegion(
+                                    dateGenerator.now,
+                                    region: .current
+                                )
                                 let formatted = date.toFormat("yyyy-MM-dd")
                                 let second = date.hour * 3600 + date.minute * 60 + date.second
                                 // ダイヤのデータを取得した後に時刻表のデータを取得する

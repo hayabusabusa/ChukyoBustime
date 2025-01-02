@@ -106,7 +106,10 @@ private extension CountdownReducer {
     /// - Parameter busTime: 次発バスのデータ.
     /// - Returns: 次発バス出発までの秒数.
     func intervalUntil(busTime: BusTime) -> Int {
-        let now = DateInRegion(dateGenerator.now)
+        let now = DateInRegion(
+            dateGenerator.now,
+            region: .current
+        )
         let nowSecond = now.hour * 3600 + now.minute * 60 + now.minute
         return busTime.second - nowSecond
     }
