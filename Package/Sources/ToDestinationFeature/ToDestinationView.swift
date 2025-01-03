@@ -255,6 +255,10 @@ public struct ToDestinationReducer {
                 return .none
 
             case .task:
+                // `TabView` 配下にいると複数回 `task` が走ってしまうため 1 度だけ実行されるように制御する.
+                guard state.viewState == .loading else {
+                    return .none
+                }
                 // カウントダウンの `Reducer` に行先の初期値を渡す.
                 state.countdown.destination = state.busDestination
                 return .run { [busDestination = state.busDestination] send in
