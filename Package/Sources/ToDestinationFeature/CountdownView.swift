@@ -89,7 +89,7 @@ public struct CountdownReducer {
             case .timerTicked:
                 state.secondsUntilDeparture -= 1
                 // カウントが完了したら親 Reducer に通知する.
-                if state.secondsUntilDeparture <= 0 {
+                if state.secondsUntilDeparture < 0 {
                     return .send(.delegate(.isTimeRunningUp))
                 }
 
