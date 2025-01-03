@@ -88,6 +88,10 @@ struct CountdownReducerTests {
         await store.send(.timerTicked) {
             $0.secondsUntilDeparture = 0
         }
+        // 0 秒までカウント.
+        await store.send(.timerTicked) {
+            $0.secondsUntilDeparture = -1
+        }
         // タイマーのカウントが完了した場合のイベントを受け取れるか確認.
         await store.receive(\.delegate.isTimeRunningUp)
     }
