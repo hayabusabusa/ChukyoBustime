@@ -51,12 +51,6 @@ public struct MainTabReducer {
     }
 
     public var body: some ReducerOf<Self> {
-        Scope(state: \.toStationTab, action: \.toStationTab) {
-            ToDestinationReducer()
-        }
-        Scope(state: \.toCollegeTab, action: \.toCollegeTab) {
-            ToDestinationReducer()
-        }
         Reduce { state, action in
             switch action {
             case let .tabChanged(tab):
@@ -69,6 +63,12 @@ public struct MainTabReducer {
             case .toCollegeTab:
                 return .none
             }
+        }
+        Scope(state: \.toStationTab, action: \.toStationTab) {
+            ToDestinationReducer()
+        }
+        Scope(state: \.toCollegeTab, action: \.toCollegeTab) {
+            ToDestinationReducer()
         }
     }
 

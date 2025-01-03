@@ -114,9 +114,6 @@ public struct ToDestinationReducer {
     @Dependency(\.userNotificationClient) var userNotificationClient
 
     public var body: some ReducerOf<Self> {
-        Scope(state: \.countdown, action: \.countdown) {
-            CountdownReducer()
-        }
         Reduce<State, Action> { state, action in
             switch action {
             case let .busListButtonTapped(index):
@@ -313,6 +310,9 @@ public struct ToDestinationReducer {
             }
         }
         .ifLet(\.$destination, action: \.destination)
+        Scope(state: \.countdown, action: \.countdown) {
+            CountdownReducer()
+        }
     }
 
     public init() {}
