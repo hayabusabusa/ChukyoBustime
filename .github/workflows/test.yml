@@ -11,49 +11,20 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    # 1. ソースのチェックアウト
+    # ソースのチェックアウト
     - uses: actions/checkout@v2
 
-    # 2. GoogleService-info.plist を Secrets から取得
+    # GoogleService-info.plist を Secrets から取得
     - name: Setup GoogleService-info.plist
       run: |
         echo "${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}" > GoogleService-Info.plist.txt
-        base64 --decode GoogleService-Info.plist.txt > Firebase/GoogleService-Info.plist
+        base64 -Dd -i GoogleService-Info.plist.txt -o App/App/GoogleService-Info.plist
 
-    # 3. CocoaPods のキャッシュの設定
-    - id: cache-cocoapods
-      uses: actions/cache@v2
-      with: 
-        path: Pods
-        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-pods-
+    # Xcode のバージョンを 16.1 に指定
+    - name: Select Xcode version 16.1
+      run: sudo xcode-select -s '/Applications/Xcode_16.1.app/Contents/Developer'
 
-    # 4. キャッシュから Pods ファイルを取得、なければそのまま pod install して自前ビルド
-    - name: Install CocoaPods frameworks and build with custom scripts
-      if: steps.cache-cocoapods.outputs.cache-hit != 'true'
-      run: pod install && sh Scripts/pods_build.sh
-
-    # 5. Carthage のキャッシュの設定
-    - uses: actions/cache@v2
-      with:
-        path: Carthage
-        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
-        restore-keys: |
-          ${{ runner.os }}-carthage-
-
-    # 6. キャッシュから Carthage 関連のファイルを取得、なければそのまま carhage bootstrap
-    - name: Install Carthage frameworks
-      run: carthage bootstrap --platform iOS --cache-builds --no-use-binaries --use-xcframeworks
-
-    # 7. Unit test を Fastlane で実行
+    # Unit test を Fastlane で実行
     - name: Run unit test
       run: |
         fastlane unit_test
-
-    # 8. Unit test の結果を GitHub Action に表示
-    - name: Post unit test result bundle
-      uses: kishikawakatsumi/xcresulttool@v1
-      with:
-        path: fastlane/test_output/ChukyoBustime.xcresult
-      if: success() || failure()

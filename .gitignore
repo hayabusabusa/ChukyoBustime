@@ -84,4 +84,4 @@ iOSInjectionProject/
 # Firebase
 # GoogleService-Info.plist
 
-/Firebase/GoogleService-Info.plist
+GoogleService-Info.plist

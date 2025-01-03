@@ -49,8 +49,14 @@ platform :ios do
   desc "Run unit tests"
   lane :unit_test do
     run_tests(
-      scheme: "ChukyoBustime", 
-      result_bundle: true
+      package_path: "./Package",
+      scheme: "PackageTests",
+      devices: ["iPhone 15 Pro"],
+      code_coverage: true,
+      result_bundle: true,
+      skip_build: true,
+      output_directory: Dir.pwd + "/test_output",
+      xcargs: "-skipMacroValidation"
     )
   end
 
@@ -67,7 +73,8 @@ platform :ios do
     )
     # アプリのビルド
     build_app(
-      scheme: "ChukyoBustime",
+      workspace: "ChukyoBustime.xcworkspace",
+      scheme: "App",
       export_options: {
         method: "app-store"
       }
