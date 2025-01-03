@@ -23,7 +23,13 @@ extension UserNotificationClient: DependencyKey {
             case .authorized:
                 return
             case .notDetermined:
-                let result = try await UNUserNotificationCenter.current().requestAuthorization()
+                let result = try await UNUserNotificationCenter.current()
+                    .requestAuthorization(
+                        options: [
+                            .alert,
+                            .badge
+                        ]
+                    )
                 if result {
                     return
                 } else {
