@@ -361,6 +361,12 @@ public struct ToDestinationView: View {
                             )
                             .frame(height: 200)
 
+                            PDFView {
+                                store.send(.calendarButtonTapped)
+                            } timetableButtonAction: {
+                                store.send(.timetableButtonTapped)
+                            }
+
                             VStack(spacing: 0) {
                                 HStack {
                                     Text("次にくるバス一覧")
