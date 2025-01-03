@@ -38,7 +38,7 @@ struct ToDestinationReducerTests {
         } withDependencies: {
             $0.date.now = {
                 // 現在時刻を `2025/01/01 12:00` で固定する.
-                Date(timeIntervalSince1970: 1735700400)
+                .testValue
             }()
             $0.userNotificationClient.authorize = {
                 // 何もしない.
@@ -88,7 +88,7 @@ struct ToDestinationReducerTests {
         } withDependencies: {
             $0.date.now = {
                 // 現在時刻を `2025/01/01 12:00` で固定する.
-                Date(timeIntervalSince1970: 1735700400)
+                .testValue
             }()
             $0.userNotificationClient.authorize = {
                 // 何もしない.
