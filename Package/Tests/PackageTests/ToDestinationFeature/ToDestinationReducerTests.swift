@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 import Shared
+import SharedView
 import Testing
 @testable import ToDestinationFeature
 
@@ -108,6 +109,60 @@ struct ToDestinationReducerTests {
                 } message: {
                     TextState("すでに5分前の時間を過ぎています")
                 }
+            )
+        }
+    }
+
+    @Test
+    func calendarButtonTapped() async {
+        let store = TestStore(
+            initialState: ToDestinationReducer.State(
+                busDestination: .toStation
+            )
+        ) {
+            ToDestinationReducer()
+        } withDependencies: {
+            $0.remoteConfigClient.configuredValue = { @Sendable _ in
+                """
+                {"calendar":"https://www.chukyo-u.ac.jp/support/pdf/studentlife/buscallender2024-2.pdf","time_table":"https://www.chukyo-u.ac.jp/support/pdf/studentlife/bustime.pdf"}
+                """
+            }
+        }
+
+        await store.send(.calendarButtonTapped) {
+            $0.destination = .safari(
+                SafariReducer.State(
+                    url: URL(
+                        string: "https://www.chukyo-u.ac.jp/support/pdf/studentlife/buscallender2024-2.pdf"
+                    )!
+                )
+            )
+        }
+    }
+
+    @Test
+    func timetableButtonTapped() async {
+        let store = TestStore(
+            initialState: ToDestinationReducer.State(
+                busDestination: .toStation
+            )
+        ) {
+            ToDestinationReducer()
+        } withDependencies: {
+            $0.remoteConfigClient.configuredValue = { @Sendable _ in
+                """
+                {"calendar":"https://www.chukyo-u.ac.jp/support/pdf/studentlife/buscallender2024-2.pdf","time_table":"https://www.chukyo-u.ac.jp/support/pdf/studentlife/bustime.pdf"}
+                """
+            }
+        }
+
+        await store.send(.timetableButtonTapped) {
+            $0.destination = .safari(
+                SafariReducer.State(
+                    url: URL(
+                        string: "https://www.chukyo-u.ac.jp/support/pdf/studentlife/bustime.pdf"
+                    )!
+                )
             )
         }
     }
