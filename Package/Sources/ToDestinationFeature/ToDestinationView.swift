@@ -142,6 +142,8 @@ public struct ToDestinationReducer {
                     )
                     return .none
                 }
+                // 通知する時間である到着時刻の 5 分前の時刻を作る.
+                let notificationDateInRegion = dateInRegion.addingTimeInterval(-(60 * 5))
 
                 return .run { send in
                     await send(
@@ -150,7 +152,7 @@ public struct ToDestinationReducer {
                                 try await userNotificationClient.authorize()
                                 // 1 件のみ通知を登録するため先に登録済みのものを削除しておく.
                                 try await userNotificationClient.removeAllNotifications()
-                                try await userNotificationClient.addNotification(date: dateInRegion.date)
+                                try await userNotificationClient.addNotification(date: notificationDateInRegion.date)
                                 return busTime
                             }
                         )
